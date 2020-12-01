@@ -1,118 +1,92 @@
 \chapter{Durchführung}
 \label{chapter:impl}
-Im Folgendem wird die Realisierung des im vorherigen Kapitel beschriebenden Vorgehen dokumentiert. Dafür werden  die gesichteten Publikationen analysiert und die entstandenen Artefakte beschrieben. 
+Im Folgendem wird die Realisierung des im vorherigen Kapitel beschriebenden Vorgehen dokumentiert. Dafür werden die gesichteten Publikationen analysiert und die entstandenen Artefakte beschrieben.
 
 \section{Kontexte}
-XX TODO \\
+%% TODO \\
 
 \subsection{Thema}
-XX TODO \\
+%% TODO \\
 
 \subsection{Eingrenzung und Abgrenzung}
-XX TODO \\
+%% TODO \\
 
 \clearpage
 \subsection{Verallgemeinbarkeit}
 
-Im Folgendem werden die Kontextfaktoren beschrieben, die zu dem Zweck der Verallgemeinbarkeit zugeordnet wurden. Des Weiteren wird untersucht, in wie weit Autoren und Autorinnen über die Verallgemeinbarkeit ihrer Annahmen diskutieren, und ob Lücken in der Diskussion zur Verallgemeinbarkeit bestehen. \\
+Im Folgendem werden die Kontextfaktoren beschrieben,
+die zu dem Zweck der Verallgemeinbarkeit zugeordnet wurden.
+Des Weiteren wird untersucht, in wie weit Autoren und Autorinnen über die Verallgemeinbarkeit ihrer Annahmen diskutieren,
+und ob Lücken in der Diskussion zur Verallgemeinbarkeit bestehen. \\
 
-XX TODO alle bereits gelesenen (64Papers) \\
-Vorrangig werden lediglich die 13 Publikationen untersucht, die mit einen ACM Award \textit{Distinguished Paper} oder \textit{Distinguished Artefact} ausgezeichnet wurden, da angenommen wird, dass diese eine bessere Qualität aufweisen. In sieben dieser Publikationen wurden 12 Kontextfaktoren identifiziert, welche in der Tabelle \ref{table:kontexte-verallgemeinbarkeit} zusammengefasst und klassifiziert wurden. Im Folgendem werden die entsprechenden Textstellen, in denen Kontextfaktoren erkannt wurden, zitiert. Dabei sind die Kontextfaktoren hervorgehoben dargestellt. \\
+%% TODO alle bereits gelesenen (64Papers) \\
+Vorrangig werden lediglich die 13 Publikationen untersucht,
+die mit einen ACM Award \textit{Distinguished Paper} oder \textit{Distinguished Artefact} ausgezeichnet wurden,
+da angenommen wird, dass diese eine bessere Qualität aufweisen.
 
-XX TODO auslagern in /belege /itemize \\
-\begin{itemize}
-    \item  \textit{"Context-aware In-process Crowdworker Recommendation"} von Junjie Wang, Ye Yang, Song Wang, Yuanzhe Hu, Dandan Wang und Qing Wang [b535]: "Therefore, we assume our designed methods can be easily adopted in the \textbf{crowdtesting platform}"
-    \item  \textit{"Context-aware In-process Crowdworker Recommendation"} von Junjie Wang, Ye Yang, Song Wang, Yuanzhe Hu, Dandan Wang und Qing Wang [b535]: "We believe that the proposed approach is generally applicable to supporting other \textbf{testing types}" - gemeint sind funktionale Tests, Usability Tests, Security Tests und Performanz Test
-    \item \textit{"Towards the Use of the Readily Available Tests from the Release Pipeline as Performance Tests. Are We There Yet?"} von Zishuo Ding, Jinfu Chen und Weiyi Shang [a435]: "Our findings might not be generalizable to other systems. Future studies can apply our approach on other systems, such as \textbf{commercial closed source systems}." - untersucht wurde anhand den Opensource Systemen \textit{Hadoop} und \textit{Cassandra} von \textit{Apache Software Foundation}
-    \item \textit{"White-box Fairness Testing through Adversarial Sampling"} von Peixin Zhang, Jingyi Wang, Jun Sun, Guoliang Dong, Xinyu Wang, Xingen Wang, Jin Song Dong und Ting Dai [a949]: "However, the key idea of ADF is generic which can be easily implemented for more complex neural networks like \textbf{convolutional neural networks (CNNs)}, as it is shown that gradient works well for generating adversarial samples of CNN."
-    \item \textit{"Taxonomy of Real Faults in Deep Learning Systems"} von Nargiz Humbatova, Gunel Jahangirova, Gabriele Bavota, Vincenzo Riccio, Andrea Stocco und Paolo Tonella [b110]: "The main threat to the external validity is generalisation beyond the \textbf{three considered frameworks}, the dataset of artefacts used and the interviews conducted" - untersucht wurden die Frameworks \textbf{TensorFlow}, \textbf{Keras} und \textbf{PyTorch}
-    \item \textit{"An Empirical Study on Program Failures of Deep Learning Jobs"} von Ru Zhang, Wencong Xiao, Hongyu Zhang, Yu Liu, Haoxiang Lin und Mao Yang [b159]: "Although our study is conducted exclusively in Microsoft, we believe that our failure categories are prevalent and most of our results can be generalized to \textbf{other DL platforms}" - untersucht wurden die Deep Learning Platform \textbf{Philly}
-    \item \textit{"Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?"} von Nischal Shrestha, Colton Botta, Titus Barik und Chris Parnin [a691]: "We believe our results provide further insight as to why plans may not generalize across \textbf{languages}." - gemeint sind Programmiersprachen 
-    \item \textit{"Translating Video Recordings of Mobile App Usages into Replayable Scenarios"} von Carlos Bernal-Cárdenas, Nathan Cooper, Kevin Moran, Oscar Chaparro, Andrian Marcus und Denys Poshyvanyk [a309]: "Finally, we do not claim that the feedback we received from developers generalizes broadly across \textbf{industrial teams}"
-\end{itemize}
+In sieben dieser Publikationen wurden 12 Kontextfaktoren identifiziert,
+welche in der Tabelle \ref{table:kontexte-verallgemeinbarkeit} zusammengefasst und klassifiziert wurden.
 
-Die 12 identifizierten Kontextfaktoren wurden in drei Faktorengruppen klassifiziert: Testtypen, Zielsoftware und Programmiersprachen. Wobei unter Zielsoftware, TODO XXX
+Im Folgendem werden die entsprechenden Textstellen, in denen Kontextfaktoren erkannt wurden, zitiert.
+Dabei sind die Kontextfaktoren hervorgehoben dargestellt. \\
+\input{content/itemize/04-itemize_Belege_Kontexte_Verallgemeinbarkeit}
 
-XX TODO auslagern in /tables \\
-\begin{table}[h!]
-\begin{tabular}{ r | l | l  }
- ID & Kontextfaktor & Klassifikation \\ 
-   \hline
- b535 & Crowdtesting Plattform & Zielsoftware\\
- b535 & funktionale Tests & Testtypen \\
- b535 & Usability Tests & Testtypen \\
- b535 & Security Tests & Testtypen \\
- b535 & Performanz Tests & Testtypen \\
- a435 & Opensource System & Zielsoftware \\
- a435 & kommerzielle Closedsource Systeme & Zielsoftware \\
- a949 & convolutional neural networks & Zielsoftware  \\
- b110 & TensorFlow, Keras, Pytorch und andere DL frameworks & Zielsoftware  \\
- b159 & Philly und andere DL Plattformen & Zielsoftware \\
- a691 & ... & Programmiersprachen \\
- a309 & industrielle Teams & Zielgruppe  \\
-\end{tabular}
-\caption{Kontexte bezüglich der Verallgemeinbarkeit}
-\label{table:kontexte-verallgemeinbarkeit}
-\end{table}
+Die 12 identifizierten Kontextfaktoren wurden in drei Faktorengruppen klassifiziert:
+Testtypen, Zielsoftware und Programmiersprachen. Wobei unter Zielsoftware, %% TODO \\
+\input{content/tables/04-table_Kontexte_Verallgemeinbarkeit}
 
 \clearpage
 
-XX TODO auslagern in /belege /itemize \\
-Insgesamt werden sehr wenig Aussagen zur Verallgemeinbarkeit getätigt. In zwei Publikationen wurde offenbart, dass der Fokus nicht auf die Verallgemeinbarkeit der Ergebnisse lag und in einer Publikation wurde gar nicht auf die Verallgemeinbarkeit eingegangen:
-\begin{itemize}
-    \item \textit{"A Tale from the Trenches: Cognitive Biases and Software Development"} von Souti Chattopadhyay, Nicholas Nelson, Audrey Au, Natalia Morales, Christopher Sanchez, Rahul Pandita und Anita Sarma [a654]: "While desirable, generalizability was not the main focus of this study"
-    \item \textit{"Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?"} von Nischal Shrestha, Colton Botta, Titus Barik und Chris Parnin [a691]: "Because the sampling approach is non-probabilistic, it does not allow for sample-to-population, or statistical generalization. Rather, our approach targets diversity (rather than representativeness) in order to identify evidence of interference across many different programming languages."
-    \item \textit{"Unblind Your Apps: Predicting Natural-Language Labels for Mobile GUI Components by Deep Learning"} von Jieshan Chen, Chunyang Chen, Zhenchang Xing, Xiwei Xu, Liming Zhu, Guoqiang Li und Jinshui Wang [a322] - keine Diskussion über die Verallgemeinbarkeit
-\end{itemize}
+Insgesamt werden sehr wenig Aussagen zur Verallgemeinbarkeit getätigt.
+In zwei Publikationen wurde offenbart, dass der Fokus nicht auf die Verallgemeinbarkeit der Ergebnisse lag
+und in einer Publikation wurde gar nicht auf die Verallgemeinbarkeit eingegangen:
+\input{content/itemize/04-itemize_Belege_Verallgemeinbarkeit_nofocus}
 
 % Vorgehen zur Fehlerprevention, intern, construct, external validity, Limitations
-Es fällt auf, dass in einigen Publikationen die Threats of Validity in internal, external und construct validity gegliedert wird [a087, a309, b171, b436, b110]. Dabei wird jedoch mehr auf die interne Validität eingegangen und welche Maßnahmen getroffen wurden, um diese zu stärken und um Fehler, Bias oder Effekte zu vermeiden. \\
-In zwei Publikationen [a087, a309] wurde zusätzlich über die Limitations ihrer Ergebnisse und Future work diskutiert. 
-Wohingegen in vier anderen Publikationen sich lediglich auf die Limitation der Ergebnisse [a691, a949] oder auf die Future Work [b535, a322] konzentriert wurde ohne die Threats of Validity zu diskutieren.
+Es fällt auf, dass in einigen Publikationen die Threats of Validity in internal, external und construct validity gegliedert wird [a087, a309, b171, b436, b110].
+Dabei wird jedoch mehr auf die interne Validität eingegangen und welche Maßnahmen getroffen wurden,
+um diese zu stärken und um Fehler, Bias oder Effekte zu vermeiden. \\
 
-XX TODO auslagern in documents/excel \\
-%k - b535 - Beschreibung der Studie, future work
-%_ - a087 - external, internal, construct validity, limitations, future work, how to mitigate, participants
-%x - a654 - participants, how to mitigate internal treats, no focus on generalizability, 
-%k,x - a691 - limitations, no focus on generalizability
-%_ - b073 nur Limitations, sonst nada
-%x - a322 - nada, future work
-%k - a309 - future work, limitations, ex/i/c validity, how to mitigate internal treats
-%_ - a481 - how to mitigate internal treats, no external 
-%_ - b171 - ex/i/c validity, how to mitigate internal treats, participants
-%k - b435 - ex/i/c validity
-%k - a949 - limitations
-%k - b110 - internal/external validity 
-%_ - b159 - discussion about generality
+In zwei Publikationen [a087, a309] wurde zusätzlich über die Limitations ihrer Ergebnisse und Future work diskutiert.
+Wohingegen in vier anderen Publikationen sich lediglich auf die Limitation der Ergebnisse [a691, a949]
+oder auf die Future Work [b535, a322] konzentriert wurde ohne die Threats of Validity zu diskutieren.
+
+\input{content/tables/04-table_Threats_of_Validity}
 
 % Teilnehmende
-In einigen Publikationen [a087, b171, a654] werden Aussagen über die Diversität der Teilnehmenden gemacht, um die Ergebnisse zu stützen und die externe Validität zu stärken.
-\begin{itemize}
-    \item \textit{"Causal Testing: Understanding Defects’ Root Causes"} von Brittany Johnson, Yuriy Brun und Alexandra Meliou [a087]: "Our study also relied on participants with different backgrounds and experience." 
-      \item \textit{"Primers or Reminders? The Effects of Existing Review Comments on Code Review"} von Davide Spadini, Gül Çalikli, Alberto Baccehlli [b171]: "To have a diverse sample of subjects representative of the overall population of software developers who 1177 employ contemporary code review, we invited developers from several countries, organizations, education levels, and background."
-    \item \textit{"A Tale from the Trenches: Cognitive Biases and Software Development"} von Souti Chattopadhyay, Nicholas Nelson, Audrey Au, Natalia Morales, Christopher Sanchez, Rahul Pandita und Anita Sarma [a654]: "To bolster these observations we subsequently used a more diverse interview sample, which included participants from both large and small employers."
-\end{itemize}
+In einigen Publikationen [a087, b171, a654] werden Aussagen über die Diversität der Teilnehmenden gemacht,
+um die Ergebnisse zu stützen und die externe Validität zu stärken.
+\input{content/itemize/04-itemize_Belege_Verallgemeinbarkeit_Teilnehmende}
 
-XX TODO auslagern in /belege /itemize \\
-Außerdem werden auch Vergleiche zu anderen Studien, welche einen kleineren Umfang haben und das Einsetzen von bekannten und weitgenutzten Benchmarks XXX um die Verallgemeinbarkeit zu garantieren. 
-\begin{itemize}
-    \item XX TODO Zitat, Beleg \\
-    \item \textit{"Causal Testing: Understanding Defects’ Root Causes"} von Brittany Johnson, Yuriy Brun und Alexandra Meliou [a087]: "Our use of this well-known and widely-used benchmark of real-world defects aims to ensure our results generalize"
-\end{itemize}
 
-Diese Aussagen über die Teilnehmende, die genutzten Benchmarks oder andere Studien lassen jedoch keine Kontexte erkennen und gehen nicht darauf ein, inwiefern die Ergebnisse der Publikationen verallgemeinbar sind. 
+Außerdem werden auch Vergleiche zu anderen Studien,
+welche einen kleineren Umfang haben und das Einsetzen von bekannten und weitgenutzten Benchmarks XXX
+um die Verallgemeinbarkeit zu garantieren.
+\input{content/itemize/04-itemize_Belege_Verallgemeinbarkeit_Scale}
+
+Diese Aussagen über die Teilnehmende, die genutzten Benchmarks oder andere Studien lassen jedoch keine Kontexte erkennen
+und gehen nicht darauf ein, inwiefern die Ergebnisse der Publikationen verallgemeinbar sind.
+
+
+
+
+
+
+
+
+
+
+
 
 \clearpage
 
 \subsection{Details}
-XX TODO \\
-
-
-
+%% TODO \\
 
 \section{Taxonomie}
-XX TODO \\
+%% TODO \\
 
 % Chapter 4:
 % - Dokumentation der Durchführung und der entstandenen Artefakte
+% - Beschreibung besonderer Schwierigkeiten und wie sie gelöst, umgangen oder vermieden wurden (oder warum nicht)
 % -	Software zur qualitativen Datenanalyse zum Sortieren, Statistik, Datenvisualisierung
