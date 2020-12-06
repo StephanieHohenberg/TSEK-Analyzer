@@ -16,65 +16,49 @@ Im Folgendem wird die Realisierung des im vorherigen Kapitel beschriebenden Vorg
 
 Im Folgendem werden die Kontextfaktoren beschrieben,
 die zu dem Zweck der Verallgemeinbarkeit zugeordnet wurden.
-Des Weiteren wird untersucht, in wie weit Autoren und Autorinnen über die Verallgemeinbarkeit ihrer Annahmen diskutieren,
-und ob Lücken in der Diskussion zur Verallgemeinbarkeit bestehen. \\
+Des Weiteren wird untersucht, in wie weit Autoren und Autorinnen über die Verallgemeinbarkeit ihrer Annahmen diskutieren. \\
 
-%% TODO alle bereits gelesenen (64Papers) \\
-Vorrangig werden lediglich die 13 Publikationen untersucht,
-die mit einen ACM Award \textit{Distinguished Paper} oder \textit{Distinguished Artefact} ausgezeichnet wurden,
-da angenommen wird, dass diese eine bessere Qualität aufweisen.
+Vorrangig werden lediglich die 59 Publikationen untersucht,
+die mit einen ACM Award für \textit{Distinguished Paper} oder \textit{Distinguished Artefact} ausgezeichnet wurden und/oder einen Badge erhalten haben \textit{ACM Artifacts Evaluated Reusable} oder \textit{ACM Artifacts Available}. Es wird angenommen, dass diese Publikationen eine höhere Qualität aufweisen und mehr auf die Verallgemeinbarkeit eingangen wird. \\
 
-In sieben dieser Publikationen wurden 12 Kontextfaktoren identifiziert,
-welche in der Tabelle \ref{table:kontexte-verallgemeinbarkeit} zusammengefasst und klassifiziert wurden.
+Wie bereits in Kapitel \ref{chapter:vorgehen} beschrieben, wird angenommen, dass die Kontexte mit dem Zweck der Verallgemeinbarkeit
+an bestimmten Stellen in einer Publikation vorkommen. Daher wurden lediglich folgende Stellen berücksichtigt: \textit{Threats of Validity}, \textit{Conclusion}, \textit{Limitations}, \textit{Future Work} und \textit{Discussion}. \\
 
-Im Folgendem werden die entsprechenden Textstellen, in denen Kontextfaktoren erkannt wurden, zitiert.
-Dabei sind die Kontextfaktoren hervorgehoben dargestellt. \\
-\input{content/itemize/04-itemize_Belege_Kontexte_Verallgemeinbarkeit}
+Innerhalb 34 Publikationen wurden 35 Kontextfaktoren identifiziert.
+Davon beziehen sich 24 Kontextfaktoren auf die Verallgemeinbarkeit,
+8 auf die Abgrenzung des Themas, zwei auf das Thema selbst und ein Kontextfaktor beschreibt Details der Publikation.
+Die Kontextfaktoren bezüglich der Verallgemeinbarkeit wurden in der Tabelle \ref{table:kontexte-verallgemeinbarkeit} zusammengefasst und in vier Faktorengruppen klassifiziert: Anwendung, Zielgruppe Programmiersprachen und Testtypen.
+\\
 
-Die 12 identifizierten Kontextfaktoren wurden in drei Faktorengruppen klassifiziert:
-Testtypen, Zielsoftware und Programmiersprachen. Wobei unter Zielsoftware, %% TODO \\
+
 \input{content/tables/04-table_Kontexte_Verallgemeinbarkeit}
 
 \clearpage
-
-Insgesamt werden sehr wenig Aussagen zur Verallgemeinbarkeit getätigt.
-In zwei Publikationen wurde offenbart, dass der Fokus nicht auf die Verallgemeinbarkeit der Ergebnisse lag
-und in einer Publikation wurde gar nicht auf die Verallgemeinbarkeit eingegangen:
-\input{content/itemize/04-itemize_Belege_Verallgemeinbarkeit_nofocus}
-
-% Vorgehen zur Fehlerprevention, intern, construct, external validity, Limitations
-Es fällt auf, dass in einigen Publikationen die Threats of Validity in internal, external und construct validity gegliedert wird [a087, a309, b171, b436, b110].
-Dabei wird jedoch mehr auf die interne Validität eingegangen und welche Maßnahmen getroffen wurden,
-um diese zu stärken und um Fehler, Bias oder Effekte zu vermeiden. \\
-
-In zwei Publikationen [a087, a309] wurde zusätzlich über die Limitations ihrer Ergebnisse und Future work diskutiert.
-Wohingegen in vier anderen Publikationen sich lediglich auf die Limitation der Ergebnisse [a691, a949]
-oder auf die Future Work [b535, a322] konzentriert wurde ohne die Threats of Validity zu diskutieren.
+In ungefährt 3/4 der Publikationen (72,8 \%) ist die Sektion \textit{Threats to Validity} vorhanden. In 41,8\% dieser Publikationen wird diese Sektion in interne, externe und construct Validität aufgeteilt und in 20,9\% in interne und externe Validität. Jedoch wird meistens mehr auf die interne Validität eingegangen und beschrieben welche Maßnahmen getroffen wurden, um diese zu stärken und um Fehler, Bias oder Effekte zu vermeiden. Die externe Validität wird meist nur knapp beschrieben und es werden sehr wenig Aussagen zur Verallgemeinbarkeit getätigt. \\
+Es fällt auf, dass anstatt über die Verallgemeinbarkeit zu diskutieren, die Studie und das Vorgehen erneut beschrieben wird. In vielen Publikationen (39,5\%) wird auf die Evaluation verwiesen, wie auf die Popularität der genutzten Benchmark
+\footnote{ "Our use of this well-known and widely-used benchmark of real-world defects aims to ensure our results generalize" - \textit{"Causal Testing: Understanding Defects’ Root Causes"} von Brittany Johnson, Yuriy Brun und Alexandra Meliou [a087]}
+und die Auswahl der evaluierten Testsubjekte.
+In 8 Publikationen (18,6 \%) wird auf die Diversität oder auf die Limitierung der Teilnehmenden verwiesen.
+\footnote{ "To bolster these observations we subsequently used a more diverse interview sample, which included participants from both large and small employers." - \textit{"A Tale from the Trenches: Cognitive Biases and Software Development"} von Souti Chattopadhyay, Nicholas Nelson, Audrey Au, Natalia Morales, Christopher Sanchez, Rahul Pandita und Anita Sarma [a654]} \\
 
 \input{content/tables/04-table_Threats_of_Validity}
+\clearpage
 
-% Teilnehmende
-In einigen Publikationen [a087, b171, a654] werden Aussagen über die Diversität der Teilnehmenden gemacht,
-um die Ergebnisse zu stützen und die externe Validität zu stärken.
-\input{content/itemize/04-itemize_Belege_Verallgemeinbarkeit_Teilnehmende}
+In zwei Publikationen wird ausgesagt, dass der Fokus der Studie nicht auf die Verallgemeinbarkeit liegt
+\footnote{ "While desirable, generalizability was not the main focus of this study" - \textit{"A Tale from the Trenches: Cognitive Biases and Software Development"} von Souti Chattopadhyay, Nicholas Nelson, Audrey Au, Natalia Morales, Christopher Sanchez, Rahul Pandita und Anita Sarma [a654]}
+und in 11 Publikationen (18,6\%) wird ausgesagt, dass die Ergebnisse möglicherweise nicht generalisierbar sind.
+\footnote{ \textit{"Our findings might not be generalizable to other systems." - "Towards the Use of the Readily Available Tests from the Release
+Pipeline as Performance Tests. Are We There Yet?"} von Zishuo Ding, Jinfu Chen und Weiyi Shang [b435] }
+In diesen Aussagen wurden zwar Kontextfaktoren gefunden bezüglich der möglichen Verallgemeinbarkeit. Jedoch werden wenig Aussagen über diese Kontexte gemacht und außerdem wird nicht über die Verallgemeinbarkeit der Ergebnisse auf diese Kontexte argumentiert. \\
 
+Des Weiteren fällt auf, dass in mehr als 1/4 der Publikation (27,1 \%) die Sektion \textit{Threats to Validity} nicht vorhanden ist. Da Kontextfaktoren auch in anderen Sektionen vorkommen können, wurde untersucht, ob neben der \textit{Conclusion}, Sektionen vorhanden sind, um die Begrenzungen der Arbeit und die zukünftige Arbeit zu erläutern.
+In 10 der 16 der Arbeiten (62,5\%) sind solche Sektionen oder Passagen vorhanden. Im Vergleich mit den Publikationen mit \textit{Threats to Validity}, welcher in Tabelle \ref{table:sektionen} dargestellt ist, ist ein Unterschied in der Häufigkeit der Sektion \textit{Limitations} bemerkbar.
+Es kann daher geschlussfolgert werden, dass in Publikationen ohne \textit{Threats to Validity} mehr über die Begrenzungen der Arbeit diskutiert wird, statt über die Validität und die Verallgemeinbarkeit.
 
-Außerdem werden auch Vergleiche zu anderen Studien,
-welche einen kleineren Umfang haben und das Einsetzen von bekannten und weitgenutzten Benchmarks XXX
-um die Verallgemeinbarkeit zu garantieren.
-\input{content/itemize/04-itemize_Belege_Verallgemeinbarkeit_Scale}
+\input{content/tables/04-table_Sektionen}
 
-Diese Aussagen über die Teilnehmende, die genutzten Benchmarks oder andere Studien lassen jedoch keine Kontexte erkennen
-und gehen nicht darauf ein, inwiefern die Ergebnisse der Publikationen verallgemeinbar sind.
-
-
-
-
-
-
-
-
-
+Es ergibt sich eine Schnittmenge von 27 Publikationen (45,7\%), in denen nicht oder nur oberflächlich auf die Verallgemeinbarkeit eingegangen wird, sodass Lücken in der Diskussion der Verallgemeinbarkeit bestehen.
+Lediglich in 25 Publikationen (42.3\%) wurden Kontexte bezüglich der Verallgemeinbarkeit gefunden.
 
 
 

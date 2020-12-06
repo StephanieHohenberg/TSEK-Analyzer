@@ -1,20 +1,44 @@
 \begin{table}[h!]
-    \begin{tabular}{ r | l | l  }
-        ID & Kontextfaktor & Klassifikation \\
+    \begin{tabular}{ r | l | l | l }
+        ID & Kontextfaktor & Klassifikation & Vorkommen \\
         \hline
-        b535 & Crowdtesting Plattform & Zielsoftware\\
-        b535 & funktionale Tests & Testtypen \\
-        b535 & Usability Tests & Testtypen \\
-        b535 & Security Tests & Testtypen \\
-        b535 & Performanz Tests & Testtypen \\
-        a435 & Opensource System & Zielsoftware \\
-        a435 & kommerzielle Closedsource Systeme & Zielsoftware \\
-        a949 & convolutional neural networks & Zielsoftware  \\
-        b110 & TensorFlow, Keras, Pytorch und andere DL frameworks & Zielsoftware  \\
-        b159 & Philly und andere DL Plattformen & Zielsoftware \\
-        a691 & ... & Programmiersprachen \\
-        a309 & industrielle Teams & Zielgruppe  \\
+        b535 & Crowdtesting Plattform & Anwendung & TtV \\
+        b535 & funktionale Tests & Testtypen & TtV \\
+        b535 & Usability Tests & Testtypen & TtV \\
+        b535 & Security Tests & Testtypen & TtV\\
+        b535 & Performanz Tests & Testtypen & TtV \\
+        a435 & open-source Systeme & Anwendung  & TtV \\
+        a435 & kommerzielle close-source Systeme & Anwendung & TtV \\
+        a949 & convolutional neural network & Anwendung & TtV\\
+        b110 & TensorFlow, Keras, Pytorch & Anwendung & TtV\\
+        b159 & Philly und andere DL Plattformen & Anwendung  & TtV \\
+        a691 &  & Programmiersprachen & L \\
+        a309 & Entwickler/innen, industrielle Teams & Zielgruppe & TtV  \\
+        a481 & große, industrielle Apps & Anwendung & C  \\
+
+        a026 & other domains with partially ordered constructs & Anwendung & C \\
+        a075 & other applications and grammar & Anwendung & TtV \\
+        b459 & SMT solver, other classes of solvers & Anwendung &  C, FW\\
+        b086 & Python, other languages, language-agnostic & Programmiersprachen & D, L \\
+        b061 & specific scenarios & Anwendung & C \\
+
+        b447 &  & Programmiersprachen & TtV \\
+        b447 & real-world Java programs & Anwendung & C \\
+        a847 & active analyzer and real world programs & Anwendung & C \\
+        a752 & OSS Datensatz mit Puppet Skripten & Anwendung & TtV \\
+        a752 & across languages & Programmiersprachen & TtV \\
+        a457 & Android Apps & Anwendung & TtV \\
+        a666 & Softwareentwicklungsfirmen, Arbeitsplatz & Zielgruppe & C \\
+        b183 & große, open-source Softwareprojekte & Anwendung & TtV \\
+        a641 & open-source Projekte, close-source Projekte & Anwendung & TtV \\
+
+        a210 & Java und Python & Programmiersprachen & L, T \\
+        a714 & control applications & Anwendung & TtV \\
+        a714 & convolutional neural network & Anwendung & TtV \\
     \end{tabular}
-    \caption{Kontexte bezüglich der Verallgemeinbarkeit}
+    \caption{Kontexte bezüglich der Verallgemeinbarkeit
+    an den Stellen \textit{Threats to Validity} (TtV), \textit{Conclusion} (C), \textit{Discussion} (D)
+    \textit{Limitations} (L), \textit{Future Work} (FW)
+    }
     \label{table:kontexte-verallgemeinbarkeit}
 \end{table}
