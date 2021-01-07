@@ -1,28 +1,35 @@
 \chapter{Durchführung}
 \label{chapter:impl}
-Im Folgendem wird die Realisierung des im vorherigen Kapitel beschriebenden Vorgehen dokumentiert. Dafür werden die gesichteten Publikationen analysiert und die entstandenen Artefakte beschrieben.
+Im Folgendem wird die Realisierung des im vorherigen Kapitel beschriebenden Vorgehen dokumentiert.
+Dafür werden die gesichteten Publikationen analysiert und die entstandenen Artefakte beschrieben.
 
-\section{Kontexte}
+\section{1. Iteration}
+In der 1. Iteration, in der lediglich die 59 Publikationen mit Auszeichnungen gesichtet wurden,
+lag der Fokus auf die Kontexte zum Zweck Thema, Ein- und Abgrenzung und Verallgemeinbarkeit.
+Um diese Kontextfaktoren zu identifizieren, wurden folgende Stellen gelesen:
+Abstract, Introduction, Related Work, Conclusion, Limitations, Future Work, Threats to Validity und Discussion. \\
+
+Diese Publikationen wurden, wie bereits im vorherigen Kapitel beschrieben, in vier Gruppen geclustert abhängig von den Auszeichnung und Anzahl an Badges. \\
+
+
+\subsection{Kontexte zum Zweck Thema}
 %% TODO \\
 
-\subsection{Thema}
-%% TODO \\
+%% 2.Iteration Zweck Anwendung, Erweiterung
 
-\subsection{Eingrenzung und Abgrenzung}
+\subsection{Kontexte zum Zweck Eingrenzung und Abgrenzung}
 %% TODO \\
 
 \clearpage
-\subsection{Verallgemeinbarkeit}
+\subsection{Kontexte zum Zweck Verallgemeinbarkeit}
 
 Im Folgendem werden die Kontextfaktoren beschrieben,
 die zu dem Zweck der Verallgemeinbarkeit zugeordnet wurden.
 Des Weiteren wird untersucht, in wie weit Autoren und Autorinnen über die Verallgemeinbarkeit ihrer Annahmen diskutieren. \\
 
-Vorrangig werden lediglich die 59 Publikationen untersucht,
-die mit einen ACM Award für \textit{Distinguished Paper} oder \textit{Distinguished Artefact} ausgezeichnet wurden und/oder einen Badge erhalten haben \textit{ACM Artifacts Evaluated Reusable} oder \textit{ACM Artifacts Available}. Es wird angenommen, dass diese Publikationen eine höhere Qualität aufweisen und mehr auf die Verallgemeinbarkeit eingangen wird. \\
-
 Wie bereits in Kapitel \ref{chapter:vorgehen} beschrieben, wird angenommen, dass die Kontexte mit dem Zweck der Verallgemeinbarkeit
-an bestimmten Stellen in einer Publikation vorkommen. Daher wurden lediglich folgende Stellen berücksichtigt: \textit{Threats of Validity}, \textit{Conclusion}, \textit{Limitations}, \textit{Future Work} und \textit{Discussion}. \\
+an bestimmten Stellen in einer Publikation vorkommen. Daher wurden lediglich folgende Stellen berücksichtigt:
+Beschreibung der externen Validität in \textit{Threats of Validity}, \textit{Conclusion}, \textit{Limitations}, \textit{Future Work} und \textit{Discussion}. \\
 
 Innerhalb 34 Publikationen wurden 35 Kontextfaktoren identifiziert.
 Davon beziehen sich 24 Kontextfaktoren auf die Verallgemeinbarkeit,
@@ -32,6 +39,9 @@ Die Kontextfaktoren bezüglich der Verallgemeinbarkeit wurden in der Tabelle \re
 
 
 \input{content/tables/04-table_Kontexte_Verallgemeinbarkeit}
+% TODO keine Tabelle sondern schöne Beispiele beschreiben!! Warum X ein Kontext zum Thema Verallgemeinbarkeit ist
+% TODO Tabellen hinterher im Anhang - lesbarer
+
 
 \clearpage
 In ungefährt 3/4 der Publikationen (72,8 \%) ist die Sektion \textit{Threats to Validity} vorhanden. In 41,8\% dieser Publikationen wird diese Sektion in interne, externe und construct Validität aufgeteilt und in 20,9\% in interne und externe Validität. Jedoch wird meistens mehr auf die interne Validität eingegangen und beschrieben welche Maßnahmen getroffen wurden, um diese zu stärken und um Fehler, Bias oder Effekte zu vermeiden. Die externe Validität wird meist nur knapp beschrieben und es werden sehr wenig Aussagen zur Verallgemeinbarkeit getätigt. \\
@@ -46,10 +56,16 @@ In 8 Publikationen (18,6 \%) wird auf die Diversität oder auf die Limitierung d
 
 In zwei Publikationen wird ausgesagt, dass der Fokus der Studie nicht auf die Verallgemeinbarkeit liegt
 \footnote{ "While desirable, generalizability was not the main focus of this study" - \textit{"A Tale from the Trenches: Cognitive Biases and Software Development"} von Souti Chattopadhyay, Nicholas Nelson, Audrey Au, Natalia Morales, Christopher Sanchez, Rahul Pandita und Anita Sarma [a654]}
-und in 11 Publikationen (18,6\%) wird ausgesagt, dass die Ergebnisse möglicherweise nicht generalisierbar sind.
+und in 11 Publikationen (18,6\%) wird ausgesagt, dass die Ergebnisse möglicherweise nicht generalisierbar sind und es wird nur eine vague Stellungnahme zur Verallgemeinbarkeit getätigt.
 \footnote{ \textit{"Our findings might not be generalizable to other systems." - "Towards the Use of the Readily Available Tests from the Release
 Pipeline as Performance Tests. Are We There Yet?"} von Zishuo Ding, Jinfu Chen und Weiyi Shang [b435] }
-In diesen Aussagen wurden zwar Kontextfaktoren gefunden bezüglich der möglichen Verallgemeinbarkeit. Jedoch werden wenig Aussagen über diese Kontexte gemacht und außerdem wird nicht über die Verallgemeinbarkeit der Ergebnisse auf diese Kontexte argumentiert. \\
+In diesen Aussagen wurden zwar Kontextfaktoren gefunden bezüglich der möglichen Verallgemeinbarkeit.
+Jedoch werden wenig Aussagen über diese Kontexte gemacht.
+Es wird nicht erläutert, um welche Art von Systemen es sich handeln könnte, auf welche sich die Ergebnisse möglicherweise verallgemeinern lassen,
+und es wird auch nicht argumentiert in wie weit, die eigenen Ergebnisse verallgemeinbar sind, und wo die Grenze, wo der eigene Kontext aufhört, liegen könnte. \\
+
+%TODO mehr am Beispiel argumentieren, Paper kurz vorstellen und erläutern - A641(grün)
+%TODO kein Eingehen auf Verallgemeinbarkeit aber Verweis auf Future Work B183(grün)
 
 Des Weiteren fällt auf, dass in mehr als 1/4 der Publikation (27,1 \%) die Sektion \textit{Threats to Validity} nicht vorhanden ist. Da Kontextfaktoren auch in anderen Sektionen vorkommen können, wurde untersucht, ob neben der \textit{Conclusion}, Sektionen vorhanden sind, um die Begrenzungen der Arbeit und die zukünftige Arbeit zu erläutern.
 In 10 der 16 der Arbeiten (62,5\%) sind solche Sektionen oder Passagen vorhanden. Im Vergleich mit den Publikationen mit \textit{Threats to Validity}, welcher in Tabelle \ref{table:sektionen} dargestellt ist, ist ein Unterschied in der Häufigkeit der Sektion \textit{Limitations} bemerkbar.
@@ -57,14 +73,60 @@ Es kann daher geschlussfolgert werden, dass in Publikationen ohne \textit{Threat
 
 \input{content/tables/04-table_Sektionen}
 
-Es ergibt sich eine Schnittmenge von 27 Publikationen (45,7\%), in denen nicht oder nur oberflächlich auf die Verallgemeinbarkeit eingegangen wird, sodass Lücken in der Diskussion der Verallgemeinbarkeit bestehen.
-Lediglich in 25 Publikationen (42.3\%) wurden Kontexte bezüglich der Verallgemeinbarkeit gefunden.
+Es ergibt sich eine Schnittmenge von 27 Publikationen (45,7\%), in denen nicht oder nur oberflächlich auf die Verallgemeinbarkeit eingegangen wird,
+sodass Lücken in der Diskussion der Verallgemeinbarkeit bestehen.
+Lediglich in 25 Publikationen (42.3\%) wurden Kontexte bezüglich der Verallgemeinbarkeit gefunden. \\
 
+Es kann verschieden begründet werden, wieso nicht ausreichend über die Verallgemeinbarkeit diskutiert wird.\\
+26 Publikationen (44,0\%) behaupten eine erstmalige Studie, eine neue Methode, Technik oder Ansatz durchzuführen.
+Daher könnte es sein, dass die Autoren und Autorinnen, es nicht als relevant ansehen die Verallgemeinbarkeit zu diskutieren.
+Zum Anderem könnte es den Autoren und Autorinnen selbstverständlich erscheinen, dass ihre Ergebnisse verallgemeinbar sind,
+oder dass der Fokus der Studie eben nicht auf die Verallgemeinbarkeit lag, wie auch in zwei Publikationen ausgesagt wurde. \\
 
+Es wird geschlussforgert, dass an den untersuchten Stellen \textit{Threats of Validity}, \textit{Conclusion}, \textit{Limitations}, \textit{Future Work} und \textit{Discussion}
+wenige Annahmen zur Verallgemeinbarkeit getätigt werden, welche allerdings klar, simpel und den Autoren und Autorinnen bewusst sind, jedoch nur oberflächlich auf die Verallgemeinbarkeit eingehen. \\
+Um tiefgründigere Kontexte zur Verallgemeinbarkeit zu finden, die den Autoren und Autorinnen als selbstverständlich erscheinen oder weniger bewusst sind,
+soll in der 2. Iteration des Sichtungsprozesses nach impliziteren Annahmen zur Verallgemeinbarkeit gesucht werden.
+Dabei soll auch analysiert werden, ob die Annahmen falsch sein könnten, sodass die Ergebnisse der Studie fragwürdig sind.
 
 \clearpage
 
-\subsection{Details}
+\section{2. Iteration}
+In der 2. Iteration wurde, wie in der 1.Iteration, die 59 Publikationen mit Auszeichnungen erneut gesichtet.
+Jedoch werden die Publikationen in einer anderen Reihenfolgen gelesen und nicht nach Art und Anzahl der Auszeichnungen gruppiert. \\
+
+Es wird angenommen, dass implizitere Annahmen zur Verallgemeinbarkeit sich an anderen Stellen befinden, als die bisher untersuchten Stellen. Es werden Sektionen zum Vorgehen betrachtet, Sektionen, in denen interpretiert wird und erneut die Sektion \textit{Threats of Validity}. In der 1. Iteration lag der Fokus auf die externe Validität. Nun soll die interne und construct Validität untersucht werden, da angenommen wird, dass dort die getroffenen Annahmen, Vorgehens- und Interpretationsschritte wiederholt werden, um die interne und construct Validität zu stärlen.
+
+Daher umfasst die 1. Gruppe die 18 Publikationen, in denen die Sektion \textit{Threats of Validity} in interne, externe und construct Validität aufgeteilt wurde. \\
+Im Gegensatz dazu beinhaltet die 2. Gruppe die 10 Publikationen, in denen keine Stellungnahme zur Verallgemeinbarkeit gemacht wurde oder in denen ausgesagt wurde, dass der Fokus nicht auf die Verallgemeinbarkeit lag. Dabei soll herausgefunden werden, an welchen Stellen und in wie weit die Autoren und Autorinnen dieser Publikationen Annahmen tätigen. \\
+
+Die restlichen 31 Publikationen werden nach Themengebieten geclustert.
+% XX TODO
+% DL 14 - 5 = 9
+% Testing 16- 13 = 3
+% TODO Grafik, Venndiagramm?
+
+
+In der 2. Iteration soll nicht nur nach impliziten Annahmen gesucht werden und mehr Kontexte zur Verallgemeinbarkeit identifiziert werden.
+
+% TODO Zweck Details
+% TODO Referenz auf RQ1
+% TODO Zweck mögliche Verallgemeinbarkeit
+Es sollen auch bereits identifizierte Kontexte nach ihren Zweck evaluiert werden, und eventuell den Zwecken Anwedung oder Erweiterung zugeordnet werden,
+da in der 1. Iteration aufgefallen ist, dass einige bereits identifizierte Kontexte zum Zweck Thema oder Details, diesen Zwecken eher angehören.
+
+
+
+\subsection{Kontexte zum Zweck Anwendung}
+%% TODO \\
+
+\subsection{Kontexte zum Zweck Erweiterung}
+%% TODO \\
+
+\subsection{Kontexte zum Zweck Details}
+%% TODO \\
+
+\subsection{Kontexte zum Zweck Verallgemeinbarkeit}
 %% TODO \\
 
 \section{Taxonomie}
