@@ -1,0 +1,31 @@
+.info-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info-line > span {
+  align-self: center;
+}
+
+mat-expansion-panel-header {
+  padding: 5px;
+  padding-top: 10px;
+}
+
+mat-panel-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.awards {
+  min-width: 25px;
+  display: flex;
+  flex-direction: row;
+}
+
+.awards > i {
+  padding-left: 5px;
+}

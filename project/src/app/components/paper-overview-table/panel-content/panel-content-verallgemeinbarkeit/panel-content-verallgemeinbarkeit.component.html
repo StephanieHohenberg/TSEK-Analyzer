@@ -1,0 +1,31 @@
+ <mat-expansion-panel hideToggle class="mat-elevation-z0"
+                       (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i *ngIf="!panelOpenState" class="fas fa-chevron-right"></i>
+        <i *ngIf="panelOpenState" class="fas fa-chevron-down"></i>
+        &nbsp;Verallgemeinbarkeit
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div *ngIf="generalizationData; else errorMessage" class="generalization-content">
+      <div class="label-column">
+        <p *ngFor='let field of fieldList'>{{field}}:&nbsp;</p>
+      </div>
+      <div class="value-column">
+        <p *ngFor='let field of fieldList'>
+          <mat-checkbox *ngIf="generalizationData[field] === true || generalizationData[field] === false; else stringLabel"
+                        [checked]="generalizationData[field]" [disabled]="true">
+          </mat-checkbox>
+          <ng-template #stringLabel>
+            {{generalizationData[field]}}
+          </ng-template>
+        </p>
+      </div>
+    </div>
+   <ng-template #errorMessage>
+     <p><i class="fas fa-exclamation-triangle"></i> Es sind keine Daten zur Verallgemeinbarkeit vorhanden!</p>
+   </ng-template>
+  </mat-expansion-panel>

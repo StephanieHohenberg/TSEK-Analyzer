@@ -1,0 +1,8 @@
+<div class="panel-content" *ngIf="paperId">
+  <app-panel-content-general [paperId]="paperId" *ngIf="visibilityService.isFieldVisible(analysisPaperFields[0])"></app-panel-content-general>
+  <app-panel-content-characterization [paperId]="paperId" *ngIf="visibilityService.isFieldVisible(analysisPaperFields[1])"></app-panel-content-characterization>
+  <p></p>
+  <app-panel-content-context [paperId]="paperId" *ngIf="visibilityService.isFieldVisible(analysisPaperFields[2])"></app-panel-content-context>
+  <app-panel-content-verallgemeinbarkeit [paperId]="paperId" *ngIf="visibilityService.isFieldVisible(analysisPaperFields[3])"></app-panel-content-verallgemeinbarkeit>
+  <app-panel-content-assumptions [paperId]="paperId" *ngIf="visibilityService.isFieldVisible(analysisPaperFields[4])"></app-panel-content-assumptions>
+</div>

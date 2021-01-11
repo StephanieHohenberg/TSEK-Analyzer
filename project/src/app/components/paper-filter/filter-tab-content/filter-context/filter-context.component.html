@@ -1,0 +1,28 @@
+<div class="filter-content">
+  <div class="filter-row">
+    <mat-form-field>
+      <mat-label>Kontexte</mat-label>
+      <input matInput #contextInput>
+    </mat-form-field>
+    <div class="space">&nbsp;</div>
+    <mat-chip class="mat-elevation-z5" (click)="addContextFilter(contextInput.value); contextInput.value=''">+ Kontext</mat-chip>
+  </div>
+
+  <div class="filter-row">
+    <app-fields-dropdown
+      [label]="'Zwecke'"
+      [fieldList]="zweckList"
+      [filterDeletedByChip]="getFilterDeletedByChipEventEmitterForContext(filterDeletedByChip)"
+      (filterChanged)="changeDropdownFilter(ZWECK_FIELD, $event)"
+    >
+    </app-fields-dropdown>
+    <div class="space">&nbsp;</div>
+    <app-fields-dropdown
+      [label]="'Vorkommen'"
+      [fieldList]="vorkommenList"
+      [filterDeletedByChip]="getFilterDeletedByChipEventEmitterForContext(filterDeletedByChip)"
+      (filterChanged)="changeDropdownFilter(VORKOMMEN_FIELD, $event)"
+    >
+    </app-fields-dropdown>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="general-data-row" *ngIf="generalData">
+  <span class="information-icon">
+    <i class="fas fa-users"></i>&nbsp;
+    <span class="hidden-information">
+      <span *ngFor="let author of generalData[generalPaperFields.AUTHORS]; let i=index">
+        {{author}}<span *ngIf="i < generalData[generalPaperFields.AUTHORS].length - 1">&nbsp;|&nbsp;</span>&nbsp;
+      </span>
+    </span>
+  </span>
+
+  <span class="information-icon">
+    <i class="fas fa-university"></i>&nbsp;
+    <span class="hidden-information">
+      <span *ngFor="let university of generalData[generalPaperFields.UNIVERSITIES]; let i=index">
+        {{university}}<span *ngIf="i < generalData[generalPaperFields.UNIVERSITIES].length - 1">&nbsp;&nbsp;&nbsp;|&nbsp;</span>&nbsp;
+      </span>
+    </span>
+  </span>
+
+  <span class="information-icon">
+    <i class="fas fa-globe"></i>&nbsp;
+    <span class="hidden-information">
+      <span *ngFor="let continent of generalData[generalPaperFields.CONTINENTS]; let i=index">
+        {{continent}}<span *ngIf="i < generalData[generalPaperFields.CONTINENTS].length - 1">&nbsp;|&nbsp;</span>&nbsp;
+      </span>
+    </span>
+  </span>
+</div>

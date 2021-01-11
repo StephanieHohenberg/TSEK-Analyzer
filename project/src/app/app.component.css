@@ -1,0 +1,34 @@
+.overall-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.toolbar {
+  width: 3vw;
+  z-index: 2;
+  background-color: ghostwhite;
+}
+
+app-paper-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 43vw;
+  z-index: 1;
+  padding-left: 3vw;
+  background-color: ghostwhite;
+}
+
+app-graph {
+width: 57vw;
+}
+
+.hide-sidebar {
+  display: none;
+}
+
+.fullscreen-graph {
+  width: 97vw;
+}

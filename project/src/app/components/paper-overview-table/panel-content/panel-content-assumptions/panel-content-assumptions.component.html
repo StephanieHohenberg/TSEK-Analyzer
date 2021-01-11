@@ -1,0 +1,30 @@
+<mat-expansion-panel hideToggle class="mat-elevation-z0"
+                     (opened)="panelOpenState = true"
+                     (closed)="panelOpenState = false"
+>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <i *ngIf="!panelOpenState" class="fas fa-chevron-right"></i>
+      <i *ngIf="panelOpenState" class="fas fa-chevron-down"></i>
+      &nbsp;Annahmen
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div *ngIf="assumptionData; else errorMessage" class="assumption-content">
+    <div class="iteration-group-column">
+      <p>Iterationsgruppe</p>
+      <p *ngFor='let label of assumptionData[assumptionPaperFields.ITERATION_GROUPS]'>{{label}}</p>
+    </div>
+    <div class="assumption-column">
+      <p>Einordnung der Annahmen in Cluster</p>
+      <p *ngFor='let label of assumptionData[assumptionPaperFields.ASSUMPTION_GROUPS]'>{{label}}</p>
+      <p *ngIf="assumptionData[assumptionPaperFields.ASSUMPTION_GROUPS].length === 0">
+        <i class="fas fa-exclamation-triangle"></i>
+        Es liegen keine Annahmen zu dieser Publikation vor
+      </p>
+    </div>
+  </div>
+  <ng-template #errorMessage>
+    <p><i class="fas fa-exclamation-triangle"></i> Es sind keine Daten zu den Annahmen vorhanden!</p>
+  </ng-template>
+</mat-expansion-panel>

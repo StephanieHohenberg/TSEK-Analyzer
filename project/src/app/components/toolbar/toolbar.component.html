@@ -1,0 +1,11 @@
+<div class="toolbar-container">
+  <p (click)="toggleSidebar()" matTooltip="toggle Sidebar">
+    <i *ngIf="visibilityService.isSidebarVisible()" class="fas fa-chevron-left"></i>
+    <i *ngIf="!visibilityService.isSidebarVisible()" class="fas fa-chevron-right"></i>
+  </p>
+  <p (click)="toggleFilter()" matTooltip="toggle Filter" class="filter"><i class="fas fa-filter"></i></p>
+  <div class="bottom-align">
+    <p (click)="openInformation()" matTooltip="Über das Projekt"><i class="fas fa-info-circle"></i></p>
+    <p (click)="openSettings()" matTooltip="Einstellungen"><i class="fas fa-cogs"></i></p>
+  </div>
+</div>

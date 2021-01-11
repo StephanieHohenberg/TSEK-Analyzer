@@ -1,0 +1,26 @@
+.filter-row {
+  display: flex;
+  flex-direction: row;
+}
+
+mat-chip {
+  margin-right: 10px;
+}
+
+.space {
+  min-width: 25px;
+}
+
+.second-filter-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.awards button {
+  margin-left: 10px;
+}
+
+.mat-mini-fab {
+  background-color: white;
+}

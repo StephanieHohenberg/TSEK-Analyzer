@@ -1,0 +1,14 @@
+.general-data-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.hidden-information {
+  display: none;
+}
+
+.information-icon:hover {
+.hidden-information {
+  display: inline;
+}
+}

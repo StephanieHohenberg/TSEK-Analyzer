@@ -1,0 +1,8 @@
+.generalization-content {
+  display: flex;
+  flex-direction: row;
+}
+
+mat-expansion-panel-header {
+  padding: 0;
+}

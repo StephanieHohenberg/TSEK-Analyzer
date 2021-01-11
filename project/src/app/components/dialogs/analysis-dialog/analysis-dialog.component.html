@@ -1,0 +1,36 @@
+<h1 mat-dialog-title><i class="fas fa-chart-line"></i> Analyse Report</h1>
+<div mat-dialog-content>
+  <div class="filter">
+    <mat-tab-group>
+      <mat-tab label="General">
+        <div class="tab-content">
+          TODO: charts-general
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Charakterisierung" *ngIf="visibilityService.isFieldVisible(analysisPaperFields[1])">
+        <div class="tab-content">
+          TODO: charts-charakterization
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Kontexte" *ngIf="visibilityService.isFieldVisible(analysisPaperFields[2])">
+        <div class="tab-content">
+          TODO: charts-context
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Verallgemeinbarkeit" *ngIf="visibilityService.isFieldVisible(analysisPaperFields[3])">
+        <div class="tab-content">
+          TODO: charts-verallgemeinbarkeit
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Annahmen" *ngIf="visibilityService.isFieldVisible(analysisPaperFields[4])">
+        <div class="tab-content">
+          TODO: charts-assumptions
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

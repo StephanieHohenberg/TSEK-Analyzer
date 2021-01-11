@@ -1,0 +1,13 @@
+.filter {
+  background-color: white;
+}
+
+.tab-content {
+  padding: 10px;
+  min-height: 135px;
+
+}
+
+mat-chip > i {
+  margin-right: 5px;
+}

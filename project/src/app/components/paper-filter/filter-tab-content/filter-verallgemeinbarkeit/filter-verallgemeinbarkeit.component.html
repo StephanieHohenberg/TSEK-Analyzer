@@ -1,0 +1,7 @@
+<app-fields-dropdown
+  [label]="'Kriterium'"
+  [fieldList]="fieldList"
+  [filterDeletedByChip]="getFilterDeletedByChipEventEmitterForGeneralization(filterDeletedByChip)"
+  (filterChanged)="changeDropdownFilter($event)"
+>
+</app-fields-dropdown>

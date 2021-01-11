@@ -1,0 +1,22 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Kontext</th>
+    <th scope="col">Zweck</th>
+    <th scope="col">Vorkommen</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let context of contextData; let i=index;"
+      (click)="displayInGraph(context.id)">
+    <th scope="row">{{i+1}}</th>
+    <td>{{context.label}}</td>
+    <td>{{context.zweck}}</td>
+    <td>{{context.vorkommen}}</td>
+  </tr>
+  <tr *ngIf="contextData.length === 0">
+    <p><i class="fas fa-exclamation-triangle"></i> Es sind keine Daten zu den Kontexten vorhanden!</p>
+  </tr>
+  </tbody>
+</table>

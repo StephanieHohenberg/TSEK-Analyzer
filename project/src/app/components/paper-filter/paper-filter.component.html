@@ -1,0 +1,86 @@
+<div class="filter">
+  <mat-tab-group class="mat-elevation-z4">
+    <mat-tab label="General">
+      <div class="tab-content">
+        <app-filter-general
+          (filterChanged)="handleFilterChangeByTabContent($event)"
+          [filterDeletedByChip]="chipDeleted"
+        >
+        </app-filter-general>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Charakterisierung" *ngIf="visibilityService.isFieldVisible(analysisPaperFields[1])">
+      <div class="tab-content">
+        <app-filter-characterization
+          (filterChanged)="handleFilterChangeByTabContent($event)"
+          [filterDeletedByChip]="chipDeleted"
+        >
+        </app-filter-characterization></div>
+    </mat-tab>
+
+    <mat-tab label="Kontexte" *ngIf="visibilityService.isFieldVisible(analysisPaperFields[2])">
+      <div class="tab-content">
+        <app-filter-context
+          (filterChanged)="handleFilterChangeByTabContent($event)"
+          [filterDeletedByChip]="chipDeleted"
+        >
+        </app-filter-context>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Verallgemeinbarkeit" *ngIf="visibilityService.isFieldVisible(analysisPaperFields[3])">
+      <div class="tab-content">
+        <app-filter-verallgemeinbarkeit
+          (filterChanged)="handleFilterChangeByTabContent($event)"
+          [filterDeletedByChip]="chipDeleted"
+        >
+        </app-filter-verallgemeinbarkeit>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Annahmen" *ngIf="visibilityService.isFieldVisible(analysisPaperFields[4])">
+      <div class="tab-content">
+        <app-filter-assumptions
+          (filterChanged)="handleFilterChangeByTabContent($event)"
+          [filterDeletedByChip]="chipDeleted"
+        >
+        </app-filter-assumptions>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<p>&nbsp;</p>
+
+<!-- TODO chiplist auslagern -->
+<div class="chip-list">
+  <mat-chip-list>
+    <mat-chip *ngFor='let filter of chipList'
+              [selectable]="true"
+              [removable]="true"
+              (removed)="deleteFilterByChip(filter)"
+              (click)="deleteFilterByChip(filter)"
+              color="primary">
+      <i *ngIf="filter.iconClass" [class]="filter.iconClass"></i>
+      {{filter.value}}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="chipList.length > 3"
+              [selectable]="true"
+              [removable]="true"
+              (removed)="deleteAllChips()"
+              (click)="deleteAllChips()"
+              color="primary">
+      <i class="far fa-trash-alt"></i>&nbsp;Alle Filter zurücksetzen
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+    <button *ngIf="chipList.length > 1" mat-mini-fab color="primary" (click)="toggleFilterConnector()">
+      <span>{{filterConnector}}</span>
+    </button>
+  </mat-chip-list>
+
+</div>
+
+<p *ngIf="chipList.length > 0">&nbsp;</p>
+

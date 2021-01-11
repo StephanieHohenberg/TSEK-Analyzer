@@ -1,0 +1,36 @@
+<div class="filter-content">
+  <div class="filter-row">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput #filterInput>
+    </mat-form-field>
+    <div class="space">&nbsp;</div>
+    <mat-chip class="mat-elevation-z5" (click)="addIdFilter(filterInput.value); filterInput.value=''">+ ID</mat-chip>
+    <mat-chip class="mat-elevation-z5" (click)="addTitleFilter(filterInput.value); filterInput.value=''">+ Titel</mat-chip>
+    <mat-chip class="mat-elevation-z5" *ngIf="visibilityService.isFieldVisible(FILTER_TAB)" (click)="addAuthorFilter(filterInput.value); filterInput.value=''" matTooltip="Filter nach Author/in">+ <i class="fas fa-users"></i></mat-chip>
+    <mat-chip class="mat-elevation-z5" *ngIf="visibilityService.isFieldVisible(FILTER_TAB)" (click)="addUniversityFilter(filterInput.value); filterInput.value=''" matTooltip="Filter nach Universität">+ <i class="fas fa-university"></i></mat-chip>
+  </div>
+
+  <div class="second-filter-row" *ngIf="visibilityService.isFieldVisible(FILTER_TAB)">
+    <app-fields-dropdown
+      [label]="'Kontinent'"
+      [iconClass]="CONTINENT_ICON_CLASS"
+      [fieldList]="continentList"
+      [filterDeletedByChip]="getFilterDeletedByChipEventEmitterForGeneralData(filterDeletedByChip)"
+      (filterChanged)="changeContinentDropdownFilter($event)"
+    >
+    </app-fields-dropdown>
+
+    <span class="awards">
+      <button mat-mini-fab matRipple (click)="addAwardFilter(AWARDS.GOLD, 'fas fa-award')" matTooltip="ACM Award: Distinguished Paper / Artefact">
+        <i class="fas fa-award" [style.color]="'gold'"></i>
+      </button>
+      <button mat-mini-fab matRipple (click)="addAwardFilter(AWARDS.GREEN, 'fas fa-shield-alt')" matTooltip="Badge: Artifacts Available">
+        <i class="fas fa-shield-alt" [style.color]="'green'"></i>
+      </button>
+      <button mat-mini-fab matRipple (click)="addAwardFilter(AWARDS.RED, 'fas fa-shield-alt')" matTooltip="Badge: Artifacts Evaluated Reusable">
+        <i class="fas fa-shield-alt" [style.color]="'darkred'"></i>
+      </button>
+    </span>
+  </div>
+</div>

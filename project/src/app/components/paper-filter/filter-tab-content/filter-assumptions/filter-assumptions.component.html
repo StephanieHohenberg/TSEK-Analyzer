@@ -1,0 +1,19 @@
+<div class="filter-content">
+  <app-fields-dropdown
+    [label]="'Clustering'"
+    [fieldList]="iterationGroupList"
+    [filterDeletedByChip]="getFilterDeletedByChipEventEmitterForAssumption(filterDeletedByChip)"
+    (filterChanged)="changeDropdownFilter(ITERATION_GROUPS_FIELD, $event)"
+  >
+  </app-fields-dropdown>
+
+  <div class="space">&nbsp;</div>
+
+  <app-fields-dropdown
+    [label]="'Annahmen'"
+    [fieldList]="assumptionGroupList"
+    [filterDeletedByChip]="getFilterDeletedByChipEventEmitterForAssumption(filterDeletedByChip)"
+    (filterChanged)="changeDropdownFilter(ASSUMPTION_GROUPS_FIELD, $event)"
+  >
+  </app-fields-dropdown>
+</div>
