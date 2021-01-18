@@ -63,6 +63,7 @@
               (click)="deleteFilterByChip(filter)"
               color="primary">
       <i *ngIf="filter.iconClass" [class]="filter.iconClass"></i>
+      <span *ngIf="filter.label">{{filter.label}}&nbsp;</span>
       {{filter.value}}
       <mat-icon matChipRemove>cancel</mat-icon>
     </mat-chip>

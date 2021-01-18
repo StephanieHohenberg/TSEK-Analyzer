@@ -3,7 +3,7 @@
     <span>
       <i class="fas fa-copy"></i>
     &nbsp;{{data.length}} Publikation<span *ngIf="data.length > 1">en</span>
-      <small *ngIf="!visibilityService.isFilterVisible()">&nbsp;(x Filter eingestellt)</small>
+      <small *ngIf="!visibilityService.isFilterVisible() && amountOfFilter > 0">&nbsp;({{amountOfFilter}} Filter eingestellt)</small>
     </span>
     <button mat-button *ngIf="data.length > 0" (click)="openAnalysisDialog()"><i class="fas fa-chart-line"></i> Analyse Report</button>
 

@@ -16,6 +16,7 @@ import {takeUntil} from 'rxjs/operators';
 export class PaperOverviewTableComponent implements OnInit, OnDestroy {
 
   public data: GeneralPaperData[] = [];
+  public amountOfFilter = 0;
   public readonly GENERAL_PAPER_FIELDS = GeneralPaperFields;
   public readonly AWARDS = Award;
   public readonly GENERAL_DATA_FIELD = AnalysisPaperFields.GENERAL_DATA;
@@ -33,6 +34,7 @@ export class PaperOverviewTableComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(filterUpdate => {
         this.data = this.paperService.getFilteredGeneralData(filterUpdate, this.filterService.getFilter());
+        this.amountOfFilter = this.filterService.getFilter().length;
       });
   }
 

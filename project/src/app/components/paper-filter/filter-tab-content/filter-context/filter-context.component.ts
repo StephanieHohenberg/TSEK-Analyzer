@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Observable} from 'rxjs';
 import {filter, map} from 'rxjs/operators';
-import {ContextFields, Vorkommen, Zweck} from '../../../../data/contextGraphData';
+import {ContextFields, Vorkommen, Zweck} from '../../../../data/context.data';
 import {AnalysisPaperFields} from '../../../../data/paper.data';
 import {FilterData} from '../../../../data/filter.data';
 
@@ -29,8 +29,12 @@ export class FilterContextComponent implements OnInit {
 
   public addContextFilter(value: string): void {
     if (!value || value.length === 0) { return; }
-    const filterLabel = `Kontext: ${value}`;
-    this.filterChanged.emit({ filterTab: this.FILTER_TAB, field: ContextFields.LABEL, value: filterLabel});
+    this.filterChanged.emit({
+      filterTab: this.FILTER_TAB,
+      field: ContextFields.LABEL,
+      value,
+      label: 'Kontext: ',
+    });
   }
 
   public changeDropdownFilter(field: string, value: string): void {

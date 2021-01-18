@@ -4,7 +4,6 @@ export enum AssumptionFields {
 }
 
 export interface AssumptionData {
-  id: string;
   [AssumptionFields.ITERATION_GROUPS]: IterationGroup[];
   [AssumptionFields.ASSUMPTION_GROUPS]: AssumptionGroup[];
 }

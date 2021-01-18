@@ -48,7 +48,7 @@ export class FilterService {
 
   public toggleFilterConnector(): void {
     const newConnector =  this.filterUpdates$.value.connector === FilterConnector.UND ? FilterConnector.ODER : FilterConnector.UND;
-    this.filterUpdates$.next({type: FilterUpdateType.CHANGE_CONNECTOR, connector: this.filterUpdates$.value.connector });
+    this.filterUpdates$.next({type: FilterUpdateType.CHANGE_CONNECTOR, connector: newConnector });
   }
 
   public getFilterConnector(): FilterConnector {

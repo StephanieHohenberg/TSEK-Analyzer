@@ -34,32 +34,42 @@ export class FilterGeneralComponent implements OnInit {
       });
       return;
     }
-    const filterLabel = `ID: ${value}`;
-    this.filterChanged.emit({ filterTab: this.FILTER_TAB, field: GeneralPaperFields.ID, value: filterLabel});
+    this.filterChanged.emit({ filterTab: this.FILTER_TAB, field: GeneralPaperFields.ID, value, label: 'ID: '});
   }
 
   public addTitleFilter(value: string): void {
     if (!value || value.length === 0) { return; }
-    const filterLabel = `Titel: ${value}`;
-    this.filterChanged.emit({ filterTab: this.FILTER_TAB, field: GeneralPaperFields.TITLE, value: filterLabel});
+    this.filterChanged.emit({ filterTab: this.FILTER_TAB, field: GeneralPaperFields.TITLE, value, label: 'Titel: '});
   }
 
   public addAuthorFilter(value: string): void {
     if (!value || value.length === 0) { return; }
     const filterLabel = `Author/in: ${value}`;
     // tslint:disable-next-line:max-line-length
-    this.filterChanged.emit({ filterTab: this.FILTER_TAB, field: GeneralPaperFields.AUTHORS, value: filterLabel, iconClass: 'fas fa-users'});
+    this.filterChanged.emit({
+      filterTab: this.FILTER_TAB,
+      field: GeneralPaperFields.AUTHORS,
+      value,
+      label: 'Author/in: ',
+      iconClass: 'fas fa-users'
+    });
   }
 
   public addUniversityFilter(value: string): void {
     if (!value || value.length === 0) { return; }
-    const filterLabel = `Universität: ${value}`;
-    this.filterChanged.emit({ filterTab: this.FILTER_TAB, field: GeneralPaperFields.UNIVERSITIES, value: filterLabel, iconClass: 'fas fa-university'});
+    this.filterChanged.emit({
+      filterTab: this.FILTER_TAB,
+      field: GeneralPaperFields.UNIVERSITIES,
+      value,
+      label: 'Universität: ',
+      iconClass: 'fas fa-university'
+    });
   }
 
   public changeContinentDropdownFilter(value: string): void {
     // tslint:disable-next-line:max-line-length
-    this.filterChanged.emit({filterTab: this.FILTER_TAB, value, field: GeneralPaperFields.CONTINENTS, deleteNotifier: true, iconClass: this.CONTINENT_ICON_CLASS});
+    this.filterChanged.emit({
+      filterTab: this.FILTER_TAB, value, field: GeneralPaperFields.CONTINENTS, deleteNotifier: true, iconClass: this.CONTINENT_ICON_CLASS});
   }
 
   public addAwardFilter(award: Award, iconClass: string): void {

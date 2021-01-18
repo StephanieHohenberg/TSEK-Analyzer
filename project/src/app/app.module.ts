@@ -38,6 +38,8 @@ import {PanelContentAssumptionsComponent} from './components/paper-overview-tabl
 import {PanelContentVerallgemeinbarkeitComponent} from './components/paper-overview-table/panel-content/panel-content-verallgemeinbarkeit/panel-content-verallgemeinbarkeit.component';
 import {PanelContentContextComponent} from './components/paper-overview-table/panel-content/panel-content-context/panel-content-context.component';
 import {PanelContentCharacterizationComponent} from './components/paper-overview-table/panel-content/panel-content-characterization/panel-content-characterization.component';
+import { ChartsGeneralComponent } from './components/analysis-charts/charts-general/charts-general.component';
+import {BarChartModule, PieChartModule} from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,8 @@ import {PanelContentCharacterizationComponent} from './components/paper-overview
     // Dialogs
     SettingsDialogComponent,
     AnalysisDialogComponent,
-    InformationDialogComponent
+    InformationDialogComponent,
+    ChartsGeneralComponent
   ],
   imports: [
     BrowserModule,
@@ -88,6 +91,8 @@ import {PanelContentCharacterizationComponent} from './components/paper-overview
     MatCheckboxModule,
     MatButtonModule,
     MatDialogModule,
+    PieChartModule,
+    BarChartModule,
   ],
   providers: [MatSnackBar],
   bootstrap: [AppComponent],

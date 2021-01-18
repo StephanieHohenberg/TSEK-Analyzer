@@ -6,3 +6,12 @@
 mat-expansion-panel-header {
   padding: 0;
 }
+
+
+mat-checkbox {
+  margin-top: 2px;
+}
+
+.string-label {
+  padding-bottom: 10px;
+}

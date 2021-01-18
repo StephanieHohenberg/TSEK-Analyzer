@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {characterizationFieldList, CharacterizationFields} from '../../../../data/characterization.data';
 import {PaperService} from '../../../../services/paper.service';
-import {ContextGraphData, ContextFields, ContextTableData, Vorkommen, Zweck} from '../../../../data/contextGraphData';
+import {ContextData, ContextFields, ContextTableData, Vorkommen, Zweck} from '../../../../data/context.data';
 
 @Component({
   selector: 'app-panel-content-context',

@@ -1,3 +1,8 @@
+import {AssumptionData} from './assumption.data';
+import {GeneralizationData} from './generalization.data';
+import {ContextData, ContextTableData} from './context.data';
+import {CharacterizationData} from './characterization.data';
+
 export enum AnalysisPaperFields {
   GENERAL_DATA = 'generalData',
   CHARACTERIZATION = 'characterization',
@@ -13,6 +18,14 @@ export const analysisPaperFieldList: AnalysisPaperFields[] = [
   AnalysisPaperFields.GENERALIZATION,
   AnalysisPaperFields.ASSUMPTIONS,
 ];
+
+export interface AnalysisPaperData {
+  [AnalysisPaperFields.GENERAL_DATA]: GeneralPaperData;
+  [AnalysisPaperFields.CHARACTERIZATION]: CharacterizationData;
+  [AnalysisPaperFields.CONTEXTS]: ContextTableData[];
+  [AnalysisPaperFields.GENERALIZATION]: GeneralizationData;
+  [AnalysisPaperFields.ASSUMPTIONS]: AssumptionData;
+}
 
 export enum GeneralPaperFields {
   ID = 'id',
@@ -53,6 +66,11 @@ export enum Award {
 }
 
 export enum Continent {
-  EU = 'EU',
+  EUROPE = 'EUROPE',
   ASIA= 'ASIA',
+  NORTH_AMERICA= 'NORTH_AMERICA',
+  CENTRAL_AMERICA= 'CENTRAL_AMERICA',
+  SOUTH_AMERICA= 'SOUTH_AMERICA',
+  AFRICA= 'AFRICA',
+  OCEANIA= 'OCEANIA',
 }

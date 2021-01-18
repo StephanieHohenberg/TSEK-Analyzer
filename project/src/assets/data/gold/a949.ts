@@ -1,0 +1,38 @@
+import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {CharacterizationFields} from '../../../app/data/characterization.data';
+import {GeneralizationFields} from '../../../app/data/generalization.data';
+import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
+
+export const A949: AnalysisPaperData = {
+  [AnalysisPaperFields.GENERAL_DATA]: {
+    [GeneralPaperFields.ID]: 'a949',
+    [GeneralPaperFields.TITLE]: 'White-box Fairness Testing through Adversarial Sampling',
+    [GeneralPaperFields.AWARDS]: [Award.GOLD],
+    [GeneralPaperFields.AUTHORS]: [
+      'Peixin Zhang', 'Jingyi Wang', 'Jun Sun',
+      'Guoliang Dong', 'Xinyu Wang', 'Xingen Wang',
+      'Jin Song Dong', 'Ting Dai',
+    ],
+    [GeneralPaperFields.UNIVERSITIES]: [
+      'Zhejiang University', 'National University of Singapore',
+      'Singapore Management University', 'Huawei Internation Pte. Ltd'
+    ],
+    [GeneralPaperFields.CONTINENTS]: [ Continent.ASIA ],
+  },
+  [AnalysisPaperFields.CHARACTERIZATION]: {
+    [CharacterizationFields.BENCHMARK]: true,
+    [CharacterizationFields.STATES_OF_ARTS]: true,
+    [CharacterizationFields.DL_NN]: 'DNN',
+    [CharacterizationFields.TESTING]: true,
+    [CharacterizationFields.HUMAN_ASPECTS]: true,
+  },
+  [AnalysisPaperFields.CONTEXTS]: [],
+  [AnalysisPaperFields.GENERALIZATION]: {
+    [GeneralizationFields.SECTION_THREATS]: true,
+    [GeneralizationFields.SECTION_LIMITATIONS]: true,
+},
+  [AnalysisPaperFields.ASSUMPTIONS]: {
+    [AssumptionFields.ITERATION_GROUPS]: [ IterationGroup.C3, IterationGroup.C4],
+    [AssumptionFields.ASSUMPTION_GROUPS]: [],
+  }
+};

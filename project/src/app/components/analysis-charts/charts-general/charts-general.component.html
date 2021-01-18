@@ -1,0 +1,21 @@
+<div class="chart-container">
+  <ngx-charts-pie-chart
+    [view]="awardView"
+    [scheme]="awardColorScheme"
+    [results]="awardData"
+    [gradient]="true"
+    [legend]="true"
+    [labels]="true"
+  >
+  </ngx-charts-pie-chart>
+
+  <ngx-charts-bar-vertical
+    [view]="continentView"
+    [scheme]="continentColorScheme"
+    [results]="continentData"
+    [gradient]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="true">
+  </ngx-charts-bar-vertical>
+</div>

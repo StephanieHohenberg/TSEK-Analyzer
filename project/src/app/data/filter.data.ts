@@ -15,6 +15,7 @@ export class FilterData {
   value: string;
   deleteNotifier?: boolean;
   iconClass?: string;
+  label?: string;
 }
 
 export class FilterUpdate {
