@@ -2,6 +2,10 @@ import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFi
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
+import {getContextTableData} from '../context/context.util';
+import {MergedContextData} from '../../../app/data/context.data';
+
+export const CONTEXT_A322: MergedContextData[] = [];
 
 export const A322: AnalysisPaperData = {
   [AnalysisPaperFields.GENERAL_DATA]: {
@@ -24,7 +28,7 @@ export const A322: AnalysisPaperData = {
     [CharacterizationFields.EXPERIMENT]: true,
     [CharacterizationFields.DL_NN]: 'DL based model',
   },
-  [AnalysisPaperFields.CONTEXTS]: [],
+  [AnalysisPaperFields.CONTEXTS]: getContextTableData([...CONTEXT_A322]),
   [AnalysisPaperFields.GENERALIZATION]: {
     [GeneralizationFields.SECTION_THREATS]: 'Generalization and Usefulness Evaluation',
     [GeneralizationFields.SECTION_FUTURE_WORK]: true,

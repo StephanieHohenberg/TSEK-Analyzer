@@ -2,6 +2,10 @@ import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFi
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
+import {getContextTableData} from '../context/context.util';
+import {MergedContextData} from '../../../app/data/context.data';
+
+export const CONTEXT_B110: MergedContextData[] = [];
 
 export const B110: AnalysisPaperData = {
   [AnalysisPaperFields.GENERAL_DATA]: {
@@ -22,7 +26,7 @@ export const B110: AnalysisPaperData = {
     [CharacterizationFields.SURVEY]: true,
     [CharacterizationFields.DL_NN]: 'DL',
   },
-  [AnalysisPaperFields.CONTEXTS]: [],
+  [AnalysisPaperFields.CONTEXTS]: getContextTableData([...CONTEXT_B110]),
   [AnalysisPaperFields.GENERALIZATION]: {
     [GeneralizationFields.AUFTEILUNG_2]: true,
     [GeneralizationFields.SECTION_THREATS]: true,

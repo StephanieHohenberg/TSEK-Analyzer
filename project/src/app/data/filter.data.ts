@@ -6,7 +6,7 @@ export enum  FilterConnector {
 }
 
 export enum  FilterUpdateType {
-  ADD_FILTER, DELETE_FILTER, CHANGE_CONNECTOR, RESET_FILTER
+  ADD_FILTER, DELETE_FILTER, CHANGE_FILTER_NEG_POS, CHANGE_CONNECTOR, RESET_FILTER
 }
 
 export class FilterData {
@@ -14,6 +14,7 @@ export class FilterData {
   field: string;
   value: string;
   deleteNotifier?: boolean;
+  isNegative?: boolean;
   iconClass?: string;
   label?: string;
 }

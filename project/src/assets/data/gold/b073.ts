@@ -2,6 +2,10 @@ import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFi
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
+import {getContextTableData} from '../context/context.util';
+import {MergedContextData} from '../../../app/data/context.data';
+
+export const CONTEXT_B073: MergedContextData[] = [];
 
 export const B073: AnalysisPaperData = {
   [AnalysisPaperFields.GENERAL_DATA]: {
@@ -22,7 +26,7 @@ export const B073: AnalysisPaperData = {
     [CharacterizationFields.INSPECTION]: 'mining C, Python, Java corpora',
     [CharacterizationFields.DL_NN]: 'Neural Language Models',
   },
-  [AnalysisPaperFields.CONTEXTS]: [],
+  [AnalysisPaperFields.CONTEXTS]: getContextTableData([...CONTEXT_B073]),
   [AnalysisPaperFields.GENERALIZATION]: {
     [GeneralizationFields.SECTION_THREATS]: false,
     [GeneralizationFields.SECTION_LIMITATIONS]: true,

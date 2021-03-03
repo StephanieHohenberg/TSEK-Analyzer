@@ -13,7 +13,7 @@ export enum CharacterizationFields {
   EXPERIMENT = 'EXPERIMENT',
   CONTROLLED_EXPERIMENT = 'CONTROLLED_EXPERIMENT',
   PSYCHOLOGICAL_EXPERIMENT = 'PSYCHOLOGICAL_EXPERIMENT',
-  ONLINE_EXPERIMENT = 'ONLINE_EXPERIMEN',
+  ONLINE_EXPERIMENT = 'ONLINE_EXPERIMENT',
   SIMULATION = 'SIMULATION',
   INTERVIEW = 'INTERVIEW',
   SEMI_STRUCTURED_INTERVIEW = 'SEMI_STRUCTURED_INTERVIEW',
@@ -23,6 +23,7 @@ export enum CharacterizationFields {
   STATES_OF_ARTS = 'STATES_OF_ARTS',
   DL_NN = 'DL_NN',
   TESTING = 'TESTING',
+  DATA = 'DATA',
   HUMAN_ASPECTS = 'HUMAN_ASPECTS',
   QUALITATIVE_ANALYSIS = 'QUALITATIVE_ANALYSIS',
   APPLICATION_TARGET = 'APPLICATION_TARGET',
@@ -53,6 +54,7 @@ export const characterizationFieldList: CharacterizationFields[] = [
   CharacterizationFields.STATES_OF_ARTS,
   CharacterizationFields.DL_NN,
   CharacterizationFields.TESTING,
+  CharacterizationFields.DATA,
   CharacterizationFields.HUMAN_ASPECTS,
   CharacterizationFields.QUALITATIVE_ANALYSIS,
   CharacterizationFields.APPLICATION_TARGET,
@@ -84,6 +86,7 @@ export interface CharacterizationData {
   [CharacterizationFields.STATES_OF_ARTS]?: string | boolean;
   [CharacterizationFields.DL_NN]?: string | boolean;
   [CharacterizationFields.TESTING]?: string | boolean;
+  [CharacterizationFields.DATA]?: string | boolean;
   [CharacterizationFields.HUMAN_ASPECTS]?: string | boolean;
   [CharacterizationFields.QUALITATIVE_ANALYSIS]?: string | boolean;
   [CharacterizationFields.APPLICATION_TARGET]?: string | boolean;

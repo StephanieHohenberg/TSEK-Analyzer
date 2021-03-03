@@ -6,6 +6,7 @@ import {ContextFields, ContextData, ContextTableData} from '../data/context.data
 import {AssumptionData} from '../data/assumption.data';
 import {FilterConnector, FilterData, FilterUpdate, FilterUpdateType} from '../data/filter.data';
 import {getDataMap} from '../../assets/data/hashmap.data';
+import {getContextMap} from '../../assets/data/context/context';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ import {getDataMap} from '../../assets/data/hashmap.data';
 export class PaperService {
 
   private paperMap: Map<string, AnalysisPaperData>;
+  private contextMap: Map<string, ContextData>;
   private paperList: AnalysisPaperData[] = [];
   private generalDataList: GeneralPaperData[] = [];
 
@@ -22,6 +24,7 @@ export class PaperService {
       this.paperList.push({...paper});
       this.generalDataList.push({...paper[AnalysisPaperFields.GENERAL_DATA]});
     }
+    this.contextMap = getContextMap();
   }
 
   public getGeneralDataOfAllPapers(): GeneralPaperData[] {
@@ -53,12 +56,8 @@ export class PaperService {
   }
 
   public getContextDataById(id: string): ContextData {
-    return {
-        id,
-        [ContextFields.LABEL]: 'Fake Kontext',
-        [ContextFields.PARENT]: undefined,
-        [ContextFields.SUB]: undefined,
-      };
+    const context = this.contextMap.get(id);
+    return context ? context : this.getDefaultContext(id);
   }
 
   public getGeneralizationDataByID(id: string): GeneralizationData {
@@ -74,10 +73,14 @@ export class PaperService {
       for (const f of filterData) {
         const data = p[f.filterTab];
         if (f.filterTab !== AnalysisPaperFields.CONTEXTS) {
-          if (!this.hasFilteredValueForField(f.filterTab, f.field, f.value, data[f.field])) {
+          if (!f.isNegative && !this.hasFilteredValueForField(f.filterTab, f.field, f.value, data[f.field])) {
+            return false;
+          } else if (f.isNegative && !this.hasNotFilteredValueForField(f.filterTab, f.field, f.value, data[f.field])) {
             return false;
           }
-        } else if (!this.hasContextWithFilterCriteria(data, f.field, f.value)) {
+        } else if (!f.isNegative && !this.hasContextWithFilterCriteria(data, f.field, f.value)) {
+          return false;
+        } else if (f.isNegative && !this.hasNotContextWithFilterCriteria(data, f.field, f.value)) {
           return false;
         }
       }
@@ -91,10 +94,14 @@ export class PaperService {
       for (const f of filterData) {
         const data = p[f.filterTab];
         if (f.filterTab !== AnalysisPaperFields.CONTEXTS) {
-          if (this.hasFilteredValueForField(f.filterTab, f.field, f.value, data[f.field])) {
+          if (f.isNegative && this.hasNotFilteredValueForField(f.filterTab, f.field, f.value, data[f.field])) {
+            return true;
+          } else if (!f.isNegative && this.hasFilteredValueForField(f.filterTab, f.field, f.value, data[f.field])) {
             return true;
           }
-        } else if (this.hasContextWithFilterCriteria(data, f.field, f.value)) {
+        } else if (f.isNegative && this.hasNotContextWithFilterCriteria(data, f.field, f.value)) {
+          return true;
+        } else if (!f.isNegative && this.hasContextWithFilterCriteria(data, f.field, f.value)) {
           return true;
         }
       }
@@ -102,6 +109,7 @@ export class PaperService {
     });
     return result.map(p => p[AnalysisPaperFields.GENERAL_DATA]);
   }
+
 
   private hasFilteredValueForField(tab: AnalysisPaperFields, field: string, expectedValue: any, value: any): boolean {
     if (Array.isArray(value)) {
@@ -123,6 +131,26 @@ export class PaperService {
     return false;
   }
 
+  private hasNotFilteredValueForField(tab: AnalysisPaperFields, field: string, expectedValue: any, value: any): boolean {
+    if (Array.isArray(value)) {
+      return value.findIndex(entry => entry.toLowerCase().includes(expectedValue.toLowerCase())) === -1;
+    }
+
+    if (tab === AnalysisPaperFields.GENERALIZATION || tab === AnalysisPaperFields.CHARACTERIZATION) {
+      return !value;
+    }
+
+    if (tab === AnalysisPaperFields.GENERAL_DATA) {
+      return !value.toLowerCase().includes(expectedValue.toLowerCase());
+    }
+
+    if (tab === AnalysisPaperFields.ASSUMPTIONS) {
+      return !value.includes(expectedValue);
+    }
+
+    return true;
+  }
+
   private hasContextWithFilterCriteria(data, field: string, expectedValue: any): boolean {
     if (field !== ContextFields.LABEL) {
       return data.findIndex(context => context[field] === expectedValue) > -1;
@@ -132,5 +160,25 @@ export class PaperService {
         return label.toLowerCase().includes(expectedValue.toLowerCase());
       }) > -1;
     }
+  }
+
+  private hasNotContextWithFilterCriteria(data, field: string, expectedValue: any): boolean {
+    if (field !== ContextFields.LABEL) {
+      return data.findIndex(context => context[field] === expectedValue) === -1;
+    } else {
+      return data.findIndex(context => {
+        const label = this.getContextDataById(context.id)[field];
+        return label.toLowerCase().includes(expectedValue.toLowerCase());
+      }) === -1;
+    }
+  }
+
+  private getDefaultContext(id: string): ContextData {
+    return {
+      id,
+      [ContextFields.LABEL]: 'Fake Kontext',
+      [ContextFields.PARENT]: undefined,
+      [ContextFields.SUB]: undefined,
+    };
   }
 }

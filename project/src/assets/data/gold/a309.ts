@@ -2,6 +2,10 @@ import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFi
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
+import {getContextTableData} from '../context/context.util';
+import {MergedContextData} from '../../../app/data/context.data';
+
+export const CONTEXT_A309: MergedContextData[] = [];
 
 export const A309: AnalysisPaperData = {
   [AnalysisPaperFields.GENERAL_DATA]: {
@@ -24,7 +28,7 @@ export const A309: AnalysisPaperData = {
     [CharacterizationFields.INTERVIEW]: true,
     [CharacterizationFields.DL_NN]: 'Tensorflow (object detection, image classification)',
   },
-  [AnalysisPaperFields.CONTEXTS]: [],
+  [AnalysisPaperFields.CONTEXTS]: getContextTableData([...CONTEXT_A309]),
   [AnalysisPaperFields.GENERALIZATION]: {
     [GeneralizationFields.AUFTEILUNG_3]: true,
     [GeneralizationFields.SECTION_THREATS]: true,

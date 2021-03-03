@@ -40,6 +40,7 @@ import {PanelContentContextComponent} from './components/paper-overview-table/pa
 import {PanelContentCharacterizationComponent} from './components/paper-overview-table/panel-content/panel-content-characterization/panel-content-characterization.component';
 import { ChartsGeneralComponent } from './components/analysis-charts/charts-general/charts-general.component';
 import {BarChartModule, PieChartModule} from '@swimlane/ngx-charts';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ import {BarChartModule, PieChartModule} from '@swimlane/ngx-charts';
     MatDialogModule,
     PieChartModule,
     BarChartModule,
+    DragDropModule,
   ],
   providers: [MatSnackBar],
   bootstrap: [AppComponent],

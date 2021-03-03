@@ -60,13 +60,15 @@
               [selectable]="true"
               [removable]="true"
               (removed)="deleteFilterByChip(filter)"
-              (click)="deleteFilterByChip(filter)"
+              (click)="toggleFilterPosNeg(filter)"
               color="primary">
+      <i *ngIf="filter.isNegative" class="fas fa-minus-circle"></i>
       <i *ngIf="filter.iconClass" [class]="filter.iconClass"></i>
       <span *ngIf="filter.label">{{filter.label}}&nbsp;</span>
       {{filter.value}}
       <mat-icon matChipRemove>cancel</mat-icon>
     </mat-chip>
+
     <mat-chip *ngIf="chipList.length > 3"
               [selectable]="true"
               [removable]="true"
@@ -75,6 +77,7 @@
               color="primary">
       <i class="far fa-trash-alt"></i>&nbsp;Alle Filter zurücksetzen
       <mat-icon matChipRemove>cancel</mat-icon>
+
     </mat-chip>
     <button *ngIf="chipList.length > 1" mat-mini-fab color="primary" (click)="toggleFilterConnector()">
       <span>{{filterConnector}}</span>

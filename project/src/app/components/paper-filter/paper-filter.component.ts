@@ -62,6 +62,10 @@ export class PaperFilterComponent implements OnInit, OnDestroy {
     this.filterConnector = this.filterService.getFilterConnector();
   }
 
+  public toggleFilterPosNeg(filter: FilterData): void {
+    this.filterService.toggleFilterPosNeg(filter);
+  }
+
   private hasDeselectedFilterInDropdown(filter: FilterData): boolean {
     return this.chipList.findIndex(c => c.filterTab === filter.filterTab && c.field === filter.field && c.value === filter.value) > -1;
   }

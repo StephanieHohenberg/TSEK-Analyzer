@@ -2,6 +2,10 @@ import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFi
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
+import {getContextTableData} from '../context/context.util';
+import {MergedContextData} from '../../../app/data/context.data';
+
+export const CONTEXT_B159: MergedContextData[] = [];
 
 export const B159: AnalysisPaperData = {
   [AnalysisPaperFields.GENERAL_DATA]: {
@@ -24,7 +28,7 @@ export const B159: AnalysisPaperData = {
     [CharacterizationFields.DL_NN]: 'DL',
     [CharacterizationFields.TESTING]: true,
   },
-  [AnalysisPaperFields.CONTEXTS]: [],
+  [AnalysisPaperFields.CONTEXTS]: getContextTableData([...CONTEXT_B159]),
   [AnalysisPaperFields.GENERALIZATION]: {
     [GeneralizationFields.AUFTEILUNG_2]: true,
     [GeneralizationFields.SECTION_THREATS]: '+ "Discussion about Generality" Sektion',

@@ -29,6 +29,13 @@ export class FilterService {
     this.filterUpdates$.next({type: FilterUpdateType.DELETE_FILTER, data, connector: this.filterUpdates$.value.connector });
   }
 
+  public toggleFilterPosNeg(data: FilterData): void {
+    const index = this.filter$.value.findIndex(c => c.filterTab === data.filterTab && c.field === data.field  && c.value === data.value);
+    this.filter$.value[index].isNegative = !data.isNegative;
+    this.filter$.next(this.filter$.value);
+    this.filterUpdates$.next({type: FilterUpdateType.CHANGE_FILTER_NEG_POS, data, connector: this.filterUpdates$.value.connector });
+  }
+
   public resetFilter(): void {
     this.filter$.next([]);
     this.filterUpdates$.next({type: FilterUpdateType.RESET_FILTER, connector: this.filterUpdates$.value.connector });

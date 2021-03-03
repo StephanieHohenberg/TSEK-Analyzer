@@ -2,7 +2,11 @@ import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFi
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {getContextTableData} from '../context/context.util';
+
+export const CONTEXT_A087: MergedContextData[] = [];
+
 
 export const A087: AnalysisPaperData = {
   [AnalysisPaperFields.GENERAL_DATA]: {
@@ -23,13 +27,7 @@ export const A087: AnalysisPaperData = {
     [CharacterizationFields.SURVEY]: 'questionnaire after the experiment',
     [CharacterizationFields.TESTING]: true,
   },
-  [AnalysisPaperFields.CONTEXTS]: [
-    {
-      id: 'fake',
-      [ContextFields.ZWECK]: Zweck.THEMA,
-      [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    },
-  ],
+  [AnalysisPaperFields.CONTEXTS]: getContextTableData([...CONTEXT_A087]),
   [AnalysisPaperFields.GENERALIZATION]: {
     [GeneralizationFields.AUFTEILUNG_3]: true,
     [GeneralizationFields.SECTION_THREATS]: true,
