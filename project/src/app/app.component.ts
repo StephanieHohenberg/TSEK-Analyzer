@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {VisibilityService} from './services/visibility.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +6,6 @@ import {VisibilityService} from './services/visibility.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'project';
-
-  constructor(public visibilityService: VisibilityService) {}
+  constructor() {}
 }
+

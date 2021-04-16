@@ -5,6 +5,7 @@ import {FilterService} from '../../services/filter.service';
 import {FilterConnector, FilterData} from '../../data/filter.data';
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
 
 
 @Component({

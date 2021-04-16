@@ -41,12 +41,21 @@ import {PanelContentCharacterizationComponent} from './components/paper-overview
 import { ChartsGeneralComponent } from './components/analysis-charts/charts-general/charts-general.component';
 import {BarChartModule, PieChartModule} from '@swimlane/ngx-charts';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {RouterModule} from '@angular/router';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {APP_ROUTES} from './app.routes';
+import {ContextService} from './services/context.service';
+import {FilterService} from './services/filter.service';
+import {VisibilityService} from './services/visibility.service';
+import {PaperService} from './services/paper.service';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    // Toolbar + Sidebar
     ToolbarComponent,
+    DashboardComponent,
     PaperSidebarComponent,
     // Sidebar > Filter
     PaperFilterComponent,
@@ -70,7 +79,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     SettingsDialogComponent,
     AnalysisDialogComponent,
     InformationDialogComponent,
-    ChartsGeneralComponent
+    ChartsGeneralComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +87,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES),
 
     // Angular Material Modules
     MatTabsModule,
@@ -96,7 +106,13 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     BarChartModule,
     DragDropModule,
   ],
-  providers: [MatSnackBar],
+  providers: [
+    MatSnackBar,
+    ContextService,
+    FilterService,
+    PaperService,
+    VisibilityService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

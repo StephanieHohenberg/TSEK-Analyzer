@@ -1,10 +1,11 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Observable} from 'rxjs';
-import {filter, map} from 'rxjs/operators';
+import {Observable, Subject} from 'rxjs';
+import {filter, map, takeUntil} from 'rxjs/operators';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../../data/paper.data';
 import {VisibilityService} from '../../../../services/visibility.service';
 import {FilterData} from '../../../../data/filter.data';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-filter-general',
@@ -19,11 +20,22 @@ export class FilterGeneralComponent implements OnInit {
   public readonly CONTINENT_ICON_CLASS = 'fas fa-globe';
   public readonly FILTER_TAB = AnalysisPaperFields.GENERAL_DATA;
   public readonly AWARDS = Award;
+  private unsubscribe$ = new Subject();
 
-  constructor(private snackBar: MatSnackBar, public visibilityService: VisibilityService) { }
+  constructor(private snackBar: MatSnackBar,
+              private activatedRoute: ActivatedRoute,
+              public visibilityService: VisibilityService) { }
 
   public ngOnInit(): void {
     this.continentList = Object.keys(Continent);
+
+    this.activatedRoute.queryParams
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(params => {
+        if (params.id) {
+          this.addIdFilter(params.id);
+        }
+      });
   }
 
   public addIdFilter(value: string): void {

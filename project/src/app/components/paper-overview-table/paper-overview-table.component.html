@@ -13,6 +13,7 @@
   </p>
   <mat-accordion multi>
     <mat-expansion-panel *ngFor="let paper of data"
+                         [expanded]="data.length === 1"
                          (opened)="displayPapersContextInGraph(paper[GENERAL_PAPER_FIELDS.ID])"
                          (closed)="dehighlightPapersContextInGraph(paper[GENERAL_PAPER_FIELDS.ID])">
       <mat-expansion-panel-header>

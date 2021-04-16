@@ -43,7 +43,6 @@ export function getContextMap(): Map<string, ContextData> {
   const map = new Map<string, ContextData>();
   const data: ContextData[][] = getContextDataOfAllPapers();
 
-  console.log(data);
   data.forEach(contextDataForPaper => {
     contextDataForPaper.forEach(contextData => {
       if (map.has(contextData.id)) {

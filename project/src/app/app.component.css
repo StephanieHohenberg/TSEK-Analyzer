@@ -10,31 +10,3 @@
   z-index: 2;
   background-color: ghostwhite;
 }
-
-app-paper-sidebar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 43vw;
-  z-index: 1;
-  padding-left: 3vw;
-  background-color: ghostwhite;
-}
-
-app-graph {
-  position: absolute;
-  top: 0;
-  left: 43vw;
-  width: 57vw;
-}
-
-.hide-sidebar {
-  display: none;
-}
-
-.fullscreen-graph {
-  position: absolute;
-  top: 0;
-  left: 3vw;
-  width: 97vw;
-}
