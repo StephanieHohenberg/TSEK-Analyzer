@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PaperService} from '../../../../services/paper.service';
 import {GeneralizationData, generalizationFieldList, GeneralizationFields} from '../../../../data/generalization.data';
+import {Continent} from '../../../../data/paper.data';
 
 @Component({
   selector: 'app-panel-content-verallgemeinbarkeit',
@@ -10,9 +11,9 @@ import {GeneralizationData, generalizationFieldList, GeneralizationFields} from 
 export class PanelContentVerallgemeinbarkeitComponent implements OnInit {
 
   @Input() public paperId: string;
+  @Input() public panelOpenState = false;
   public generalizationData: GeneralizationData;
   public readonly fieldList: GeneralizationFields[] = generalizationFieldList;
-  public panelOpenState = false;
 
   constructor(private paperService: PaperService) { }
 
@@ -20,5 +21,9 @@ export class PanelContentVerallgemeinbarkeitComponent implements OnInit {
     if (this.paperId) {
       this.generalizationData = this.paperService.getGeneralizationDataByID(this.paperId);
     }
+  }
+
+  public getTranslationKeyForGeneralizationField(field: GeneralizationFields): string {
+    return `GENERALIZATION.LABELS.${field}`;
   }
 }

@@ -21,7 +21,7 @@
     <i class="fas fa-globe"></i>&nbsp;
     <span class="hidden-information">
       <span *ngFor="let continent of generalData[generalPaperFields.CONTINENTS]; let i=index">
-        {{continent}}<span *ngIf="i < generalData[generalPaperFields.CONTINENTS].length - 1">&nbsp;|&nbsp;</span>&nbsp;
+        {{getTranslationKeyForContinentField(continent) | translate}}<span *ngIf="i < generalData[generalPaperFields.CONTINENTS].length - 1">&nbsp;|&nbsp;</span>&nbsp;
       </span>
     </span>
   </span>

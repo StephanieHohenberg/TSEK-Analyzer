@@ -1,0 +1,9 @@
+a {
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
+}
+
+a.activated {
+  font-weight: bolder;
+}

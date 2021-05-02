@@ -1,27 +1,29 @@
 <div class="filter-content">
   <div class="filter-row">
     <mat-form-field>
-      <mat-label>Kontexte</mat-label>
+      <mat-label>{{"CONTEXTS.TITLE" | translate}}</mat-label>
       <input matInput #contextInput>
     </mat-form-field>
     <div class="space">&nbsp;</div>
-    <mat-chip class="mat-elevation-z5" (click)="addContextFilter(contextInput.value); contextInput.value=''">+ Kontext</mat-chip>
+    <mat-chip class="mat-elevation-z5" (click)="addContextFilter(contextInput.value); contextInput.value=''">+ {{"CONTEXTS.LABEL_SG" | translate}}</mat-chip>
   </div>
 
   <div class="filter-row">
     <app-fields-dropdown
-      [label]="'Zwecke'"
+      [label]="'CONTEXTS.ZWECK.LABEL_PL' | translate"
       [fieldList]="zweckList"
+      [prefixTranslateKey]="PREFIX_TRANSLATE_KEY_ZWECK"
       [filterDeletedByChip]="getFilterDeletedByChipEventEmitterForContext(filterDeletedByChip)"
-      (filterChanged)="changeDropdownFilter(ZWECK_FIELD, $event)"
+      (filterChanged)="changeDropdownFilter(ZWECK_FIELD, $event, PREFIX_TRANSLATE_KEY_ZWECK)"
     >
     </app-fields-dropdown>
     <div class="space">&nbsp;</div>
     <app-fields-dropdown
-      [label]="'Vorkommen'"
+      [label]="'CONTEXTS.VORKOMMEN.LABEL_PL' | translate"
       [fieldList]="vorkommenList"
+      [prefixTranslateKey]="PREFIX_TRANSLATE_KEY_VORKOMMEN"
       [filterDeletedByChip]="getFilterDeletedByChipEventEmitterForContext(filterDeletedByChip)"
-      (filterChanged)="changeDropdownFilter(VORKOMMEN_FIELD, $event)"
+      (filterChanged)="changeDropdownFilter(VORKOMMEN_FIELD, $event, PREFIX_TRANSLATE_KEY_VORKOMMEN)"
     >
     </app-fields-dropdown>
   </div>

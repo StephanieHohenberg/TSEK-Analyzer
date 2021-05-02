@@ -2,21 +2,24 @@
   <thead>
   <tr>
     <th scope="col">#</th>
-    <th scope="col">Kontext</th>
-    <th scope="col">Zweck</th>
-    <th scope="col">Vorkommen</th>
+    <th scope="col">{{"CONTEXTS.LABEL_SG" | translate}}</th>
+    <th scope="col">{{"CONTEXTS.ZWECK.LABEL" | translate}}</th>
+    <th scope="col">{{"CONTEXTS.VORKOMMEN.LABEL" | translate}}</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let context of contextData; let i=index;"
-      (click)="displayInGraph(context.id)">
+      (click)="highlightContextInGraph(context.id)">
     <th scope="row">{{i+1}}</th>
     <td>{{context.label}}</td>
-    <td>{{context.zweck}}</td>
-    <td>{{context.vorkommen}}</td>
+    <td [matTooltip]="getTranslationKeyForTooltip(context.zweck)| translate">{{getTranslationKeyForZweckField(context.zweck) | translate}}</td>
+    <td>{{getTranslationKeyForVorkommenField(context.vorkommen) | translate }}</td>
   </tr>
   <tr *ngIf="contextData.length === 0">
-    <p><i class="fas fa-exclamation-triangle"></i> Es sind keine Daten zu den Kontexten vorhanden!</p>
+    <p><i class="fas fa-exclamation-triangle"></i> {{"CONTEXTS.NOT_FOUND" | translate}}</p>
   </tr>
   </tbody>
 </table>
+<div class="action-button" *ngIf="contextData.length > 0">
+  <button mat-button (click)="displayPapersContextInGraph()"><i class="fas fa-braille"></i> {{"ACTION_BUTTON.SHOW_CONTEXTS" | translate}}</button>
+</div>

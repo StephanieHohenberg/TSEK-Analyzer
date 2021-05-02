@@ -6,16 +6,17 @@
     </mat-form-field>
     <div class="space">&nbsp;</div>
     <mat-chip class="mat-elevation-z5" (click)="addIdFilter(filterInput.value); filterInput.value=''">+ ID</mat-chip>
-    <mat-chip class="mat-elevation-z5" (click)="addTitleFilter(filterInput.value); filterInput.value=''">+ Titel</mat-chip>
-    <mat-chip class="mat-elevation-z5" *ngIf="visibilityService.isFieldVisible(FILTER_TAB)" (click)="addAuthorFilter(filterInput.value); filterInput.value=''" matTooltip="Filter nach Author/in">+ <i class="fas fa-users"></i></mat-chip>
-    <mat-chip class="mat-elevation-z5" *ngIf="visibilityService.isFieldVisible(FILTER_TAB)" (click)="addUniversityFilter(filterInput.value); filterInput.value=''" matTooltip="Filter nach Universität">+ <i class="fas fa-university"></i></mat-chip>
+    <mat-chip class="mat-elevation-z5" (click)="addTitleFilter(filterInput.value); filterInput.value=''">+ {{"FILTER.GENERAL_DATA.FIELD.TITLE" | translate}}</mat-chip>
+    <mat-chip class="mat-elevation-z5" *ngIf="visibilityService.isFieldVisible(FILTER_TAB)" (click)="addAuthorFilter(filterInput.value); filterInput.value=''" [matTooltip]="'FILTER.GENERAL_DATA.TOOLTIP.AUTHOR' | translate">+ <i class="fas fa-users"></i></mat-chip>
+    <mat-chip class="mat-elevation-z5" *ngIf="visibilityService.isFieldVisible(FILTER_TAB)" (click)="addUniversityFilter(filterInput.value); filterInput.value=''" [matTooltip]="'FILTER.GENERAL_DATA.TOOLTIP.UNIVERSITY' | translate">+ <i class="fas fa-university"></i></mat-chip>
   </div>
 
   <div class="second-filter-row" *ngIf="visibilityService.isFieldVisible(FILTER_TAB)">
     <app-fields-dropdown
-      [label]="'Kontinent'"
+      [label]="'FILTER.GENERAL_DATA.DROPDOWN.CONTINENT' | translate"
       [iconClass]="CONTINENT_ICON_CLASS"
       [fieldList]="continentList"
+      [prefixTranslateKey]="'GENERAL_DATA.CONTINENT'"
       [filterDeletedByChip]="getFilterDeletedByChipEventEmitterForGeneralData(filterDeletedByChip)"
       (filterChanged)="changeContinentDropdownFilter($event)"
     >

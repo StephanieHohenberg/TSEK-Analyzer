@@ -1,6 +1,18 @@
-
 #cy {
   position: relative;
   width: 100%;
   height: 100vh;
 }
+
+.action-buttons {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  text-align: right;
+}
+

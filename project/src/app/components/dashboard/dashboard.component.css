@@ -15,11 +15,11 @@ app-graph {
   width: 57vw;
 }
 
-.hide-sidebar {
+.hide-sidebar, .hide-graph {
   display: none;
 }
 
-.fullscreen-graph {
+.fullscreen-graph, .fullscreen-sidebar {
   position: absolute;
   top: 0;
   left: 3vw;

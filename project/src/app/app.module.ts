@@ -7,7 +7,7 @@ import { PaperSidebarComponent } from './components/paper-sidebar/paper-sidebar.
 import { GraphComponent } from './components/context-graph/graph.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatRippleModule} from '@angular/material/core';
@@ -48,8 +48,13 @@ import {ContextService} from './services/context.service';
 import {FilterService} from './services/filter.service';
 import {VisibilityService} from './services/visibility.service';
 import {PaperService} from './services/paper.service';
+import {TranslateLoader, TranslateModule, TranslatePipe} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { LanguageToggleComponent } from './components/language-toggle/language-toggle.component';
 
-
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -80,6 +85,7 @@ import {PaperService} from './services/paper.service';
     AnalysisDialogComponent,
     InformationDialogComponent,
     ChartsGeneralComponent,
+    LanguageToggleComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,6 +94,14 @@ import {PaperService} from './services/paper.service';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(APP_ROUTES),
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
 
     // Angular Material Modules
     MatTabsModule,
@@ -112,6 +126,7 @@ import {PaperService} from './services/paper.service';
     FilterService,
     PaperService,
     VisibilityService,
+    TranslatePipe,
   ],
   bootstrap: [AppComponent],
 })

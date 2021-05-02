@@ -1,6 +1,7 @@
 <app-fields-dropdown
-  [label]="'Kriterium'"
+  [label]="'FILTER.CHARACTERIZATION.DROPDOWN.TITLE' | translate"
   [fieldList]="fieldList"
+  [prefixTranslateKey]="PREFIX_TRANSLATE_KEY"
   [filterDeletedByChip]="getFilterDeletedByChipEventEmitterForCharacterization(filterDeletedByChip)"
   (filterChanged)="changeDropdownFilter($event)"
 >

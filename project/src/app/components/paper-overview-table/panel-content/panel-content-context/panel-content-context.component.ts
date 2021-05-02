@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {characterizationFieldList, CharacterizationFields} from '../../../../data/characterization.data';
 import {PaperService} from '../../../../services/paper.service';
 import {ContextData, ContextFields, ContextTableData, Vorkommen, Zweck} from '../../../../data/context.data';
+import {VisibilityService} from '../../../../services/visibility.service';
 
 @Component({
   selector: 'app-panel-content-context',
@@ -14,7 +15,7 @@ export class PanelContentContextComponent implements OnInit {
   public contextData: TableContextForDisplay[] = [];
   public readonly fieldList: CharacterizationFields[] = characterizationFieldList;
 
-  constructor(private paperService: PaperService) { }
+  constructor(private paperService: PaperService, private visibilityService: VisibilityService) { }
 
   public ngOnInit(): void {
     if (this.paperId) {
@@ -22,8 +23,24 @@ export class PanelContentContextComponent implements OnInit {
     }
   }
 
-  public displayInGraph(contextId): void {
-    console.log('TODO: implement context-graph and higlight context: ' + contextId);
+  public highlightContextInGraph(contextID: string): void {
+    this.visibilityService.highlightContext(contextID);
+  }
+
+  public displayPapersContextInGraph(): void {
+    this.visibilityService.showContextsOfPaper(this.paperId);
+  }
+
+  public getTranslationKeyForVorkommenField(field: Vorkommen): string {
+    return `CONTEXTS.VORKOMMEN.${field}`;
+  }
+
+  public getTranslationKeyForZweckField(field: Zweck): string {
+    return `CONTEXTS.ZWECK.${field}`;
+  }
+
+  public getTranslationKeyForTooltip(field: Zweck): string {
+    return `CONTEXTS.TOOLTIP.${field}`;
   }
 
   private getContextDataForDisplayInTable(): TableContextForDisplay[] {

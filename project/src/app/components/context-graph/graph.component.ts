@@ -2,9 +2,13 @@ import {Component, ElementRef, OnChanges, OnDestroy, OnInit, Renderer2} from '@a
 import {takeUntil} from 'rxjs/operators';
 import {GraphData} from './graph.data';
 import {FilterService} from '../../services/filter.service';
-import {Subject} from 'rxjs';
+import {BehaviorSubject, Subject} from 'rxjs';
 import * as cytoscape from 'cytoscape';
 import {ContextService} from '../../services/context.service';
+import {PaperService} from '../../services/paper.service';
+import {AnalysisPaperFields, GeneralPaperFields} from '../../data/paper.data';
+import {FilterConnector, FilterData, FilterUpdate, FilterUpdateType, GraphVisibilityUpdateType} from '../../data/filter.data';
+import {VisibilityService} from '../../services/visibility.service';
 
 @Component({
   selector: 'app-graph',
@@ -14,27 +18,26 @@ import {ContextService} from '../../services/context.service';
 export class GraphComponent implements OnInit, OnDestroy, OnChanges {
 
   public elements: GraphData;
+  public currentGraphVisibilityPaperId: string;
+  public highlightedContextIDs: string[] = [];
   private layout: any;
   private style: any;
   private cy;
   private unsubscribe$ = new Subject();
+  private  = new BehaviorSubject<FilterData[]>([]);
+
 
   public constructor(private filterService: FilterService,
+                     private paperService: PaperService,
+                     public visibilityService: VisibilityService,
                      private contextService: ContextService,
                      private renderer: Renderer2, private el: ElementRef) {
   }
 
   public ngOnInit(): void {
     this.initializeGraphConfiguration();
+    this.initializeGraphElements();
     this.render();
-    this.elements = this.contextService.getGraphDataForAllContexts();
-    this.filterService.getFilterUpdates$()
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(filterUpdate => {
-        this.elements = this.contextService.getGraphDataForAllContexts();
-        // this.data = this.paperService.getFilteredGeneralData(filterUpdate, this.filterService.getFilter());
-        this.render();
-      });
   }
 
   public ngOnChanges(): any {
@@ -44,6 +47,60 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
   public ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+  }
+
+  private initializeGraphElements(): void {
+    this.filterService.getFilterUpdates$()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(filterUpdate => {
+        if (filterUpdate.type === FilterUpdateType.RESET_FILTER) {
+          this.elements = this.contextService.getGraphDataForAllContexts();
+        } else {
+          this.applyFilter(filterUpdate, [...this.filterService.getFilter()]);
+          this.render();
+        }
+      });
+
+    this.visibilityService.getGraphUpdates$()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(graphUpdate => {
+        switch (graphUpdate.type) {
+          case GraphVisibilityUpdateType.SHOW_PAPER:
+            const data = { filterTab: AnalysisPaperFields.GENERAL_DATA, field: GeneralPaperFields.ID, value: graphUpdate.id, label: 'ID: '};
+            const filter = [...this.filterService.getFilter()].concat([data]);
+            this.applyFilter({ type: FilterUpdateType.ADD_FILTER, connector: FilterConnector.UND, data}, filter);
+            this.render();
+            this.currentGraphVisibilityPaperId = graphUpdate.id;
+            break;
+          case GraphVisibilityUpdateType.HIGHLIGHT_CONTEXT:
+            this.highlightedContextIDs.push(graphUpdate.id);
+            break;
+        }
+      });
+  }
+
+  private removeFocusOnPaper(): void {
+    if (this.currentGraphVisibilityPaperId) {
+      // tslint:disable-next-line:max-line-length
+      const data = { filterTab: AnalysisPaperFields.GENERAL_DATA, field: GeneralPaperFields.ID, value: this.currentGraphVisibilityPaperId, label: 'ID: '};
+      this.applyFilter({ type: FilterUpdateType.DELETE_FILTER, connector: FilterConnector.UND, data}, [...this.filterService.getFilter()]);
+      this.currentGraphVisibilityPaperId = undefined;
+      this.render();
+    }
+  }
+
+  private unhighlightContexts(): void {
+    this.highlightedContextIDs = [];
+    this.render();
+  }
+
+  private applyFilter(filterUpdate: FilterUpdate, filterData: FilterData[]): void {
+    let contextIDs: string[] = [];
+    this.paperService.getFilteredGeneralData(filterUpdate, filterData).forEach(paper => {
+      const paperID = paper[GeneralPaperFields.ID];
+      contextIDs = contextIDs.concat(this.paperService.getPapersContextsByID(paperID).map(c => c.id));
+    });
+    this.elements = this.contextService.getGraphDataByContextIDs(contextIDs);
   }
 
   private initializeGraphConfiguration(): void {

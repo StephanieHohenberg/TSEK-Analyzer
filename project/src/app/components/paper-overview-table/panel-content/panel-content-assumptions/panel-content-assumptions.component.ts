@@ -10,9 +10,9 @@ import {AssumptionData, AssumptionFields} from '../../../../data/assumption.data
 export class PanelContentAssumptionsComponent implements OnInit {
 
   @Input() public paperId: string;
+  @Input() public panelOpenState = false;
   public assumptionData: AssumptionData;
   public readonly assumptionPaperFields = AssumptionFields;
-  public panelOpenState = false;
 
   constructor(private paperService: PaperService) { }
 

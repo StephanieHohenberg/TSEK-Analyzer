@@ -1,18 +1,36 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {analysisPaperFieldList, AnalysisPaperFields} from '../data/paper.data';
+import {Observable, Subject} from 'rxjs';
+import {GraphVisibilityUpdate, GraphVisibilityUpdateType} from '../data/filter.data';
+
+export enum  ScreenComponent { SIDE_BAR, GRAPH}
 
 @Injectable({
   providedIn: 'root'
 })
 export class VisibilityService {
 
-  private sidebarVisible = true;
+  private hiddenElement: ScreenComponent;
   private filterVisible = true;
-  private hiddenFields: string[] = [];
+  private hiddenFields: string[] = [AnalysisPaperFields.ASSUMPTIONS];
+  private graphUpdate$ = new Subject<GraphVisibilityUpdate>();
 
   constructor() { }
 
   public toggleSidebar(): void {
-    this.sidebarVisible = !this.sidebarVisible;
+    if (this.hiddenElement === ScreenComponent.SIDE_BAR) {
+      this.hiddenElement = null;
+    } else {
+      this.hiddenElement = ScreenComponent.SIDE_BAR;
+    }
+  }
+
+  public toggleGraph(): void {
+    if (this.hiddenElement === ScreenComponent.GRAPH) {
+      this.hiddenElement = null;
+    } else {
+      this.hiddenElement = ScreenComponent.GRAPH;
+    }
   }
 
   public toggleFilter(): void {
@@ -27,8 +45,31 @@ export class VisibilityService {
     }
   }
 
-  public isSidebarVisible(): boolean {
-    return this.sidebarVisible;
+  public hideAllFieldsExcept(field: string): void {
+    const fields = analysisPaperFieldList.filter(f => f !== field);
+    this.hiddenFields = fields.length < analysisPaperFieldList.length ? fields : this.hiddenFields;
+  }
+
+  public showContextsOfPaper(paperID: string): void {
+    this.graphUpdate$.next({type: GraphVisibilityUpdateType.SHOW_PAPER, id: paperID});
+    if (this.isGraphHidden()) {
+      this.hiddenElement = null;
+    }
+  }
+
+  public highlightContext(contextID: string): void {
+    this.graphUpdate$.next({type: GraphVisibilityUpdateType.HIGHLIGHT_CONTEXT, id: contextID});
+    if (this.isGraphHidden()) {
+      this.hiddenElement = null;
+    }
+  }
+
+  public isSidebarHidden(): boolean {
+    return this.hiddenElement === ScreenComponent.SIDE_BAR;
+  }
+
+  public isGraphHidden(): boolean {
+    return this.hiddenElement === ScreenComponent.GRAPH;
   }
 
   public isFilterVisible(): boolean {
@@ -37,5 +78,13 @@ export class VisibilityService {
 
   public isFieldVisible(field: string): boolean {
     return !this.hiddenFields.includes(field);
+  }
+
+  public isOnlyOneFieldVisible(): boolean {
+    return this.hiddenFields.length === analysisPaperFieldList.length - 1;
+  }
+
+  public getGraphUpdates$(): Observable<GraphVisibilityUpdate> {
+    return this.graphUpdate$.asObservable();
   }
 }

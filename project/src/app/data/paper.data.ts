@@ -4,11 +4,11 @@ import {ContextData, ContextTableData} from './context.data';
 import {CharacterizationData} from './characterization.data';
 
 export enum AnalysisPaperFields {
-  GENERAL_DATA = 'generalData',
-  CHARACTERIZATION = 'characterization',
-  CONTEXTS = 'contexts',
-  GENERALIZATION = 'generalization',
-  ASSUMPTIONS = 'assumptions',
+  GENERAL_DATA = 'GENERAL_DATA.TITLE',
+  CHARACTERIZATION = 'CHARACTERIZATION.TITLE',
+  CONTEXTS = 'CONTEXTS.TITLE',
+  GENERALIZATION = 'GENERALIZATION.TITLE',
+  ASSUMPTIONS = 'ASSUMPTIONS.TITLE',
 }
 
 export const analysisPaperFieldList: AnalysisPaperFields[] = [

@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angula
 import {FormControl} from '@angular/forms';
 import {Observable, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+import {Continent} from '../../../../data/paper.data';
 
 @Component({
   selector: 'app-fields-dropdown',
@@ -13,6 +14,7 @@ export class FieldsDropdownComponent implements OnInit, OnDestroy {
   @Input() public label = 'filter';
   @Input() public iconClass: string;
   @Input() public fieldList: string[] = [];
+  @Input() public prefixTranslateKey?: string;
   @Input() public filterDeletedByChip: Observable<string>;
   @Output() public filterChanged = new EventEmitter<string>();
   public formControl = new FormControl([]);
@@ -39,5 +41,9 @@ export class FieldsDropdownComponent implements OnInit, OnDestroy {
 
   public handleFilter(event, field: string): void {
     this.filterChanged.emit(field);
+  }
+
+  public getTranslationKeyForContinentField(field: string): string {
+    return this.prefixTranslateKey ? `${this.prefixTranslateKey}.${field}` : field;
   }
 }

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {filter, map, takeUntil} from 'rxjs/operators';
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -6,13 +6,14 @@ import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../.
 import {VisibilityService} from '../../../../services/visibility.service';
 import {FilterData} from '../../../../data/filter.data';
 import {ActivatedRoute} from '@angular/router';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-filter-general',
   templateUrl: './filter-general.component.html',
   styleUrls: ['./filter-general.component.css']
 })
-export class FilterGeneralComponent implements OnInit {
+export class FilterGeneralComponent implements OnInit, OnDestroy {
 
   @Input() filterDeletedByChip: EventEmitter<FilterData>;
   @Output() filterChanged = new EventEmitter<FilterData>();
@@ -24,7 +25,8 @@ export class FilterGeneralComponent implements OnInit {
 
   constructor(private snackBar: MatSnackBar,
               private activatedRoute: ActivatedRoute,
-              public visibilityService: VisibilityService) { }
+              public visibilityService: VisibilityService,
+              private translate: TranslatePipe) { }
 
   public ngOnInit(): void {
     this.continentList = Object.keys(Continent);
@@ -38,10 +40,15 @@ export class FilterGeneralComponent implements OnInit {
       });
   }
 
+  public ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
   public addIdFilter(value: string): void {
     if (!value) { return; }
     if (value.length !== 4) {
-      this.snackBar.open('Gib die ID einer Publikation im XXXX-Format an.', '', {
+      this.snackBar.open(this.translate.transform('SNACKBAR.ID_VALIDATION'), '', {
         duration: 2000,
       });
       return;
@@ -51,7 +58,7 @@ export class FilterGeneralComponent implements OnInit {
 
   public addTitleFilter(value: string): void {
     if (!value || value.length === 0) { return; }
-    this.filterChanged.emit({ filterTab: this.FILTER_TAB, field: GeneralPaperFields.TITLE, value, label: 'Titel: '});
+    this.filterChanged.emit({ filterTab: this.FILTER_TAB, field: GeneralPaperFields.TITLE, value, label: this.translate.transform('FILTER.GENERAL_DATA.CHIP.TITLE')});
   }
 
   public addAuthorFilter(value: string): void {
@@ -62,7 +69,7 @@ export class FilterGeneralComponent implements OnInit {
       filterTab: this.FILTER_TAB,
       field: GeneralPaperFields.AUTHORS,
       value,
-      label: 'Author/in: ',
+      label: this.translate.transform('FILTER.GENERAL_DATA.CHIP.AUTHOR'),
       iconClass: 'fas fa-users'
     });
   }
@@ -73,7 +80,7 @@ export class FilterGeneralComponent implements OnInit {
       filterTab: this.FILTER_TAB,
       field: GeneralPaperFields.UNIVERSITIES,
       value,
-      label: 'Universität: ',
+      label: this.translate.transform('FILTER.GENERAL_DATA.CHIP.UNIVERSITY'),
       iconClass: 'fas fa-university'
     });
   }
@@ -91,5 +98,4 @@ export class FilterGeneralComponent implements OnInit {
   public getFilterDeletedByChipEventEmitterForGeneralData(emitter: EventEmitter<FilterData>): Observable<string> {
     return emitter.pipe(filter(f => f.filterTab === this.FILTER_TAB), map(f => f.value));
   }
-
 }

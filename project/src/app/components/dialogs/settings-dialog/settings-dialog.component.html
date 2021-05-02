@@ -1,28 +1,32 @@
-<h1 mat-dialog-title><i class="fas fa-cogs"></i> Einstellungen</h1>
+<h1 mat-dialog-title><i class="fas fa-cogs"></i>&nbsp;{{"SETTINGS.TITLE" | translate}}</h1>
 <div mat-dialog-content class="dialog-content">
   <button mat-button class="text-left" (click)="toggleVisibility(conf[0].configurableComponent)">
     <i *ngIf="visibilityService.isFieldVisible(conf[0].configurableComponent)" class="fas fa-eye"></i>
     <i *ngIf="!visibilityService.isFieldVisible(conf[0].configurableComponent)" class="fas fa-eye-slash"></i>
-    &nbsp;{{conf[0].configurableComponent}}
+    &nbsp;{{conf[0].configurableComponent | translate}}
   </button>
   <button mat-button class="text-left" (click)="toggleVisibility(conf[1].configurableComponent)">
     <i *ngIf="visibilityService.isFieldVisible(conf[1].configurableComponent)" class="fas fa-eye"></i>
     <i *ngIf="!visibilityService.isFieldVisible(conf[1].configurableComponent)" class="fas fa-eye-slash"></i>
-    &nbsp;{{conf[1].configurableComponent}}
+    &nbsp;{{conf[1].configurableComponent | translate}}
   </button>
   <button mat-button class="text-left" (click)="toggleVisibility(conf[2].configurableComponent)">
     <i *ngIf="visibilityService.isFieldVisible(conf[2].configurableComponent)" class="fas fa-eye"></i>
     <i *ngIf="!visibilityService.isFieldVisible(conf[2].configurableComponent)" class="fas fa-eye-slash"></i>
-    &nbsp;{{conf[2].configurableComponent}}
+    &nbsp;{{conf[2].configurableComponent | translate}}
   </button>
   <button mat-button class="text-left" (click)="toggleVisibility(conf[3].configurableComponent)">
     <i *ngIf="visibilityService.isFieldVisible(conf[3].configurableComponent)" class="fas fa-eye"></i>
     <i *ngIf="!visibilityService.isFieldVisible(conf[3].configurableComponent)" class="fas fa-eye-slash"></i>
-    &nbsp;{{conf[3].configurableComponent}}
+    &nbsp;{{conf[3].configurableComponent | translate}}
   </button>
+  <!--
   <button mat-button class="text-left" (click)="toggleVisibility(conf[4].configurableComponent)">
     <i *ngIf="visibilityService.isFieldVisible(conf[4].configurableComponent)" class="fas fa-eye"></i>
     <i *ngIf="!visibilityService.isFieldVisible(conf[4].configurableComponent)" class="fas fa-eye-slash"></i>
-    &nbsp;{{conf[4].configurableComponent}}
-  </button>
+    &nbsp;{{conf[4].configurableComponent | translate}}
+  </button> -->
+  <div class="language-toggle-container">
+    <app-language-toggle></app-language-toggle>
+  </div>
 </div>

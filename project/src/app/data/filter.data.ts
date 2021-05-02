@@ -17,10 +17,20 @@ export class FilterData {
   isNegative?: boolean;
   iconClass?: string;
   label?: string;
+  prefixTranslateKey?: string;
 }
 
 export class FilterUpdate {
   type: FilterUpdateType;
   connector: FilterConnector;
   data?: FilterData;
+}
+
+export enum  GraphVisibilityUpdateType {
+   SHOW_PAPER, HIGHLIGHT_CONTEXT
+}
+
+export class GraphVisibilityUpdate {
+  type: GraphVisibilityUpdateType;
+  id?: string;
 }

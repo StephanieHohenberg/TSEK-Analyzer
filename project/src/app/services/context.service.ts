@@ -12,10 +12,25 @@ export class ContextService {
 
   public getGraphDataForAllContexts(): GraphData {
     const nodes: NodeDataWrapper[] = [];
-    const edges: EdgeDataWrapper[] = [];    const map: Map<string, ContextData> = getContextMap();
-    map.forEach((context, key) => {
+    const edges: EdgeDataWrapper[] = [];
+    const map: Map<string, ContextData> = getContextMap();
+    map.forEach((context, _) => {
       nodes.push({data: new NodeData(context.id, context[ContextFields.LABEL])});
       if (context[ContextFields.PARENT]) {
+        edges.push({data: new EdgeData(context[ContextFields.PARENT], context.id)});
+      }
+    });
+    return { nodes, edges};
+  }
+
+  public getGraphDataByContextIDs(contextIDs: string[]): GraphData {
+    const nodes: NodeDataWrapper[] = [];
+    const edges: EdgeDataWrapper[] = [];
+    const map: Map<string, ContextData> = getContextMap();
+    contextIDs.forEach(id => {
+      const context = map.get(id);
+      nodes.push({data: new NodeData(context.id, context[ContextFields.LABEL])});
+      if (context[ContextFields.PARENT] && contextIDs.includes(context[ContextFields.PARENT])) {
         edges.push({data: new EdgeData(context[ContextFields.PARENT], context.id)});
       }
     });

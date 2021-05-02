@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {GeneralPaperData, GeneralPaperFields} from '../../../../data/paper.data';
+import {Continent, GeneralPaperData, GeneralPaperFields} from '../../../../data/paper.data';
 import {PaperService} from '../../../../services/paper.service';
+import {Zweck} from '../../../../data/context.data';
 
 @Component({
   selector: 'app-panel-content-general',
@@ -15,10 +16,14 @@ export class PanelContentGeneralComponent implements OnInit {
 
   constructor(private paperService: PaperService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     if (this.paperId) {
       this.generalData = this.paperService.getGeneralDataByID(this.paperId);
     }
+  }
+
+  public getTranslationKeyForContinentField(field: Continent): string {
+    return `GENERAL_DATA.CONTINENT.${field}`;
   }
 
 }

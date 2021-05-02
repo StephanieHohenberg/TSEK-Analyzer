@@ -3,11 +3,11 @@
     <i *ngIf="iconClass" [class]="iconClass"></i> {{label}}
   </mat-label>
   <mat-select [formControl]="formControl" multiple>
-    <mat-select-trigger>{{formControl.value.length}} Filter ausgewählt</mat-select-trigger>
+    <mat-select-trigger>{{formControl.value.length}} {{"FILTER.DROPDOWN.FILTER_SELECTED" | translate}}</mat-select-trigger>
     <mat-option *ngFor="let field of fieldList"
                 [value]="field"
                 (onSelectionChange)="handleFilter($event, field)">
-      {{field}}
+      {{getTranslationKeyForContinentField(field) | translate}}
     </mat-option>
   </mat-select>
 </mat-form-field>

@@ -15,6 +15,7 @@ export class FilterVerallgemeinbarkeitComponent implements OnInit {
   @Input() filterDeletedByChip: EventEmitter<FilterData>;
   @Output() filterChanged = new EventEmitter<FilterData>();
   public fieldList: string[] = [];
+  public readonly PREFIX_TRANSLATE_KEY = 'GENERALIZATION.LABELS';
   private readonly FILTER_TAB = AnalysisPaperFields.GENERALIZATION;
 
 
@@ -25,7 +26,8 @@ export class FilterVerallgemeinbarkeitComponent implements OnInit {
   }
 
   public changeDropdownFilter(value: string): void {
-    this.filterChanged.emit({filterTab: this.FILTER_TAB, field: value, value, deleteNotifier: true});
+    this.filterChanged.emit(
+      {filterTab: this.FILTER_TAB, field: value, value, prefixTranslateKey: this.PREFIX_TRANSLATE_KEY, deleteNotifier: true});
   }
 
   public getFilterDeletedByChipEventEmitterForGeneralization(emitter: EventEmitter<FilterData>): Observable<string> {

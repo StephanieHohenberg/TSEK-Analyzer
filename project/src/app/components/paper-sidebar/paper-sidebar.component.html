@@ -1,5 +1,14 @@
+<div class="title">
+  <span>TSEK-Analyzer <i class="fas fa-sitemap"></i></span>
+</div>
+
 <div class="sidebar">
-  <p>TSEK-Analyzer <i class="fas fa-sitemap"></i></p>
   <app-paper-filter *ngIf="visibilityService.isFilterVisible()"></app-paper-filter>
   <app-paper-overview-table></app-paper-overview-table>
+</div>
+
+<div class="action-buttons" *ngIf="visibilityService.isGraphHidden()">
+  <button mat-button (click)="visibilityService.toggleGraph()">
+    <span>{{"ACTION_BUTTON.SHOW_GRAPH" | translate }}<i class="fas fa-expand"></i></span>
+  </button>
 </div>

@@ -1,3 +1,2 @@
-<app-paper-sidebar [ngClass]="{'hide-sidebar': !visibilityService.isSidebarVisible()}" class="mat-elevation-z12"></app-paper-sidebar>
-<app-graph [ngClass]="{'fullscreen-graph': !visibilityService.isSidebarVisible()}"></app-graph>
-sAD
+<app-paper-sidebar [ngClass]="{'hide-sidebar': visibilityService.isSidebarHidden(), 'fullscreen-sidebar': visibilityService.isGraphHidden()}" class="mat-elevation-z12"></app-paper-sidebar>
+<app-graph [ngClass]="{'fullscreen-graph': visibilityService.isSidebarHidden(), 'hide-graph': visibilityService.isGraphHidden()}"></app-graph>

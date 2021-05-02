@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-information-dialog',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformationDialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(private translate: TranslatePipe) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
+  public getTranslatedKeyOfLineAsHTML(suffix: string): string {
+    return this.translate.transform(`ABOUT_PROJECT.${suffix}`);
+  }
 }

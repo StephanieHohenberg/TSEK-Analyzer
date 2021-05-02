@@ -4,6 +4,7 @@ import {filter, map} from 'rxjs/operators';
 import {ContextFields, Vorkommen, Zweck} from '../../../../data/context.data';
 import {AnalysisPaperFields} from '../../../../data/paper.data';
 import {FilterData} from '../../../../data/filter.data';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-filter-context',
@@ -17,10 +18,12 @@ export class FilterContextComponent implements OnInit {
   public zweckList: string[] = [];
   public vorkommenList: string[] = [];
   public readonly VORKOMMEN_FIELD = ContextFields.VORKOMMEN;
+  public readonly PREFIX_TRANSLATE_KEY_ZWECK = 'CONTEXTS.ZWECK';
   public readonly ZWECK_FIELD = ContextFields.ZWECK;
+  public readonly PREFIX_TRANSLATE_KEY_VORKOMMEN = 'CONTEXTS.VORKOMMEN';
   private readonly FILTER_TAB = AnalysisPaperFields.CONTEXTS;
 
-  constructor() { }
+  constructor(private translate: TranslatePipe) { }
 
   public ngOnInit(): void {
     this.zweckList = Object.keys(Zweck);
@@ -33,12 +36,12 @@ export class FilterContextComponent implements OnInit {
       filterTab: this.FILTER_TAB,
       field: ContextFields.LABEL,
       value,
-      label: 'Kontext: ',
+      label: this.translate.transform('FILTER.CONTEXTS.CHIP.CONTEXT'),
     });
   }
 
-  public changeDropdownFilter(field: string, value: string): void {
-    this.filterChanged.emit({filterTab: this.FILTER_TAB, field, value, deleteNotifier: true});
+  public changeDropdownFilter(field: string, value: string, prefixTranslateKey: string): void {
+    this.filterChanged.emit({filterTab: this.FILTER_TAB, field, value, prefixTranslateKey, deleteNotifier: true});
   }
 
   public getFilterDeletedByChipEventEmitterForContext(emitter: EventEmitter<FilterData>): Observable<string> {

@@ -47,7 +47,7 @@ export enum Zweck {
 
 // TOWRITE Bereinigung der Daten, Einordnung in einer dieser Kategorien
 export enum Vorkommen {
-  TITEL = 'TITEL',
+  TITEL = 'TITLE',
   ABSTRACT = 'ABSTRACT',
   INTRODUCTION = 'INTRODUCTION',
   BACKGROUND = 'BACKGROUND',

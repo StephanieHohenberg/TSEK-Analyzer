@@ -6,6 +6,7 @@ import {FilterConnector, FilterData} from '../../data/filter.data';
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
+import {TranslatePipe} from '@ngx-translate/core';
 
 
 @Component({
@@ -22,7 +23,8 @@ export class PaperFilterComponent implements OnInit, OnDestroy {
   private unsubscribe$ = new Subject();
 
   constructor(public filterService: FilterService,
-              public visibilityService: VisibilityService) { }
+              public visibilityService: VisibilityService,
+              private translate: TranslatePipe) { }
 
   public ngOnInit(): void {
     this.filterService.getFilter$()
@@ -54,6 +56,7 @@ export class PaperFilterComponent implements OnInit, OnDestroy {
     if (this.hasDeselectedFilterInDropdown(filter)) {
       this.filterService.removeFilter(filter);
     } else {
+      console.log(filter, 'filter');
       this.filterService.addFilter(filter);
     }
   }
@@ -69,6 +72,15 @@ export class PaperFilterComponent implements OnInit, OnDestroy {
 
   private hasDeselectedFilterInDropdown(filter: FilterData): boolean {
     return this.chipList.findIndex(c => c.filterTab === filter.filterTab && c.field === filter.field && c.value === filter.value) > -1;
+  }
+
+  public getLabelForFilterTab(tab: string): string {
+    return this.translate.transform(`FILTER.${tab}.TAB_TITLE`);
+  }
+
+  public getTranslatedFilterValue(filter: FilterData): string {
+    console.log(filter.prefixTranslateKey + '  -  ' + filter.value);
+    return filter.prefixTranslateKey ? this.translate.transform(`${filter.prefixTranslateKey}.${filter.value}`) : filter.value;
   }
 
 }

@@ -1,14 +1,15 @@
 <div *ngIf="characterization; else errorMessage">
-  <span>Charakterisierung: </span>
+  <span>{{"CHARACTERIZATION.TITLE" | translate}}:</span>
   <mat-chip-list>
     <span *ngFor='let field of fieldList'>
       <mat-chip *ngIf="characterization[field]" [disableRipple]="true" [selectable]="false">
-        {{field}}<span *ngIf="characterization[field] !== true">: {{characterization[field]}}</span>
+        {{getTranslationKeyForCharacterizationField(field) | translate}}
+        <span *ngIf="characterization[field] !== true">: {{characterization[field]}}</span>
       </mat-chip>
     </span>
   </mat-chip-list>
 </div>
 
 <ng-template #errorMessage>
-  <p><i class="fas fa-exclamation-triangle"></i> Es sind keine Daten zur Charakterisierung vorhanden!</p>
+  <p><i class="fas fa-exclamation-triangle"></i> {{"CHARACTERIZATION.NOT_FOUND" | translate}}</p>
 </ng-template>

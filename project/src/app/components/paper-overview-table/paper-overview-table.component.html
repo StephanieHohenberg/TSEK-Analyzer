@@ -2,14 +2,14 @@
   <p class="info-line">
     <span>
       <i class="fas fa-copy"></i>
-    &nbsp;{{data.length}} Publikation<span *ngIf="data.length > 1">en</span>
-      <small *ngIf="!visibilityService.isFilterVisible() && amountOfFilter > 0">&nbsp;({{amountOfFilter}} Filter eingestellt)</small>
+    &nbsp;{{data.length}} {{"TABLE.PAPER" | translate}}<span *ngIf="data.length > 1">{{"TABLE.PAPERS" | translate}}</span>
+      <small *ngIf="!visibilityService.isFilterVisible() && amountOfFilter > 0">&nbsp;({{amountOfFilter}} {{"TABLE.FILTER_SET" | translate}})</small>
     </span>
-    <button mat-button *ngIf="data.length > 0" (click)="openAnalysisDialog()"><i class="fas fa-chart-line"></i> Analyse Report</button>
+    <!--<button mat-button *ngIf="data.length > 0" (click)="openAnalysisDialog()"><i class="fas fa-chart-line"></i> Analyse Report</button>-->
 
   </p>
   <p class="error-line" *ngIf="data.length === 0">
-    <i class="fas fa-exclamation-triangle"></i> Keine passenden Publikationen gefunden. Setze den Filter zurück.
+    <i class="fas fa-exclamation-triangle"></i> {{"TABLE.NO_PAPERS_FOUND" | translate}}
   </p>
   <mat-accordion multi>
     <mat-expansion-panel *ngFor="let paper of data"
