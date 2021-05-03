@@ -56,7 +56,6 @@ export class PaperFilterComponent implements OnInit, OnDestroy {
     if (this.hasDeselectedFilterInDropdown(filter)) {
       this.filterService.removeFilter(filter);
     } else {
-      console.log(filter, 'filter');
       this.filterService.addFilter(filter);
     }
   }
@@ -79,7 +78,6 @@ export class PaperFilterComponent implements OnInit, OnDestroy {
   }
 
   public getTranslatedFilterValue(filter: FilterData): string {
-    console.log(filter.prefixTranslateKey + '  -  ' + filter.value);
     return filter.prefixTranslateKey ? this.translate.transform(`${filter.prefixTranslateKey}.${filter.value}`) : filter.value;
   }
 

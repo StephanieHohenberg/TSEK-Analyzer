@@ -18,9 +18,9 @@ export class FilterContextComponent implements OnInit {
   public zweckList: string[] = [];
   public vorkommenList: string[] = [];
   public readonly VORKOMMEN_FIELD = ContextFields.VORKOMMEN;
-  public readonly PREFIX_TRANSLATE_KEY_ZWECK = 'CONTEXTS.ZWECK';
+  public PREFIX_TRANSLATE_KEY_ZWECK = 'CONTEXTS.ZWECK';
   public readonly ZWECK_FIELD = ContextFields.ZWECK;
-  public readonly PREFIX_TRANSLATE_KEY_VORKOMMEN = 'CONTEXTS.VORKOMMEN';
+  public  PREFIX_TRANSLATE_KEY_VORKOMMEN = 'CONTEXTS.VORKOMMEN';
   private readonly FILTER_TAB = AnalysisPaperFields.CONTEXTS;
 
   constructor(private translate: TranslatePipe) { }

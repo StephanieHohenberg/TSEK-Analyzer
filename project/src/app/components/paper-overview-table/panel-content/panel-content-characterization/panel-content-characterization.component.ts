@@ -22,7 +22,7 @@ export class PanelContentCharacterizationComponent implements OnInit {
   }
 
   public getTranslationKeyForCharacterizationField(field: CharacterizationFields): string {
-    return `CHARACTERIZATION.${field}`;
+    return `CHARACTERIZATION.LABELS.${field}`;
   }
 
 }

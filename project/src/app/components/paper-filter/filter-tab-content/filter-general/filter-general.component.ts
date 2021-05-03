@@ -18,6 +18,7 @@ export class FilterGeneralComponent implements OnInit, OnDestroy {
   @Input() filterDeletedByChip: EventEmitter<FilterData>;
   @Output() filterChanged = new EventEmitter<FilterData>();
   public continentList: string[] = [];
+  public  PREFIX_TRANSLATE_KEY_CONTINENT = 'GENERAL_DATA.CONTINENT';
   public readonly CONTINENT_ICON_CLASS = 'fas fa-globe';
   public readonly FILTER_TAB = AnalysisPaperFields.GENERAL_DATA;
   public readonly AWARDS = Award;
@@ -88,7 +89,7 @@ export class FilterGeneralComponent implements OnInit, OnDestroy {
   public changeContinentDropdownFilter(value: string): void {
     // tslint:disable-next-line:max-line-length
     this.filterChanged.emit({
-      filterTab: this.FILTER_TAB, value, field: GeneralPaperFields.CONTINENTS, deleteNotifier: true, iconClass: this.CONTINENT_ICON_CLASS});
+      filterTab: this.FILTER_TAB, value, field: GeneralPaperFields.CONTINENTS, prefixTranslateKey: this.PREFIX_TRANSLATE_KEY_CONTINENT, deleteNotifier: true, iconClass: this.CONTINENT_ICON_CLASS});
   }
 
   public addAwardFilter(award: Award, iconClass: string): void {
