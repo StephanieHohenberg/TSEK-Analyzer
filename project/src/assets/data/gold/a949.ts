@@ -3,9 +3,34 @@ import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
 import {getContextTableData} from '../context/context.util';
-import {MergedContextData} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 
-export const CONTEXT_A949: MergedContextData[] = [];
+export const CONTEXT_A949: MergedContextData[] = [
+  {
+    id: 'A949_1',
+    [ContextFields.LABEL]: 'Fairness Testing',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+  },
+  {
+    id: 'A949_S2',
+    [ContextFields.LABEL]: 'application characteristics',
+    [ContextFields.SUB]: ['A949_S1_1'],
+  },
+  {
+    id: 'A949_S2_1',
+    [ContextFields.LABEL]: 'applications with societal impact',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'A949_S2'
+  },
+  {
+    id: 'A949_S3',
+    [ContextFields.LABEL]: 'Convolutional Neural Networks',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+  },
+];
 
 export const A949: AnalysisPaperData = {
   [AnalysisPaperFields.GENERAL_DATA]: {

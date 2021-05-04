@@ -2,10 +2,96 @@ import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFi
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
-import {MergedContextData} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_B447: MergedContextData[] = [];
+export const CONTEXT_B447: MergedContextData[] = [
+  {
+    id: 'B447_S1',
+    [ContextFields.LABEL]: 'Programming Languages',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.SUB]: ['B447_S1_1'],
+  },
+  {
+    id: 'B447_S1_1',
+    [ContextFields.LABEL]: 'Object-orientated languages',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B447_S1',
+    [ContextFields.SUB]: ['B447_S1_1_1'],
+  },
+  {
+    id: 'B447_S1_1_1',
+    [ContextFields.LABEL]: 'Java',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B447_S1_1'
+  },
+  {
+    id: 'B447_2',
+    [ContextFields.LABEL]: 'real-world Java programs',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.CONCLUSION,
+  },
+  {
+    id: 'B447_S3',
+    [ContextFields.LABEL]: 'Defects',
+    [ContextFields.SUB]: ['B447_S3_1', 'B447_S3_2'],
+  },
+  {
+    id: 'B447_S3_1',
+    [ContextFields.LABEL]: 'Security Vulnerabilities',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B447_S3',
+  },
+  {
+    id: 'B447_S3_2',
+    [ContextFields.LABEL]: 'Null-Pointer Violations',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B447_S3',
+  },
+  {
+    id: 'B447_S4',
+    [ContextFields.LABEL]: 'Builder Frameworks',
+    [ContextFields.SUB]: ['B447_S4_1', 'B447_S4_2'],
+  },
+  {
+    id: 'B447_S4_1',
+    [ContextFields.LABEL]: 'Lombok',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B447_S4',
+  },
+  {
+    id: 'B447_S4_2',
+    [ContextFields.LABEL]: 'AutoValue',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B447_S4',
+  },
+  {
+    id: 'B447_S5',
+    [ContextFields.LABEL]: 'Project Characteristics',
+    [ContextFields.SUB]: ['B447_S5_1', 'B447_S5_2'],
+  },
+  {
+    id: 'B447_S5_1',
+    [ContextFields.LABEL]: 'projects with builder usages',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
+    [ContextFields.PARENT]: 'B447_S5',
+  },
+  {
+    id: 'B447_S5_2',
+    [ContextFields.LABEL]: 'projects using libraries which use builders for API objects',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
+    [ContextFields.PARENT]: 'B447_S5',
+  },
+];
 
 
 export const B447: AnalysisPaperData = {

@@ -11,11 +11,11 @@ export const CONTEXT_A210: MergedContextData[] = [
     [ContextFields.LABEL]: 'programming languages types',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EVALUATION,
-    [ContextFields.SUB]: ['A210_1', 'A210_2'],
+    [ContextFields.SUB]: ['A210_S1_1', 'A210_S1_2'],
     [ContextFields.DIMENSION]: Dimension.PROGRAMMING_LANGUAGE,
   },
   {
-    id: 'A210_1',
+    id: 'A210_S1_1',
     [ContextFields.LABEL]: 'static typed languages',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EVALUATION,
@@ -23,7 +23,7 @@ export const CONTEXT_A210: MergedContextData[] = [
     [ContextFields.DIMENSION]: Dimension.PROGRAMMING_LANGUAGE,
   },
   {
-    id: 'A210_2',
+    id: 'A210_S1_2',
     [ContextFields.LABEL]: 'dynamic typed languages',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EVALUATION,

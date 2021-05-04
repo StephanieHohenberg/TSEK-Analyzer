@@ -80,7 +80,7 @@
     "VORKOMMEN": {
       "LABEL": "Appearance",
       "LABEL_PL": "Appearances",
-      "TITEL": "Title",
+      "TITLE": "Title",
       "ABSTRACT": "Abstract",
       "INTRODUCTION": "Introduction",
       "BACKGROUND": "Background",
@@ -93,7 +93,9 @@
       "EVALUATION": "Evaluation",
       "FUTURE_WORK": "Future Work",
       "DISCUSSION": "Discussion",
-      "CONCLUSION": "Conclusions"
+      "CONCLUSION": "Conclusions",
+      "IMPLICITE": "Implicitly"
+
     }
   },
   "GENERALIZATION": {

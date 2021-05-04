@@ -30,7 +30,12 @@ export class ContextService {
     contextIDs.forEach(id => {
       const context = map.get(id);
       nodes.push({data: new NodeData(context.id, context[ContextFields.LABEL])});
-      if (context[ContextFields.PARENT] && contextIDs.includes(context[ContextFields.PARENT])) {
+      if (context[ContextFields.PARENT]) {
+        if (!contextIDs.includes(context[ContextFields.PARENT])) {
+          const parent = map.get(context[ContextFields.PARENT]);
+          nodes.push({data: new NodeData(parent.id, parent[ContextFields.LABEL])});
+          // TODO: what to display for focus view ?
+        }
         edges.push({data: new EdgeData(context[ContextFields.PARENT], context.id)});
       }
     });

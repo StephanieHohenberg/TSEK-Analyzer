@@ -2,10 +2,64 @@ import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFi
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
-import {MergedContextData} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_B359: MergedContextData[] = [];
+export const CONTEXT_B359: MergedContextData[] = [
+  {
+    id: 'B359_1',
+    [ContextFields.LABEL]: 'Program Analysis',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+  },
+  {
+    id: 'B359_S2',
+    [ContextFields.LABEL]: 'Code Comments',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.SUB]: ['B359_S2_1', 'B359_S2_2', 'B359_S2_3'],
+  },
+  {
+    id: 'B359_S2_1',
+    [ContextFields.LABEL]: 'Comment Classification',
+    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'B359_S2',
+  },
+  {
+    id: 'B359_S2_2',
+    [ContextFields.LABEL]: 'Comment Generation',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'B359_S2',
+  },
+  {
+    id: 'B359_S2_3',
+    [ContextFields.LABEL]: 'Comment-Code Inconsistency Detection',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'B359_S2',
+  },
+  {
+    id: 'B359_S3',
+    [ContextFields.LABEL]: 'Project Properties',
+    [ContextFields.SUB]: ['B359_S3_1', 'B359_S3_2'],
+  },
+  {
+    id: 'B359_S3_1',
+    [ContextFields.LABEL]: 'larger software systems with lots of comments',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
+    [ContextFields.PARENT]: 'B359_S3',
+  },
+  {
+    id: 'B359_S3_2',
+    [ContextFields.LABEL]: 'software systems without a standard towards comments',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
+    [ContextFields.PARENT]: 'B359_S3',
+  },
+];
 
 
 export const B359: AnalysisPaperData = {

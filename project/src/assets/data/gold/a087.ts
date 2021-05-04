@@ -2,10 +2,103 @@ import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFi
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck, Dimension} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_A087: MergedContextData[] = [];
+export const CONTEXT_A087: MergedContextData[] = [
+  {
+    id: 'A087_S1',
+    [ContextFields.LABEL]: 'Bug Handling',
+    [ContextFields.SUB]: ['A087_S1_1', 'A087_S1_2'],
+    [ContextFields.IDENTICAL]: ['B535_S3']
+  },
+  {
+    id: 'A087_S1_1',
+    [ContextFields.LABEL]: 'Root-Cause Analysis',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'A087_S1'
+  },
+  {
+    id: 'A087_S1_2',
+    [ContextFields.LABEL]: 'Delta Debugging',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A087_S1'
+  },
+  {
+    id: 'A087_S2',
+    [ContextFields.LABEL]: 'Software Tools',
+    [ContextFields.SUB]: ['A087_S2_1', 'A087_S2_2', 'A087_S2_2'],
+  },
+  {
+    id: 'A087_S2_1',
+    [ContextFields.LABEL]: 'Eclipse Plugin',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'A087_S2'
+  },
+  {
+    id: 'A087_S2_2',
+    [ContextFields.LABEL]: 'Java Programs',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.DIMENSION]: Dimension.APPLICATION,
+    [ContextFields.PARENT]: 'A087_S2'
+  },
+  {
+    id: 'A087_S2_3',
+    [ContextFields.LABEL]: 'JUnit Interfaces',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.DIMENSION]: Dimension.APPLICATION,
+    [ContextFields.PARENT]: 'A087_S2'
+  },
+  {
+    id: 'A087_3',
+    [ContextFields.LABEL]: 'TDD',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
+  },
+  {
+    id: 'A087_S4',
+    [ContextFields.LABEL]: 'Test Characteristics',
+    [ContextFields.SUB]: ['A087_S4_1', 'A087_S4_2'],
+  },
+  {
+    id: 'A087_S4_1',
+    [ContextFields.LABEL]: 'single argument tests with string or primitive arguments',
+    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.LIMITATIONS,
+    [ContextFields.PARENT]: 'A087_S4'
+  },
+  {
+    id: 'A087_S4_2',
+    [ContextFields.LABEL]: 'multiple argument tests',
+    [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.LIMITATIONS,
+    [ContextFields.PARENT]: 'A087_S4'
+  },
+  {
+    id: 'A087_S5',
+    [ContextFields.LABEL]: 'Code Ownership',
+    [ContextFields.SUB]: ['A087_S5_1', 'A087_S5_2'],
+  },
+  {
+    id: 'A087_S5_1',
+    [ContextFields.LABEL]: 'debugging other s code',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'A087_S5'
+  },
+  {
+    id: 'A087_S5_2',
+    [ContextFields.LABEL]: 'debugging own/familiar code',
+    [ContextFields.ZWECK]: Zweck.VAGUE_VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'A087_S5'
+  },
+];
 
 
 export const A087: AnalysisPaperData = {

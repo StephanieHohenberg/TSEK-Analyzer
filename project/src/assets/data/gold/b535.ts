@@ -3,9 +3,157 @@ import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
 import {getContextTableData} from '../context/context.util';
-import {MergedContextData} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck, Dimension} from '../../../app/data/context.data';
 
-export const CONTEXT_B535: MergedContextData[] = [];
+export const CONTEXT_B535: MergedContextData[] = [
+  {
+    id: 'B535_S1',
+    [ContextFields.LABEL]: 'Crowdworking',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.SUB]: ['B535_S1_1', 'B535_S1_2'],
+  },
+  {
+    id: 'B535_S1_1',
+    [ContextFields.LABEL]: 'Crowdsource Software Development',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
+    [ContextFields.PARENT]: 'B535_S1'
+  },
+  {
+    id: 'B535_S1_2',
+    [ContextFields.LABEL]: 'Crowdtesting',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
+    [ContextFields.PARENT]: 'B535_S1'
+  },
+  {
+    id: 'B535_S2',
+    [ContextFields.LABEL]: 'Recommendation Systems',
+    [ContextFields.SUB]: ['B535_S2_1', 'B535_S2_2', 'B535_S2_3', 'B535_S2_4'],
+  },
+  {
+    id: 'B535_S2_1',
+    [ContextFields.LABEL]: 'Crowdworker Recommendation',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'B535_S2'
+  },
+  {
+    id: 'B535_S2_2',
+    [ContextFields.LABEL]: 'Code Review Recommendation',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'B535_S2'
+  },
+  {
+    id: 'B535_S2_3',
+    [ContextFields.LABEL]: 'Expert Recommendation',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'B535_S2'
+  },
+  {
+    id: 'B535_S2_4',
+    [ContextFields.LABEL]: 'Developer Recommendation',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'B535_S2'
+  },
+  {
+    id: 'B535_S3',
+    [ContextFields.LABEL]: 'Bug Handling',
+    [ContextFields.SUB]: ['B535_S3_1', 'B535_S3_2'],
+    [ContextFields.IDENTICAL]: ['B535_S3']
+  },
+  {
+    id: 'B535_S3_1',
+    [ContextFields.LABEL]: 'Bug Detection',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.BACKGROUND,
+    [ContextFields.PARENT]: 'B535_S3'
+  },
+  {
+    id: 'B535_S3_2',
+    [ContextFields.LABEL]: 'Bug Triage',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'B535_S3'
+  },
+  {
+    id: 'B535_S4',
+    [ContextFields.LABEL]: 'Project Characteristics',
+    [ContextFields.IDENTICAL]: ['A654_S4'],
+    [ContextFields.SUB]: ['B535_S4_1', 'B535_S4_2', 'B535_S4_3'],
+  },
+  {
+    id: 'B535_S4_1',
+    [ContextFields.LABEL]: 'Open Source Software',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B535_S4'
+  },
+  {
+    id: 'B535_S4_2',
+    [ContextFields.LABEL]: 'On Demand  Web Storage',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B535_S4'
+  },
+  {
+    id: 'B535_S4_3',
+    [ContextFields.LABEL]: 'Crowdsource Software',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B535_S4'
+  },
+  {
+    id: 'B535_5',
+    [ContextFields.LABEL]: 'Crowdtesting Platform',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.DIMENSION]: Dimension.APPLICATION,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+  },
+  {
+    id: 'B535_S6',
+    [ContextFields.LABEL]: 'Types of Tests',
+    [ContextFields.IDENTICAL]: ['A309_S4', 'B435_S1'],
+    [ContextFields.SUB]: ['B535_S6_1', 'B535_S6_2', 'B535_S6_3', 'B535_S6_4'],
+  },
+  {
+    id: 'B535_S6_1',
+    [ContextFields.LABEL]: 'Functional Tests',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.IDENTICAL]: ['A309_S4_1'],
+    [ContextFields.PARENT]: 'B535_S6'
+  },
+  {
+    id: 'B535_S6_2',
+    [ContextFields.LABEL]: 'Usability Tests',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.IDENTICAL]: ['A309_S4_2'],
+    [ContextFields.PARENT]: 'B535_S6'
+  },
+  {
+    id: 'B535_S6_3',
+    [ContextFields.LABEL]: 'Security Tests',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'B535_S6'
+  },
+  {
+    id: 'B535_S6_4',
+    [ContextFields.LABEL]: 'Performance Tests',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.IDENTICAL]: ['B435_S1_1'],
+    [ContextFields.PARENT]: 'B535_S6'
+  },
+];
 
 export const B535: AnalysisPaperData = {
   [AnalysisPaperFields.GENERAL_DATA]: {

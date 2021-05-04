@@ -3,9 +3,201 @@ import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
 import {getContextTableData} from '../context/context.util';
-import {MergedContextData} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 
-export const CONTEXT_B159: MergedContextData[] = [];
+export const CONTEXT_B159: MergedContextData[] = [
+  {
+    id: 'B159_S1',
+    [ContextFields.LABEL]: 'DL Frameworks',
+    [ContextFields.IDENTICAL]: ['B110_S2'],
+    [ContextFields.SUB]: ['B159_S1_1', 'B159_S1_2', 'B159_S1_3', 'B159_S1_4'],
+  },
+  {
+    id: 'B159_S1_1',
+    [ContextFields.LABEL]: 'Tensorflow',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.IDENTICAL]: ['B110_S2_1'],
+    [ContextFields.PARENT]: 'B159_S1',
+  },
+  {
+    id: 'B159_S1_2',
+    [ContextFields.LABEL]: 'MXNet',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B159_S1',
+  },
+  {
+    id: 'B159_S1_3',
+    [ContextFields.LABEL]: 'Pytorch',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.IDENTICAL]: ['B110_S2_3'],
+    [ContextFields.PARENT]: 'B159_S1',
+  },
+  {
+    id: 'B159_S1_4',
+    [ContextFields.LABEL]: 'CNTK',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B159_S1',
+  },
+  {
+    id: 'B159_S2',
+    [ContextFields.LABEL]: 'SE Activities',
+    [ContextFields.SUB]: ['B159_S2_1', 'B159_S2_2', 'B159_S2_3', 'B159_S2_4'],
+  },
+  {
+    id: 'B159_S2_1',
+    [ContextFields.LABEL]: 'Root-cause and bugfixing',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B159_S2',
+  },
+  {
+    id: 'B159_S2_2',
+    [ContextFields.LABEL]: 'Testing',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B159_S2',
+  },
+  {
+    id: 'B159_S2_3',
+    [ContextFields.LABEL]: 'Debugging',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B159_S2',
+  },
+  {
+    id: 'B159_S2_4',
+    [ContextFields.LABEL]: 'Fault localization',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B159_S2',
+  },
+  {
+    id: 'B159_S3',
+    [ContextFields.LABEL]: 'DL Applications',
+    [ContextFields.IDENTICAL]: ['B110_S3'],
+    [ContextFields.SUB]: ['B159_S3_1', 'B159_S3_2', 'B159_S3_3'],
+  },
+  {
+    id: 'B159_S3_1',
+    [ContextFields.LABEL]: 'Speech and image recognition',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B159_S3',
+  },
+  {
+    id: 'B159_S3_2',
+    [ContextFields.LABEL]: 'Natural language processing',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B159_S3',
+  },
+  {
+    id: 'B159_S3_3',
+    [ContextFields.LABEL]: 'Gaming with reinforcement learning',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B159_S3',
+  },
+  {
+    id: 'B159_S4',
+    [ContextFields.LABEL]: 'DL Platforms',
+    [ContextFields.SUB]: ['B159_S4_1', 'B159_S4_2', 'B159_S4_3', 'B159_S4_4', 'B159_S4_5'],
+  },
+  {
+    id: 'B159_S4_1',
+    [ContextFields.LABEL]: 'Microsoft Azure Machine Learning',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B159_S4',
+  },
+  {
+    id: 'B159_S4_2',
+    [ContextFields.LABEL]: 'Amazon SageMaker',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B159_S4',
+  },
+  {
+    id: 'B159_S4_3',
+    [ContextFields.LABEL]: 'Google Cloud AI',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B159_S4',
+  },
+  {
+    id: 'B159_S4_4',
+    [ContextFields.LABEL]: 'Philly',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'B159_S4',
+  },
+  {
+    id: 'B159_S4_5',
+    [ContextFields.LABEL]: 'other DL platforms',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'B159_S4',
+  },
+
+  {
+    id: 'B159_S5',
+    [ContextFields.LABEL]: 'Program Failures',
+    [ContextFields.SUB]: ['B159_S5_1', 'B159_S5_2', 'B159_S5_3', 'B159_S5_4', 'B159_S5_5', 'B159_S5_6', 'B159_S5_7'],
+  },
+  {
+    id: 'B159_S5_1',
+    [ContextFields.LABEL]: 'Code/Script Defects',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B159_S5',
+  },
+  {
+    id: 'B159_S5_2',
+    [ContextFields.LABEL]: 'Hardware Failures',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B159_S5',
+  },
+  {
+    id: 'B159_S5_3',
+    [ContextFields.LABEL]: 'System Failures',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B159_S5',
+  },
+  {
+    id: 'B159_S5_4',
+    [ContextFields.LABEL]: 'ML/DL Bugs',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'B159_S5',
+  },
+  {
+    id: 'B159_S5_5',
+    [ContextFields.LABEL]: 'non-deterministic bugs in SQL-like MapReduce programs',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'B159_S5',
+  },
+  {
+    id: 'B159_S5_6',
+    [ContextFields.LABEL]: 'code/data defects in distributed data-parallel programs',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'B159_S5',
+  },
+  {
+    id: 'B159_S5_7',
+    [ContextFields.LABEL]: 'users errors',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'B159_S5',
+  },
+];
 
 export const B159: AnalysisPaperData = {
   [AnalysisPaperFields.GENERAL_DATA]: {

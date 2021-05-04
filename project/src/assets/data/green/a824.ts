@@ -2,10 +2,106 @@ import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFi
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
-import {MergedContextData} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_A824: MergedContextData[] = [];
+export const CONTEXT_A824: MergedContextData[] = [
+  {
+    id: 'A824_S1',
+    [ContextFields.LABEL]: 'Static Analysis',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.SUB]: ['A824_S1_1', 'A824_S1_2'],
+  },
+  {
+    id: 'A824_S1_1',
+    [ContextFields.LABEL]: 'Bug detection',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'A824_S1',
+  },
+  {
+    id: 'A824_S1_2',
+    [ContextFields.LABEL]: 'QA',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'A824_S1',
+  },
+  {
+    id: 'A824_2',
+    [ContextFields.LABEL]: 'Program Transformation',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+  },
+  {
+    id: 'A824_S3',
+    [ContextFields.LABEL]: 'Programming Languages',
+    [ContextFields.SUB]: ['A824_S3_1', 'A824_S3_2', 'A824_S3_3'],
+  },
+  {
+    id: 'A824_S3_1',
+    [ContextFields.LABEL]: 'Java',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'A824_S3',
+  },
+  {
+    id: 'A824_S3_2',
+    [ContextFields.LABEL]: 'C',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'A824_S3',
+  },
+  {
+    id: 'A824_S3_3',
+    [ContextFields.LABEL]: 'PHP',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'A824_S3',
+  },
+  {
+    id: 'A824_S4',
+    [ContextFields.LABEL]: 'Analysis Tools',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.CONCLUSION,
+    [ContextFields.SUB]: ['A824_S4_1', 'A824_S4_2', 'A824_S4_3', 'A824_S4_4', 'A824_S4_5'],
+  },
+  {
+    id: 'A824_S4_1',
+    [ContextFields.LABEL]: 'Clang',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A824_S4',
+  },
+  {
+    id: 'A824_S4_2',
+    [ContextFields.LABEL]: 'Infer',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A824_S4',
+  },
+  {
+    id: 'A824_S4_3',
+    [ContextFields.LABEL]: 'PHPStan',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A824_S4',
+  },
+  {
+    id: 'A824_S4_4',
+    [ContextFields.LABEL]: 'SpotBugs',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A824_S4',
+  },
+  {
+    id: 'A824_S4_5',
+    [ContextFields.LABEL]: 'CodeSonar',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A824_S4',
+  },
+];
 
 
 export const A824: AnalysisPaperData = {

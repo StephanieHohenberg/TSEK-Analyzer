@@ -2,10 +2,49 @@ import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFi
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
-import {MergedContextData} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_A752: MergedContextData[] = [];
+export const CONTEXT_A752: MergedContextData[] = [
+  {
+    id: 'A752_1',
+    [ContextFields.LABEL]: 'Configuration Script Defects',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+  },
+  {
+    id: 'A752_S2',
+    [ContextFields.LABEL]: 'IaC Tools',
+    [ContextFields.SUB]: ['A752_S2_1', 'A752_S2_2', 'A752_S2_3'],
+  },
+  {
+    id: 'A752_S2_1',
+    [ContextFields.LABEL]: 'Puppet',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A752_S2',
+  },
+  {
+    id: 'A752_S2_2',
+    [ContextFields.LABEL]: 'Chef',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'A752_S2',
+  },
+  {
+    id: 'A752_S2_3',
+    [ContextFields.LABEL]: 'CFEnginge',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'A752_S2',
+  },
+  {
+    id: 'A752_S3',
+    [ContextFields.LABEL]: 'OSS datasets with Puppet Scripts',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+  },
+];
 
 
 export const A752: AnalysisPaperData = {

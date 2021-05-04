@@ -26,46 +26,37 @@ export const CONTEXT_A641: MergedContextData[] = [
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
   },
   {
-    id: 'A641_4',
-    [ContextFields.LABEL]: 'sentence-wise feature request detection',
-    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
-    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    id: 'A641_S3',
+    [ContextFields.LABEL]: 'text classification',
+    [ContextFields.SUB]: ['A641_S3_1', 'A641_S3_2', 'A641_S3_3', 'A641_S3_4'],
   },
   {
-    id: 'A641_5',
+    id: 'A641_S3_1',
     [ContextFields.LABEL]: 'sentence-wise classifier',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION, // Vorkommen.CONCLUSION
+    [ContextFields.PARENT]: 'A641_S3',
   },
   {
-    id: 'A641_6',
+    id: 'A641_S3_2',
     [ContextFields.LABEL]: 'dialog-wise classifier',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A641_S3',
   },
   {
-    id: 'A641_7',
+    id: 'A641_S3_3',
     [ContextFields.LABEL]: '(traditional) text classification approach',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION, // Vorkommen.CONCLUSION
+    [ContextFields.PARENT]: 'A641_S3',
   },
   {
-    id: 'A641_8',
+    id: 'A641_S3_4',
     [ContextFields.LABEL]: 'model based approach',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-  },
-  {
-    id: 'A641_9',
-    [ContextFields.LABEL]: 'open source projects',
-    [ContextFields.ZWECK]: Zweck.VAGUE_VERALLGEMEINBARKEIT,
-    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-  },
-  {
-    id: 'A641_10',
-    [ContextFields.LABEL]: 'closed source projects',
-    [ContextFields.ZWECK]: Zweck.VAGUE_VERALLGEMEINBARKEIT,
-    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'A641_S3',
   },
   {
     id: 'A641_11',
@@ -74,22 +65,30 @@ export const CONTEXT_A641: MergedContextData[] = [
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
   },
   {
-    id: 'A641_12',
+    id: 'A641_S2',
+    [ContextFields.LABEL]: 'Project Properties',
+    [ContextFields.SUB]: ['A641_S2_1', 'A641_S2_2', 'A641_S2_3'],
+  },
+  {
+    id: 'A641_S2_1',
     [ContextFields.LABEL]: 'Projekte mit Online Chatting',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A641_S2',
   },
   {
-    id: 'A641_13',
-    [ContextFields.LABEL]: 'englisch-sprachige Projekte',
+    id: 'A641_S2_2',
+    [ContextFields.LABEL]: 'english speaking projects',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.DATA_PREPARATION,
+    [ContextFields.PARENT]: 'A641_S2',
   },
   {
-    id: 'A641_14',
+    id: 'A641_S2_3',
     [ContextFields.LABEL]: 'cross-project settings',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RESULTS_ANALYSIS,
+    [ContextFields.PARENT]: 'A641_S2',
   },
   // SUBTREES:
   {

@@ -3,9 +3,94 @@ import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
 import {getContextTableData} from '../context/context.util';
-import {MergedContextData} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 
-export const CONTEXT_A322: MergedContextData[] = [];
+export const CONTEXT_A322: MergedContextData[] = [
+  {
+    id: 'A322_S1',
+    [ContextFields.LABEL]: 'Mobile Applications',
+    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.IDENTICAL]: ['A481_S1', 'A309_S1'],
+    [ContextFields.SUB]: ['A322_S1_1', 'A481_S1'],
+  },
+  {
+    id: 'A322_S1_1',
+    [ContextFields.LABEL]: 'Android  application',
+    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.IDENTICAL]: ['A481_S1_1', 'A309_S1_1'],
+    [ContextFields.PARENT]: 'A322_S1',
+  },
+  {
+    id: 'A322_S2',
+    [ContextFields.LABEL]: 'Application Properties',
+    [ContextFields.SUB]: ['A322_S2_1', 'A322_S2_2', 'A322_S2_3', 'A322_S2_4', 'A322_S2_5', 'A322_S2_6', 'A322_S2_7', 'A322_S2_8', 'A322_S2_9'],
+  },
+  {
+    id: 'A322_S2_1',
+    [ContextFields.LABEL]: 'GUI design',
+    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'A322_S2',
+  },
+  {
+    id: 'A322_S2_2',
+    [ContextFields.LABEL]: 'accessibility',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'A322_S2',
+  },
+  {
+    id: 'A322_S2_3',
+    [ContextFields.LABEL]: 'compatibility',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'A322_S2',
+  },
+  {
+    id: 'A322_S2_4',
+    [ContextFields.LABEL]: 'performance',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'A322_S2',
+  },
+  {
+    id: 'A322_S2_5',
+    [ContextFields.LABEL]: 'energy efficiency',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'A322_S2',
+  },
+  {
+    id: 'A322_S2_6',
+    [ContextFields.LABEL]: 'GUI animation linting',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'A322_S2',
+  },
+  {
+    id: 'A322_S2_7',
+    [ContextFields.LABEL]: 'localization',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'A322_S2',
+  },
+  {
+    id: 'A322_S2_8',
+    [ContextFields.LABEL]: 'privacy',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'A322_S2',
+  },
+  {
+    id: 'A322_S2_9',
+    [ContextFields.LABEL]: 'security',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'A322_S2',
+  },
+];
 
 export const A322: AnalysisPaperData = {
   [AnalysisPaperFields.GENERAL_DATA]: {

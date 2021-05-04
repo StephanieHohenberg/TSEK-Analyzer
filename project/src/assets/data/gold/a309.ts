@@ -3,9 +3,60 @@ import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
 import {getContextTableData} from '../context/context.util';
-import {MergedContextData} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 
-export const CONTEXT_A309: MergedContextData[] = [];
+export const CONTEXT_A309: MergedContextData[] = [
+  {
+    id: 'A309_S1',
+    [ContextFields.LABEL]: 'Mobile Applications',
+    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.IDENTICAL]: ['A322_S1', 'A481_S1'],
+    [ContextFields.SUB]: ['A322_S1_1'],
+  },
+  {
+    id: 'A309_S1_1',
+    [ContextFields.LABEL]: 'Android  application',
+    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.IDENTICAL]: ['A322_S1_1', 'A481_S1_1'],
+    [ContextFields.PARENT]: 'A309_S1',
+  },
+  {
+    id: 'A309_2',
+    [ContextFields.LABEL]: 'Crowdsource Testing',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+  },
+  {
+    id: 'A309_3',
+    [ContextFields.LABEL]: 'Responsive WebPages with mobile testing',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
+  },
+  {
+    id: 'A309_S4',
+    [ContextFields.LABEL]: 'Types of Tests',
+    [ContextFields.IDENTICAL]: ['B535_S6', 'B435_S1'],
+    [ContextFields.SUB]: ['A309_S4_1', 'A309_S4_2' ],
+  },
+  {
+    id: 'A309_S4_1',
+    [ContextFields.LABEL]: 'Functional Tests',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.IDENTICAL]: ['B535_S6_1'],
+    [ContextFields.PARENT]: 'A309_S4'
+  },
+  {
+    id: 'A309_S4_2',
+    [ContextFields.LABEL]: 'Usability Tests',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.IDENTICAL]: ['B535_S6_2'],
+    [ContextFields.PARENT]: 'A309_S4'
+  },
+];
 
 export const A309: AnalysisPaperData = {
   [AnalysisPaperFields.GENERAL_DATA]: {

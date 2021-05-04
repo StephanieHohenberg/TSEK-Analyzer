@@ -3,9 +3,103 @@ import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
 import {getContextTableData} from '../context/context.util';
-import {MergedContextData} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 
-export const CONTEXT_B435: MergedContextData[] = [];
+export const CONTEXT_B435: MergedContextData[] = [
+  {
+    id: 'B435_S1',
+    [ContextFields.LABEL]: 'Types of Tests',
+    [ContextFields.IDENTICAL]: ['A309_S4', 'B535_S6'],
+    [ContextFields.SUB]: ['B435_S1_1'],
+  },
+  {
+    id: 'B435_S1_1',
+    [ContextFields.LABEL]: 'Performance Tests',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.IDENTICAL]: ['B535_S6_4'],
+    [ContextFields.PARENT]: 'B435_S1'
+  },
+  {
+    id: 'B435_2',
+    [ContextFields.LABEL]: 'DevOps',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+  },
+  {
+    id: 'B435_S2',
+    [ContextFields.LABEL]: 'Performance Issues',
+    [ContextFields.SUB]: ['B435_S2_1', 'B435_S2_2', 'B435_S2_3', 'B435_S2_4', 'B435_S2_5', 'B435_S2_6'],
+  },
+  {
+    id: 'B435_S2_1',
+    [ContextFields.LABEL]: 'Elapsed Time',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'B435_S2'
+  },
+  {
+    id: 'B435_S2_2',
+    [ContextFields.LABEL]: 'CPU Usage',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'B435_S2'
+  },
+  {
+    id: 'B435_S2_3',
+    [ContextFields.LABEL]: 'Memory Usage',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'B435_S2'
+  },
+  {
+    id: 'B435_S2_4',
+    [ContextFields.LABEL]: 'I/O Read',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'B435_S2'
+  },
+  {
+    id: 'B435_S2_5',
+    [ContextFields.LABEL]: 'I/O Write',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'B435_S2'
+  },
+  {
+    id: 'B435_S2_6',
+    [ContextFields.LABEL]: 'Other Performance Issues',
+    [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'B435_S2'
+  },
+  {
+    id: 'B435_S3',
+    [ContextFields.LABEL]: 'application characteristics',
+    [ContextFields.SUB]: ['B435_S3_1', 'B435_S3_2', 'B435_S3_3'],
+  },
+  {
+    id: 'B435_S3_1',
+    [ContextFields.LABEL]: 'large-scale systems',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B435_S3'
+  },
+  {
+    id: 'B435_S3_2',
+    [ContextFields.LABEL]: 'distributed database management system',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.PARENT]: 'B435_S3'
+  },
+  {
+    id: 'B435_S3_3',
+    [ContextFields.LABEL]: 'distributed database processing system',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.PARENT]: 'B435_S3'
+  },
+];
 
 export const B435: AnalysisPaperData = {
   [AnalysisPaperFields.GENERAL_DATA]: {

@@ -2,10 +2,57 @@ import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFi
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
-import {MergedContextData} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_A566: MergedContextData[] = [];
+export const CONTEXT_A566: MergedContextData[] = [
+  {
+    id: 'A566_S1',
+    [ContextFields.LABEL]: 'Data-driven defect prediction',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.SUB]: ['A566_S1_1'],
+  },
+  {
+    id: 'A566_S1_1',
+    [ContextFields.LABEL]: 'Cross-project defect prediction',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'A566_S1',
+  },
+  {
+    id: 'A566_S2',
+    [ContextFields.LABEL]: 'Project Characteristics',
+    [ContextFields.SUB]: ['A566_S2_1', 'A566_S2_2', 'A566_S2_3'],
+  },
+  {
+    id: 'A566_S2_1',
+    [ContextFields.LABEL]: 'projects with limited software quality assurance resources',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A566_S2',
+  },
+  {
+    id: 'A566_S2_2',
+    [ContextFields.LABEL]: 'brand new projects',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A566_S2',
+  },
+  {
+    id: 'A566_S2_3',
+    [ContextFields.LABEL]: 'small projects',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A566_S2',
+  },
+  {
+    id: 'A566_S3',
+    [ContextFields.LABEL]: 'CPDP techniques and datasets',
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+  },
+];
 
 
 export const A566: AnalysisPaperData = {
