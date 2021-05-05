@@ -38,6 +38,27 @@ import {CONTEXT_B061} from '../green red/b061';
 import {CONTEXT_A284} from '../green red/a284';
 import {CONTEXT_A125} from '../green red/a125';
 import {CONTEXT_B049} from '../green red/b049';
+import {CONTEXT_B273} from '../green red/b273';
+import {CONTEXT_A335} from '../green red/a335';
+import {CONTEXT_B261} from '../green red/b261';
+import {CONTEXT_B024} from '../green red/b024';
+import {CONTEXT_A615} from '../green red/a615';
+import {CONTEXT_B410} from '../green red/b410';
+import {CONTEXT_A026} from '../green red/a026';
+import {CONTEXT_A542} from '../green red/a542';
+import {CONTEXT_A075} from '../green red/a075';
+import {CONTEXT_A530} from '../green red/a530';
+import {CONTEXT_B459} from '../green red/b459';
+import {CONTEXT_A765} from '../green red/a765';
+import {CONTEXT_B248} from '../green red/b248';
+import {CONTEXT_A271} from '../green red/a271';
+import {CONTEXT_A678} from '../green red/a678';
+import {CONTEXT_A986} from '../green red/a986';
+import {CONTEXT_B122} from '../green red/b122';
+import {CONTEXT_B135} from '../green red/b135';
+import {CONTEXT_B509} from '../green red/b509';
+import {CONTEXT_B098} from '../green red/b098';
+import {CONTEXT_B086} from '../green red/b086';
 
 export function getContextMap(): Map<string, ContextData> {
   const map = new Map<string, ContextData>();
@@ -73,10 +94,31 @@ function getContextDataOfAllPapers(): ContextData[][] {
 
   // green red
   const greenRedContext = [
-    getContextData([...CONTEXT_B061]),
-    getContextData([...CONTEXT_A284]),
-    getContextData([...CONTEXT_A125]),
+    getContextData([...CONTEXT_B273]),
+    getContextData([...CONTEXT_A335]),
+    getContextData([...CONTEXT_B261]),
+    getContextData([...CONTEXT_B024]),
+    getContextData([...CONTEXT_A615]),
+    getContextData([...CONTEXT_B410]),
+    getContextData([...CONTEXT_A026]),
+    getContextData([...CONTEXT_A542]),
+    getContextData([...CONTEXT_A075]),
+    getContextData([...CONTEXT_A530]),
+    getContextData([...CONTEXT_B459]),
+    getContextData([...CONTEXT_A765]),
+    getContextData([...CONTEXT_B248]),
+    getContextData([...CONTEXT_A271]),
+    getContextData([...CONTEXT_A678]),
+    getContextData([...CONTEXT_A986]),
+    getContextData([...CONTEXT_B122]),
+    getContextData([...CONTEXT_B135]),
+    getContextData([...CONTEXT_B509]),
+    getContextData([...CONTEXT_B098]),
+    getContextData([...CONTEXT_B086]),
     getContextData([...CONTEXT_B049]),
+    getContextData([...CONTEXT_A125]),
+    getContextData([...CONTEXT_A284]),
+    getContextData([...CONTEXT_B061]),
   ];
 
   const greenContext = [

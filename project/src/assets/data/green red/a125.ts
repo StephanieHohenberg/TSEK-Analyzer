@@ -119,7 +119,7 @@ export const A125 = {
   [AnalysisPaperFields.CONTEXTS]: getContextTableData([ ...CONTEXT_A125 ]),
   [AnalysisPaperFields.GENERALIZATION]: {
     [GeneralizationFields.AUFTEILUNG_1]: true,
-    [GeneralizationFields.SECTION_THREATS]: 'kurz',
+    [GeneralizationFields.SECTION_THREATS]: 'short',
     [GeneralizationFields.SECTION_LIMITATIONS]: true,
     [GeneralizationFields.SECTION_FUTURE_WORK]: true,
   },

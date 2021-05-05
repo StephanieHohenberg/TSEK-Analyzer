@@ -37,6 +37,27 @@ import {B049} from './green red/b049';
 import {A125} from './green red/a125';
 import {A284} from './green red/a284';
 import {B061} from './green red/b061';
+import {B273} from './green red/b273';
+import {A335} from './green red/a335';
+import {B261} from './green red/b261';
+import {B024} from './green red/b024';
+import {A615} from './green red/a615';
+import {B410} from './green red/b410';
+import {A026} from './green red/a026';
+import {A542} from './green red/a542';
+import {A075} from './green red/a075';
+import {B459} from './green red/b459';
+import {A530} from './green red/a530';
+import {B248} from './green red/b248';
+import {A271} from './green red/a271';
+import {A765} from './green red/a765';
+import {A986} from './green red/a986';
+import {A678} from './green red/a678';
+import {B122} from './green red/b122';
+import {B135} from './green red/b135';
+import {B509} from './green red/b509';
+import {B098} from './green red/b098';
+import {B086} from './green red/b086';
 
 
 export function getDataMap(): Map<string, AnalysisPaperData>{
@@ -61,10 +82,31 @@ export function getDataMap(): Map<string, AnalysisPaperData>{
   map.set('b159', B159);
 
   // green red
-  map.set('b061', B061);
-  map.set('a284', A284);
-  map.set('a125', A125);
+  map.set('b273', B273);
+  map.set('a335', A335);
+  map.set('b261', B261);
+  map.set('b024', B024);
+  map.set('a615', A615);
+  map.set('b410', B410);
+  map.set('a026', A026);
+  map.set('a542', A542);
+  map.set('a075', A075);
+  map.set('a530', A530);
+  map.set('b459', B459);
+  map.set('a765', A765);
+  map.set('b248', B248);
+  map.set('a271', A271);
+  map.set('a678', A678);
+  map.set('a986', A986);
+  map.set('b122', B122);
+  map.set('b135', B135);
+  map.set('b509', B509);
+  map.set('b098', B098);
+  map.set('B086', B086);
   map.set('b049', B049);
+  map.set('a125', A125);
+  map.set('a284', A284);
+  map.set('b061', B061);
 
 
   // green
