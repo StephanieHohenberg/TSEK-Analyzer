@@ -102,7 +102,7 @@ export function getDataMap(): Map<string, AnalysisPaperData>{
   map.set('b135', B135);
   map.set('b509', B509);
   map.set('b098', B098);
-  map.set('B086', B086);
+  map.set('b086', B086);
   map.set('b049', B049);
   map.set('a125', A125);
   map.set('a284', A284);

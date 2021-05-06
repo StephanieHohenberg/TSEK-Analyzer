@@ -5,7 +5,66 @@ import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.dat
 import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_A542: MergedContextData[] = [];
+export const CONTEXT_A542: MergedContextData[] = [
+  {
+    id: 'A542_1',
+    [ContextFields.LABEL]: 'Security',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+  },
+  {
+    id: 'A542_S2',
+    [ContextFields.LABEL]: 'Blockchain Technologies',
+    [ContextFields.SUB]: ['A542_S2_1', 'A542_S2_2']
+  },
+  {
+    id: 'A542_S2_1',
+    [ContextFields.LABEL]: 'Solidity',
+    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'A542_S2',
+  },
+  {
+    id: 'A542_S2_1',
+    [ContextFields.LABEL]: 'Ethereum',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'A542_S2',
+  },
+  {
+    id: 'A542_S3',
+    [ContextFields.LABEL]: 'Applications',
+    [ContextFields.SUB]: ['A542_S3_1', 'A542_S3_2', 'A542_S3_3', 'A542_S3_4']
+  },
+  {
+    id: 'A542_S3_1',
+    [ContextFields.LABEL]: 'Crypto Currency',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A542_S3',
+  },
+  {
+    id: 'A542_S3_2',
+    [ContextFields.LABEL]: 'Games',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A542_S3',
+  },
+  {
+    id: 'A542_S3_3',
+    [ContextFields.LABEL]: 'Financial Services',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A542_S3',
+  },
+  {
+    id: 'A542_S3_4',
+    [ContextFields.LABEL]: 'Security-Critical Applications',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A542_S3',
+  },
+];
 
 export const A542 = {
   [AnalysisPaperFields.GENERAL_DATA]: {

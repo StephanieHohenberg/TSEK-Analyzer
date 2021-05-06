@@ -5,7 +5,88 @@ import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.dat
 import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_B086: MergedContextData[] = [];
+export const CONTEXT_B086: MergedContextData[] = [
+  {
+    id: 'B086_0',
+    [ContextFields.LABEL]: 'Data Science',
+    [ContextFields.SUB]: ['B086_S1'],
+  },
+  {
+    id: 'B086_S1',
+    [ContextFields.LABEL]: 'Data Processing',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B086_0',
+    [ContextFields.SUB]: ['B086_S1_1', 'B086_S1_2', 'B086_S1_3', 'B086_S1_4', 'B086_S1_5'],
+  },
+  {
+    id: 'B086_S1_1',
+    [ContextFields.LABEL]: 'Preprocessing Data Input',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B086_S1',
+  },
+  {
+    id: 'B086_S1_2',
+    [ContextFields.LABEL]: 'Training Models',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B086_S1',
+  },
+  {
+    id: 'B086_S1_3',
+    [ContextFields.LABEL]: 'Tuning Aguments or Parameters',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B086_S1',
+  },
+  {
+    id: 'B086_S1_4',
+    [ContextFields.LABEL]: 'Adding Analysis Functions',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B086_S1',
+  },
+  {
+    id: 'B086_S1_5',
+    [ContextFields.LABEL]: 'Propagating Changes',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'B086_S1',
+  },
+  {
+    id: 'B086_2',
+    [ContextFields.LABEL]: 'Debugging Data Analysis Scripts',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+  },
+  {
+    id: 'B086_S3',
+    [ContextFields.LABEL]: 'Programming Languages',
+    [ContextFields.SUB]: ['B086_S3_1', 'B086_S3_2', 'B086_S3_3'],
+  },
+  {
+    id: 'B086_S3_1',
+    [ContextFields.LABEL]: 'Python',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.DISCUSSION,
+    [ContextFields.PARENT]: 'B086_S3',
+  },
+  {
+    id: 'B086_S3_2',
+    [ContextFields.LABEL]: 'Adaptation to other Languages',
+    [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.DISCUSSION,
+    [ContextFields.PARENT]: 'B086_S3',
+  },
+  {
+    id: 'B086_S3_3',
+    [ContextFields.LABEL]: 'Language-agnostic',
+    [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.DISCUSSION,
+    [ContextFields.PARENT]: 'B086_S3',
+  },
+];
 
 export const B086 = {
   [AnalysisPaperFields.GENERAL_DATA]: {

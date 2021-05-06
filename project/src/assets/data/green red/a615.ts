@@ -5,7 +5,40 @@ import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.dat
 import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_A615: MergedContextData[] = [];
+export const CONTEXT_A615: MergedContextData[] = [
+  {
+    id: 'A615_1',
+    [ContextFields.LABEL]: 'Testing',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+  },
+  {
+    id: 'A335_S2',
+    [ContextFields.LABEL]: 'Applications',
+    [ContextFields.SUB]: ['A335_S2_1', 'A335_S2_2', 'A335_S2_3'],
+  },
+  {
+    id: 'A335_S2_1',
+    [ContextFields.LABEL]: 'Test Suite based program repair',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'A335_S2',
+  },
+  {
+    id: 'A335_S2_2',
+    [ContextFields.LABEL]: 'Java Programs',
+    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'A335_S2',
+  },
+  {
+    id: 'A335_S2_3',
+    [ContextFields.LABEL]: 'Standalone Automated Program Repair Systems',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.PARENT]: 'A335_S2',
+  },
+];
 
 export const A615 = {
   [AnalysisPaperFields.GENERAL_DATA]: {

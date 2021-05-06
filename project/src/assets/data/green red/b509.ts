@@ -5,7 +5,40 @@ import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.dat
 import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_B509: MergedContextData[] = [];
+export const CONTEXT_B509: MergedContextData[] = [
+  {
+    id: 'B509_1',
+    [ContextFields.LABEL]: 'Highly Configurable Software',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+  },
+  {
+    id: 'B509_S2',
+    [ContextFields.LABEL]: 'Product Discovery',
+    [ContextFields.SUB]: ['B509_S2_1', 'B509_S2_2', 'B509_S2_3'],
+  },
+  {
+    id: 'B509_S2_1',
+    [ContextFields.LABEL]: 'Lazy Product Discovery',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'B509_S2',
+  },
+  {
+    id: 'B509_S2_2',
+    [ContextFields.LABEL]: 'Standard Product Discovery',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B509_S2',
+  },
+  {
+    id: 'B509_S2_3',
+    [ContextFields.LABEL]: 'Interactive Product Discovery',
+    [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.FUTURE_WORK,
+    [ContextFields.PARENT]: 'B509_S2',
+  },
+];
 
 export const B509 = {
   [AnalysisPaperFields.GENERAL_DATA]: {

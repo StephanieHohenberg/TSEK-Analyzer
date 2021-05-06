@@ -5,7 +5,20 @@ import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.dat
 import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_B024: MergedContextData[] = [];
+export const CONTEXT_B024: MergedContextData[] = [
+  {
+    id: 'B024_1',
+    [ContextFields.LABEL]: 'Bug Detection',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+  },
+  {
+    id: 'B024_2',
+    [ContextFields.LABEL]: 'Grey-box Fuzzing',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+  },
+];
 
 export const B024 = {
   [AnalysisPaperFields.GENERAL_DATA]: {

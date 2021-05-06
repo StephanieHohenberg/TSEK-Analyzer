@@ -5,7 +5,26 @@ import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.dat
 import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_A026: MergedContextData[] = [];
+export const CONTEXT_A026: MergedContextData[] = [
+  {
+    id: 'A026_1',
+    [ContextFields.LABEL]: 'Fault Detection',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+  },
+  {
+    id: 'A026_2',
+    [ContextFields.LABEL]: 'Puppet Programs',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+  },
+  {
+    id: 'A026_3',
+    [ContextFields.LABEL]: 'other domains with partially ordered constructs',
+    [ContextFields.ZWECK]: Zweck.VAGUE_VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.CONCLUSION,
+  },
+];
 
 export const A026 = {
   [AnalysisPaperFields.GENERAL_DATA]: {

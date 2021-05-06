@@ -5,7 +5,77 @@ import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.dat
 import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_A335: MergedContextData[] = [];
+export const CONTEXT_A335: MergedContextData[] = [
+  {
+    id: 'A335_S1',
+    [ContextFields.LABEL]: 'Bug Detection',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.SUB]: ['A335_S1_1'],
+  },
+  {
+    id: 'A335_S1_1',
+    [ContextFields.LABEL]: 'Compiler Bugs',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'A335_S1',
+  },
+  {
+    id: 'A335_S2',
+    [ContextFields.LABEL]: 'Applications',
+    [ContextFields.SUB]: ['A335_S2_1', 'A335_S2_2', 'A335_S2_3', 'A335_S2_4', 'A335_S2_5'],
+  },
+  {
+    id: 'A335_S2_1',
+    [ContextFields.LABEL]: 'commercial cyber-physical system development tools (CPS) / model-based design tools',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A335_S2',
+    [ContextFields.SUB]: ['A335_S2_1_1', 'A335_S2_1_2'],
+  },
+  {
+    id: 'A335_S2_1_1',
+    [ContextFields.LABEL]: 'MathWorks Simulink',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.EVALUATION,
+    [ContextFields.PARENT]: 'A335_S2_1',
+  },
+  {
+    id: 'A335_S2_1_2',
+    [ContextFields.LABEL]: 'MathLab',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.EVALUATION,
+    [ContextFields.PARENT]: 'A335_S2_1',
+  },
+  {
+    id: 'A335_S2_2',
+    [ContextFields.LABEL]: 'safety-critical application',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'A335_S2',
+  },
+  {
+    id: 'A335_S2_3',
+    [ContextFields.LABEL]: 'subset of the Simulink language and libraries',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'A335_S2',
+  },
+  {
+    id: 'A335_S2_4',
+    [ContextFields.LABEL]: 'commercial CPS tool chain',
+    [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'A335_S2',
+  },
+  {
+    id: 'A335_S2_5',
+    [ContextFields.LABEL]: 'other libraries, user-created models and other CPS tools',
+    [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'A335_S2',
+  },
+];
 
 export const A335 = {
   [AnalysisPaperFields.GENERAL_DATA]: {

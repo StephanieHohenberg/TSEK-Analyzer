@@ -5,7 +5,56 @@ import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.dat
 import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_B135: MergedContextData[] = [];
+export const CONTEXT_B135: MergedContextData[] = [
+  {
+    id: 'B135_1',
+    [ContextFields.LABEL]: 'Automated DNN Repair',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+  },
+  {
+    id: 'B135_S2',
+    [ContextFields.LABEL]: 'DL libraries',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.SUB]: ['B135_S2_1', 'B135_S2_2', 'B135_S2_3', 'B135_S2_4', 'B135_S2_5'],
+  },
+  {
+    id: 'B135_S2_1',
+    [ContextFields.LABEL]: 'Caffe',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B135_S2',
+  },
+  {
+    id: 'B135_S2_2',
+    [ContextFields.LABEL]: 'Keras',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B135_S2',
+  },
+  {
+    id: 'B135_S2_3',
+    [ContextFields.LABEL]: 'Tensorflow',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B135_S2',
+  },
+  {
+    id: 'B135_S2_4',
+    [ContextFields.LABEL]: 'Theano',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B135_S2',
+  },
+  {
+    id: 'B135_S2_5',
+    [ContextFields.LABEL]: 'Torch',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B135_S2',
+  },
+];
 
 export const B135 = {
   [AnalysisPaperFields.GENERAL_DATA]: {

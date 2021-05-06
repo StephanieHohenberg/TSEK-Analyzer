@@ -5,7 +5,70 @@ import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.dat
 import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_A678: MergedContextData[] = [];
+export const CONTEXT_A678: MergedContextData[] = [
+  {
+    id: 'A678_S1',
+    [ContextFields.LABEL]: 'Human Cognitive Processes',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.SUB]: ['A678_S1_1', 'A678_S1_2', 'A678_S1_3', 'A678_S1_4', 'A678_S1_5', 'A678_S1_6', 'A678_S1_7'],
+  },
+  {
+    id: 'A678_S1_1',
+    [ContextFields.LABEL]: 'Code Writing',
+    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'A678_S1',
+  },
+  {
+    id: 'A678_S1_2',
+    [ContextFields.LABEL]: 'Prose Writing',
+    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'A678_S1',
+  },
+  {
+    id: 'A678_S1_3',
+    [ContextFields.LABEL]: 'Code Comprehension',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A678_S1',
+  },
+  {
+    id: 'A678_S1_4',
+    [ContextFields.LABEL]: 'Code Review',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A678_S1',
+  },
+  {
+    id: 'A678_S1_5',
+    [ContextFields.LABEL]: 'Data Structure Manipulation',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A678_S1',
+  },
+  {
+    id: 'A678_S1_6',
+    [ContextFields.LABEL]: 'Prose Review',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'A678_S1',
+  },
+  {
+    id: 'A678_S1_7',
+    [ContextFields.LABEL]: 'in-the-wild Programming',
+    [ContextFields.ZWECK]: Zweck.VAGUE_VERALLGEMEINBARKEIT,
+    [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'A678_S1',
+  },
+  {
+    id: 'A678_S2',
+    [ContextFields.LABEL]: 'C/C++',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+  },
+];
 
 export const A678 = {
   [AnalysisPaperFields.GENERAL_DATA]: {

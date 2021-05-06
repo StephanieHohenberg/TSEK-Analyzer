@@ -5,7 +5,59 @@ import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.dat
 import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_B248: MergedContextData[] = [];
+export const CONTEXT_B248: MergedContextData[] = [
+  {
+    id: 'B248_S1',
+    [ContextFields.LABEL]: 'Automatic Verification',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.SUB]: ['B248_S1_1', 'B248_S1_2'],
+
+  },
+  {
+    id: 'B248_S1_1',
+    [ContextFields.LABEL]: 'Symbolic Excecution',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'B248_S1',
+  },
+  {
+    id: 'B248_S1_2',
+    [ContextFields.LABEL]: 'Model Checking',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B248_S1',
+  },
+  {
+    id: 'B248_S2',
+    [ContextFields.LABEL]: 'High-Performance Computing',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.SUB]: ['B248_S2_1'],
+  },
+  {
+    id: 'B248_S2_1',
+    [ContextFields.LABEL]: 'Message Passing Interface Programs (MPI)',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.SUB]: ['B248_S2_1_1', 'B248_S2_1_2'],
+    [ContextFields.PARENT]: 'B248_S2',
+  },
+  {
+    id: 'B248_S2_1_1',
+    [ContextFields.LABEL]: 'with non-blocking operations',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B248_S2_1',
+  },
+  {
+    id: 'B248_S2_1_2',
+    [ContextFields.LABEL]: 'with non-deterministic operations',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.CONCLUSION,
+    [ContextFields.PARENT]: 'B248_S2_1',
+  },
+];
 
 export const B248 = {
   [AnalysisPaperFields.GENERAL_DATA]: {

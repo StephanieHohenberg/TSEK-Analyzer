@@ -5,7 +5,50 @@ import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.dat
 import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
-export const CONTEXT_B410: MergedContextData[] = [];
+export const CONTEXT_B410: MergedContextData[] = [
+  {
+    id: 'B410_S1',
+    [ContextFields.LABEL]: 'Test Input Generation',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.SUB]: ['B410_S1_1', 'B410_S1_2', 'B410_S1_3', 'B410_S1_4', 'B410_S1_5'],
+  },
+  {
+    id: 'B410_S1_1',
+    [ContextFields.LABEL]: 'Property-based Testing',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'B410_S1',
+  },
+  {
+    id: 'B410_S1_2',
+    [ContextFields.LABEL]: 'Reinforcement Learning',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'B410_S1',
+  },
+  {
+    id: 'B410_S1_3',
+    [ContextFields.LABEL]: 'Symbolic Execution',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'B410_S1',
+  },
+  {
+    id: 'B410_S1_4',
+    [ContextFields.LABEL]: 'Fuzz Testing',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'B410_S1',
+  },
+  {
+    id: 'B410_S1_5',
+    [ContextFields.LABEL]: 'Search-based Software Testing',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'B410_S1',
+  },
+];
 
 export const B410 = {
   [AnalysisPaperFields.GENERAL_DATA]: {
