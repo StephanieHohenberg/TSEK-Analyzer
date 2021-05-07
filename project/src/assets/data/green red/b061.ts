@@ -2,24 +2,16 @@ import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../.
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_B061: MergedContextData[] = [
-  {
-    id: 'B061_S1',
-    [ContextFields.LABEL]: 'mobile operation system',
-    [ContextFields.SUB]: ['B061_S1_1'],
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
-  },
   {
     id: 'B061_S1_1',
     [ContextFields.LABEL]: 'Android applications',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'B061_S1',
-    [ContextFields.SUB]: ['B061_S1_1_1', 'B061_S1_1_2', 'B061_S1_1_3', 'B061_S1_1_4', 'B061_S1_1_5'],
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
+    [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
   },
   {
     id: 'B061_S2',
@@ -33,7 +25,6 @@ export const CONTEXT_B061: MergedContextData[] = [
     [ContextFields.LABEL]: 'identify sensitive information leaks',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
     [ContextFields.PARENT]: 'B061_S2',
   },
   {
@@ -41,7 +32,6 @@ export const CONTEXT_B061: MergedContextData[] = [
     [ContextFields.LABEL]: 'detect security related bugs',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
     [ContextFields.PARENT]: 'B061_S2',
   },
   {
@@ -63,46 +53,41 @@ export const CONTEXT_B061: MergedContextData[] = [
     [ContextFields.LABEL]: 'real-world applications',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
-    [ContextFields.PARENT]: 'B061_S1_1',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B061_S1_1_2',
     [ContextFields.LABEL]: 'top Android applications',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
-    [ContextFields.PARENT]: 'B061_S1_1',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B061_S1_1_3',
     [ContextFields.LABEL]: 'large applications with hard to analyse code',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
-    [ContextFields.PARENT]: 'B061_S1_1',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B061_S1_1_4',
     [ContextFields.LABEL]: 'debuggable and installable apps',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
-    [ContextFields.PARENT]: 'B061_S1_1',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B061_S1_1_5',
     [ContextFields.LABEL]: 'applications with write operations',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
-    [ContextFields.PARENT]: 'B061_S1_1',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B061_S3',
-    [ContextFields.LABEL]: 'debugging',
+    [ContextFields.LABEL]: 'Debugging',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.BACKGROUND,
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
+    [ContextFields.PARENT]: 'DEBUGGING',
     [ContextFields.SUB]: ['B061_S3_1'],
   },
   {
@@ -110,7 +95,6 @@ export const CONTEXT_B061: MergedContextData[] = [
     [ContextFields.LABEL]: 'finding memory leaks',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.BACKGROUND,
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
     [ContextFields.PARENT]: 'B061_S3',
   },
 ];

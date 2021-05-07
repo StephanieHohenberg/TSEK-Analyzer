@@ -1,8 +1,8 @@
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_B509: MergedContextData[] = [
@@ -10,11 +10,13 @@ export const CONTEXT_B509: MergedContextData[] = [
     id: 'B509_1',
     [ContextFields.LABEL]: 'Highly Configurable Software',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.PARENT]: 'DEV_OPS',
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
   },
   {
     id: 'B509_S2',
     [ContextFields.LABEL]: 'Product Discovery',
+    [ContextFields.PARENT]: 'DEV_OPS',
     [ContextFields.SUB]: ['B509_S2_1', 'B509_S2_2', 'B509_S2_3'],
   },
   {

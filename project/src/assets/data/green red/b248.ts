@@ -1,8 +1,8 @@
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_B248: MergedContextData[] = [
@@ -12,7 +12,6 @@ export const CONTEXT_B248: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.SUB]: ['B248_S1_1', 'B248_S1_2'],
-
   },
   {
     id: 'B248_S1_1',
@@ -34,6 +33,7 @@ export const CONTEXT_B248: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.SUB]: ['B248_S2_1'],
+    [ContextFields.PARENT]: 'SYSTEMS',
   },
   {
     id: 'B248_S2_1',

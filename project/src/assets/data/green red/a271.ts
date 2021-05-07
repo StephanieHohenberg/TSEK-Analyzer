@@ -1,14 +1,15 @@
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A271: MergedContextData[] = [
   {
     id: 'A271_S1',
     [ContextFields.LABEL]: 'Automated Program Repair',
+    [ContextFields.PARENT]: 'AUTOMATED_REPAIR',
     [ContextFields.SUB]: ['A271_S1_1', 'A271_S1_2'],
   },
   {
@@ -162,6 +163,7 @@ export const CONTEXT_A271: MergedContextData[] = [
     [ContextFields.LABEL]: 'UnSafe Languages',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
     [ContextFields.SUB]: ['A271_S2_1'],
   },
   {
@@ -176,6 +178,7 @@ export const CONTEXT_A271: MergedContextData[] = [
     [ContextFields.LABEL]: 'Domains',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EVALUATION,
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
     [ContextFields.SUB]: ['A271_S3_1', 'A271_S3_2', 'A271_S3_3', 'A271_S3_4'],
   },
   {

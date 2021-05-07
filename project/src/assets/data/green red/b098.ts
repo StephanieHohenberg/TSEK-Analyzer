@@ -1,8 +1,8 @@
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_B098: MergedContextData[] = [
@@ -11,6 +11,7 @@ export const CONTEXT_B098: MergedContextData[] = [
     [ContextFields.LABEL]: 'Data Constraints',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'DATA',
     [ContextFields.SUB]: ['B098_S1_1', 'B098_S1_2', 'B098_S1_3', 'B098_S1_4', 'B098_S1_4'],
   },
   {
@@ -71,37 +72,32 @@ export const CONTEXT_B098: MergedContextData[] = [
     [ContextFields.PARENT]: 'B098_S1',
   },
   {
-    id: 'B098_S2',
-    [ContextFields.LABEL]: 'Applications',
-    [ContextFields.SUB]: ['B098_S2_1', 'B098_S2_2', 'B098_S2_3', 'B098_S2_4'],
-  },
-  {
     id: 'B098_S2_1',
     [ContextFields.LABEL]: 'database-backed web applications',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'B098_S2',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B098_S2_2',
     [ContextFields.LABEL]: 'ORM applications',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'B098_S2',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B098_S2_3',
     [ContextFields.LABEL]: 'software with large amounts of persistent data',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'B098_S2',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B098_S2_4',
     [ContextFields.LABEL]: 'applications with millions of users',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'B098_S2',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
 ];
 

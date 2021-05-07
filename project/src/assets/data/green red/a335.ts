@@ -1,8 +1,8 @@
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A335: MergedContextData[] = [
@@ -12,6 +12,7 @@ export const CONTEXT_A335: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.SUB]: ['A335_S1_1'],
+    [ContextFields.PARENT]: 'BUG_HANDLING',
   },
   {
     id: 'A335_S1_1',
@@ -21,16 +22,11 @@ export const CONTEXT_A335: MergedContextData[] = [
     [ContextFields.PARENT]: 'A335_S1',
   },
   {
-    id: 'A335_S2',
-    [ContextFields.LABEL]: 'Applications',
-    [ContextFields.SUB]: ['A335_S2_1', 'A335_S2_2', 'A335_S2_3', 'A335_S2_4', 'A335_S2_5'],
-  },
-  {
     id: 'A335_S2_1',
     [ContextFields.LABEL]: 'commercial cyber-physical system development tools (CPS) / model-based design tools',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'A335_S2',
+    [ContextFields.PARENT]: 'SOFTWARE_TOOLS',
     [ContextFields.SUB]: ['A335_S2_1_1', 'A335_S2_1_2'],
   },
   {
@@ -52,28 +48,27 @@ export const CONTEXT_A335: MergedContextData[] = [
     [ContextFields.LABEL]: 'safety-critical application',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'A335_S2',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'A335_S2_3',
     [ContextFields.LABEL]: 'subset of the Simulink language and libraries',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.PARENT]: 'A335_S2',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'A335_S2_4',
     [ContextFields.LABEL]: 'commercial CPS tool chain',
     [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.PARENT]: 'A335_S2',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'A335_S2_5',
     [ContextFields.LABEL]: 'other libraries, user-created models and other CPS tools',
     [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.PARENT]: 'A335_S2',
   },
 ];
 

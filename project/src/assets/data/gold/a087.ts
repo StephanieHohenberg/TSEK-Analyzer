@@ -1,69 +1,64 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, MergedContextData, Vorkommen, Zweck, Dimension} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A087: MergedContextData[] = [
-  {
-    id: 'A087_S1',
-    [ContextFields.LABEL]: 'Bug Handling',
-    [ContextFields.SUB]: ['A087_S1_1', 'A087_S1_2'],
-    [ContextFields.IDENTICAL]: ['B535_S3']
-  },
   {
     id: 'A087_S1_1',
     [ContextFields.LABEL]: 'Root-Cause Analysis',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'A087_S1'
+    [ContextFields.PARENT]: 'BUG_HANDLING'
   },
   {
     id: 'A087_S1_2',
     [ContextFields.LABEL]: 'Delta Debugging',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'A087_S1'
-  },
-  {
-    id: 'A087_S2',
-    [ContextFields.LABEL]: 'Software Tools',
-    [ContextFields.SUB]: ['A087_S2_1', 'A087_S2_2', 'A087_S2_2'],
+    [ContextFields.PARENT]: 'BUG_HANDLING'
   },
   {
     id: 'A087_S2_1',
     [ContextFields.LABEL]: 'Eclipse Plugin',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'A087_S2'
+    [ContextFields.PARENT]: 'SOFTWARE_TOOLS'
   },
   {
     id: 'A087_S2_2',
     [ContextFields.LABEL]: 'Java Programs',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
-    [ContextFields.PARENT]: 'A087_S2'
+    [ContextFields.PARENT]: 'PROGRAMS'
   },
   {
     id: 'A087_S2_3',
     [ContextFields.LABEL]: 'JUnit Interfaces',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
-    [ContextFields.PARENT]: 'A087_S2'
+    [ContextFields.PARENT]: 'SOFTWARE_TOOLS'
   },
   {
     id: 'A087_3',
     [ContextFields.LABEL]: 'TDD',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
+    [ContextFields.PARENT]: 'TESTING'
   },
   {
     id: 'A087_S4',
     [ContextFields.LABEL]: 'Test Characteristics',
     [ContextFields.SUB]: ['A087_S4_1', 'A087_S4_2'],
+    [ContextFields.PARENT]: 'TESTING'
   },
   {
     id: 'A087_S4_1',
@@ -83,6 +78,7 @@ export const CONTEXT_A087: MergedContextData[] = [
     id: 'A087_S5',
     [ContextFields.LABEL]: 'Code Ownership',
     [ContextFields.SUB]: ['A087_S5_1', 'A087_S5_2'],
+    [ContextFields.PARENT]: 'DEBUGGING'
   },
   {
     id: 'A087_S5_1',

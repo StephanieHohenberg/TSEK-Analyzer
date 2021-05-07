@@ -1,24 +1,17 @@
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_B459: MergedContextData[] = [
-  {
-    id: 'B459_S1',
-    [ContextFields.LABEL]: 'Testing',
-    [ContextFields.ZWECK]: Zweck.THEMA,
-    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.SUB]: ['B459_S1_1', 'B459_S1_2', 'B459_S1_3', 'B459_S1_4'],
-  },
   {
     id: 'B459_S1_1',
     [ContextFields.LABEL]: 'Test Case Generation',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'B459_S1',
+    [ContextFields.PARENT]: 'TESTING',
     [ContextFields.SUB]: ['B459_S1_1_1'],
   },
   {
@@ -33,27 +26,28 @@ export const CONTEXT_B459: MergedContextData[] = [
     [ContextFields.LABEL]: 'Differential Testing',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
-    [ContextFields.PARENT]: 'B459_S1',
+    [ContextFields.PARENT]: 'TESTING',
   },
   {
     id: 'B459_S1_3',
     [ContextFields.LABEL]: 'Formal Verification',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
-    [ContextFields.PARENT]: 'B459_S1',
+    [ContextFields.PARENT]: 'TESTING',
   },
   {
     id: 'B459_S1_4',
     [ContextFields.LABEL]: 'Validation and Proof Checking',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
-    [ContextFields.PARENT]: 'B459_S1',
+    [ContextFields.PARENT]: 'TESTING',
   },
   {
     id: 'B459_S2',
     [ContextFields.LABEL]: 'String Solvers',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'APPLICATIONS',
     [ContextFields.SUB]: ['B459_S2_1', 'B459_S2_2'],
   },
   {

@@ -5,14 +5,12 @@ export enum ContextFields {
   PARENT = 'parent',
   SUB = 'sub',
   IDENTICAL = 'identical',
-  DIMENSION = 'dimension',
 }
 
 export interface ContextTableData {
   id: string;
   [ContextFields.ZWECK]: Zweck;
   [ContextFields.VORKOMMEN]: Vorkommen;
-  [ContextFields.DIMENSION]: Dimension;
 }
 
 export interface ContextData {
@@ -20,7 +18,6 @@ export interface ContextData {
   [ContextFields.LABEL]: string;
   [ContextFields.PARENT]?: string; // contextId
   [ContextFields.SUB]?: string[]; // contextId
-  [ContextFields.DIMENSION]?: Dimension;
 }
 
 export interface MergedContextData {
@@ -31,7 +28,6 @@ export interface MergedContextData {
   [ContextFields.PARENT]?: string; // contextId
   [ContextFields.SUB]?: string[]; // contextId
   [ContextFields.IDENTICAL]?: string[]; // contextId
-  [ContextFields.DIMENSION]?: Dimension;
 }
 
 export enum Zweck {
@@ -63,14 +59,3 @@ export enum Vorkommen {
   CONCLUSION = 'CONCLUSION',
   IMPLICITE = 'IMPLICITE',
 }
-
-export enum Dimension {
-  APPLICATION = 'application',
-  DL_NN_APPLICATION = 'DL/NN application',
-  PROGRAMMING_LANGUAGE = 'programming language',
-  PROJECT = 'project related',
-  HUMAN = 'human related',
-  SE_ACTIVITY = 'software engineering activity',
-  SOURCING = 'sourcing', // TODO: Datenquelle mitaufnehmen ? in Charakterisierung
-}
-

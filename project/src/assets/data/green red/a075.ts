@@ -1,14 +1,15 @@
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A075: MergedContextData[] = [
   {
     id: 'A075_1',
-    [ContextFields.LABEL]: 'Automated Data Repair and Debugging',
+    [ContextFields.LABEL]: 'Automated Data Repair and Debugging', // TODO
+    [ContextFields.PARENT]: 'AUTOMATED_REPAIR',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
   },
@@ -17,6 +18,7 @@ export const CONTEXT_A075: MergedContextData[] = [
     [ContextFields.LABEL]: 'Data Corruption',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'DATA',
     [ContextFields.SUB]: ['A075_2_1', 'A075_2_2', 'A075_2_3', 'A075_2_4', 'A075_2_5', 'A075_2_6', 'A075_2_7', 'A075_2_8'],
   },
   {
@@ -80,6 +82,7 @@ export const CONTEXT_A075: MergedContextData[] = [
     [ContextFields.LABEL]: 'Input Format',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.PARENT]: 'DATA',
     [ContextFields.SUB]: ['A075_S3_1', 'A075_S3_2'],
   },
   {
@@ -101,6 +104,7 @@ export const CONTEXT_A075: MergedContextData[] = [
     [ContextFields.LABEL]: 'Programs',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.PARENT]: 'APPLICATIONS',
     [ContextFields.SUB]: ['A075_S4_1', 'A075_S4_2', 'A075_S4_3'],
   },
   {
@@ -129,6 +133,7 @@ export const CONTEXT_A075: MergedContextData[] = [
     [ContextFields.LABEL]: 'Grammar',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.PARENT]: 'APPLICATIONS',
     [ContextFields.SUB]: ['A075_S5_1', 'A075_S5_2'],
   },
   {

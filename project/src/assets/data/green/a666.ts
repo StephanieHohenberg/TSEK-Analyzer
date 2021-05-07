@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
@@ -8,8 +14,9 @@ import {getContextTableData} from '../context/context.util';
 export const CONTEXT_A666: MergedContextData[] = [
   {
     id: 'A666_S1',
-    [ContextFields.LABEL]: 'Software Development',
+    [ContextFields.LABEL]: 'Forms of Software Development',
     [ContextFields.SUB]: ['A666_S1_1', 'A666_S1_2', 'A666_S1_3'],
+    [ContextFields.PARENT]: 'SOFTWARE_DEVELOPMENT',
   },
   {
     id: 'A666_S1_1',
@@ -37,31 +44,28 @@ export const CONTEXT_A666: MergedContextData[] = [
     [ContextFields.LABEL]: 'Emotion Awareness',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-  },
-  {
-    id: 'A666_S3',
-    [ContextFields.LABEL]: 'Study Setting',
-    [ContextFields.SUB]: ['A666_S3_1', 'A666_S3_2'],
+    [ContextFields.PARENT]: 'HUMAN_ASPECTS',
   },
   {
     id: 'A666_S3_1',
     [ContextFields.LABEL]: 'Labotory Settings',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.PARENT]: 'A666_S3',
+    [ContextFields.PARENT]: 'PS_STUDY_CHARACTERISTICS',
   },
   {
     id: 'A666_S3_2',
     [ContextFields.LABEL]: 'Workplace Settings in Software Development Companies',
     [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.CONCLUSION,
-    [ContextFields.PARENT]: 'A666_S3',
+    [ContextFields.PARENT]: 'PS_STUDY_CHARACTERISTICS',
   },
   {
     id: 'A666_S4',
     [ContextFields.LABEL]: 'Java',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
   },
 ];
 

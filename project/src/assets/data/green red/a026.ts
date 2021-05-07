@@ -1,8 +1,8 @@
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A026: MergedContextData[] = [
@@ -11,12 +11,14 @@ export const CONTEXT_A026: MergedContextData[] = [
     [ContextFields.LABEL]: 'Fault Detection',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'SE_ACTIVITIES',
   },
   {
     id: 'A026_2',
     [ContextFields.LABEL]: 'Puppet Programs',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'APPLICATIONS',
   },
   {
     id: 'A026_3',

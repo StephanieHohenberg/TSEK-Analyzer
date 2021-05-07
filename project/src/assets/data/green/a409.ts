@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
@@ -11,6 +17,7 @@ export const CONTEXT_A409: MergedContextData[] = [
     [ContextFields.LABEL]: 'Human Values',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'HUMAN_ASPECTS',
     [ContextFields.SUB]: ['A409_S1_1', 'A409_S1_2', 'A409_S1_3', 'A409_S1_4',
                           'A409_S1_2', 'A409_S1_6', 'A409_S1_7', 'A409_S1_8'],
   },

@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
@@ -7,18 +13,11 @@ import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A469: MergedContextData[] = [
   {
-    id: 'A469_S1',
-    [ContextFields.LABEL]: 'Testing',
-    [ContextFields.ZWECK]: Zweck.THEMA,
-    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.SUB]: ['A469_S1_1', 'A469_S1_2', 'A469_S1_3', 'A469_S1_4'],
-  },
-  {
     id: 'A469_S1_1',
     [ContextFields.LABEL]: 'Test Input Generation',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'A469_S1',
+    [ContextFields.PARENT]: 'TESTING',
     [ContextFields.SUB]: ['B447_S1_1_1', 'B447_S1_1_2', 'B447_S1_1_3'],
   },
   {
@@ -47,27 +46,28 @@ export const CONTEXT_A469: MergedContextData[] = [
     [ContextFields.LABEL]: 'Manual Testing',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'A469_S1',
+    [ContextFields.PARENT]: 'TESTING',
   },
   {
     id: 'A469_S1_3',
     [ContextFields.LABEL]: 'human-machine collaborative testing (mix of manual and automatic)',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.DISCUSSION,
-    [ContextFields.PARENT]: 'A469_S1',
+    [ContextFields.PARENT]: 'TESTING',
   },
   {
     id: 'A469_S1_4',
     [ContextFields.LABEL]: 'systematic input space exploration',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'A469_S1',
+    [ContextFields.PARENT]: 'TESTING',
   },
   {
     id: 'A469_2',
     [ContextFields.LABEL]: 'Android Apps',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
   },
 ];
 

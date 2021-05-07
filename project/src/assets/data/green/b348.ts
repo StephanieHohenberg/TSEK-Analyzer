@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
@@ -7,45 +13,25 @@ import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_B348: MergedContextData[] = [
   {
-    id: 'B348_S1',
-    [ContextFields.LABEL]: 'Languages',
-    [ContextFields.SUB]: ['B348_S1_1', 'B348_S1_2'],
-  },
-  {
-    id: 'B348_S1_1',
-    [ContextFields.LABEL]: 'Programming Languages',
-    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
-    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'B348_S1',
-    [ContextFields.SUB]: ['B348_S1_1_1'],
-  },
-  {
     id: 'B348_S1_1_1',
     [ContextFields.LABEL]: 'C/C++',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'B348_S1_1',
-  },
-  {
-    id: 'B348_S1_2',
-    [ContextFields.LABEL]: 'Natural Languages',
-    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
-    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'B348_S1',
-    [ContextFields.SUB]: ['B348_S1_2_1'],
+    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
   },
   {
     id: 'B348_S1_2_1',
     [ContextFields.LABEL]: 'English',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'B348_S1_2',
+    [ContextFields.PARENT]: 'NATURAL_LANGUAGES',
   },
   {
     id: 'B348_S2',
     [ContextFields.LABEL]: 'Developer Communication',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'NATURAL_LANGUAGES',
     [ContextFields.SUB]: ['B348_S2_1', 'B348_S2_2', 'B348_S2_3', 'B348_S2_4'],
   },
   {
@@ -89,6 +75,7 @@ export const CONTEXT_B348: MergedContextData[] = [
     [ContextFields.LABEL]: 'Natural Language Processing',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'NATURAL_LANGUAGES',
     [ContextFields.SUB]: ['B348_S3_1', 'B348_S3_2', 'B348_S3_3', 'B348_S3_4', 'B348_S3_5'],
   },
   {

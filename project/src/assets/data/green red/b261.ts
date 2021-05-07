@@ -1,8 +1,8 @@
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_B261: MergedContextData[] = [
@@ -11,12 +11,14 @@ export const CONTEXT_B261: MergedContextData[] = [
     [ContextFields.LABEL]: 'Numerical Bugs',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
   },
   {
     id: 'A335_S2',
     [ContextFields.LABEL]: 'Numerical Programs',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'APPLICATIONS',
     [ContextFields.SUB]: ['A335_S2_1', 'A335_S2_2'],
   },
   {
@@ -34,23 +36,18 @@ export const CONTEXT_B261: MergedContextData[] = [
     [ContextFields.PARENT]: 'A335_S2',
   },
   {
-    id: 'A335_S3',
-    [ContextFields.LABEL]: 'Bug Detection',
-    [ContextFields.SUB]: ['A335_S3_1', 'A335_S3_2', 'A335_S3_3'],
-  },
-  {
     id: 'A335_S3_1',
     [ContextFields.LABEL]: 'Test Data Generation',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
-    [ContextFields.PARENT]: 'A335_S3',
+    [ContextFields.PARENT]: 'BUG_DETECTION',
   },
   {
     id: 'A335_S3_2',
     [ContextFields.LABEL]: 'Input Generation',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'A335_S3',
+    [ContextFields.PARENT]: 'BUG_DETECTION',
     [ContextFields.SUB]: ['A335_S3_2_1']
   },
   {
@@ -65,7 +62,7 @@ export const CONTEXT_B261: MergedContextData[] = [
     [ContextFields.LABEL]: 'Dynamic Analysis',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
-    [ContextFields.PARENT]: 'A335_S3',
+    [ContextFields.PARENT]: 'BUG_DETECTION',
   },
 ];
 

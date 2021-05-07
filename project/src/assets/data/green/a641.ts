@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
@@ -15,20 +21,23 @@ export const CONTEXT_A641: MergedContextData[] = [
   },
   {
     id: 'A641_2',
-    [ContextFields.LABEL]: 'requirement engineering',
+    [ContextFields.LABEL]: 'Requirement Engineering',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'SE_ACTIVITIES',
   },
   {
     id: 'A641_3',
     [ContextFields.LABEL]: 'developer communication',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'NATURAL_LANGUAGES',
   },
   {
     id: 'A641_S3',
     [ContextFields.LABEL]: 'text classification',
     [ContextFields.SUB]: ['A641_S3_1', 'A641_S3_2', 'A641_S3_3', 'A641_S3_4'],
+    [ContextFields.PARENT]: 'NATURAL_LANGUAGES',
   },
   {
     id: 'A641_S3_1',
@@ -36,6 +45,7 @@ export const CONTEXT_A641: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION, // Vorkommen.CONCLUSION
     [ContextFields.PARENT]: 'A641_S3',
+    [ContextFields.SUB]: ['A641_S1'],
   },
   {
     id: 'A641_S3_2',
@@ -63,37 +73,34 @@ export const CONTEXT_A641: MergedContextData[] = [
     [ContextFields.LABEL]: 'issue tracking system',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
-  },
-  {
-    id: 'A641_S2',
-    [ContextFields.LABEL]: 'Project Properties',
-    [ContextFields.SUB]: ['A641_S2_1', 'A641_S2_2', 'A641_S2_3'],
+    [ContextFields.PARENT]: 'SYSTEMS',
   },
   {
     id: 'A641_S2_1',
     [ContextFields.LABEL]: 'Projekte mit Online Chatting',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'A641_S2',
+    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
   },
   {
     id: 'A641_S2_2',
     [ContextFields.LABEL]: 'english speaking projects',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.DATA_PREPARATION,
-    [ContextFields.PARENT]: 'A641_S2',
+    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
   },
   {
     id: 'A641_S2_3',
     [ContextFields.LABEL]: 'cross-project settings',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RESULTS_ANALYSIS,
-    [ContextFields.PARENT]: 'A641_S2',
+    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
   },
   // SUBTREES:
   {
     id: 'A641_S1',
     [ContextFields.LABEL]: 'applications of sentence classificifaction',
+    [ContextFields.PARENT]: 'A641_S3_1',
     [ContextFields.SUB]: ['A641_1', 'A641_15', 'A641_16', 'A641_17', 'A641_18', 'A641_19', 'A641_20'],
   },
   {

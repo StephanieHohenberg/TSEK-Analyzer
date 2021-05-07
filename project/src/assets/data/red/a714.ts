@@ -1,9 +1,15 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
 import {getContextTableData} from '../context/context.util';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 
 export const CONTEXT_A714: MergedContextData[] = [
   {
@@ -11,54 +17,49 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.LABEL]: 'differential verification',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'A714_2',
   },
   {
     id: 'A714_2',
     [ContextFields.LABEL]: 'verification techniques',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.SUB]: ['A714_1'],
   },
   {
     id: 'A714_X',
     [ContextFields.LABEL]: 'control applications, where the number of input signals is not large',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
-  },
-  {
-    id: 'A714_S1',
-    [ContextFields.LABEL]: 'neuronal networks',
-    [ContextFields.SUB]: ['A714_S1_1', 'A714_S1_2', 'A714_S1_3', 'A714_S1_4', 'A714_S1_5', 'A714_S1_6' ],
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'A714_S1_1',
     [ContextFields.LABEL]: 'DNN',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'A714_S1',
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
+    [ContextFields.PARENT]: 'NEURAL_NETWORKS',
   },
   {
     id: 'A714_S1_2',
     [ContextFields.LABEL]: 'compressed network',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'A714_S1',
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
+    [ContextFields.PARENT]: 'NEURAL_NETWORKS',
   },
   {
     id: 'A714_S1_3',
     [ContextFields.LABEL]: 'single network',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'A714_S1',
+    [ContextFields.PARENT]: 'NEURAL_NETWORKS',
   },
   {
     id: 'A714_S1_4',
     [ContextFields.LABEL]: 'relationship between networks',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'A714_S1',
+    [ContextFields.PARENT]: 'NEURAL_NETWORKS',
     [ContextFields.SUB]: ['A714_S1_7'],
   },
   {
@@ -66,15 +67,14 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.LABEL]: 'feed-forward ReLU networks',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.PARENT]: 'A714_S1',
+    [ContextFields.PARENT]: 'NEURAL_NETWORKS',
   },
   {
     id: 'A714_S1_6',
     [ContextFields.LABEL]: 'CNN (convolutional neural networks)',
     [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
-    [ContextFields.PARENT]: 'A714_S1',
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
+    [ContextFields.PARENT]: 'NEURAL_NETWORKS',
   },
   {
     id: 'A714_S1_7',
@@ -83,7 +83,6 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'A714_S1_4',
     [ContextFields.SUB]: ['A714_S1_8', 'A714_S1_9'],
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
   },
   {
     id: 'A714_S1_8',
@@ -91,7 +90,6 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'A714_S1_7',
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
   },
   {
     id: 'A714_S1_9',
@@ -99,13 +97,12 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'A714_S1_7',
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
   },
   {
     id: 'A714_S2',
     [ContextFields.LABEL]: 'applications for neural networks',
     [ContextFields.SUB]: ['A714_S2_1', 'A714_S2_5', 'A714_S2_6' ],
-    [ContextFields.DIMENSION]: Dimension.DL_NN_APPLICATION,
+    [ContextFields.PARENT]: 'DL_APPLICATIONS'
   },
   {
     id: 'A714_S2_1',
@@ -114,7 +111,6 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
     [ContextFields.PARENT]: 'A714_S2',
     [ContextFields.SUB]: [ 'A714_S2_2', 'A714_S2_3', 'A714_S2_4' ],
-    [ContextFields.DIMENSION]: Dimension.DL_NN_APPLICATION,
   },
   {
     id: 'A714_S2_2',
@@ -122,7 +118,6 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
     [ContextFields.PARENT]: 'A714_S2_1',
-    [ContextFields.DIMENSION]: Dimension.DL_NN_APPLICATION,
   },
   {
     id: 'A714_S2_3',
@@ -130,7 +125,6 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
     [ContextFields.PARENT]: 'A714_S2_1',
-    [ContextFields.DIMENSION]: Dimension.DL_NN_APPLICATION,
   },
   {
     id: 'A714_S2_4',
@@ -138,7 +132,6 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
     [ContextFields.PARENT]: 'A714_S2_1',
-    [ContextFields.DIMENSION]: Dimension.DL_NN_APPLICATION,
   },
   {
     id: 'A714_S2_5',
@@ -146,7 +139,6 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
     [ContextFields.PARENT]: 'A714_S2',
-    [ContextFields.DIMENSION]: Dimension.DL_NN_APPLICATION,
   },
   {
     id: 'A714_S2_6',
@@ -154,7 +146,6 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
     [ContextFields.PARENT]: 'A714_S2',
-    [ContextFields.DIMENSION]: Dimension.DL_NN_APPLICATION,
   },
 ];
 

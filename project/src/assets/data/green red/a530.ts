@@ -1,14 +1,15 @@
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A530: MergedContextData[] = [
   {
     id: 'A530_S1',
     [ContextFields.LABEL]: 'Blockchain Technologies',
+    [ContextFields.PARENT]: 'SOFTWARE_TOOLS',
     [ContextFields.SUB]: ['A530_S1_1', 'A530_S1_2']
   },
   {
@@ -30,6 +31,7 @@ export const CONTEXT_A530: MergedContextData[] = [
     [ContextFields.LABEL]: 'Automated Analysis Tool',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'SOFTWARE_TOOLS',
     [ContextFields.SUB]: ['A530_S2_1', 'A530_S2_2']
   },
   {
@@ -49,7 +51,8 @@ export const CONTEXT_A530: MergedContextData[] = [
 
   {
     id: 'A530_S3',
-    [ContextFields.LABEL]: 'Contract Vulnerabilities',
+    [ContextFields.LABEL]: 'Blockchain Contract Vulnerabilities',
+    [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
     [ContextFields.SUB]: ['A530_S2_1', 'A530_S2_2', 'A530_S2_3', 'A530_S2_4', 'A530_S2_5', 'A530_S2_6', 'A530_S2_7', 'A530_S2_8']
   },
   {

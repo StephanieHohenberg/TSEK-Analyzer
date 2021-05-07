@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
@@ -11,22 +17,19 @@ export const CONTEXT_A949: MergedContextData[] = [
     [ContextFields.LABEL]: 'Fairness Testing',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-  },
-  {
-    id: 'A949_S2',
-    [ContextFields.LABEL]: 'application characteristics',
-    [ContextFields.SUB]: ['A949_S1_1'],
+    [ContextFields.PARENT]: 'TESTING'
   },
   {
     id: 'A949_S2_1',
     [ContextFields.LABEL]: 'applications with societal impact',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'A949_S2'
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS'
   },
   {
     id: 'A949_S3',
     [ContextFields.LABEL]: 'Convolutional Neural Networks',
+    [ContextFields.PARENT]: 'NEURAL_NETWORKS',
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
   },

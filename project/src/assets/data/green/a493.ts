@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
@@ -11,12 +17,14 @@ export const CONTEXT_A493: MergedContextData[] = [
     [ContextFields.LABEL]: 'Refactoring',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'SE_ACTIVITIES',
   },
   {
     id: 'A666_S2',
     [ContextFields.LABEL]: 'heteregonous computing with field-programmable gate-arrays',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
     [ContextFields.SUB]: ['A666_S2_1'],
   },
   {
@@ -24,6 +32,7 @@ export const CONTEXT_A493: MergedContextData[] = [
     [ContextFields.LABEL]: 'systems with more than one kind of core / processor',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
     [ContextFields.PARENT]: 'A666_S2',
   },
   {
@@ -31,6 +40,7 @@ export const CONTEXT_A493: MergedContextData[] = [
     [ContextFields.LABEL]: 'C/C++ programs',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'PROGRAMS',
     [ContextFields.SUB]: ['A666_S3_1', 'A666_S3_2', 'A666_S3_3', 'A666_S3_4'],
   },
   {
@@ -64,6 +74,7 @@ export const CONTEXT_A493: MergedContextData[] = [
   {
     id: 'A666_S4',
     [ContextFields.LABEL]: 'purposes of refactorings',
+    [ContextFields.PARENT]: 'A493_1',
     [ContextFields.SUB]: ['A666_S4_1', 'A666_S4_2', 'A666_S4_3', 'A666_S4_4'],
   },
   {
@@ -97,6 +108,7 @@ export const CONTEXT_A493: MergedContextData[] = [
   {
     id: 'A666_S5',
     [ContextFields.LABEL]: 'HLS tools',
+    [ContextFields.PARENT]: 'SOFTWARE_TOOLS',
     [ContextFields.SUB]: ['A666_S5_1', 'A666_S5_2', 'A666_S5_3', 'A666_S5_4'],
   },
   {

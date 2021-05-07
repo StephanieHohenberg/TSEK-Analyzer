@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
@@ -12,39 +18,35 @@ export const CONTEXT_A566: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.SUB]: ['A566_S1_1'],
+    [ContextFields.PARENT]: 'DATA',
   },
   {
     id: 'A566_S1_1',
-    [ContextFields.LABEL]: 'Cross-project defect prediction',
+    [ContextFields.LABEL]: 'Cross-project defect prediction (CPDP)',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.PARENT]: 'A566_S1',
-  },
-  {
-    id: 'A566_S2',
-    [ContextFields.LABEL]: 'Project Characteristics',
-    [ContextFields.SUB]: ['A566_S2_1', 'A566_S2_2', 'A566_S2_3'],
   },
   {
     id: 'A566_S2_1',
     [ContextFields.LABEL]: 'projects with limited software quality assurance resources',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'A566_S2',
+    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
   },
   {
     id: 'A566_S2_2',
     [ContextFields.LABEL]: 'brand new projects',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'A566_S2',
+    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
   },
   {
     id: 'A566_S2_3',
     [ContextFields.LABEL]: 'small projects',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'A566_S2',
+    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
   },
   {
     id: 'A566_S3',

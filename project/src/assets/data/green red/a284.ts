@@ -2,9 +2,8 @@ import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../.
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
-import {D} from '@angular/cdk/keycodes';
 
 export const CONTEXT_A284: MergedContextData[] = [
   {
@@ -12,6 +11,7 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.LABEL]: 'injection vulnerabilities and attacks',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
     [ContextFields.SUB]: ['A283_S1_1', 'A283_S1_2', 'A283_S1_3', 'A283_S1_4', 'A283_S1_5', 'A283_S1_6', 'A283_S1_7'],
   },
   {
@@ -68,26 +68,26 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.LABEL]: 'critical web applications',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'A283_2',
     [ContextFields.LABEL]: 'complicated stateful web applications',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'A283_3',
     [ContextFields.LABEL]: 'safety-critical, similar \'high-assurance\' software',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'A283_S2',
-    [ContextFields.LABEL]: 'data',
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
+    [ContextFields.LABEL]: 'form of data',
+    [ContextFields.PARENT]: 'DATA',
     [ContextFields.SUB]: ['A283_S2_1', 'A283_S2_2', 'A283_S2_3' ],
   },
   {
@@ -95,7 +95,6 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.LABEL]: 'individual private data',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
     [ContextFields.PARENT]: 'A283_S2',
   },
   {
@@ -103,7 +102,6 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.LABEL]: 'sensitive financial data',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
     [ContextFields.PARENT]: 'A283_S2',
   },
   {
@@ -111,7 +109,6 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.LABEL]: 'healthcare',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
     [ContextFields.PARENT]: 'A283_S2',
   },
   {
@@ -119,7 +116,7 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.LABEL]: 'security assurance',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
+    [ContextFields.PARENT]: 'SE_ACTIVITIES',
     [ContextFields.SUB]: ['A283_S3_1', 'A283_S3_2', 'A283_S3_S4'],
   },
   {
@@ -127,7 +124,6 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.LABEL]: 'code review',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
     [ContextFields.PARENT]: 'A283_S3',
   },
   {
@@ -135,7 +131,6 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.LABEL]: 'code analysis by static analyzers',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
     [ContextFields.PARENT]: 'A283_S3',
   },
   {
@@ -143,7 +138,6 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.LABEL]: 'taint tracking',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
     [ContextFields.PARENT]: 'A283_S3',
   },
   {
@@ -151,7 +145,6 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.LABEL]: 'taint tracking during runtime',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
     [ContextFields.PARENT]: 'A283_S3_S4',
   },
   {
@@ -159,7 +152,6 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.LABEL]: 'taint tracking by input generation',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
     [ContextFields.PARENT]: 'A283_S3_S4',
   },
   {
@@ -167,29 +159,21 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.LABEL]: 'open source projects',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.DIMENSION]: Dimension.SOURCING,
-  },
-  {
-    id: 'A283_S5',
-    [ContextFields.LABEL]: 'tests',
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
-    [ContextFields.SUB]: ['A283_S5_1', 'A283_S5_2'],
+    [ContextFields.PARENT]: 'SOURCING',
   },
   {
     id: 'A283_5',
-    [ContextFields.LABEL]: 'functional tests',
+    [ContextFields.LABEL]: 'Functional Tests',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
-    [ContextFields.PARENT]: 'A283_S5',
+    [ContextFields.PARENT]: 'TEST_TYPES',
   },
   {
     id: 'A283_6',
     [ContextFields.LABEL]: 'test cases that expose an information flow',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
-    [ContextFields.PARENT]: 'A283_S5',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
 ];
 

@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
@@ -8,9 +14,10 @@ import {getContextTableData} from '../context/context.util';
 export const CONTEXT_B447: MergedContextData[] = [
   {
     id: 'B447_S1',
-    [ContextFields.LABEL]: 'Programming Languages',
+    [ContextFields.LABEL]: 'Programming Languages', // TODO:
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
     [ContextFields.SUB]: ['B447_S1_1'],
   },
   {
@@ -33,29 +40,26 @@ export const CONTEXT_B447: MergedContextData[] = [
     [ContextFields.LABEL]: 'real-world Java programs',
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.CONCLUSION,
-  },
-  {
-    id: 'B447_S3',
-    [ContextFields.LABEL]: 'Defects',
-    [ContextFields.SUB]: ['B447_S3_1', 'B447_S3_2'],
+    [ContextFields.PARENT]: 'APPLICATIONS'
   },
   {
     id: 'B447_S3_1',
     [ContextFields.LABEL]: 'Security Vulnerabilities',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'B447_S3',
+    [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
   },
   {
     id: 'B447_S3_2',
     [ContextFields.LABEL]: 'Null-Pointer Violations',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'B447_S3',
+    [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
   },
   {
     id: 'B447_S4',
     [ContextFields.LABEL]: 'Builder Frameworks',
+    [ContextFields.PARENT]: 'SOFTWARE_TOOLS',
     [ContextFields.SUB]: ['B447_S4_1', 'B447_S4_2'],
   },
   {
@@ -73,23 +77,18 @@ export const CONTEXT_B447: MergedContextData[] = [
     [ContextFields.PARENT]: 'B447_S4',
   },
   {
-    id: 'B447_S5',
-    [ContextFields.LABEL]: 'Project Characteristics',
-    [ContextFields.SUB]: ['B447_S5_1', 'B447_S5_2'],
-  },
-  {
     id: 'B447_S5_1',
     [ContextFields.LABEL]: 'projects with builder usages',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
-    [ContextFields.PARENT]: 'B447_S5',
+    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
   },
   {
     id: 'B447_S5_2',
     [ContextFields.LABEL]: 'projects using libraries which use builders for API objects',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
-    [ContextFields.PARENT]: 'B447_S5',
+    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
   },
 ];
 

@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
@@ -11,11 +17,20 @@ export const CONTEXT_A752: MergedContextData[] = [
     [ContextFields.LABEL]: 'Configuration Script Defects',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
+  },
+  {
+    id: 'A752_1',
+    [ContextFields.LABEL]: 'DevOps',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
+    [ContextFields.PARENT]: 'DEV_OPS',
   },
   {
     id: 'A752_S2',
     [ContextFields.LABEL]: 'IaC Tools',
     [ContextFields.SUB]: ['A752_S2_1', 'A752_S2_2', 'A752_S2_3'],
+    [ContextFields.PARENT]: 'SOFTWARE_TOOLS',
   },
   {
     id: 'A752_S2_1',

@@ -1,8 +1,8 @@
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A542: MergedContextData[] = [
@@ -11,10 +11,12 @@ export const CONTEXT_A542: MergedContextData[] = [
     [ContextFields.LABEL]: 'Security',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'SE_ACTIVITIES',
   },
   {
     id: 'A542_S2',
     [ContextFields.LABEL]: 'Blockchain Technologies',
+    [ContextFields.PARENT]: 'SOFTWARE_TOOLS',
     [ContextFields.SUB]: ['A542_S2_1', 'A542_S2_2']
   },
   {
@@ -33,7 +35,8 @@ export const CONTEXT_A542: MergedContextData[] = [
   },
   {
     id: 'A542_S3',
-    [ContextFields.LABEL]: 'Applications',
+    [ContextFields.LABEL]: 'Blockchain Applications',
+    [ContextFields.PARENT]: 'APPLICATIONS',
     [ContextFields.SUB]: ['A542_S3_1', 'A542_S3_2', 'A542_S3_3', 'A542_S3_4']
   },
   {

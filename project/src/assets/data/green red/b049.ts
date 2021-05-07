@@ -2,7 +2,7 @@ import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../.
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_B049: MergedContextData[] = [
@@ -17,7 +17,7 @@ export const CONTEXT_B049: MergedContextData[] = [
     [ContextFields.LABEL]: 'detecting faults (bugs, vulnerabilities, defects)',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
+    [ContextFields.PARENT]: 'BUG_DETECTION',
     [ContextFields.SUB]: ['B049_S1_S2', 'B049_S1_2'],
   },
   {
@@ -25,7 +25,6 @@ export const CONTEXT_B049: MergedContextData[] = [
     [ContextFields.LABEL]: 'static analysis',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
     [ContextFields.PARENT]: 'B049_S1',
     [ContextFields.SUB]: ['B049_S1_S2_1', 'B049_S1_S2_2', 'B049_S1_S2_3'],
   },
@@ -34,7 +33,6 @@ export const CONTEXT_B049: MergedContextData[] = [
     [ContextFields.LABEL]: 'dynamic analysis',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
     [ContextFields.PARENT]: 'B049_S1',
   },
   {
@@ -63,7 +61,7 @@ export const CONTEXT_B049: MergedContextData[] = [
     [ContextFields.LABEL]: 'Java Programs',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.DIMENSION]: Dimension.PROGRAMMING_LANGUAGE,
+    [ContextFields.PARENT]: 'APPLICATIONS',
   },
 ];
 

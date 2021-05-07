@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
@@ -7,28 +13,24 @@ import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/d
 
 export const CONTEXT_B435: MergedContextData[] = [
   {
-    id: 'B435_S1',
-    [ContextFields.LABEL]: 'Types of Tests',
-    [ContextFields.IDENTICAL]: ['A309_S4', 'B535_S6'],
-    [ContextFields.SUB]: ['B435_S1_1'],
-  },
-  {
     id: 'B435_S1_1',
     [ContextFields.LABEL]: 'Performance Tests',
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
     [ContextFields.IDENTICAL]: ['B535_S6_4'],
-    [ContextFields.PARENT]: 'B435_S1'
+    [ContextFields.PARENT]: 'TEST_TYPES'
   },
   {
     id: 'B435_2',
     [ContextFields.LABEL]: 'DevOps',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'SE_ACTIVITIES',
   },
   {
     id: 'B435_S2',
     [ContextFields.LABEL]: 'Performance Issues',
+    [ContextFields.PARENT]: 'SOFTWARE_ISSUES',
     [ContextFields.SUB]: ['B435_S2_1', 'B435_S2_2', 'B435_S2_3', 'B435_S2_4', 'B435_S2_5', 'B435_S2_6'],
   },
   {
@@ -74,30 +76,25 @@ export const CONTEXT_B435: MergedContextData[] = [
     [ContextFields.PARENT]: 'B435_S2'
   },
   {
-    id: 'B435_S3',
-    [ContextFields.LABEL]: 'application characteristics',
-    [ContextFields.SUB]: ['B435_S3_1', 'B435_S3_2', 'B435_S3_3'],
-  },
-  {
     id: 'B435_S3_1',
     [ContextFields.LABEL]: 'large-scale systems',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'B435_S3'
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS'
   },
   {
     id: 'B435_S3_2',
     [ContextFields.LABEL]: 'distributed database management system',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'B435_S3'
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS'
   },
   {
     id: 'B435_S3_3',
     [ContextFields.LABEL]: 'distributed database processing system',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'B435_S3'
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS'
   },
 ];
 

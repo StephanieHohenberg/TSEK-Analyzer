@@ -1,8 +1,8 @@
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_B135: MergedContextData[] = [
@@ -11,12 +11,14 @@ export const CONTEXT_B135: MergedContextData[] = [
     [ContextFields.LABEL]: 'Automated DNN Repair',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'AUTOMATED_REPAIR',
   },
   {
     id: 'B135_S2',
     [ContextFields.LABEL]: 'DL libraries',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'DL_TOOLS',
     [ContextFields.SUB]: ['B135_S2_1', 'B135_S2_2', 'B135_S2_3', 'B135_S2_4', 'B135_S2_5'],
   },
   {

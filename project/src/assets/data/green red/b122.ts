@@ -1,16 +1,17 @@
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_B122: MergedContextData[] = [
   {
     id: 'B122_S1',
-    [ContextFields.LABEL]: 'Testing',
+    [ContextFields.LABEL]: 'Testing DNN',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'TESTING',
     [ContextFields.SUB]: ['B122_S1_1', 'B122_S1_2'],
   },
   {
@@ -59,7 +60,7 @@ export const CONTEXT_B122: MergedContextData[] = [
   },
   {
     id: 'B122_S2',
-    [ContextFields.LABEL]: 'Computer Vision',
+    [ContextFields.LABEL]: 'Computer Vision', // TODO
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
     [ContextFields.SUB]: ['B122_S2_1'],

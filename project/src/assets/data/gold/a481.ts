@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
@@ -7,18 +13,11 @@ import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/d
 
 export const CONTEXT_A481: MergedContextData[] = [
   {
-    id: 'A481_S1',
-    [ContextFields.LABEL]: 'Mobile Applications',
-    [ContextFields.IDENTICAL]: ['A322_S1', 'A309_S1'],
-    [ContextFields.SUB]: ['A322_S1_1'],
-  },
-  {
     id: 'A481_S1_1',
     [ContextFields.LABEL]: 'Android  application',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.IDENTICAL]: ['A322_S1_1', 'A309_S1_1'],
-    [ContextFields.PARENT]: 'A481_S1',
+    [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
   },
   {
     id: 'A481_2',
@@ -27,30 +26,25 @@ export const CONTEXT_A481: MergedContextData[] = [
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
   },
   {
-    id: 'A481_S3',
-    [ContextFields.LABEL]: 'applications characteristics',
-    [ContextFields.SUB]: ['A481_S3_1', 'A481_S3_2', 'A481_S3_3'],
-  },
-  {
     id: 'A481_S3_1',
     [ContextFields.LABEL]: 'large, industrial applications',
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.CONCLUSION,
-    [ContextFields.PARENT]: 'A481_S3',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'A481_S3_2',
     [ContextFields.LABEL]: 'open source',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'A481_S3',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'A481_S3_3',
     [ContextFields.LABEL]: 'closed source',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'A481_S3',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
 ];
 

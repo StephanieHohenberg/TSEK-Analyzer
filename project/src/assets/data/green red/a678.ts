@@ -1,8 +1,8 @@
 import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A678: MergedContextData[] = [
@@ -11,6 +11,7 @@ export const CONTEXT_A678: MergedContextData[] = [
     [ContextFields.LABEL]: 'Human Cognitive Processes',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'HUMAN_ASPECTS',
     [ContextFields.SUB]: ['A678_S1_1', 'A678_S1_2', 'A678_S1_3', 'A678_S1_4', 'A678_S1_5', 'A678_S1_6', 'A678_S1_7'],
   },
   {
@@ -67,6 +68,7 @@ export const CONTEXT_A678: MergedContextData[] = [
     [ContextFields.LABEL]: 'C/C++',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
   },
 ];
 

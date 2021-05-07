@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
@@ -7,54 +13,39 @@ import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/d
 
 export const CONTEXT_A309: MergedContextData[] = [
   {
-    id: 'A309_S1',
-    [ContextFields.LABEL]: 'Mobile Applications',
-    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
-    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.IDENTICAL]: ['A322_S1', 'A481_S1'],
-    [ContextFields.SUB]: ['A322_S1_1'],
-  },
-  {
     id: 'A309_S1_1',
     [ContextFields.LABEL]: 'Android  application',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.IDENTICAL]: ['A322_S1_1', 'A481_S1_1'],
-    [ContextFields.PARENT]: 'A309_S1',
+    [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
   },
   {
     id: 'A309_2',
     [ContextFields.LABEL]: 'Crowdsource Testing',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'TESTING',
   },
   {
     id: 'A309_3',
     [ContextFields.LABEL]: 'Responsive WebPages with mobile testing',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
-  },
-  {
-    id: 'A309_S4',
-    [ContextFields.LABEL]: 'Types of Tests',
-    [ContextFields.IDENTICAL]: ['B535_S6', 'B435_S1'],
-    [ContextFields.SUB]: ['A309_S4_1', 'A309_S4_2' ],
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'A309_S4_1',
     [ContextFields.LABEL]: 'Functional Tests',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.IDENTICAL]: ['B535_S6_1'],
-    [ContextFields.PARENT]: 'A309_S4'
+    [ContextFields.PARENT]: 'TEST_TYPES'
   },
   {
     id: 'A309_S4_2',
     [ContextFields.LABEL]: 'Usability Tests',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.IDENTICAL]: ['B535_S6_2'],
-    [ContextFields.PARENT]: 'A309_S4'
+    [ContextFields.PARENT]: 'TEST_TYPES'
   },
 ];
 

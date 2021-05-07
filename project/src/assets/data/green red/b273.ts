@@ -1,8 +1,14 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
-import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {AssumptionFields} from '../../../app/data/assumption.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_B273: MergedContextData[] = [
@@ -12,7 +18,6 @@ export const CONTEXT_B273: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.SUB]: ['B273_S2'],
-
   },
   {
     id: 'B273_S2',
@@ -59,65 +64,59 @@ export const CONTEXT_B273: MergedContextData[] = [
     [ContextFields.PARENT]: 'B273_S2',
   },
   {
-    id: 'B273_S3',
-    [ContextFields.LABEL]: 'Applications',
-    [ContextFields.SUB]: ['B273_S3_1', 'B273_S3_2', 'B273_S3_3', 'B273_S3_4', 'B273_S3_5', 'B273_S3_6', 'B273_S3_7', 'B273_S3_8'],
-  },
-  {
     id: 'B273_S3_1',
     [ContextFields.LABEL]: 'Java ByteCode Programs',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'B273_S3',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B273_S3_2',
     [ContextFields.LABEL]: 'Neural Networks',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'B273_S3',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B273_S3_3',
     [ContextFields.LABEL]: 'Traffic Collision Avoidance System',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'B273_S3',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B273_S3_4',
     [ContextFields.LABEL]: 'Applications from the Defects4J Benchmark',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'B273_S3',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B273_S3_5',
     [ContextFields.LABEL]: 'Time, Math, Apache CLI',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'B273_S3',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B273_S3_6',
     [ContextFields.LABEL]: 'Login / Authentication Application',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'B273_S3',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B273_S3_7',
     [ContextFields.LABEL]: 'Handwritten Digit Recognition Classifier',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'B273_S3',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B273_S3_8',
     [ContextFields.LABEL]: 'other programs, other classifier, other domains',
     [ContextFields.ZWECK]: Zweck.VAGUE_VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.LIMITATIONS,
-    [ContextFields.PARENT]: 'B273_S3',
   }
 ];
 

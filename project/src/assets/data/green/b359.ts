@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
@@ -17,6 +23,7 @@ export const CONTEXT_B359: MergedContextData[] = [
     [ContextFields.LABEL]: 'Code Comments',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'NATURAL_LANGUAGES',
     [ContextFields.SUB]: ['B359_S2_1', 'B359_S2_2', 'B359_S2_3'],
   },
   {
@@ -41,23 +48,18 @@ export const CONTEXT_B359: MergedContextData[] = [
     [ContextFields.PARENT]: 'B359_S2',
   },
   {
-    id: 'B359_S3',
-    [ContextFields.LABEL]: 'Project Properties',
-    [ContextFields.SUB]: ['B359_S3_1', 'B359_S3_2'],
-  },
-  {
     id: 'B359_S3_1',
     [ContextFields.LABEL]: 'larger software systems with lots of comments',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
-    [ContextFields.PARENT]: 'B359_S3',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'B359_S3_2',
     [ContextFields.LABEL]: 'software systems without a standard towards comments',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
-    [ContextFields.PARENT]: 'B359_S3',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
 ];
 

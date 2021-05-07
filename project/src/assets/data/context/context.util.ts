@@ -6,7 +6,6 @@ export function getContextData(data: MergedContextData[]): ContextData[] {
     [ContextFields.LABEL]: d[ContextFields.LABEL],
     [ContextFields.PARENT]: d[ContextFields.PARENT],
     [ContextFields.SUB]: d[ContextFields.SUB],
-    [ContextFields.DIMENSION]: d[ContextFields.DIMENSION],
   })).filter(d => d[ContextFields.LABEL] !== undefined);
 }
 
@@ -15,6 +14,5 @@ export function getContextTableData(data: MergedContextData[]): ContextTableData
     id: d.id,
     [ContextFields.ZWECK]: d[ContextFields.ZWECK],
     [ContextFields.VORKOMMEN]: d[ContextFields.VORKOMMEN],
-    [ContextFields.DIMENSION]: d[ContextFields.DIMENSION],
-  })).filter(d => d[ContextFields.ZWECK] !== undefined && d[ContextFields.VORKOMMEN] !== undefined);
+  })); // .filter(d => d[ContextFields.ZWECK] !== undefined && d[ContextFields.VORKOMMEN] !== undefined);
 }

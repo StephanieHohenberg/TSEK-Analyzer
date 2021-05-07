@@ -2,7 +2,7 @@ import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../.
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
-import {ContextFields, Dimension, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
+import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/data/context.data';
 import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A125: MergedContextData[] = [
@@ -11,13 +11,14 @@ export const CONTEXT_A125: MergedContextData[] = [
     [ContextFields.LABEL]: 'Dependency Conflicts',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'DEV_OPS',
   },
   {
     id: 'A125_S1',
     [ContextFields.LABEL]: 'Python Library Ecosystems',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
+    [ContextFields.PARENT]: 'SOFTWARE_TOOLS',
     [ContextFields.SUB]: ['A125_S1_1', 'A125_S1_2'],
   },
   {
@@ -25,7 +26,6 @@ export const CONTEXT_A125: MergedContextData[] = [
     [ContextFields.LABEL]: 'Python Package Index (PyPi)',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.DIMENSION]: Dimension.APPLICATION,
     [ContextFields.PARENT]: 'A125_S1',
   },
   {
@@ -38,7 +38,7 @@ export const CONTEXT_A125: MergedContextData[] = [
   {
     id: 'A125_S2',
     [ContextFields.LABEL]: 'Root-cause Analysis',
-    [ContextFields.DIMENSION]: Dimension.SE_ACTIVITY,
+    [ContextFields.PARENT]: 'BUG_HANDLING',
     [ContextFields.SUB]: ['A125_S2_1', 'A125_S2_2', 'A124_S2_3'],
   },
   {
@@ -46,52 +46,55 @@ export const CONTEXT_A125: MergedContextData[] = [
     [ContextFields.LABEL]: 'Build Failures',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.LIMITATIONS,
-    [ContextFields.PARENT]: 'A125_S2',
+    [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
   },
   {
     id: 'A125_S2_2',
     [ContextFields.LABEL]: 'Semantic Inconsistencies',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.LIMITATIONS,
-    [ContextFields.PARENT]: 'A125_S2',
+    [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
   },
   {
     id: 'A125_S2_3',
     [ContextFields.LABEL]: 'Runtime Errors',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.LIMITATIONS,
-    [ContextFields.PARENT]: 'A125_S2',
+    [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
   },
   {
     id: 'A125_2',
     [ContextFields.LABEL]: 'Github Projects',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.DATA_PREPARATION,
-    [ContextFields.DIMENSION]: Dimension.SOURCING,
+    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
   },
   {
     id: 'A125_3',
     [ContextFields.LABEL]: 'popular projects',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.DATA_PREPARATION,
+    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
   },
   {
     id: 'A125_4',
     [ContextFields.LABEL]: 'projects used as a python library',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.DATA_PREPARATION,
+    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
   },
   {
     id: 'A125_5',
     [ContextFields.LABEL]: 'well-maintained projects',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.DATA_PREPARATION,
+    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
   },
   {
     id: 'A125_6',
     [ContextFields.LABEL]: 'Python',
     [ContextFields.ZWECK]: Zweck.DETAILS,
-    [ContextFields.DIMENSION]: Dimension.PROGRAMMING_LANGUAGE,
+    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
   },
 ];
 

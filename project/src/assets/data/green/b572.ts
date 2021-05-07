@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
@@ -7,10 +13,16 @@ import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_B572: MergedContextData[] = [
   {
-    id: 'B572_S1',
-    [ContextFields.LABEL]: 'Analytic Service',
+    id: 'B572_S0',
+    [ContextFields.LABEL]: 'Analytic Services',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'SOFTWARE_TOOLS',
+  },
+  {
+    id: 'B572_S1',
+    [ContextFields.LABEL]: 'Analytic Service Providers',
+    [ContextFields.PARENT]: 'B572_S0',
     [ContextFields.SUB]: ['B572_S1_1', 'B572_S1_2', 'B572_S1_3', 'B572_S1_4', 'B572_S1_5', 'B572_S1_6', 'B572_S1_7',
                           'B572_S1_8', 'B572_S1_9', 'B572_S1_10', 'B572_S1_11', 'B572_S1_12', 'B572_S1_13'],
   },
@@ -109,11 +121,13 @@ export const CONTEXT_B572: MergedContextData[] = [
     id: 'B572_2',
     [ContextFields.LABEL]: 'Android Applications',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
   },
   {
     id: 'B572_S3',
     [ContextFields.LABEL]: 'Applications of Analytic Services',
+    [ContextFields.PARENT]: 'B572_S0',
     [ContextFields.SUB]: ['B572_S3_1', 'B572_S3_2', 'B572_S3_3'],
   },
   {

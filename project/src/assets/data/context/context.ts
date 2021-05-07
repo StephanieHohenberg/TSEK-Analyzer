@@ -59,6 +59,7 @@ import {CONTEXT_B135} from '../green red/b135';
 import {CONTEXT_B509} from '../green red/b509';
 import {CONTEXT_B098} from '../green red/b098';
 import {CONTEXT_B086} from '../green red/b086';
+import {SHARED_CONTEXT} from './shared-context';
 
 export function getContextMap(): Map<string, ContextData> {
   const map = new Map<string, ContextData>();
@@ -152,5 +153,6 @@ function getContextDataOfAllPapers(): ContextData[][] {
     ...greenRedContext,
     ...greenContext,
     ...redContext,
+    getContextData([...SHARED_CONTEXT]),
   ];
 }

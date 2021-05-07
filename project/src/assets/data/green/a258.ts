@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
@@ -7,14 +13,9 @@ import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A258: MergedContextData[] = [
   {
-    id: 'A258_1',
-    [ContextFields.LABEL]: 'Security',
-    [ContextFields.ZWECK]: Zweck.THEMA,
-    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-  },
-  {
     id: 'A258_S2',
     [ContextFields.LABEL]: 'Security Attacks',
+    [ContextFields.PARENT]: 'SECURITY_A',
     [ContextFields.SUB]: ['A258_S1_1', 'A258_S1_2', 'A258_S1_3'],
   },
   {
@@ -51,6 +52,7 @@ export const CONTEXT_A258: MergedContextData[] = [
     [ContextFields.LABEL]: 'C/C++ programs',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'PROGRAMS',
     [ContextFields.SUB]: ['A258_S3_1', 'A258_S3_2'],
   },
   {

@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
@@ -10,6 +16,7 @@ export const CONTEXT_A186: MergedContextData[] = [
     id: 'A186_1',
     [ContextFields.LABEL]: 'Automated Test Generation',
     [ContextFields.SUB]: ['A186_S1'],
+    [ContextFields.PARENT]: 'TESTING',
   },
   {
     id: 'A186_S1',
@@ -64,23 +71,18 @@ export const CONTEXT_A186: MergedContextData[] = [
     [ContextFields.PARENT]: 'A186_S1',
   },
   {
-    id: 'A186_S2',
-    [ContextFields.LABEL]: 'Application Properties',
-    [ContextFields.SUB]: ['A186_S2_1', 'A186_S2_2'],
-  },
-  {
     id: 'A186_S2_1',
     [ContextFields.LABEL]: 'php based applications',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'A186_S2',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
   {
     id: 'A186_S2_2',
     [ContextFields.LABEL]: 'web apps with JS frameworks',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'A186_S2',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
     [ContextFields.SUB]: ['A186_S2_2_1', 'A186_S2_2_2', 'A186_S2_2_3', 'A186_S2_2_4'],
   },
   {
@@ -116,6 +118,7 @@ export const CONTEXT_A186: MergedContextData[] = [
     [ContextFields.LABEL]: 'Test Automation Tools',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.BACKGROUND,
+    [ContextFields.PARENT]: 'SOFTWARE_TOOLS',
     [ContextFields.SUB]: ['A186_S3_1', 'A186_S3_2'],
   },
   {

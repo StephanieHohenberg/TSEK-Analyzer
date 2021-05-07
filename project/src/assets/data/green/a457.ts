@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../app/data/assumption.data';
@@ -7,56 +13,53 @@ import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A457: MergedContextData[] = [
   {
-    id: 'A457_S1',
-    [ContextFields.LABEL]: 'Testing',
-    [ContextFields.SUB]: ['A457_S1_1', 'A457_S1_2', 'A457_S1_3', 'A457_S1_4', 'A457_S1_5'],
-  },
-  {
     id: 'A457_S1_1',
     [ContextFields.LABEL]: 'Mulitple Entry Testing',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'A457_S1',
+    [ContextFields.PARENT]: 'TESTING',
   },
   {
     id: 'A457_S1_2',
     [ContextFields.LABEL]: 'Single Entry Testing',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'A457_S1',
+    [ContextFields.PARENT]: 'TESTING',
   },
   {
     id: 'A457_S1_3',
     [ContextFields.LABEL]: 'GUI Testing',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'A457_S1',
+    [ContextFields.PARENT]: 'TESTING',
   },
   {
     id: 'A457_S1_4',
     [ContextFields.LABEL]: 'GUI Exploration',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'A457_S1',
+    [ContextFields.PARENT]: 'TESTING',
   },
   {
     id: 'A457_S1_5',
     [ContextFields.LABEL]: 'e2e Testing',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
-    [ContextFields.PARENT]: 'A457_S1',
+    [ContextFields.PARENT]: 'TESTING',
   },
   {
     id: 'A457_S2',
     [ContextFields.LABEL]: 'Android Applications',
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
   },
   {
     id: 'A457_S3',
     [ContextFields.LABEL]: 'large applications with several components',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
 ];
 

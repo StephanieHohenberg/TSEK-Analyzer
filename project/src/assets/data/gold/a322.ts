@@ -1,4 +1,10 @@
-import {AnalysisPaperData, AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../app/data/paper.data';
+import {
+  AnalysisPaperData,
+  AnalysisPaperFields,
+  Award,
+  Continent,
+  GeneralPaperFields
+} from '../../../app/data/paper.data';
 import {CharacterizationFields} from '../../../app/data/characterization.data';
 import {GeneralizationFields} from '../../../app/data/generalization.data';
 import {AssumptionFields, IterationGroup} from '../../../app/data/assumption.data';
@@ -7,24 +13,16 @@ import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../../app/d
 
 export const CONTEXT_A322: MergedContextData[] = [
   {
-    id: 'A322_S1',
-    [ContextFields.LABEL]: 'Mobile Applications',
-    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
-    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.IDENTICAL]: ['A481_S1', 'A309_S1'],
-    [ContextFields.SUB]: ['A322_S1_1', 'A481_S1'],
-  },
-  {
     id: 'A322_S1_1',
     [ContextFields.LABEL]: 'Android  application',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.IDENTICAL]: ['A481_S1_1', 'A309_S1_1'],
-    [ContextFields.PARENT]: 'A322_S1',
+    [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
   },
   {
     id: 'A322_S2',
     [ContextFields.LABEL]: 'Application Properties',
+    [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
     [ContextFields.SUB]: ['A322_S2_1', 'A322_S2_2', 'A322_S2_3', 'A322_S2_4', 'A322_S2_5', 'A322_S2_6', 'A322_S2_7', 'A322_S2_8', 'A322_S2_9'],
   },
   {
