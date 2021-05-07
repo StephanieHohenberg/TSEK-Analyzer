@@ -5,12 +5,13 @@ export enum ContextFields {
   PARENT = 'parent',
   SUB = 'sub',
   IDENTICAL = 'identical',
+  WEIGHT_FACTOR = 'weightFactor',
 }
 
 export interface ContextTableData {
   id: string;
-  [ContextFields.ZWECK]: Zweck;
-  [ContextFields.VORKOMMEN]: Vorkommen;
+  [ContextFields.ZWECK]?: Zweck;
+  [ContextFields.VORKOMMEN]?: Vorkommen;
 }
 
 export interface ContextData {
@@ -18,6 +19,7 @@ export interface ContextData {
   [ContextFields.LABEL]: string;
   [ContextFields.PARENT]?: string; // contextId
   [ContextFields.SUB]?: string[]; // contextId
+  [ContextFields.WEIGHT_FACTOR]?: number;
 }
 
 export interface MergedContextData {
@@ -28,6 +30,7 @@ export interface MergedContextData {
   [ContextFields.PARENT]?: string; // contextId
   [ContextFields.SUB]?: string[]; // contextId
   [ContextFields.IDENTICAL]?: string[]; // contextId
+  [ContextFields.WEIGHT_FACTOR]?: number;
 }
 
 export enum Zweck {

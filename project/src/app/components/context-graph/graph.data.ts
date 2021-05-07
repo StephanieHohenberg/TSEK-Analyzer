@@ -15,12 +15,14 @@ export class NodeData {
 
   public id;
   public label: string;
-  public colorCode = 'grey';
-  public weight = 30;
+  public colorCode;
+  public weight;
 
-  constructor(ID, word: string) {
+  constructor(ID, word: string, colorCode: string, weight?: number = 20) {
     this.id = ID;
     this.label = word;
+    this.colorCode = colorCode;
+    this.weight = weight;
   }
 }
 
@@ -30,10 +32,12 @@ export class EdgeData {
   public target;
   public linkID;
   public linkStrength = 10;
+  public lineStyle;
 
-  constructor(sourceID, targetID) {
+  constructor(sourceID, targetID, lineStyle: string) {
     this.source = sourceID;
     this.target = targetID;
     this.linkID = `${sourceID}-${targetID}`;
+    this.lineStyle = lineStyle
   }
 }

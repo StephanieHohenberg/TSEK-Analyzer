@@ -7,7 +7,13 @@ import * as cytoscape from 'cytoscape';
 import {ContextService} from '../../services/context.service';
 import {PaperService} from '../../services/paper.service';
 import {AnalysisPaperFields, GeneralPaperFields} from '../../data/paper.data';
-import {FilterConnector, FilterData, FilterUpdate, FilterUpdateType, GraphVisibilityUpdateType} from '../../data/filter.data';
+import {
+  FilterConnector,
+  FilterData,
+  FilterUpdate,
+  FilterUpdateType,
+  GraphVisibilityUpdateType
+} from '../../data/filter.data';
 import {VisibilityService} from '../../services/visibility.service';
 
 @Component({
@@ -106,9 +112,10 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
   private initializeGraphConfiguration(): void {
     this.layout = {
       name: 'cose',
-      //      rankDir: 'LR',
-      directed: true,
-      padding: 0
+      componentSpacing: 120,
+      animate: false, // TODO display table with loader already
+      avoidOverlap: true,
+      idealEdgeLength: ( edge ) => 64,
     };
 
     this.style = cytoscape.stylesheet()
@@ -120,9 +127,10 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
         'content': 'data(label)',
         'text-valign': 'center',
         'text-outline-width': 2,
-        'text-outline-color': 'data(colorCode)',
+        'text-outline-color': 'white',
+        'text-max-width': '50px',
         'background-color': 'data(colorCode)',
-        'color': '#fff',
+        'color': 'black',
         'font-size': 10
       })
       .selector(':selected')
@@ -132,12 +140,13 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
       })
       .selector('edge')
       .css({
-        'curve-style': 'bezier',
+        'curve-style': 'taxi',
+        'line-style': 'data(lineStyle)',
         'opacity': 0.8,
         'width': '2',
         'line-color': 'grey',
         'target-arrow-color': 'grey',
-        'target-arrow-shape': 'triangle'
+        'target-arrow-shape': 'triangle-cross'
       })
       .selector('.faded')
       .css({

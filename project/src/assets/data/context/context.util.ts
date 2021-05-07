@@ -6,6 +6,8 @@ export function getContextData(data: MergedContextData[]): ContextData[] {
     [ContextFields.LABEL]: d[ContextFields.LABEL],
     [ContextFields.PARENT]: d[ContextFields.PARENT],
     [ContextFields.SUB]: d[ContextFields.SUB],
+    [ContextFields.ZWECK]: d[ContextFields.ZWECK],
+    [ContextFields.WEIGHT_FACTOR]: d[ContextFields.WEIGHT_FACTOR],
   })).filter(d => d[ContextFields.LABEL] !== undefined);
 }
 
