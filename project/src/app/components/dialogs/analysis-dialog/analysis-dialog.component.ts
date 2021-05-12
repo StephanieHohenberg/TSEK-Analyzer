@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {analysisPaperFieldList} from '../../../data/paper.data';
+import {Component, OnInit} from '@angular/core';
+import {analysisPaperFieldList} from '../../../model/paper.data';
 import {VisibilityService} from '../../../services/visibility.service';
 
 @Component({

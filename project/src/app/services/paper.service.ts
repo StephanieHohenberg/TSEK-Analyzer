@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
-import {GeneralizationData} from '../data/generalization.data';
-import {AnalysisPaperData, AnalysisPaperFields, GeneralPaperData} from '../data/paper.data';
-import {CharacterizationData} from '../data/characterization.data';
-import {ContextFields, ContextData, ContextTableData} from '../data/context.data';
-import {AssumptionData} from '../data/assumption.data';
-import {FilterConnector, FilterData, FilterUpdate, FilterUpdateType} from '../data/filter.data';
-import {getDataMap} from '../../assets/data/hashmap.data';
-import {getContextMap} from '../../assets/data/context/context';
+import {GeneralizationData} from '../model/generalization.data';
+import {AnalysisPaperData, AnalysisPaperFields, GeneralPaperData} from '../model/paper.data';
+import {CharacterizationData} from '../model/characterization.data';
+import {ContextData, ContextFields, ContextTableData} from '../model/context.data';
+import {AssumptionData} from '../model/assumption.data';
+import {FilterConnector, FilterData, FilterUpdate, FilterUpdateType} from '../model/filter.data';
+import {getDataMap} from '../data/hashmap.data';
+import {getContextMap} from '../data/context/context';
 
 @Injectable({
   providedIn: 'root'

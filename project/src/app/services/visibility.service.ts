@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {analysisPaperFieldList, AnalysisPaperFields} from '../data/paper.data';
+import {analysisPaperFieldList, AnalysisPaperFields} from '../model/paper.data';
 import {Observable, Subject} from 'rxjs';
-import {GraphVisibilityUpdate, GraphVisibilityUpdateType} from '../data/filter.data';
+import {GraphVisibilityUpdate, GraphVisibilityUpdateType} from '../model/filter.data';
 
 export enum  ScreenComponent { SIDE_BAR, GRAPH}
 

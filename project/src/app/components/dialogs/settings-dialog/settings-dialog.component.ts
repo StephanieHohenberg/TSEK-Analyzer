@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AnalysisPaperFields, generalPaperFieldList, GeneralPaperFields} from '../../../data/paper.data';
+import {AnalysisPaperFields, generalPaperFieldList, GeneralPaperFields} from '../../../model/paper.data';
 import {VisibilityService} from '../../../services/visibility.service';
 
 @Component({

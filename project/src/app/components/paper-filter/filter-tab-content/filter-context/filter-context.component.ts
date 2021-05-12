@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Observable} from 'rxjs';
 import {filter, map} from 'rxjs/operators';
-import {ContextFields, Vorkommen, Zweck} from '../../../../data/context.data';
-import {AnalysisPaperFields} from '../../../../data/paper.data';
-import {FilterData} from '../../../../data/filter.data';
+import {ContextFields, Vorkommen, Zweck} from '../../../../model/context.data';
+import {AnalysisPaperFields} from '../../../../model/paper.data';
+import {FilterData} from '../../../../model/filter.data';
 import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({

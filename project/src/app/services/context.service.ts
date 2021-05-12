@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {EdgeData, EdgeDataWrapper, GraphData, NodeData, NodeDataWrapper} from '../components/context-graph/graph.data';
-import {getContextMap} from '../../assets/data/context/context';
-import {ContextData, ContextFields, Zweck} from '../data/context.data';
+import {getContextMap} from '../data/context/context';
+import {ContextData, ContextFields, Zweck} from '../model/context.data';
 
 @Injectable({
   providedIn: 'root'

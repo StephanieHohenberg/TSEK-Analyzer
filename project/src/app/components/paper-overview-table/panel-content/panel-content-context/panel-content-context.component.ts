@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {characterizationFieldList, CharacterizationFields} from '../../../../data/characterization.data';
+import {characterizationFieldList, CharacterizationFields} from '../../../../model/characterization.data';
 import {PaperService} from '../../../../services/paper.service';
-import {ContextData, ContextFields, ContextTableData, Vorkommen, Zweck} from '../../../../data/context.data';
+import {ContextFields, ContextTableData, Vorkommen, Zweck} from '../../../../model/context.data';
 import {VisibilityService} from '../../../../services/visibility.service';
 
 @Component({

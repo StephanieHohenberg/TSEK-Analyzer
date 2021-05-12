@@ -1,5 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CharacterizationData, characterizationFieldList, CharacterizationFields} from '../../../../data/characterization.data';
+import {
+  CharacterizationData,
+  characterizationFieldList,
+  CharacterizationFields
+} from '../../../../model/characterization.data';
 import {PaperService} from '../../../../services/paper.service';
 
 @Component({

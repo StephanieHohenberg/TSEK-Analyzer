@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PaperService} from '../../../../services/paper.service';
-import {AssumptionData, AssumptionFields} from '../../../../data/assumption.data';
+import {AssumptionData, AssumptionFields} from '../../../../model/assumption.data';
 
 @Component({
   selector: 'app-panel-content-assumptions',

@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Observable} from 'rxjs';
 import {filter, map} from 'rxjs/operators';
-import {AnalysisPaperFields} from '../../../../data/paper.data';
-import {CharacterizationFields} from '../../../../data/characterization.data';
-import {FilterData} from '../../../../data/filter.data';
+import {AnalysisPaperFields} from '../../../../model/paper.data';
+import {CharacterizationFields} from '../../../../model/characterization.data';
+import {FilterData} from '../../../../model/filter.data';
 
 @Component({
   selector: 'app-filter-characterization',

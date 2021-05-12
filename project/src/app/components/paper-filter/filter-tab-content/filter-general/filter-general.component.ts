@@ -2,9 +2,9 @@ import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angula
 import {Observable, Subject} from 'rxjs';
 import {filter, map, takeUntil} from 'rxjs/operators';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../../data/paper.data';
+import {AnalysisPaperFields, Award, Continent, GeneralPaperFields} from '../../../../model/paper.data';
 import {VisibilityService} from '../../../../services/visibility.service';
-import {FilterData} from '../../../../data/filter.data';
+import {FilterData} from '../../../../model/filter.data';
 import {ActivatedRoute} from '@angular/router';
 import {TranslatePipe} from '@ngx-translate/core';
 

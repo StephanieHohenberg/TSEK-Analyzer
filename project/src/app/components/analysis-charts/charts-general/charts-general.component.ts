@@ -3,7 +3,7 @@ import {FilterService} from '../../../services/filter.service';
 import {takeUntil} from 'rxjs/operators';
 import {PaperService} from '../../../services/paper.service';
 import {Subject} from 'rxjs';
-import {Award, Continent, GeneralPaperData, GeneralPaperFields} from '../../../data/paper.data';
+import {Award, Continent, GeneralPaperData, GeneralPaperFields} from '../../../model/paper.data';
 
 @Component({
   selector: 'app-charts-general',

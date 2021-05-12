@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {filter, map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
-import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../../data/assumption.data';
-import {AnalysisPaperFields} from '../../../../data/paper.data';
-import {FilterData} from '../../../../data/filter.data';
+import {AssumptionFields, AssumptionGroup, IterationGroup} from '../../../../model/assumption.data';
+import {AnalysisPaperFields} from '../../../../model/paper.data';
+import {FilterData} from '../../../../model/filter.data';
 
 @Component({
   selector: 'app-filter-assumptions',

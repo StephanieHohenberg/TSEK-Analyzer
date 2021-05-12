@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Observable} from 'rxjs';
 import {filter, map} from 'rxjs/operators';
-import {AnalysisPaperFields} from '../../../../data/paper.data';
-import {GeneralizationFields} from '../../../../data/generalization.data';
-import {FilterData} from '../../../../data/filter.data';
+import {AnalysisPaperFields} from '../../../../model/paper.data';
+import {GeneralizationFields} from '../../../../model/generalization.data';
+import {FilterData} from '../../../../model/filter.data';
 
 @Component({
   selector: 'app-filter-verallgemeinbarkeit',

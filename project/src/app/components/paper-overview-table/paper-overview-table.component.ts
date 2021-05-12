@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AnalysisPaperFields, Award, GeneralPaperData, GeneralPaperFields} from '../../data/paper.data';
+import {AnalysisPaperFields, Award, GeneralPaperData, GeneralPaperFields} from '../../model/paper.data';
 import {PaperService} from '../../services/paper.service';
 import {AnalysisDialogComponent} from '../dialogs/analysis-dialog/analysis-dialog.component';
 import {MatDialog} from '@angular/material/dialog';

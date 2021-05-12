@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Continent, GeneralPaperData, GeneralPaperFields} from '../../../../data/paper.data';
+import {Continent, GeneralPaperData, GeneralPaperFields} from '../../../../model/paper.data';
 import {PaperService} from '../../../../services/paper.service';
-import {Zweck} from '../../../../data/context.data';
 
 @Component({
   selector: 'app-panel-content-general',

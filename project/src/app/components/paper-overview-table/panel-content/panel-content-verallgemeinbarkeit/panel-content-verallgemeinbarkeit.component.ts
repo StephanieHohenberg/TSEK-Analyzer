@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PaperService} from '../../../../services/paper.service';
-import {GeneralizationData, generalizationFieldList, GeneralizationFields} from '../../../../data/generalization.data';
-import {Continent} from '../../../../data/paper.data';
+import {GeneralizationData, generalizationFieldList, GeneralizationFields} from '../../../../model/generalization.data';
 
 @Component({
   selector: 'app-panel-content-verallgemeinbarkeit',

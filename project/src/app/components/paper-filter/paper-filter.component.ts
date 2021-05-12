@@ -1,11 +1,10 @@
 import {Component, EventEmitter, OnDestroy, OnInit} from '@angular/core';
-import {analysisPaperFieldList} from '../../data/paper.data';
+import {analysisPaperFieldList} from '../../model/paper.data';
 import {VisibilityService} from '../../services/visibility.service';
 import {FilterService} from '../../services/filter.service';
-import {FilterConnector, FilterData} from '../../data/filter.data';
+import {FilterConnector, FilterData} from '../../model/filter.data';
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
-import {ActivatedRoute} from '@angular/router';
 import {TranslatePipe} from '@ngx-translate/core';
 
 

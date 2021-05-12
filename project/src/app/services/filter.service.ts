@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {FilterConnector, FilterData, FilterUpdate, FilterUpdateType} from '../data/filter.data';
+import {FilterConnector, FilterData, FilterUpdate, FilterUpdateType} from '../model/filter.data';
 import {BehaviorSubject, Observable} from 'rxjs';
 
 export const DEFAULT_FILTER: FilterUpdate = { type: FilterUpdateType.RESET_FILTER, connector: FilterConnector.UND};

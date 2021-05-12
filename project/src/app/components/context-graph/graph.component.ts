@@ -6,14 +6,14 @@ import {BehaviorSubject, Subject} from 'rxjs';
 import * as cytoscape from 'cytoscape';
 import {ContextService} from '../../services/context.service';
 import {PaperService} from '../../services/paper.service';
-import {AnalysisPaperFields, GeneralPaperFields} from '../../data/paper.data';
+import {AnalysisPaperFields, GeneralPaperFields} from '../../model/paper.data';
 import {
   FilterConnector,
   FilterData,
   FilterUpdate,
   FilterUpdateType,
   GraphVisibilityUpdateType
-} from '../../data/filter.data';
+} from '../../model/filter.data';
 import {VisibilityService} from '../../services/visibility.service';
 
 @Component({
