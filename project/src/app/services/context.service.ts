@@ -26,7 +26,7 @@ export class ContextService {
       const colorCode = weight === this.DEFAULT_WEIGHT ? 'white' : 'darkslateblue';
       nodes.push({data: new NodeData(context.id, label, colorCode, weight)});
       if (context[ContextFields.PARENT]) {
-        edges.push({data: new EdgeData(context[ContextFields.PARENT], context.id)});
+        edges.push({data: new EdgeData(context[ContextFields.PARENT], context.id, 'solid')});
       }
     });
     return { nodes, edges};

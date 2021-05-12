@@ -18,7 +18,7 @@ export class NodeData {
   public colorCode;
   public weight;
 
-  constructor(ID, word: string, colorCode: string, weight?: number = 20) {
+  constructor(ID, word: string, colorCode: string, weight: number = 20) {
     this.id = ID;
     this.label = word;
     this.colorCode = colorCode;
@@ -38,6 +38,6 @@ export class EdgeData {
     this.source = sourceID;
     this.target = targetID;
     this.linkID = `${sourceID}-${targetID}`;
-    this.lineStyle = lineStyle
+    this.lineStyle = lineStyle;
   }
 }
