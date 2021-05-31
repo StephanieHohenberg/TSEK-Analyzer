@@ -62,7 +62,8 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
         if (filterUpdate.type === FilterUpdateType.RESET_FILTER) {
           this.elements = this.contextService.getGraphDataForAllContexts();
         } else {
-          this.applyFilter(filterUpdate, [...this.filterService.getFilter()]);
+          const contextIDs = this.getContextIDsByFilter(filterUpdate, [...this.filterService.getFilter()]);
+          this.elements = this.contextService.getGraphDataByContextIDsWithWeightedStyle(contextIDs);
           this.render();
         }
       });
@@ -74,7 +75,9 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
           case GraphVisibilityUpdateType.SHOW_PAPER:
             const data = { filterTab: AnalysisPaperFields.GENERAL_DATA, field: GeneralPaperFields.ID, value: graphUpdate.id, label: 'ID: '};
             const filter = [...this.filterService.getFilter()].concat([data]);
-            this.applyFilter({ type: FilterUpdateType.ADD_FILTER, connector: FilterConnector.UND, data}, filter);
+            const contextIDs = this.getContextIDsByFilter(
+              { type: FilterUpdateType.ADD_FILTER, connector: FilterConnector.UND, data}, filter);
+            this.elements = this.contextService.getGraphDataByContextIDsWithColoredStyle(contextIDs);
             this.render();
             this.currentGraphVisibilityPaperId = graphUpdate.id;
             break;
@@ -85,28 +88,31 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
       });
   }
 
-  private removeFocusOnPaper(): void {
+  public removeFocusOnPaper(): void {
     if (this.currentGraphVisibilityPaperId) {
       // tslint:disable-next-line:max-line-length
       const data = { filterTab: AnalysisPaperFields.GENERAL_DATA, field: GeneralPaperFields.ID, value: this.currentGraphVisibilityPaperId, label: 'ID: '};
-      this.applyFilter({ type: FilterUpdateType.DELETE_FILTER, connector: FilterConnector.UND, data}, [...this.filterService.getFilter()]);
+      const contextIDs = this.getContextIDsByFilter(
+        { type: FilterUpdateType.DELETE_FILTER, connector: FilterConnector.UND, data},
+        [...this.filterService.getFilter()]);
+      this.elements = this.contextService.getGraphDataByContextIDsWithWeightedStyle(contextIDs);
       this.currentGraphVisibilityPaperId = undefined;
       this.render();
     }
   }
 
-  private unhighlightContexts(): void {
+  public unhighlightContexts(): void {
     this.highlightedContextIDs = [];
     this.render();
   }
 
-  private applyFilter(filterUpdate: FilterUpdate, filterData: FilterData[]): void {
+  private getContextIDsByFilter(filterUpdate: FilterUpdate, filterData: FilterData[]): string[] {
     let contextIDs: string[] = [];
     this.paperService.getFilteredGeneralData(filterUpdate, filterData).forEach(paper => {
       const paperID = paper[GeneralPaperFields.ID];
       contextIDs = contextIDs.concat(this.paperService.getPapersContextsByID(paperID).map(c => c.id));
     });
-    this.elements = this.contextService.getGraphDataByContextIDs(contextIDs);
+    return contextIDs;
   }
 
   private initializeGraphConfiguration(): void {

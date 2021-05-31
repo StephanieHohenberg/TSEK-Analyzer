@@ -32,7 +32,29 @@ export class ContextService {
     return { nodes, edges};
   }
 
-  public getGraphDataByContextIDs(contextIDs: string[]): GraphData {
+  public getGraphDataByContextIDsWithWeightedStyle(contextIDs: string[]): GraphData {
+    const nodes: NodeDataWrapper[] = [];
+    const edges: EdgeDataWrapper[] = [];
+    const map: Map<string, ContextData> = getContextMap();
+    contextIDs.forEach(id => {
+      const context = map.get(id);
+      const weight = this.getWeightForContext(context);
+      const colorCode = weight === this.DEFAULT_WEIGHT ? 'white' : 'darkslateblue';
+      nodes.push({data: new NodeData(context.id, context[ContextFields.LABEL], colorCode, weight)});
+      if (context[ContextFields.PARENT]) {
+        if (!contextIDs.includes(context[ContextFields.PARENT])) {
+          const parent = map.get(context[ContextFields.PARENT]);
+          const pWeight = this.getWeightForContext(parent);
+          const pColorCode = weight === this.DEFAULT_WEIGHT ? 'white' : 'darkslateblue';
+          nodes.push({data: new NodeData(parent.id, parent[ContextFields.LABEL], pColorCode, pWeight)});
+        }
+        edges.push({data: new EdgeData(context[ContextFields.PARENT], context.id, 'solid')});
+      }
+    });
+    return { nodes, edges};
+  }
+
+  public getGraphDataByContextIDsWithColoredStyle(contextIDs: string[]): GraphData {
     const nodes: NodeDataWrapper[] = [];
     const edges: EdgeDataWrapper[] = [];
     const map: Map<string, ContextData> = getContextMap();
