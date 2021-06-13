@@ -164,6 +164,7 @@ export const CONTEXT_A271: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.HIDE]: true,
     [ContextFields.SUB]: ['A271_S2_1'],
   },
   {
@@ -171,6 +172,7 @@ export const CONTEXT_A271: MergedContextData[] = [
     [ContextFields.LABEL]: 'C',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'A271_S2',
   },
   {

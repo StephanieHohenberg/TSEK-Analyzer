@@ -63,6 +63,7 @@ export const CONTEXT_A986: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
     [ContextFields.PARENT]: 'NEURAL_NETWORKS',
+    [ContextFields.HIDE]: true,
   },
   {
     id: 'A986_S2_4',

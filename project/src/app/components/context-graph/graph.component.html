@@ -1,13 +1,13 @@
 <div id="cy"></div>
 <div class="action-buttons">
   <button mat-button (click)="visibilityService.toggleGraph()">
-    <span>Hide Graph &nbsp;<i class="fas fa-compress"></i></span>
+    <span>{{"ACTION_BUTTON.HIDE_GRAPH" | translate}} &nbsp;<i class="fas fa-compress"></i></span>
   </button>
   <button *ngIf="currentGraphVisibilityPaperId" mat-button (click)="removeFocusOnPaper()">
     {{"ACTION_BUTTON.DELETE_FOCUS" | translate}} {{currentGraphVisibilityPaperId}} &nbsp;<i class="fas fa-braille"></i>
   </button>
   <button *ngIf="highlightedContextIDs.length > 0" mat-button (click)="unhighlightContexts()">
-    {{"ACTION_BUTTON.DELETE_HIGHLIGHT" | translate}}&nbsp;<i class="fas fa-chart-line"></i>
+    {{"ACTION_BUTTON.DELETE_HIGHLIGHT" | translate}}&nbsp;<i class="fas fa-search-minus"></i>
   </button>
 
 </div>

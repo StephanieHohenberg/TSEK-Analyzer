@@ -15,6 +15,13 @@ export const CONTEXT_B122: MergedContextData[] = [
     [ContextFields.SUB]: ['B122_S1_1', 'B122_S1_2'],
   },
   {
+    id: 'B122_S1_0',
+    [ContextFields.LABEL]: 'Software Testing',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'TESTING',
+  },
+  {
     id: 'B122_S1_1',
     [ContextFields.LABEL]: 'Testing DNN Image Classifiers',
     [ContextFields.ZWECK]: Zweck.THEMA,
@@ -31,7 +38,7 @@ export const CONTEXT_B122: MergedContextData[] = [
   },
   {
     id: 'B122_S1_2',
-    [ContextFields.LABEL]: 'Software Testing & Verification of DNNs',
+    [ContextFields.LABEL]: 'Verification of DNNs',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'B122_S1',
@@ -122,7 +129,7 @@ export const CONTEXT_B122: MergedContextData[] = [
     [ContextFields.LABEL]: 'DNN-driven image software',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.SUB]: ['B122_S1_1'],
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
 ];
 

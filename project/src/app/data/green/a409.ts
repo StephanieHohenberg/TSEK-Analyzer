@@ -74,6 +74,7 @@ export const CONTEXT_A409: MergedContextData[] = [
   {
     id: 'A409_S2',
     [ContextFields.LABEL]: 'Research Fields / Disciplines',
+    [ContextFields.HIDE]: true,
     [ContextFields.SUB]: ['A409_S2_1', 'A409_S2_2', 'A409_S2_3', 'A409_S2_4'],
   },
   {
@@ -83,6 +84,7 @@ export const CONTEXT_A409: MergedContextData[] = [
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.PARENT]: 'A409_S2',
     [ContextFields.SUB]: ['A409_S2_1_1', 'A409_S2_1_2'],
+    [ContextFields.HIDE]: true,
   },
   {
     id: 'A409_S2_1_1',
@@ -90,6 +92,7 @@ export const CONTEXT_A409: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.BACKGROUND,
     [ContextFields.PARENT]: 'A409_S2_1',
+    [ContextFields.HIDE]: true,
   },
   {
     id: 'A409_S2_1_2',
@@ -97,6 +100,7 @@ export const CONTEXT_A409: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.BACKGROUND,
     [ContextFields.PARENT]: 'A409_S2_1',
+    [ContextFields.HIDE]: true,
   },
   {
     id: 'A409_S2_2',
@@ -105,12 +109,14 @@ export const CONTEXT_A409: MergedContextData[] = [
     [ContextFields.VORKOMMEN]: Vorkommen.BACKGROUND,
     [ContextFields.PARENT]: 'A409_S2',
     [ContextFields.SUB]: ['A409_S2_2_1'],
+    [ContextFields.HIDE]: true,
   },
   {
     id: 'A409_S2_2_1',
     [ContextFields.LABEL]: 'Values-based Requirements Engineering',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.BACKGROUND,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'A409_S2_2',
   },
   {
@@ -118,6 +124,7 @@ export const CONTEXT_A409: MergedContextData[] = [
     [ContextFields.LABEL]: 'HCI',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'A409_S2',
   },
   {
@@ -125,11 +132,13 @@ export const CONTEXT_A409: MergedContextData[] = [
     [ContextFields.LABEL]: 'AI',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.BACKGROUND,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'A409_S2',
   },
   {
     id: 'A409_S3',
     [ContextFields.LABEL]: 'Conferences & Journals',
+    [ContextFields.HIDE]: true,
     [ContextFields.SUB]: ['A409_S3_1', 'A409_S3_2', 'A409_S3_3', 'A409_S3_4'],
   },
   {
@@ -137,6 +146,7 @@ export const CONTEXT_A409: MergedContextData[] = [
     [ContextFields.LABEL]: 'ICSE',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'A409_S3',
   },
   {
@@ -144,6 +154,7 @@ export const CONTEXT_A409: MergedContextData[] = [
     [ContextFields.LABEL]: 'ESEC/FSE',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'A409_S3',
   },
   {
@@ -151,6 +162,7 @@ export const CONTEXT_A409: MergedContextData[] = [
     [ContextFields.LABEL]: 'TSE',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'A409_S3',
   },
   {
@@ -158,6 +170,7 @@ export const CONTEXT_A409: MergedContextData[] = [
     [ContextFields.LABEL]: 'TOSEM',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'A409_S3',
   },
 ];

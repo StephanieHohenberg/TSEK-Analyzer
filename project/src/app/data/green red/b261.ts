@@ -18,7 +18,7 @@ export const CONTEXT_B261: MergedContextData[] = [
     [ContextFields.LABEL]: 'Numerical Programs',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'APPLICATIONS',
+    [ContextFields.PARENT]: 'PROGRAMS',
     [ContextFields.SUB]: ['A335_S2_1', 'A335_S2_2'],
   },
   {

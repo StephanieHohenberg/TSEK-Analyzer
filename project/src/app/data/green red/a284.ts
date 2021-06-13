@@ -86,7 +86,7 @@ export const CONTEXT_A284: MergedContextData[] = [
   },
   {
     id: 'A283_S2',
-    [ContextFields.LABEL]: 'form of data',
+    [ContextFields.LABEL]: 'Type of Data',
     [ContextFields.PARENT]: 'DATA',
     [ContextFields.SUB]: ['A283_S2_1', 'A283_S2_2', 'A283_S2_3' ],
   },
@@ -156,9 +156,10 @@ export const CONTEXT_A284: MergedContextData[] = [
   },
   {
     id: 'A283_4',
-    [ContextFields.LABEL]: 'open source projects',
+    [ContextFields.LABEL]: 'Open Source Projects',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'SOURCING',
   },
   {

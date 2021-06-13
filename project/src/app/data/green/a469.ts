@@ -58,9 +58,10 @@ export const CONTEXT_A469: MergedContextData[] = [
   },
   {
     id: 'A469_2',
-    [ContextFields.LABEL]: 'Android Apps',
+    [ContextFields.LABEL]: 'Android Applications',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
   },
 ];

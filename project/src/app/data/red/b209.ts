@@ -15,7 +15,7 @@ export const CONTEXT_B209: MergedContextData[] = [
   },
   {
     id: 'B209_2',
-    [ContextFields.LABEL]: 'effective funding',
+    [ContextFields.LABEL]: 'Effective Funding',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.PARENT]: 'HUMAN_ASPECTS',

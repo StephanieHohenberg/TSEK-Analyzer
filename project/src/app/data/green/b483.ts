@@ -115,7 +115,7 @@ export const CONTEXT_B483: MergedContextData[] = [
   },
   {
     id: 'B483_S1_9',
-    [ContextFields.LABEL]: 'formal verification',
+    [ContextFields.LABEL]: 'Formal Verification',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'TESTING',
@@ -126,7 +126,7 @@ export const CONTEXT_B483: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.SUB]: ['B483_S2_1'],
-    [ContextFields.PARENT]: 'APPLICATIONS',
+    [ContextFields.PARENT]: 'SYSTEMS',
   },
   {
     id: 'B483_S2_1',

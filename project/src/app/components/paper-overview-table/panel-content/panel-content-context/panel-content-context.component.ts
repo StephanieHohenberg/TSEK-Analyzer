@@ -32,15 +32,15 @@ export class PanelContentContextComponent implements OnInit {
   }
 
   public getTranslationKeyForVorkommenField(field: Vorkommen): string {
-    return `CONTEXTS.VORKOMMEN.${field}`;
+    return field ? `CONTEXTS.VORKOMMEN.${field}` : '';
   }
 
   public getTranslationKeyForZweckField(field: Zweck): string {
-    return `CONTEXTS.ZWECK.${field}`;
+    return field ? `CONTEXTS.ZWECK.${field}` : '';
   }
 
   public getTranslationKeyForTooltip(field: Zweck): string {
-    return `CONTEXTS.TOOLTIP.${field}`;
+    return field ? `CONTEXTS.TOOLTIP.${field}` : '';
   }
 
   private getContextDataForDisplayInTable(): TableContextForDisplay[] {

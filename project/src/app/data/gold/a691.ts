@@ -18,6 +18,7 @@ export const CONTEXT_A691: MergedContextData[] = [
     [ContextFields.LABEL]: 'Python',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
   },
   {
@@ -53,6 +54,7 @@ export const CONTEXT_A691: MergedContextData[] = [
     [ContextFields.LABEL]: 'TypeScript',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
   },
   {

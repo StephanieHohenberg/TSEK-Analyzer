@@ -8,9 +8,10 @@ import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../model/co
 export const CONTEXT_A481: MergedContextData[] = [
   {
     id: 'A481_S1_1',
-    [ContextFields.LABEL]: 'Android  application',
+    [ContextFields.LABEL]: 'Android Applications',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
   },
   {

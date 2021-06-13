@@ -64,7 +64,7 @@ export const CONTEXT_A641: MergedContextData[] = [
   },
   {
     id: 'A641_11',
-    [ContextFields.LABEL]: 'issue tracking system',
+    [ContextFields.LABEL]: 'Issue Tracking System',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'SYSTEMS',

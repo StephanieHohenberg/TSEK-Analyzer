@@ -31,6 +31,7 @@ export const CONTEXT_A530: MergedContextData[] = [
     [ContextFields.LABEL]: 'Automated Analysis Tool',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'SOFTWARE_TOOLS',
     [ContextFields.SUB]: ['A530_S2_1', 'A530_S2_2']
   },
@@ -39,6 +40,7 @@ export const CONTEXT_A530: MergedContextData[] = [
     [ContextFields.LABEL]: 'Identification of Vulnerabilities',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'A530_S2',
   },
   {
@@ -46,6 +48,7 @@ export const CONTEXT_A530: MergedContextData[] = [
     [ContextFields.LABEL]: 'Construction of Artifacts',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'A530_S2',
   },
 

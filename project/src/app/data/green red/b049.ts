@@ -61,7 +61,8 @@ export const CONTEXT_B049: MergedContextData[] = [
     [ContextFields.LABEL]: 'Java Programs',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'APPLICATIONS',
+    [ContextFields.HIDE]: true,
+    [ContextFields.PARENT]: 'PROGRAMS',
   },
 ];
 

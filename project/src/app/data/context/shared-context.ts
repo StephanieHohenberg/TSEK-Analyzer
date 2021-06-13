@@ -15,19 +15,19 @@ export const SHARED_CONTEXT: MergedContextData[] = [
   {
     id: 'SOFTWARE_TOOLS',
     [ContextFields.LABEL]: 'Software Tools',
-    [ContextFields.WEIGHT_FACTOR]: 15,
+    [ContextFields.WEIGHT_FACTOR]: 14,
   },
   {
     id: 'PROGRAMMING_LANGUAGES',
     [ContextFields.LABEL]: 'Programming Languages',
     [ContextFields.PARENT]: 'SOFTWARE_TOOLS',
-    [ContextFields.WEIGHT_FACTOR]: 41,
+    [ContextFields.WEIGHT_FACTOR]: 15,
   },
   {
     id: 'DL_FRAMEWORKS',
     [ContextFields.LABEL]: 'DL Frameworks',
     [ContextFields.PARENT]: 'DL_TOOLS',
-    [ContextFields.WEIGHT_FACTOR]: 7,
+    [ContextFields.WEIGHT_FACTOR]: 5,
   },
   {
     id: 'DL_PLATFORMS',
@@ -44,25 +44,31 @@ export const SHARED_CONTEXT: MergedContextData[] = [
   {
     id: 'APPLICATIONS',
     [ContextFields.LABEL]: 'Applications',
-    [ContextFields.WEIGHT_FACTOR]: 16,
+    [ContextFields.WEIGHT_FACTOR]: 10,
   },
   {
     id: 'SYSTEMS',
     [ContextFields.LABEL]: 'Systems',
     [ContextFields.PARENT]: 'APPLICATIONS',
-    [ContextFields.WEIGHT_FACTOR]: 6,
+    [ContextFields.WEIGHT_FACTOR]: 5,
   },
   {
     id: 'PROGRAMS',
     [ContextFields.LABEL]: 'Programs',
     [ContextFields.PARENT]: 'APPLICATIONS',
-    [ContextFields.WEIGHT_FACTOR]: 8,
+    [ContextFields.WEIGHT_FACTOR]: 5,
+  },
+  {
+    id: 'C_PROGRAMS',
+    [ContextFields.LABEL]: 'C/C++ Programs',
+    [ContextFields.PARENT]: 'PROGRAMS',
+    [ContextFields.WEIGHT_FACTOR]: 4,
   },
   {
     id: 'DL_APPLICATIONS',
     [ContextFields.LABEL]: 'DL Applications',
     [ContextFields.PARENT]: 'APPLICATIONS',
-    [ContextFields.WEIGHT_FACTOR]: 16,
+    [ContextFields.WEIGHT_FACTOR]: 15,
   },
   {
     id: 'RNN_APPLICATIONS',
@@ -74,7 +80,7 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     id: 'MOBILE_APPLICATIONS',
     [ContextFields.LABEL]: 'Mobile Applications',
     [ContextFields.PARENT]: 'APPLICATIONS',
-    [ContextFields.WEIGHT_FACTOR]: 8,
+    [ContextFields.WEIGHT_FACTOR]: 2,
   },
   {
     id: 'SE_ACTIVITIES',
@@ -164,7 +170,7 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     id: 'PS_APPLICATION_CHARACTERISTICS',
     [ContextFields.LABEL]: 'Paper Specific Application Properties',
     [ContextFields.PARENT]: 'PAPER_SPECIFIC_PROPERTIES',
-    [ContextFields.WEIGHT_FACTOR]: 43,
+    [ContextFields.WEIGHT_FACTOR]: 44,
   },
   {
     id: 'HUMAN_ASPECTS',
@@ -181,7 +187,7 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     id: 'NEURAL_NETWORKS',
     [ContextFields.LABEL]: 'Neural Networks',
     [ContextFields.PARENT]: 'A986_S2_0',
-    [ContextFields.WEIGHT_FACTOR]: 12,
+    [ContextFields.WEIGHT_FACTOR]: 7
   },
   {
     id: 'SOURCING',

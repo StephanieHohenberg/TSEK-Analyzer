@@ -42,26 +42,18 @@ export const CONTEXT_A258: MergedContextData[] = [
     [ContextFields.PARENT]: 'A258_S2_3',
   },
   {
-    id: 'A258_S3',
-    [ContextFields.LABEL]: 'C/C++ programs',
-    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
-    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'PROGRAMS',
-    [ContextFields.SUB]: ['A258_S3_1', 'A258_S3_2'],
-  },
-  {
     id: 'A258_S3_1',
     [ContextFields.LABEL]: 'single-threaded programs',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.LIMITATIONS,
-    [ContextFields.PARENT]: 'A258_S3',
+    [ContextFields.PARENT]: 'C_PROGRAMS',
   },
   {
     id: 'A258_S3_2',
     [ContextFields.LABEL]: 'multi-threaded programs',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.LIMITATIONS,
-    [ContextFields.PARENT]: 'A258_S3',
+    [ContextFields.PARENT]: 'C_PROGRAMS',
   },
 ];
 

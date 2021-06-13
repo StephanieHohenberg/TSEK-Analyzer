@@ -6,6 +6,7 @@ export enum ContextFields {
   SUB = 'sub',
   IDENTICAL = 'identical',
   WEIGHT_FACTOR = 'weightFactor',
+  HIDE = 'hide',
 }
 
 export interface ContextTableData {
@@ -20,6 +21,7 @@ export interface ContextData {
   [ContextFields.PARENT]?: string; // contextId
   [ContextFields.SUB]?: string[]; // contextId
   [ContextFields.WEIGHT_FACTOR]?: number;
+  [ContextFields.HIDE]?: boolean;
 }
 
 export interface MergedContextData {
@@ -31,6 +33,7 @@ export interface MergedContextData {
   [ContextFields.SUB]?: string[]; // contextId
   [ContextFields.IDENTICAL]?: string[]; // contextId
   [ContextFields.WEIGHT_FACTOR]?: number;
+  [ContextFields.HIDE]?: boolean;
 }
 
 export enum Zweck {

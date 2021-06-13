@@ -60,6 +60,7 @@ export const CONTEXT_A666: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
     [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.HIDE]: true,
   },
 ];
 

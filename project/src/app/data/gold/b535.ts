@@ -85,7 +85,7 @@ export const CONTEXT_B535: MergedContextData[] = [
   },
   {
     id: 'B535_S4_2',
-    [ContextFields.LABEL]: 'On Demand  Web Storage',
+    [ContextFields.LABEL]: 'On Demand Web Storage',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
     [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS'

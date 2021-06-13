@@ -82,6 +82,7 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
             this.currentGraphVisibilityPaperId = graphUpdate.id;
             break;
           case GraphVisibilityUpdateType.HIGHLIGHT_CONTEXT:
+            this.cy.fit( this.cy.$(`#${graphUpdate.id}` ) );
             this.highlightedContextIDs.push(graphUpdate.id);
             break;
         }
@@ -102,8 +103,8 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   public unhighlightContexts(): void {
+    this.cy.fit();
     this.highlightedContextIDs = [];
-    this.render();
   }
 
   private getContextIDsByFilter(filterUpdate: FilterUpdate, filterData: FilterData[]): string[] {
@@ -131,7 +132,7 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
         'width': 'data(weight)',
         'height': 'data(weight)',
         'content': 'data(label)',
-        'text-valign': 'center',
+        'text-valign': 'bottom center',
         'text-outline-width': 2,
         'text-outline-color': 'white',
         'text-max-width': '50px',

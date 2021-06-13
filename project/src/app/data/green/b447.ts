@@ -12,6 +12,7 @@ export const CONTEXT_B447: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
     [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.HIDE]: true,
     [ContextFields.SUB]: ['B447_S1_1'],
   },
   {
@@ -20,6 +21,7 @@ export const CONTEXT_B447: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.PARENT]: 'B447_S1',
+    [ContextFields.HIDE]: true,
     [ContextFields.SUB]: ['B447_S1_1_1'],
   },
   {
@@ -27,6 +29,7 @@ export const CONTEXT_B447: MergedContextData[] = [
     [ContextFields.LABEL]: 'Java',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'B447_S1_1'
   },
   {
@@ -34,7 +37,8 @@ export const CONTEXT_B447: MergedContextData[] = [
     [ContextFields.LABEL]: 'real-world Java programs',
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.CONCLUSION,
-    [ContextFields.PARENT]: 'APPLICATIONS'
+    [ContextFields.HIDE]: true,
+    [ContextFields.PARENT]: 'PROGRAMS'
   },
   {
     id: 'B447_S3_1',

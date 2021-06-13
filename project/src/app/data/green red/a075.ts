@@ -104,7 +104,7 @@ export const CONTEXT_A075: MergedContextData[] = [
     [ContextFields.LABEL]: 'Programs',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'APPLICATIONS',
+    [ContextFields.HIDE]: true,
     [ContextFields.SUB]: ['A075_S4_1', 'A075_S4_2', 'A075_S4_3'],
   },
   {
@@ -112,6 +112,7 @@ export const CONTEXT_A075: MergedContextData[] = [
     [ContextFields.LABEL]: 'C',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'A075_S4',
   },
   {
@@ -119,6 +120,7 @@ export const CONTEXT_A075: MergedContextData[] = [
     [ContextFields.LABEL]: 'C++',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'A075_S4',
   },
   {
@@ -126,6 +128,7 @@ export const CONTEXT_A075: MergedContextData[] = [
     [ContextFields.LABEL]: 'Java',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'A075_S4',
   },
   {

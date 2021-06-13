@@ -11,6 +11,7 @@ export const CONTEXT_B159: MergedContextData[] = [
     [ContextFields.LABEL]: 'Tensorflow',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'DL_FRAMEWORKS',
   },
   {
@@ -26,6 +27,7 @@ export const CONTEXT_B159: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.PARENT]: 'DL_FRAMEWORKS',
+    [ContextFields.HIDE]: true,
   },
   {
     id: 'B159_S1_4',

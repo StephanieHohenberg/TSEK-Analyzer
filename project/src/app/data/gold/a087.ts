@@ -23,7 +23,7 @@ export const CONTEXT_A087: MergedContextData[] = [
   {
     id: 'A087_S2_1',
     [ContextFields.LABEL]: 'Eclipse Plugin',
-    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.PARENT]: 'SOFTWARE_TOOLS'
   },

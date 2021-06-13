@@ -8,7 +8,7 @@ import {ContextData, ContextFields, Zweck} from '../model/context.data';
 })
 export class ContextService {
 
-  private readonly DEFAULT_WEIGHT = 20;
+  private readonly DEFAULT_WEIGHT = 10;
 
   constructor() { }
 
@@ -17,14 +17,12 @@ export class ContextService {
     const edges: EdgeDataWrapper[] = [];
     const map: Map<string, ContextData> = getContextMap();
     map.forEach((context, _) => {
-      if (!context[ContextFields.PARENT] && !context[ContextFields.SUB] && !context[ContextFields.WEIGHT_FACTOR]) {
+      if (this.shouldHideContext(context)) {
         console.log(context.id + ': "' + context[ContextFields.LABEL] + '" hidden in taxonomy');
         return;
       }
-      const label = `${context[ContextFields.LABEL]} (${context.id})`;
       const weight = this.getWeightForContext(context);
-      const colorCode = weight === this.DEFAULT_WEIGHT ? 'white' : 'darkslateblue';
-      nodes.push({data: new NodeData(context.id, label, colorCode, weight)});
+      nodes.push({data: new NodeData(context.id, context[ContextFields.LABEL], 'darkslateblue', weight)});
       if (context[ContextFields.PARENT]) {
         edges.push({data: new EdgeData(context[ContextFields.PARENT], context.id, 'solid')});
       }
@@ -39,14 +37,12 @@ export class ContextService {
     contextIDs.forEach(id => {
       const context = map.get(id);
       const weight = this.getWeightForContext(context);
-      const colorCode = weight === this.DEFAULT_WEIGHT ? 'white' : 'darkslateblue';
-      nodes.push({data: new NodeData(context.id, context[ContextFields.LABEL], colorCode, weight)});
+      nodes.push({data: new NodeData(context.id, context[ContextFields.LABEL], 'darkslateblue', weight)});
       if (context[ContextFields.PARENT]) {
         if (!contextIDs.includes(context[ContextFields.PARENT])) {
           const parent = map.get(context[ContextFields.PARENT]);
           const pWeight = this.getWeightForContext(parent);
-          const pColorCode = weight === this.DEFAULT_WEIGHT ? 'white' : 'darkslateblue';
-          nodes.push({data: new NodeData(parent.id, parent[ContextFields.LABEL], pColorCode, pWeight)});
+          nodes.push({data: new NodeData(parent.id, parent[ContextFields.LABEL], 'darkslateblue', pWeight)});
         }
         edges.push({data: new EdgeData(context[ContextFields.PARENT], context.id, 'solid')});
       }
@@ -79,7 +75,7 @@ export class ContextService {
   }
 
 
-  public getColorCodeForContext(context: ContextData): string {
+  private getColorCodeForContext(context: ContextData): string {
     const zweck = context[ContextFields.ZWECK];
     switch (zweck) {
       case Zweck.ANWENDUNG: return 'orange';
@@ -91,9 +87,14 @@ export class ContextService {
     return 'white';
   }
 
-  public getWeightForContext(context: ContextData): number {
+  private getWeightForContext(context: ContextData): number {
     const amountOfSubs = context[ContextFields.SUB] ? context[ContextFields.SUB].length : 0;
     const factor = context[ContextFields.WEIGHT_FACTOR] || amountOfSubs;
-    return this.DEFAULT_WEIGHT + (2 * factor);
+    return this.DEFAULT_WEIGHT + (5 * factor);
+  }
+
+  private shouldHideContext(context: ContextData): boolean {
+    return context[ContextFields.HIDE]  ||
+      (!context[ContextFields.PARENT] && !context[ContextFields.SUB] && !context[ContextFields.WEIGHT_FACTOR]);
   }
 }

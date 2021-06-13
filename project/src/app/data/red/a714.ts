@@ -7,18 +7,18 @@ import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../model/co
 
 export const CONTEXT_A714: MergedContextData[] = [
   {
-    id: 'A714_1',
-    [ContextFields.LABEL]: 'differential verification',
-    [ContextFields.ZWECK]: Zweck.THEMA,
-    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'A714_2',
-  },
-  {
-    id: 'A714_2',
+    id: 'A714_0',
     [ContextFields.LABEL]: 'verification techniques',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.SUB]: ['A714_1'],
+    [ContextFields.SUB]: ['A714_0_1'],
+  },
+  {
+    id: 'A714_0_1',
+    [ContextFields.LABEL]: 'differential verification',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'A714_0',
   },
   {
     id: 'A714_X',
@@ -33,6 +33,7 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.PARENT]: 'NEURAL_NETWORKS',
+    [ContextFields.HIDE]: true,
   },
   {
     id: 'A714_S1_2',
@@ -49,19 +50,12 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.PARENT]: 'NEURAL_NETWORKS',
   },
   {
-    id: 'A714_S1_4',
-    [ContextFields.LABEL]: 'relationship between networks',
-    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
-    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'NEURAL_NETWORKS',
-    [ContextFields.SUB]: ['A714_S1_7'],
-  },
-  {
     id: 'A714_S1_5',
     [ContextFields.LABEL]: 'feed-forward ReLU networks',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
     [ContextFields.PARENT]: 'NEURAL_NETWORKS',
+    [ContextFields.HIDE]: true,
   },
   {
     id: 'A714_S1_6',
@@ -69,6 +63,15 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'NEURAL_NETWORKS',
+    [ContextFields.HIDE]: true,
+  },
+  {
+    id: 'A714_S1_4',
+    [ContextFields.LABEL]: 'relationship between networks',
+    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'NEURAL_NETWORKS',
+    [ContextFields.SUB]: ['A714_S1_7'],
   },
   {
     id: 'A714_S1_7',
@@ -96,7 +99,7 @@ export const CONTEXT_A714: MergedContextData[] = [
     id: 'A714_S2',
     [ContextFields.LABEL]: 'applications for neural networks',
     [ContextFields.SUB]: ['A714_S2_1', 'A714_S2_5', 'A714_S2_6' ],
-    [ContextFields.PARENT]: 'DL_APPLICATIONS'
+    [ContextFields.PARENT]: 'APPLICATIONS'
   },
   {
     id: 'A714_S2_1',

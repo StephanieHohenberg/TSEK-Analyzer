@@ -54,6 +54,7 @@ export const CONTEXT_B183: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.DATA_PREPARATION,
     [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.HIDE]: true,
   },
   {
     id: 'B183_S4_2',
@@ -61,6 +62,7 @@ export const CONTEXT_B183: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.DATA_PREPARATION,
     [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.HIDE]: true,
   },
   {
     id: 'B183_S4_3',
@@ -68,6 +70,7 @@ export const CONTEXT_B183: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.DATA_PREPARATION,
     [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.HIDE]: true,
   },
 ];
 

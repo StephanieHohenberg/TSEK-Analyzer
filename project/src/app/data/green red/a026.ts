@@ -18,7 +18,7 @@ export const CONTEXT_A026: MergedContextData[] = [
     [ContextFields.LABEL]: 'Puppet Programs',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'APPLICATIONS',
+    [ContextFields.PARENT]: 'PROGRAMS',
   },
   {
     id: 'A026_3',

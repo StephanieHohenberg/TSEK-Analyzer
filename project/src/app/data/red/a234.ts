@@ -44,9 +44,10 @@ export const CONTEXT_A234: MergedContextData[] = [
   },
   {
     id: 'A234_2',
-    [ContextFields.LABEL]: 'C/C++ programs',
+    [ContextFields.LABEL]: 'C/C++ Programs',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'PROGRAMS',
   },
   {
@@ -58,6 +59,7 @@ export const CONTEXT_A234: MergedContextData[] = [
     id: 'A234_4',
     [ContextFields.LABEL]: 'Rust',
     [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.HIDE]: true,
   },
   {
     id: 'A234_5',

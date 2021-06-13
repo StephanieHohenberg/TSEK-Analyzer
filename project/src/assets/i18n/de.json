@@ -126,6 +126,7 @@
     "LINE_5": "Das Projekt wurde mit dem Framework Angular <i class=\"fab fa-angular\"></i> umgesetzt und der Sourcecode, sowie weitere Artefakte, wie das Dokument zur Masterthesis selbst,\n    ist auf <a target=\"_blank\" href=\"https://github.com/StephanieHohenberg/TheMasterThesis\">Github <i class=\"fab fa-github\"></i></a> öffentlich zugänglich."
   },
   "ACTION_BUTTON": {
+    "HIDE_GRAPH": "Verstecke Graphen",
     "SHOW_GRAPH": "Blende Graphen ein",
     "SHOW_CONTEXTS": "Zeig Kontexte im Graph",
     "DELETE_FOCUS": "Entferne Fokus von ",

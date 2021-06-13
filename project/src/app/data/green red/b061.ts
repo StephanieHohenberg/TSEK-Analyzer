@@ -8,9 +8,10 @@ import {getContextTableData} from '../context/context.util';
 export const CONTEXT_B061: MergedContextData[] = [
   {
     id: 'B061_S1_1',
-    [ContextFields.LABEL]: 'Android applications',
+    [ContextFields.LABEL]: 'Android Applications',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
   },
   {

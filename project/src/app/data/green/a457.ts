@@ -46,6 +46,7 @@ export const CONTEXT_A457: MergedContextData[] = [
     [ContextFields.LABEL]: 'Android Applications',
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
+    [ContextFields.HIDE]: true,
     [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
   },
   {

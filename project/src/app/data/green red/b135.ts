@@ -15,7 +15,7 @@ export const CONTEXT_B135: MergedContextData[] = [
   },
   {
     id: 'B135_S2',
-    [ContextFields.LABEL]: 'DL libraries',
+    [ContextFields.LABEL]: 'DL Libraries',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.PARENT]: 'DL_TOOLS',

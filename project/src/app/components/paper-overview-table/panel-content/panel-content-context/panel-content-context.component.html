@@ -11,7 +11,10 @@
   <tr *ngFor="let context of contextData; let i=index;"
       (click)="highlightContextInGraph(context.id)">
     <th scope="row">{{i+1}}</th>
-    <td>{{context.label}}</td>
+    <td>
+      <i *ngIf="context.hasParentWithinPaper" class="fas fa-level-up-alt fa-rotate-90">&nbsp;</i>
+      {{context.label}}
+    </td>
     <td [matTooltip]="getTranslationKeyForTooltip(context.zweck)| translate">{{getTranslationKeyForZweckField(context.zweck) | translate}}</td>
     <td>{{getTranslationKeyForVorkommenField(context.vorkommen) | translate }}</td>
   </tr>
