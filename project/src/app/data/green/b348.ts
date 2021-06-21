@@ -11,8 +11,7 @@ export const CONTEXT_B348: MergedContextData[] = [
     [ContextFields.LABEL]: 'C/C++',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
-    [ContextFields.HIDE]: true,
+    [ContextFields.PARENT]: 'C++',
   },
   {
     id: 'B348_S1_2_1',

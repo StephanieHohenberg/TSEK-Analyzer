@@ -11,15 +11,14 @@ export const CONTEXT_B435: MergedContextData[] = [
     [ContextFields.LABEL]: 'Performance Tests',
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.IDENTICAL]: ['B535_S6_4'],
-    [ContextFields.PARENT]: 'TEST_TYPES'
+    [ContextFields.PARENT]: 'PERFORMANCE_TESTS'
   },
   {
     id: 'B435_2',
     [ContextFields.LABEL]: 'DevOps',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'SE_ACTIVITIES',
+    [ContextFields.PARENT]: 'DEV_OPS',
   },
   {
     id: 'B435_S2',

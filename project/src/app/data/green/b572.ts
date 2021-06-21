@@ -115,7 +115,7 @@ export const CONTEXT_B572: MergedContextData[] = [
     id: 'B572_2',
     [ContextFields.LABEL]: 'Android Applications',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
-    [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
+    [ContextFields.PARENT]: 'ANDROID_APPLICATIONS',
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
   },
   {

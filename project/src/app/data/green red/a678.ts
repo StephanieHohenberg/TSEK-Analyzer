@@ -68,8 +68,7 @@ export const CONTEXT_A678: MergedContextData[] = [
     [ContextFields.LABEL]: 'C/C++',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
-    [ContextFields.HIDE]: true,
+    [ContextFields.PARENT]: 'C++',
   },
 ];
 

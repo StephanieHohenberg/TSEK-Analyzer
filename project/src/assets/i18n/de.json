@@ -111,8 +111,8 @@
   "ASSUMPTIONS.TITLE": "Annahmen",
   "SETTINGS.TITLE": "Einstellungen",
   "TOOLBAR": {
-    "TOGGLE_SIDEBAR": "toggle Sidebar",
-    "TOGGLE FILTER": "toggle Filter",
+    "TOGGLE_SIDEBAR": "toggle Tabelle",
+    "TOGGLE_FILTER": "toggle Filter",
     "ABOUT": "Über das Projekt",
     "SETTINGS": "Einstellung"
   },

@@ -24,7 +24,7 @@ export class PanelContentContextComponent implements OnInit {
   }
 
   public highlightContextInGraph(contextID: string): void {
-    this.visibilityService.highlightContext(contextID);
+    this.visibilityService.highlightContext(this.paperId, contextID);
   }
 
   public displayPapersContextInGraph(): void {

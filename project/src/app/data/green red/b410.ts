@@ -11,7 +11,7 @@ export const CONTEXT_B410: MergedContextData[] = [
     [ContextFields.LABEL]: 'Test Input Generation',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'TESTING',
+    [ContextFields.PARENT]: 'TEST_INPUT_GEN',
     [ContextFields.SUB]: ['B410_S1_1', 'B410_S1_2', 'B410_S1_3', 'B410_S1_4', 'B410_S1_5'],
   },
   {

@@ -149,32 +149,31 @@ export const CONTEXT_B171: MergedContextData[] = [
   },
   {
     id: 'B171_S6_1',
-    [ContextFields.LABEL]: 'closed-source software projects',
+    [ContextFields.LABEL]: 'Closed Source Software Projects',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_SOURCING',
   },
   {
     id: 'B171_S6_2',
     [ContextFields.LABEL]: 'Java',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.HIDE]: true,
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.PARENT]: 'JAVA',
   },
   {
     id: 'B171_S6_3',
     [ContextFields.LABEL]: 'projects using software review tools with online discussion features',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_SPECIFIC',
   },
   {
     id: 'B171_S6_4',
     [ContextFields.LABEL]: 'bigger projects with a big dev team',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_SIZE',
   },
 ];
 

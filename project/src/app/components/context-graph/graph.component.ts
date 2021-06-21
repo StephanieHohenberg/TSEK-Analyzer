@@ -1,6 +1,6 @@
 import {Component, ElementRef, OnChanges, OnDestroy, OnInit, Renderer2} from '@angular/core';
 import {takeUntil} from 'rxjs/operators';
-import {GraphData} from './graph.data';
+import {EdgeDataWrapper, GraphData, NodeDataWrapper} from './graph.data';
 import {FilterService} from '../../services/filter.service';
 import {BehaviorSubject, Subject} from 'rxjs';
 import * as cytoscape from 'cytoscape';
@@ -29,6 +29,7 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
   private layout: any;
   private style: any;
   private cy;
+  private subGraphElementsMap = new Map<string, GraphData>();
   private unsubscribe$ = new Subject();
   private  = new BehaviorSubject<FilterData[]>([]);
 
@@ -43,7 +44,10 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
   public ngOnInit(): void {
     this.initializeGraphConfiguration();
     this.initializeGraphElements();
-    this.render();
+    document.addEventListener('DOMContentLoaded', () => {
+      this.render();
+      this.initializeGraphInteractions();
+    });
   }
 
   public ngOnChanges(): any {
@@ -56,49 +60,69 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   private initializeGraphElements(): void {
-    this.filterService.getFilterUpdates$()
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(filterUpdate => {
-        if (filterUpdate.type === FilterUpdateType.RESET_FILTER) {
-          this.elements = this.contextService.getGraphDataForAllContexts();
-        } else {
-          const contextIDs = this.getContextIDsByFilter(filterUpdate, [...this.filterService.getFilter()]);
-          this.elements = this.contextService.getGraphDataByContextIDsWithWeightedStyle(contextIDs);
-          this.render();
-        }
-      });
+    this.elements = this.contextService.getGraphDataForRoots();
+    this.render();
 
     this.visibilityService.getGraphUpdates$()
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(graphUpdate => {
         switch (graphUpdate.type) {
-          case GraphVisibilityUpdateType.SHOW_PAPER:
-            const data = { filterTab: AnalysisPaperFields.GENERAL_DATA, field: GeneralPaperFields.ID, value: graphUpdate.id, label: 'ID: '};
-            const filter = [...this.filterService.getFilter()].concat([data]);
-            const contextIDs = this.getContextIDsByFilter(
-              { type: FilterUpdateType.ADD_FILTER, connector: FilterConnector.UND, data}, filter);
-            this.elements = this.contextService.getGraphDataByContextIDsWithColoredStyle(contextIDs);
-            this.render();
-            this.currentGraphVisibilityPaperId = graphUpdate.id;
-            break;
-          case GraphVisibilityUpdateType.HIGHLIGHT_CONTEXT:
-            this.cy.fit( this.cy.$(`#${graphUpdate.id}` ) );
-            this.highlightedContextIDs.push(graphUpdate.id);
-            break;
+          case GraphVisibilityUpdateType.SHOW_PAPER: this.showPaper(graphUpdate.paperID); break;
+          case GraphVisibilityUpdateType.HIGHLIGHT_CONTEXT: this.showContext(graphUpdate.paperID, graphUpdate.contextID); break;
         }
       });
   }
 
+  private initializeGraphInteractions(): void {
+    this.cy.on('tap', 'node', (e) => {
+      const ele = e.target;
+      if (ele.isNode()){
+        this.toggleSubGraphElements(ele.id());
+
+      }
+    });
+  }
+
+  private toggleSubGraphElements(rootID: string): void {
+    if (!this.subGraphElementsMap.has(rootID)) { // display
+      const graphElements = this.contextService.getSubGraphElementsOf(rootID);
+      const eles = this.cy.add(graphElements);
+      this.subGraphElementsMap.set(rootID, eles);
+      // TODO add for parent nodes
+    } else { // hide
+      const eles = this.subGraphElementsMap.get(rootID);
+      this.subGraphElementsMap.delete(rootID);
+      this.cy.remove(eles);
+    }
+  }
+
+  private showPaper(paperID: string): void {
+    const data = { filterTab: AnalysisPaperFields.GENERAL_DATA, field: GeneralPaperFields.ID, value: paperID, label: 'ID: '};
+    const filter = [...this.filterService.getFilter()].concat([data]);
+    const contextIDs = this.getContextIDsByFilter(
+      { type: FilterUpdateType.ADD_FILTER, connector: FilterConnector.UND, data}, filter);
+    this.elements = this.contextService.getGraphDataByContextIDs(contextIDs, true);
+    this.render();
+    this.currentGraphVisibilityPaperId = paperID;
+  }
+
+  private showContext(paperID: string, contextID: string): void {
+    const el =  this.cy.$(`#${contextID}`);
+    if (el.length === 0) {
+      this.showPaper(paperID);
+      this.showContext(paperID, contextID);
+    } else {
+      this.cy.fit(el);
+      this.highlightedContextIDs.push(contextID);
+    }
+  }
+
   public removeFocusOnPaper(): void {
     if (this.currentGraphVisibilityPaperId) {
-      // tslint:disable-next-line:max-line-length
-      const data = { filterTab: AnalysisPaperFields.GENERAL_DATA, field: GeneralPaperFields.ID, value: this.currentGraphVisibilityPaperId, label: 'ID: '};
-      const contextIDs = this.getContextIDsByFilter(
-        { type: FilterUpdateType.DELETE_FILTER, connector: FilterConnector.UND, data},
-        [...this.filterService.getFilter()]);
-      this.elements = this.contextService.getGraphDataByContextIDsWithWeightedStyle(contextIDs);
+      this.elements = this.contextService.getGraphDataForRoots();
       this.currentGraphVisibilityPaperId = undefined;
       this.render();
+      this.initializeGraphInteractions();
     }
   }
 
@@ -117,18 +141,45 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   private initializeGraphConfiguration(): void {
+    const layoutTest = {
+      name: 'breadthfirst',
+      fit: true, // whether to fit the viewport to the graph
+      directed: true, // whether the tree is directed downwards (or edges can point in any direction if false)
+      padding: 30, // padding on fit
+      circle: true, // put depths in concentric circles if true, put depths top down if false
+      grid: false, // whether to create an even grid into which the DAG is placed (circle:false only)
+      spacingFactor: 1.75, // positive spacing factor, larger => more space between nodes (N.B. n/a if causes overlap)
+      boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
+      avoidOverlap: true, // prevents node overlap, may overflow boundingBox if not enough space
+      nodeDimensionsIncludeLabels: false, // Excludes the label when calculating node bounding boxes for the layout algorithm
+      roots: undefined, // the roots of the trees
+      maximal: false, // whether to shift nodes down their natural BFS depths in order to avoid upwards edges (DAGS only)
+      animate: false, // whether to transition the node positions
+      animationDuration: 500, // duration of animation in ms if enabled
+      animationEasing: undefined, // easing of animation if enabled,
+      animateFilter: ( node, i ) => true, // a function that determines whether the node should be animated
+      ready: undefined, // callback on layoutready
+      stop: undefined, // callback on layoutstop
+      transform: (node, position ) => position,
+    };
+
     this.layout = {
       name: 'cose',
+      fit: true, // whether to fit the viewport to the graph
+      directed: true, // whether the tree is directed downwards (or edges can point in any direction if false)
+      refresh: 20,
       componentSpacing: 120,
-      animate: false, // TODO display table with loader already
+      animate: true,
+      spacingFactor: 1.75, // positive spacing factor, larger => more space between nodes (N.B. n/a if causes overlap)
       avoidOverlap: true,
       idealEdgeLength: ( edge ) => 64,
     };
 
+
     this.style = cytoscape.stylesheet()
       .selector('node')
       .css({
-        shape: 'circle',
+        'shape': 'circle',
         'width': 'data(weight)',
         'height': 'data(weight)',
         'content': 'data(label)',
@@ -138,7 +189,7 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
         'text-max-width': '50px',
         'background-color': 'data(colorCode)',
         'color': 'black',
-        'font-size': 10
+        'font-size': 16
       })
       .selector(':selected')
       .css({
@@ -163,6 +214,7 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   public render(): void {
+
     const cyContainer = this.renderer.selectRootElement('#cy');
     this.cy = cytoscape({
       container: cyContainer,
@@ -172,5 +224,18 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
       style: this.style,
       elements: this.elements,
     });
+  }
+
+  private getDataOfAllDisplayedGraphElements(): GraphData {
+    let nodes: NodeDataWrapper[] = this.elements.nodes;
+    let edges: EdgeDataWrapper[] = this.elements.edges;
+
+    this.subGraphElementsMap.forEach((data, key) => {
+      nodes = nodes.concat(data.nodes);
+      edges = edges.concat(data.edges);
+    });
+    console.log(nodes.length, 'nodes');
+    console.log(edges.length, 'edges');
+    return { nodes, edges};
   }
 }

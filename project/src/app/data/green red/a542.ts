@@ -11,27 +11,21 @@ export const CONTEXT_A542: MergedContextData[] = [
     [ContextFields.LABEL]: 'Security',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'SE_ACTIVITIES',
-  },
-  {
-    id: 'A542_S2',
-    [ContextFields.LABEL]: 'Blockchain Technologies',
-    [ContextFields.PARENT]: 'SOFTWARE_TOOLS',
-    [ContextFields.SUB]: ['A542_S2_1', 'A542_S2_2']
+    [ContextFields.PARENT]: 'SECURITY_A',
   },
   {
     id: 'A542_S2_1',
     [ContextFields.LABEL]: 'Solidity',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'A542_S2',
+    [ContextFields.PARENT]: 'SOLIDITY',
   },
   {
-    id: 'A542_S2_1',
+    id: 'A542_S2_2',
     [ContextFields.LABEL]: 'Ethereum',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'A542_S2',
+    [ContextFields.PARENT]: 'ETHEREUM',
   },
   {
     id: 'A542_S3',

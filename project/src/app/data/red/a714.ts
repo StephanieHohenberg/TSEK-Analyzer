@@ -32,8 +32,7 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.LABEL]: 'DNN',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'NEURAL_NETWORKS',
-    [ContextFields.HIDE]: true,
+    [ContextFields.PARENT]: 'DNN',
   },
   {
     id: 'A714_S1_2',
@@ -55,15 +54,13 @@ export const CONTEXT_A714: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
     [ContextFields.PARENT]: 'NEURAL_NETWORKS',
-    [ContextFields.HIDE]: true,
   },
   {
     id: 'A714_S1_6',
     [ContextFields.LABEL]: 'CNN (convolutional neural networks)',
     [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
-    [ContextFields.PARENT]: 'NEURAL_NETWORKS',
-    [ContextFields.HIDE]: true,
+    [ContextFields.PARENT]: 'CNN',
   },
   {
     id: 'A714_S1_4',
@@ -97,7 +94,7 @@ export const CONTEXT_A714: MergedContextData[] = [
   },
   {
     id: 'A714_S2',
-    [ContextFields.LABEL]: 'applications for neural networks',
+    [ContextFields.LABEL]: 'Applications for neural networks',
     [ContextFields.SUB]: ['A714_S2_1', 'A714_S2_5', 'A714_S2_6' ],
     [ContextFields.PARENT]: 'APPLICATIONS'
   },

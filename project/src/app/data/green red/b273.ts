@@ -69,7 +69,7 @@ export const CONTEXT_B273: MergedContextData[] = [
     [ContextFields.LABEL]: 'Neural Networks',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'NEURAL_NETWORKS',
   },
   {
     id: 'B273_S3_3',

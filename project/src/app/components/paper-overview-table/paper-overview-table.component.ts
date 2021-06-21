@@ -17,9 +17,6 @@ export class PaperOverviewTableComponent implements OnInit, OnDestroy {
 
   public data: GeneralPaperData[] = [];
   public amountOfFilter = 0;
-  public readonly GENERAL_PAPER_FIELDS = GeneralPaperFields;
-  public readonly AWARDS = Award;
-  public readonly GENERAL_DATA_FIELD = AnalysisPaperFields.GENERAL_DATA;
   private unsubscribe$ = new Subject();
 
 
@@ -43,16 +40,26 @@ export class PaperOverviewTableComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 
-  public displayPapersContextInGraph(paperId): void {
-    console.log('TODO: implement context-graph and higlight papers contexts: ' + paperId);
-  }
-
-  public dehighlightPapersContextInGraph(paperId): void {
-    console.log('TODO: implement context-graph and dehilight papers contexts: ' + paperId);
-  }
-
   public openAnalysisDialog(): void {
     this.dialog.open(AnalysisDialogComponent, { width: '80vw' });
+  }
+
+  public getDataForLeftCol(): GeneralPaperData[] {
+    if (this.showOnlyOneColumn()) {
+      return this.data;
+    }
+    return this.data.slice(0, this.data.length / 2 + 1);
+  }
+
+  public getDataForRightCol(): GeneralPaperData[] {
+    if (this.showOnlyOneColumn()) {
+      return [];
+    }
+    return this.data.slice(this.data.length / 2 + 1, this.data.length);
+  }
+
+  public showOnlyOneColumn(): boolean {
+    return !this.visibilityService.isGraphHidden() || this.data.length < 10;
   }
 
 }

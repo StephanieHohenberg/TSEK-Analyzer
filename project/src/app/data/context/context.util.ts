@@ -7,8 +7,7 @@ export function getContextData(data: MergedContextData[]): ContextData[] {
     [ContextFields.PARENT]: d[ContextFields.PARENT],
     [ContextFields.SUB]: d[ContextFields.SUB],
     [ContextFields.ZWECK]: d[ContextFields.ZWECK],
-    [ContextFields.WEIGHT_FACTOR]: d[ContextFields.WEIGHT_FACTOR],
-    [ContextFields.HIDE]: d[ContextFields.HIDE],
+    [ContextFields.COLLECTING]: d[ContextFields.COLLECTING],
   })).filter(d => d[ContextFields.LABEL] !== undefined);
 }
 

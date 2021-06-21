@@ -17,7 +17,7 @@ export const CONTEXT_B049: MergedContextData[] = [
     [ContextFields.LABEL]: 'detecting faults (bugs, vulnerabilities, defects)',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'BUG_DETECTION',
+    [ContextFields.PARENT]: 'FAULT_DETECTION',
     [ContextFields.SUB]: ['B049_S1_S2', 'B049_S1_2'],
   },
   {
@@ -61,8 +61,7 @@ export const CONTEXT_B049: MergedContextData[] = [
     [ContextFields.LABEL]: 'Java Programs',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.HIDE]: true,
-    [ContextFields.PARENT]: 'PROGRAMS',
+    [ContextFields.PARENT]: 'JAVA_PROGRAMS',
   },
 ];
 

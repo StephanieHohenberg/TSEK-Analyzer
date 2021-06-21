@@ -11,8 +11,7 @@ export const CONTEXT_A309: MergedContextData[] = [
     [ContextFields.LABEL]: 'Android Applications',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.HIDE]: true,
-    [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
+    [ContextFields.PARENT]: 'ANDROID_APPLICATIONS',
   },
   {
     id: 'A309_2',
@@ -33,14 +32,14 @@ export const CONTEXT_A309: MergedContextData[] = [
     [ContextFields.LABEL]: 'Functional Tests',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'TEST_TYPES'
+    [ContextFields.PARENT]: 'FUNC_TESTS'
   },
   {
     id: 'A309_S4_2',
     [ContextFields.LABEL]: 'Usability Tests',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'TEST_TYPES'
+    [ContextFields.PARENT]: 'USABILITY_TESTS'
   },
 ];
 

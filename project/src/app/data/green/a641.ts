@@ -22,14 +22,14 @@ export const CONTEXT_A641: MergedContextData[] = [
   },
   {
     id: 'A641_3',
-    [ContextFields.LABEL]: 'developer communication',
+    [ContextFields.LABEL]: 'Developer Communication',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
     [ContextFields.PARENT]: 'NATURAL_LANGUAGES',
   },
   {
     id: 'A641_S3',
-    [ContextFields.LABEL]: 'text classification',
+    [ContextFields.LABEL]: 'Text Classification',
     [ContextFields.SUB]: ['A641_S3_1', 'A641_S3_2', 'A641_S3_3', 'A641_S3_4'],
     [ContextFields.PARENT]: 'NATURAL_LANGUAGES',
   },
@@ -74,21 +74,21 @@ export const CONTEXT_A641: MergedContextData[] = [
     [ContextFields.LABEL]: 'Projekte mit Online Chatting',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_SPECIFIC',
   },
   {
     id: 'A641_S2_2',
     [ContextFields.LABEL]: 'english speaking projects',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.DATA_PREPARATION,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_CHAR',
   },
   {
     id: 'A641_S2_3',
     [ContextFields.LABEL]: 'cross-project settings',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RESULTS_ANALYSIS,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_SPECIFIC',
   },
   // SUBTREES:
   {

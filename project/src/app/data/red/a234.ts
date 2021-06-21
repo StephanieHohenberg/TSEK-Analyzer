@@ -37,34 +37,29 @@ export const CONTEXT_A234: MergedContextData[] = [
   },
   {
     id: 'A234_1',
-    [ContextFields.LABEL]: 'security',
+    [ContextFields.LABEL]: 'Security Assurance',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'SE_ACTIVITIES',
+    [ContextFields.PARENT]: 'SECURITY_A',
   },
   {
     id: 'A234_2',
     [ContextFields.LABEL]: 'C/C++ Programs',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.HIDE]: true,
-    [ContextFields.PARENT]: 'PROGRAMS',
-  },
-  {
-    id: 'A234_3',
-    [ContextFields.LABEL]: 'security assurance',
-    [ContextFields.PARENT]: 'SE_ACTIVITIES',
+    [ContextFields.PARENT]: 'C_PROGRAMS',
   },
   {
     id: 'A234_4',
     [ContextFields.LABEL]: 'Rust',
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
-    [ContextFields.HIDE]: true,
+    [ContextFields.PARENT]: 'RUST',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
   },
   {
     id: 'A234_5',
     [ContextFields.LABEL]: 'Open Source',
-    [ContextFields.PARENT]: 'SOURCING',
+    [ContextFields.PARENT]: 'PS_SOURCING',
   },
 
 ];

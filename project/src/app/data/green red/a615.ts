@@ -15,17 +15,17 @@ export const CONTEXT_A615: MergedContextData[] = [
   },
   {
     id: 'A615_S2_1',
-    [ContextFields.LABEL]: 'Test Suite based program repair', // TODO Jump ?
+    [ContextFields.LABEL]: 'Test Suite based program repair',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'AUTOMATED_REPAIR',
   },
   {
     id: 'A615_S2_2',
     [ContextFields.LABEL]: 'Java Programs',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'JAVA_PROGRAMS',
   },
   {
     id: 'A615_S2_3',

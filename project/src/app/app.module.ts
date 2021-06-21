@@ -51,6 +51,7 @@ import {PaperService} from './services/paper.service';
 import {TranslateLoader, TranslateModule, TranslatePipe} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { LanguageToggleComponent } from './components/language-toggle/language-toggle.component';
+import { PaperAccordionComponent } from './components/paper-overview-table/paper-accordion/paper-accordion.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -86,6 +87,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     InformationDialogComponent,
     ChartsGeneralComponent,
     LanguageToggleComponent,
+    PaperAccordionComponent,
   ],
   imports: [
     BrowserModule,

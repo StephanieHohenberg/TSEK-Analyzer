@@ -7,31 +7,26 @@ import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A666: MergedContextData[] = [
   {
-    id: 'A666_S1',
-    [ContextFields.LABEL]: 'Forms of Software Development',
-    [ContextFields.SUB]: ['A666_S1_1', 'A666_S1_2', 'A666_S1_3'],
-    [ContextFields.PARENT]: 'SOFTWARE_DEVELOPMENT',
-  },
-  {
     id: 'A666_S1_1',
     [ContextFields.LABEL]: 'Colloborative',
     [ContextFields.ZWECK]: Zweck.VAGUE_VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'A666_S1',
+    [ContextFields.PARENT]: 'SOFTWARE_DEVELOPMENT',
   },
   {
     id: 'A666_S1_2',
     [ContextFields.LABEL]: 'Solo',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'A666_S1',
+    [ContextFields.PARENT]: 'SOFTWARE_DEVELOPMENT',
+    [ContextFields.COLLECTING]: ['A654_S2_1_1'],
   },
   {
     id: 'A666_S1_3',
     [ContextFields.LABEL]: 'Live',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'A666_S1',
+    [ContextFields.PARENT]: 'SOFTWARE_DEVELOPMENT',
   },
   {
     id: 'A666_2',
@@ -59,8 +54,7 @@ export const CONTEXT_A666: MergedContextData[] = [
     [ContextFields.LABEL]: 'Java',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
-    [ContextFields.HIDE]: true,
+    [ContextFields.PARENT]: 'JAVA',
   },
 ];
 

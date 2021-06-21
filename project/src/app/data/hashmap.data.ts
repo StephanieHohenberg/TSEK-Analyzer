@@ -64,9 +64,6 @@ import {B086} from './green red/b086';
 export function getDataMap(): Map<string, AnalysisPaperData>{
   const map = new Map<string, AnalysisPaperData>();
 
-  // TODO fills assumptions, context
-  // and changes after iteration 3
-
   // gold
   map.set('b535', B535);
   map.set('a087', A087);

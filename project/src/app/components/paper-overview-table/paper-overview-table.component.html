@@ -11,28 +11,8 @@
   <p class="error-line" *ngIf="data.length === 0">
     <i class="fas fa-exclamation-triangle"></i> {{"TABLE.NO_PAPERS_FOUND" | translate}}
   </p>
-  <mat-accordion multi>
-    <mat-expansion-panel *ngFor="let paper of data"
-                         [expanded]="data.length === 1"
-                         (opened)="displayPapersContextInGraph(paper[GENERAL_PAPER_FIELDS.ID])"
-                         (closed)="dehighlightPapersContextInGraph(paper[GENERAL_PAPER_FIELDS.ID])">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          {{paper[GENERAL_PAPER_FIELDS.ID]}}
-        </mat-panel-title>
-        <mat-panel-description>
-          <small>{{paper[GENERAL_PAPER_FIELDS.TITLE]}}</small>
-          <span class="awards" *ngIf="visibilityService.isFieldVisible(GENERAL_DATA_FIELD)">
-            <i *ngIf="paper[GENERAL_PAPER_FIELDS.AWARDS]?.includes(AWARDS.GOLD)"
-               class="fas fa-award" [style.color]="'gold'" matTooltip="ACM Award: Distinguished Paper / Artefact"></i>
-            <i *ngIf="paper[GENERAL_PAPER_FIELDS.AWARDS]?.includes(AWARDS.GREEN)"
-               class="fas fa-shield-alt" [style.color]="'green'" matTooltip="Badge: Artifacts Available"></i>
-            <i *ngIf="paper[GENERAL_PAPER_FIELDS.AWARDS]?.includes(AWARDS.RED)"
-               class="fas fa-shield-alt" [style.color]="'darkred'" matTooltip="Badge: Artifacts Evaluated Reusable"></i>
-          </span>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-     <app-paper-panel-content [paperId]="paper[GENERAL_PAPER_FIELDS.ID]"></app-paper-panel-content>
-    </mat-expansion-panel>
-  </mat-accordion>
+  <div class="paper-table">
+    <app-paper-accordion [data]="getDataForLeftCol()"></app-paper-accordion>
+    <app-paper-accordion *ngIf="!showOnlyOneColumn()" [data]="getDataForRightCol()"></app-paper-accordion>
+  </div>
 </div>

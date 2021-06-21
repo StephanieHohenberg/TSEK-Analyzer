@@ -26,6 +26,7 @@
     "@ngx-translate/http-loader": "^6.0.0",
     "@swimlane/ngx-charts": "^16.0.0",
     "cytoscape": "^3.18.0",
+    "cytoscape-cola": "^2.4.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"

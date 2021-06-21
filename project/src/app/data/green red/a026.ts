@@ -11,7 +11,7 @@ export const CONTEXT_A026: MergedContextData[] = [
     [ContextFields.LABEL]: 'Fault Detection',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'SE_ACTIVITIES',
+    [ContextFields.PARENT]: 'FAULT_DETECTION',
   },
   {
     id: 'A026_2',

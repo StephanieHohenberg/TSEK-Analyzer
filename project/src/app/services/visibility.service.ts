@@ -15,7 +15,9 @@ export class VisibilityService {
   private hiddenFields: string[] = [AnalysisPaperFields.ASSUMPTIONS];
   private graphUpdate$ = new Subject<GraphVisibilityUpdate>();
 
-  constructor() { }
+  constructor() {
+    this.toggleGraph();
+  }
 
   public toggleSidebar(): void {
     if (this.hiddenElement === ScreenComponent.SIDE_BAR) {
@@ -28,8 +30,10 @@ export class VisibilityService {
   public toggleGraph(): void {
     if (this.hiddenElement === ScreenComponent.GRAPH) {
       this.hiddenElement = null;
+      this.filterVisible = false;
     } else {
       this.hiddenElement = ScreenComponent.GRAPH;
+      this.filterVisible = true;
     }
   }
 
@@ -46,21 +50,23 @@ export class VisibilityService {
   }
 
   public hideAllFieldsExcept(field: string): void {
-    const fields = analysisPaperFieldList.filter(f => f !== field);
+    const fields = analysisPaperFieldList.filter(f => !f.includes(field));
     this.hiddenFields = fields.length < analysisPaperFieldList.length ? fields : this.hiddenFields;
   }
 
   public showContextsOfPaper(paperID: string): void {
-    this.graphUpdate$.next({type: GraphVisibilityUpdateType.SHOW_PAPER, id: paperID});
+    this.graphUpdate$.next({type: GraphVisibilityUpdateType.SHOW_PAPER, paperID});
     if (this.isGraphHidden()) {
       this.hiddenElement = null;
+      this.filterVisible = false;
     }
   }
 
-  public highlightContext(contextID: string): void {
-    this.graphUpdate$.next({type: GraphVisibilityUpdateType.HIGHLIGHT_CONTEXT, id: contextID});
+  public highlightContext(paperID: string, contextID: string): void {
+    this.graphUpdate$.next({type: GraphVisibilityUpdateType.HIGHLIGHT_CONTEXT, paperID, contextID});
     if (this.isGraphHidden()) {
       this.hiddenElement = null;
+      this.filterVisible = false;
     }
   }
 

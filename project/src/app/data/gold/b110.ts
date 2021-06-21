@@ -18,7 +18,7 @@ export const CONTEXT_B110: MergedContextData[] = [
     [ContextFields.LABEL]: 'Tensorflow',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'DL_FRAMEWORKS',
+    [ContextFields.PARENT]: 'TENSORFLOW',
   },
   {
     id: 'B110_S2_2',
@@ -32,8 +32,7 @@ export const CONTEXT_B110: MergedContextData[] = [
     [ContextFields.LABEL]: 'Pytorch',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.IDENTICAL]: ['B159_S1_3'],
-    [ContextFields.PARENT]: 'DL_FRAMEWORKS',
+    [ContextFields.PARENT]: 'PYTORCH',
   },
   {
     id: 'B110_S2_4',

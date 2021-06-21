@@ -11,14 +11,14 @@ export const CONTEXT_A765: MergedContextData[] = [
     [ContextFields.LABEL]: 'Fuzzing',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'TESTING',
+    [ContextFields.PARENT]: 'FUZZING',
   },
   {
     id: 'A765_S1_2',
-    [ContextFields.LABEL]: 'Coverage-based Gey-box fuzzing',
+    [ContextFields.LABEL]: 'Coverage-based Gey-box Fuzzing',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
-    [ContextFields.PARENT]: 'TESTING',
+    [ContextFields.PARENT]: 'A765_S1_1',
   },
   {
     id: 'A765_S1_3',
@@ -36,9 +36,9 @@ export const CONTEXT_A765: MergedContextData[] = [
   },
   {
     id: 'A765_S2',
-    [ContextFields.LABEL]: 'Bugs',
+    [ContextFields.LABEL]: 'Memory Bugs',
     [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
-    [ContextFields.SUB]: ['A765_S2_1', 'A765_S2_2'],
+    [ContextFields.SUB]: ['A765_S2_1', 'A765_S2_2', 'B261_S1'],
   },
   {
     id: 'A765_S2_1',

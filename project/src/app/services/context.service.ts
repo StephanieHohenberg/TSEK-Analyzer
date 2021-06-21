@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {EdgeData, EdgeDataWrapper, GraphData, NodeData, NodeDataWrapper} from '../components/context-graph/graph.data';
-import {getContextMap} from '../data/context/context';
+import {getContextDataOfRoots, getContextMap} from '../data/context/context';
 import {ContextData, ContextFields, Zweck} from '../model/context.data';
 
 @Injectable({
@@ -12,68 +12,84 @@ export class ContextService {
 
   constructor() { }
 
-  public getGraphDataForAllContexts(): GraphData {
+  public getGraphDataForRoots(): GraphData {
     const nodes: NodeDataWrapper[] = [];
     const edges: EdgeDataWrapper[] = [];
-    const map: Map<string, ContextData> = getContextMap();
-    map.forEach((context, _) => {
-      if (this.shouldHideContext(context)) {
-        console.log(context.id + ': "' + context[ContextFields.LABEL] + '" hidden in taxonomy');
-        return;
-      }
-      const weight = this.getWeightForContext(context);
-      nodes.push({data: new NodeData(context.id, context[ContextFields.LABEL], 'darkslateblue', weight)});
-      if (context[ContextFields.PARENT]) {
-        edges.push({data: new EdgeData(context[ContextFields.PARENT], context.id, 'solid')});
-      }
+
+    const roots: ContextData[] = getContextDataOfRoots();
+    roots.forEach((context, _) => {
+      const prefix = context[ContextFields.SUB] ? ' (' + context[ContextFields.SUB].length + ')' : '';
+      const word = context[ContextFields.LABEL] + prefix;
+      nodes.push({data: new NodeData(context.id, word , 'darkslateblue')});
     });
     return { nodes, edges};
   }
 
-  public getGraphDataByContextIDsWithWeightedStyle(contextIDs: string[]): GraphData {
+  public getSubGraphElementsOf(rootID: string): GraphData {
     const nodes: NodeDataWrapper[] = [];
     const edges: EdgeDataWrapper[] = [];
-    const map: Map<string, ContextData> = getContextMap();
-    contextIDs.forEach(id => {
-      const context = map.get(id);
-      const weight = this.getWeightForContext(context);
-      nodes.push({data: new NodeData(context.id, context[ContextFields.LABEL], 'darkslateblue', weight)});
-      if (context[ContextFields.PARENT]) {
-        if (!contextIDs.includes(context[ContextFields.PARENT])) {
-          const parent = map.get(context[ContextFields.PARENT]);
-          const pWeight = this.getWeightForContext(parent);
-          nodes.push({data: new NodeData(parent.id, parent[ContextFields.LABEL], 'darkslateblue', pWeight)});
-        }
-        edges.push({data: new EdgeData(context[ContextFields.PARENT], context.id, 'solid')});
-      }
+    const contextMap: Map<string, ContextData> = getContextMap();
+
+    const root = contextMap.get(rootID);
+    const subs = this.getSubIDsOfContext(root);
+
+    subs.forEach((subID, _) => {
+      const context = contextMap.get(subID);
+      const nSubs = this.getSubIDsOfContext(context).length;
+      const prefix = nSubs > 0 ? ' (' + nSubs + ')' : '';
+      const word = context[ContextFields.LABEL] + prefix;
+      nodes.push({data: new NodeData(subID, word, 'darkslateblue')});
+      edges.push({data: new EdgeData(rootID, subID, 'solid')});
     });
+
     return { nodes, edges};
   }
 
-  public getGraphDataByContextIDsWithColoredStyle(contextIDs: string[]): GraphData {
+  public getGraphDataByContextIDs(contextIDs: string[], focus: boolean): GraphData {
     const nodes: NodeDataWrapper[] = [];
     const edges: EdgeDataWrapper[] = [];
-    const map: Map<string, ContextData> = getContextMap();
+    const contextMap: Map<string, ContextData> = getContextMap();
     contextIDs.forEach(id => {
-      const context = map.get(id);
-      const colorCode = this.getColorCodeForContext(context);
+      const context = contextMap.get(id);
+      const colorCode = focus ? this.getColorCodeForContext(context) : 'darkslateblue';
       nodes.push({data: new NodeData(context.id, context[ContextFields.LABEL], colorCode)});
-      if (context[ContextFields.PARENT]) {
-        if (!contextIDs.includes(context[ContextFields.PARENT])) {
-          const parent = map.get(context[ContextFields.PARENT]);
-          const pColorCode = this.getColorCodeForContext(parent);
-          nodes.push({data: new NodeData(parent.id, parent[ContextFields.LABEL], pColorCode)});
-          // TODO: node/edge styling + legend
-          // TODO: what to display for focus view ?
-          // TODO: add parents of shared context
+
+      let childID = id;
+      let parentID = context[ContextFields.PARENT];
+      console.log(parentID, 'parentID-0');
+      while (parentID !== undefined) {
+        const parent = contextMap.get(parentID);
+        if (parent[ContextFields.COLLECTING] && parent[ContextFields.COLLECTING].includes(childID)) {
+          parentID = parent[ContextFields.PARENT];
+        } else {
+          if (!contextIDs.includes(context[ContextFields.PARENT])) {
+            const parentColorCode = focus ? 'grey' : 'darkslateblue';
+            nodes.push({data: new NodeData(parentID, parent[ContextFields.LABEL], parentColorCode)});
+          }
+          const lineStyle = childID === id && context[ContextFields.ZWECK] === Zweck.ABGRENZUNG ? 'dotted' : 'solid';
+          edges.push({data: new EdgeData(parentID, childID, lineStyle)});
+          childID = parentID;
+          parentID = parent[ContextFields.PARENT];
         }
-        const lineStyle = context[ContextFields.ZWECK] === Zweck.ABGRENZUNG ? 'dotted' : 'solid';
-        edges.push({data: new EdgeData(context[ContextFields.PARENT], context.id, lineStyle)});
+        // TODO: label mit siblings ?
       }
     });
     return { nodes, edges};
   }
 
+  private getSubIDsOfContext(context: ContextData): string[] {
+    let subs: string[] = context[ContextFields.SUB] || [];
+    if (context[ContextFields.COLLECTING]) {
+      const contextMap: Map<string, ContextData> = getContextMap();
+      context[ContextFields.COLLECTING]
+        .forEach(cID => {
+          const c = contextMap.get(cID);
+          const s = c[ContextFields.SUB];
+          if (s) { subs = subs.concat(s); }
+        });
+    }
+    return subs;
+  }
 
   private getColorCodeForContext(context: ContextData): string {
     const zweck = context[ContextFields.ZWECK];
@@ -84,17 +100,13 @@ export class ContextService {
       case Zweck.ERWEITERUNG:
         return 'lightblue';
     }
-    return 'white';
+    return 'darkslateblue';
   }
 
   private getWeightForContext(context: ContextData): number {
     const amountOfSubs = context[ContextFields.SUB] ? context[ContextFields.SUB].length : 0;
-    const factor = context[ContextFields.WEIGHT_FACTOR] || amountOfSubs;
+    const amountOfIdentical = context[ContextFields.COLLECTING] ? context[ContextFields.COLLECTING].length : 0;
+    const factor = amountOfIdentical + amountOfSubs;
     return this.DEFAULT_WEIGHT + (5 * factor);
-  }
-
-  private shouldHideContext(context: ContextData): boolean {
-    return context[ContextFields.HIDE]  ||
-      (!context[ContextFields.PARENT] && !context[ContextFields.SUB] && !context[ContextFields.WEIGHT_FACTOR]);
   }
 }

@@ -11,23 +11,21 @@ export const CONTEXT_B073: MergedContextData[] = [
     [ContextFields.LABEL]: 'Java',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.HIDE]: true,
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.PARENT]: 'JAVA',
   },
   {
     id: 'B073_S1_2',
     [ContextFields.LABEL]: 'C',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.PARENT]: 'C',
   },
   {
     id: 'B073_S1_3',
     [ContextFields.LABEL]: 'Python',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.HIDE]: true,
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.PARENT]: 'PYTHON',
   },
 ];
 

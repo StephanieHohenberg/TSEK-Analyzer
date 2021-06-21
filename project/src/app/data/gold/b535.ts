@@ -12,7 +12,6 @@ export const CONTEXT_B535: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.SUB]: ['B535_S1_1', 'B535_S1_2'],
-    [ContextFields.PARENT]: 'SOURCING'
   },
   {
     id: 'B535_S1_1',
@@ -67,7 +66,7 @@ export const CONTEXT_B535: MergedContextData[] = [
     [ContextFields.LABEL]: 'Bug Detection',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.BACKGROUND,
-    [ContextFields.PARENT]: 'BUG_HANDLING'
+    [ContextFields.PARENT]: 'BUG_DETECTION'
   },
   {
     id: 'B535_S3_2',
@@ -81,21 +80,21 @@ export const CONTEXT_B535: MergedContextData[] = [
     [ContextFields.LABEL]: 'Open Source Software',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS'
+    [ContextFields.PARENT]: 'PS_SOURCING'
   },
   {
     id: 'B535_S4_2',
     [ContextFields.LABEL]: 'On Demand Web Storage',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS'
+    [ContextFields.PARENT]: 'PS_SPECIFIC'
   },
   {
     id: 'B535_S4_3',
     [ContextFields.LABEL]: 'Crowdsource Software',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS'
+    [ContextFields.PARENT]: 'PS_SOURCING'
   },
   {
     id: 'B535_5',
@@ -109,16 +108,14 @@ export const CONTEXT_B535: MergedContextData[] = [
     [ContextFields.LABEL]: 'Functional Tests',
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.IDENTICAL]: ['A309_S4_1'],
-    [ContextFields.PARENT]: 'TEST_TYPES'
+    [ContextFields.PARENT]: 'FUNC_TESTS'
   },
   {
     id: 'B535_S6_2',
     [ContextFields.LABEL]: 'Usability Tests',
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.IDENTICAL]: ['A309_S4_2'],
-    [ContextFields.PARENT]: 'TEST_TYPES'
+    [ContextFields.PARENT]: 'USABILITY_TESTS'
   },
   {
     id: 'B535_S6_3',
@@ -132,8 +129,7 @@ export const CONTEXT_B535: MergedContextData[] = [
     [ContextFields.LABEL]: 'Performance Tests',
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.IDENTICAL]: ['B435_S1_1'],
-    [ContextFields.PARENT]: 'TEST_TYPES'
+    [ContextFields.PARENT]: 'PERFORMANCE_TESTS'
   },
 ];
 

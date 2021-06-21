@@ -8,7 +8,7 @@ import {getContextTableData} from '../context/context.util';
 export const CONTEXT_B209: MergedContextData[] = [
   {
     id: 'B209_1',
-    [ContextFields.LABEL]: 'Open Source projects',
+    [ContextFields.LABEL]: 'Open Source Projects',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
@@ -18,49 +18,47 @@ export const CONTEXT_B209: MergedContextData[] = [
     [ContextFields.LABEL]: 'Effective Funding',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'HUMAN_ASPECTS',
+    [ContextFields.PARENT]: 'PS_RESOURCES',
   },
   {
     id: 'B209_3',
     [ContextFields.LABEL]: 'npm Corpus',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'PS_STUDY_CHARACTERISTICS',
   },
   {
     id: 'B209_4',
     [ContextFields.LABEL]: 'Github Corpus',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'PS_STUDY_CHARACTERISTICS',
   },
   {
     id: 'B209_5',
     [ContextFields.LABEL]: 'active projects',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RESULTS_ANALYSIS,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_CHAR',
   },
   {
     id: 'B209_6',
     [ContextFields.LABEL]: 'more mature projects',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RESULTS_ANALYSIS,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_CHAR',
   },
   {
     id: 'B209_7',
     [ContextFields.LABEL]: 'popular projects',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RESULTS_ANALYSIS,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_CHAR',
   },
   {
     id: 'B209_8',
     [ContextFields.LABEL]: 'projects in the need of financial aid',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RESULTS_ANALYSIS,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_RESOURCES',
   },
 ];
 

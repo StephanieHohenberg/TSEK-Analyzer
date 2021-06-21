@@ -32,5 +32,6 @@ export enum  GraphVisibilityUpdateType {
 
 export class GraphVisibilityUpdate {
   type: GraphVisibilityUpdateType;
-  id?: string;
+  paperID?: string;
+  contextID?: string;
 }

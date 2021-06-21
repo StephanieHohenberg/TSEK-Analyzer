@@ -11,7 +11,7 @@ export const CONTEXT_A322: MergedContextData[] = [
     [ContextFields.LABEL]: 'Android Applications',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
+    [ContextFields.PARENT]: 'ANDROID_APPLICATIONS',
   },
   {
     id: 'A322_S2',

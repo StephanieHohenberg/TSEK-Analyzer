@@ -67,8 +67,7 @@ export const CONTEXT_B086: MergedContextData[] = [
     [ContextFields.LABEL]: 'Python',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.DISCUSSION,
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
-    [ContextFields.HIDE]: true,
+    [ContextFields.PARENT]: 'PYTHON',
   },
   {
     id: 'B086_S3_2',

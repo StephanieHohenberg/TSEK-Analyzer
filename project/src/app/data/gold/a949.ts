@@ -23,7 +23,7 @@ export const CONTEXT_A949: MergedContextData[] = [
   {
     id: 'A949_S3',
     [ContextFields.LABEL]: 'Convolutional Neural Networks',
-    [ContextFields.PARENT]: 'NEURAL_NETWORKS',
+    [ContextFields.PARENT]: 'CNN',
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
   },

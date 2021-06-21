@@ -11,12 +11,14 @@ export const CONTEXT_B024: MergedContextData[] = [
     [ContextFields.LABEL]: 'Bug Detection',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'BUG_DETECTION',
   },
   {
     id: 'B024_2',
     [ContextFields.LABEL]: 'Grey-box Fuzzing',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'FUZZING',
   },
 ];
 

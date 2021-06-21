@@ -11,8 +11,7 @@ export const CONTEXT_B061: MergedContextData[] = [
     [ContextFields.LABEL]: 'Android Applications',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.HIDE]: true,
-    [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
+    [ContextFields.PARENT]: 'ANDROID_APPLICATIONS',
   },
   {
     id: 'B061_S2',

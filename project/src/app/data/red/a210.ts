@@ -12,7 +12,6 @@ export const CONTEXT_A210: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EVALUATION,
     [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
-    [ContextFields.HIDE]: true,
     [ContextFields.SUB]: ['A210_3'],
   },
   {
@@ -21,7 +20,6 @@ export const CONTEXT_A210: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EVALUATION,
     [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
-    [ContextFields.HIDE]: true,
     [ContextFields.SUB]: ['A210_4'],
   },
   {
@@ -29,16 +27,14 @@ export const CONTEXT_A210: MergedContextData[] = [
     [ContextFields.LABEL]: 'Java', // TODO kommt auch als Eingrenzung, Abstract vor
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.HIDE]: true,
-    [ContextFields.PARENT]: 'A210_S1_1',
+    [ContextFields.PARENT]: 'JAVA',
   },
   {
     id: 'A210_4',
     [ContextFields.LABEL]: 'Python', // TODO kommt auch als Eingrenzung, Abstract vor
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.HIDE]: true,
-    [ContextFields.PARENT]: 'A210_S1_2',
+    [ContextFields.PARENT]: 'PYTHON',
   },
   {
     id: 'A210_S4',

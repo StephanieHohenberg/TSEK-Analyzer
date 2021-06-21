@@ -11,14 +11,14 @@ export const CONTEXT_A087: MergedContextData[] = [
     [ContextFields.LABEL]: 'Root-Cause Analysis',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'BUG_HANDLING'
+    [ContextFields.PARENT]: 'ROOT_CAUSE_ANALYSIS'
   },
   {
     id: 'A087_S1_2',
     [ContextFields.LABEL]: 'Delta Debugging',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'BUG_HANDLING'
+    [ContextFields.PARENT]: 'DEBUGGING'
   },
   {
     id: 'A087_S2_1',
@@ -32,7 +32,7 @@ export const CONTEXT_A087: MergedContextData[] = [
     [ContextFields.LABEL]: 'Java Programs',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'PROGRAMS'
+    [ContextFields.PARENT]: 'JAVA_PROGRAMS'
   },
   {
     id: 'A087_S2_3',

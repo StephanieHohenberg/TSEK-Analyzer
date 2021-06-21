@@ -37,6 +37,7 @@ export class FilterGeneralComponent implements OnInit, OnDestroy {
       .subscribe(params => {
         if (params.id) {
           this.addIdFilter(params.id);
+          this.visibilityService.showContextsOfPaper(params.id);
         }
       });
   }

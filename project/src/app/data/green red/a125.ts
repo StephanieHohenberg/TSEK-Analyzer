@@ -38,8 +38,8 @@ export const CONTEXT_A125: MergedContextData[] = [
   {
     id: 'A125_S2',
     [ContextFields.LABEL]: 'Root-cause Analysis',
-    [ContextFields.PARENT]: 'BUG_HANDLING',
-    [ContextFields.SUB]: ['A125_S2_1', 'A125_S2_2', 'A124_S2_3'],
+    [ContextFields.PARENT]: 'ROOT_CAUSE_ANALYSIS',
+    [ContextFields.SUB]: ['A125_S2_1', 'A125_S2_2', 'A125_S2_3'],
   },
   {
     id: 'A125_S2_1',
@@ -67,34 +67,34 @@ export const CONTEXT_A125: MergedContextData[] = [
     [ContextFields.LABEL]: 'Github Projects',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.DATA_PREPARATION,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_SOURCING',
   },
   {
     id: 'A125_3',
     [ContextFields.LABEL]: 'popular projects',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.DATA_PREPARATION,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_CHAR',
   },
   {
     id: 'A125_4',
     [ContextFields.LABEL]: 'projects used as a python library',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.DATA_PREPARATION,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_SPECIFIC',
   },
   {
     id: 'A125_5',
     [ContextFields.LABEL]: 'well-maintained projects',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.DATA_PREPARATION,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_CHAR',
   },
   {
     id: 'A125_6',
     [ContextFields.LABEL]: 'Python',
     [ContextFields.ZWECK]: Zweck.DETAILS,
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.PARENT]: 'PYTHON',
   },
 ];
 

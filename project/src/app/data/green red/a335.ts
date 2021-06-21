@@ -12,14 +12,14 @@ export const CONTEXT_A335: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.SUB]: ['A335_S1_1'],
-    [ContextFields.PARENT]: 'BUG_HANDLING',
+    [ContextFields.PARENT]: 'BUG_DETECTION',
   },
   {
     id: 'A335_S1_1',
     [ContextFields.LABEL]: 'Compiler Bugs',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'A335_S1',
+    [ContextFields.PARENT]: 'SOFTWARE_ISSUES',
   },
   {
     id: 'A335_S2_1',

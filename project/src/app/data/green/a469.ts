@@ -11,7 +11,7 @@ export const CONTEXT_A469: MergedContextData[] = [
     [ContextFields.LABEL]: 'Test Input Generation',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'TESTING',
+    [ContextFields.PARENT]: 'TEST_INPUT_GEN',
     [ContextFields.SUB]: ['B447_S1_1_1', 'B447_S1_1_2', 'B447_S1_1_3'],
   },
   {
@@ -61,8 +61,7 @@ export const CONTEXT_A469: MergedContextData[] = [
     [ContextFields.LABEL]: 'Android Applications',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.HIDE]: true,
-    [ContextFields.PARENT]: 'MOBILE_APPLICATIONS',
+    [ContextFields.PARENT]: 'ANDROID_APPLICATIONS',
   },
 ];
 

@@ -7,9 +7,16 @@ import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A075: MergedContextData[] = [
   {
-    id: 'A075_1',
-    [ContextFields.LABEL]: 'Automated Data Repair and Debugging', // TODO
+    id: 'A075_1_1',
+    [ContextFields.LABEL]: 'Automated Data Repair',
     [ContextFields.PARENT]: 'AUTOMATED_REPAIR',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+  },
+  {
+    id: 'A075_1_2',
+    [ContextFields.LABEL]: 'Debugging',
+    [ContextFields.PARENT]: 'DEBUGGING',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
   },
@@ -19,7 +26,8 @@ export const CONTEXT_A075: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.PARENT]: 'DATA',
-    [ContextFields.SUB]: ['A075_2_1', 'A075_2_2', 'A075_2_3', 'A075_2_4', 'A075_2_5', 'A075_2_6', 'A075_2_7', 'A075_2_8'],
+    [ContextFields.SUB]: ['A075_2_1', 'A075_2_2', 'A075_2_3', 'A075_2_4', 'A075_2_5',
+                          'A075_2_6', 'A075_2_7', 'A075_2_8_1', 'A075_2_8_2'],
   },
   {
     id: 'A075_S2_1',
@@ -71,8 +79,15 @@ export const CONTEXT_A075: MergedContextData[] = [
     [ContextFields.PARENT]: 'A075_S2',
   },
   {
-    id: 'A075_S2_8',
-    [ContextFields.LABEL]: 'Data Testing and Debugging',
+    id: 'A075_S2_8_1',
+    [ContextFields.LABEL]: 'Data Testing',
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
+    [ContextFields.PARENT]: 'A075_S2',
+  },
+  {
+    id: 'A075_S2_8_2',
+    [ContextFields.LABEL]: 'Debugging',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'A075_S2',
@@ -100,36 +115,18 @@ export const CONTEXT_A075: MergedContextData[] = [
     [ContextFields.PARENT]: 'A075_S3',
   },
   {
-    id: 'A075_S4',
-    [ContextFields.LABEL]: 'Programs',
-    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
-    [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.HIDE]: true,
-    [ContextFields.SUB]: ['A075_S4_1', 'A075_S4_2', 'A075_S4_3'],
-  },
-  {
     id: 'A075_S4_1',
-    [ContextFields.LABEL]: 'C',
+    [ContextFields.LABEL]: 'C/C++ Programs',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.HIDE]: true,
-    [ContextFields.PARENT]: 'A075_S4',
-  },
-  {
-    id: 'A075_S4_2',
-    [ContextFields.LABEL]: 'C++',
-    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
-    [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.HIDE]: true,
-    [ContextFields.PARENT]: 'A075_S4',
+    [ContextFields.PARENT]: 'C_PROGRAMS',
   },
   {
     id: 'A075_S4_3',
-    [ContextFields.LABEL]: 'Java',
+    [ContextFields.LABEL]: 'Java Programs',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.HIDE]: true,
-    [ContextFields.PARENT]: 'A075_S4',
+    [ContextFields.PARENT]: 'JAVA_PROGRAMS',
   },
   {
     id: 'A075_S5',

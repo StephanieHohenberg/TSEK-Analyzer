@@ -17,7 +17,7 @@ export const CONTEXT_B359: MergedContextData[] = [
     [ContextFields.LABEL]: 'Code Comments',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'NATURAL_LANGUAGES',
+    [ContextFields.PARENT]: 'DEV_COM',
     [ContextFields.SUB]: ['B359_S2_1', 'B359_S2_2', 'B359_S2_3'],
   },
   {

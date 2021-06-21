@@ -15,7 +15,7 @@ export const CONTEXT_A654: MergedContextData[] = [
   {
     id: 'A654_S2_1',
     [ContextFields.LABEL]: 'Software Development',
-    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
+    [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
     [ContextFields.PARENT]: 'COG_BIAS',
   },
@@ -24,7 +24,7 @@ export const CONTEXT_A654: MergedContextData[] = [
     [ContextFields.LABEL]: 'Solo Programming',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
-    [ContextFields.PARENT]: 'SOFTWARE_DEVELOPMENT',
+    [ContextFields.PARENT]: 'A666_S1_2',
   },
   {
     id: 'A654_S2_2',
@@ -66,7 +66,7 @@ export const CONTEXT_A654: MergedContextData[] = [
     [ContextFields.LABEL]: 'Java',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.PARENT]: 'JAVA',
   },
   {
     id: 'A654_S3_2',
@@ -80,7 +80,7 @@ export const CONTEXT_A654: MergedContextData[] = [
     [ContextFields.LABEL]: 'Python',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.PARENT]: 'PYTHON',
   },
   {
     id: 'A654_S3_4',
@@ -94,15 +94,14 @@ export const CONTEXT_A654: MergedContextData[] = [
     [ContextFields.LABEL]: 'TypeScript',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.PARENT]: 'TYPESCRIPT',
   },
   {
     id: 'A654_S3_6',
     [ContextFields.LABEL]: 'C/C++',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.HIDE]: true,
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
+    [ContextFields.PARENT]: 'C++',
   },
   {
     id: 'A654_S3_7',
@@ -123,7 +122,7 @@ export const CONTEXT_A654: MergedContextData[] = [
     [ContextFields.LABEL]: 'large team size',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
-    [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.PARENT]: 'PS_PERSON_CHARACTERISTICS',
   },
 ];
 
