@@ -36,7 +36,7 @@ export const CONTEXT_A530: MergedContextData[] = [
     [ContextFields.PARENT]: 'A530_S2',
   },
   {
-    id: 'A530_S2_1',
+    id: 'A530_S2_2',
     [ContextFields.LABEL]: 'Construction of Artifacts',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
@@ -47,7 +47,7 @@ export const CONTEXT_A530: MergedContextData[] = [
     id: 'A530_S3',
     [ContextFields.LABEL]: 'Blockchain Contract Vulnerabilities',
     [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
-    [ContextFields.SUB]: ['A530_S2_1', 'A530_S2_2', 'A530_S2_3', 'A530_S2_4', 'A530_S2_5', 'A530_S2_6', 'A530_S2_7', 'A530_S2_8']
+    [ContextFields.SUB]: ['A530_S3_1', 'A530_S3_2', 'A530_S3_3', 'A530_S3_4', 'A530_S3_5', 'A530_S3_6', 'A530_S3_7', 'A530_S3_8']
   },
   {
     id: 'A530_S3_1',
@@ -57,7 +57,7 @@ export const CONTEXT_A530: MergedContextData[] = [
     [ContextFields.PARENT]: 'A530_S3',
   },
   {
-    id: 'A530_S3_3',
+    id: 'A530_S3_2',
     [ContextFields.LABEL]: 'Arithmetic',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,

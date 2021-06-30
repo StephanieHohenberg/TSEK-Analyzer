@@ -12,6 +12,7 @@ export const CONTEXT_B209: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
+    [ContextFields.SUB]: ['B209_3', 'B209_4'],
   },
   {
     id: 'B209_2',
@@ -25,12 +26,14 @@ export const CONTEXT_B209: MergedContextData[] = [
     [ContextFields.LABEL]: 'npm Corpus',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.PARENT]: 'B209_1',
   },
   {
     id: 'B209_4',
     [ContextFields.LABEL]: 'Github Corpus',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.EXPERIMENTAL_DESIGN,
+    [ContextFields.PARENT]: 'B209_1',
   },
   {
     id: 'B209_5',

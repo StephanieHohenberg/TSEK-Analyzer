@@ -9,6 +9,7 @@ import {ContextData, ContextFields, Zweck} from '../model/context.data';
 export class ContextService {
 
   private readonly DEFAULT_WEIGHT = 10;
+  private contextMap: Map<string, ContextData>;
 
   constructor() { }
 
@@ -25,16 +26,39 @@ export class ContextService {
     return { nodes, edges};
   }
 
+  public getGraphDataForRootAndKids(rootID: string): GraphData {
+    let nodes: NodeDataWrapper[] = [];
+    let edges: EdgeDataWrapper[] = [];
+    this.initContextMap();
+
+    const root = this.contextMap.get(rootID);
+    if (!root) { console.log(rootID); }
+    const subs = this.getSubIDsOfContext(root);
+    const prefix = subs.length > 0 ? ' (' + subs.length + ')' : '';
+    const word = root[ContextFields.LABEL] + prefix;
+    nodes.push({data: new NodeData(root.id, word , 'darkslateblue')});
+
+    subs.forEach((subID, _) => {
+      const context = this.contextMap.get(subID);
+      edges.push({data: new EdgeData(rootID, subID, 'solid')});
+      const subData = this.getGraphDataForRootAndKids(subID);
+      nodes = nodes.concat(subData.nodes);
+      edges = edges.concat(subData.edges);
+    });
+
+    return { nodes, edges};
+  }
+
   public getSubGraphElementsOf(rootID: string): GraphData {
     const nodes: NodeDataWrapper[] = [];
     const edges: EdgeDataWrapper[] = [];
-    const contextMap: Map<string, ContextData> = getContextMap();
+    this.initContextMap();
 
-    const root = contextMap.get(rootID);
+    const root = this.contextMap.get(rootID);
     const subs = this.getSubIDsOfContext(root);
 
     subs.forEach((subID, _) => {
-      const context = contextMap.get(subID);
+      const context = this.contextMap.get(subID);
       const nSubs = this.getSubIDsOfContext(context).length;
       const prefix = nSubs > 0 ? ' (' + nSubs + ')' : '';
       const word = context[ContextFields.LABEL] + prefix;
@@ -48,9 +72,13 @@ export class ContextService {
   public getGraphDataByContextIDs(contextIDs: string[], focus: boolean): GraphData {
     const nodes: NodeDataWrapper[] = [];
     const edges: EdgeDataWrapper[] = [];
-    const contextMap: Map<string, ContextData> = getContextMap();
+
+    console.log(contextIDs, 'contextIDs');
+    this.initContextMap();
+    const parentIDs: string[] = [];
+
     contextIDs.forEach(id => {
-      const context = contextMap.get(id);
+      const context = this.contextMap.get(id);
       const colorCode = focus ? this.getColorCodeForContext(context) : 'darkslateblue';
       nodes.push({data: new NodeData(context.id, context[ContextFields.LABEL], colorCode)});
 
@@ -58,18 +86,24 @@ export class ContextService {
       let parentID = context[ContextFields.PARENT];
       console.log(parentID, 'parentID-0');
       while (parentID !== undefined) {
-        const parent = contextMap.get(parentID);
+        const parent = this.contextMap.get(parentID);
         if (parent[ContextFields.COLLECTING] && parent[ContextFields.COLLECTING].includes(childID)) {
           parentID = parent[ContextFields.PARENT];
         } else {
-          if (!contextIDs.includes(context[ContextFields.PARENT])) {
+          if (!contextIDs.includes(parentID)) {
             const parentColorCode = focus ? 'grey' : 'darkslateblue';
             nodes.push({data: new NodeData(parentID, parent[ContextFields.LABEL], parentColorCode)});
+            parentIDs.push(parentID);
           }
-          const lineStyle = childID === id && context[ContextFields.ZWECK] === Zweck.ABGRENZUNG ? 'dotted' : 'solid';
-          edges.push({data: new EdgeData(parentID, childID, lineStyle)});
-          childID = parentID;
-          parentID = parent[ContextFields.PARENT];
+          if (edges.filter(e => e.data.source === parentID && e.data.target === childID).length === 0) {
+            const lineStyle = childID === id && context[ContextFields.ZWECK] === Zweck.ABGRENZUNG ? 'dotted' : 'solid';
+            edges.push({data: new EdgeData(parentID, childID, lineStyle)});
+            childID = parentID;
+            parentID = parent[ContextFields.PARENT];
+          } else {
+            parentID = undefined;
+          }
+
         }
         // TODO: label mit siblings ?
       }
@@ -80,10 +114,10 @@ export class ContextService {
   private getSubIDsOfContext(context: ContextData): string[] {
     let subs: string[] = context[ContextFields.SUB] || [];
     if (context[ContextFields.COLLECTING]) {
-      const contextMap: Map<string, ContextData> = getContextMap();
+      this.initContextMap();
       context[ContextFields.COLLECTING]
         .forEach(cID => {
-          const c = contextMap.get(cID);
+          const c = this.contextMap.get(cID);
           const s = c[ContextFields.SUB];
           if (s) { subs = subs.concat(s); }
         });
@@ -108,5 +142,11 @@ export class ContextService {
     const amountOfIdentical = context[ContextFields.COLLECTING] ? context[ContextFields.COLLECTING].length : 0;
     const factor = amountOfIdentical + amountOfSubs;
     return this.DEFAULT_WEIGHT + (5 * factor);
+  }
+
+  private initContextMap(): void {
+    if (!this.contextMap) {
+      this.contextMap = getContextMap();
+    }
   }
 }

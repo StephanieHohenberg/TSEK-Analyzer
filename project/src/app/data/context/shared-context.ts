@@ -5,7 +5,7 @@ export const ROOTS: MergedContextData[] = [
     id: 'SOFTWARE_TOOLS',
     [ContextFields.LABEL]: 'Software Tools',
     [ContextFields.SUB]: ['A752_S2', 'PROGRAMMING_LANGUAGES', 'DL_TOOLS', 'A087_S2_1', 'A087_S2_3', 'A125_S1',
-                          'A335_S2_1', 'A186_S3', 'A666_S5', 'A824_S4', 'B572_S0', 'B447_S4'],
+                          'A335_S2_1', 'A186_S3', 'A493_S5', 'A824_S4', 'B572_S0', 'B447_S4'],
   },
   {
     id: 'APPLICATIONS',
@@ -122,7 +122,7 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     id: 'DL_FRAMEWORKS',
     [ContextFields.LABEL]: 'DL Frameworks',
     [ContextFields.PARENT]: 'DL_TOOLS',
-    [ContextFields.SUB]: ['TENSORFLOW', 'PYTORCH', 'B159_S1_2', 'B159_S1_4', 'B110_S2_2'],
+    [ContextFields.SUB]: ['TENSORFLOW', 'PYTORCH', 'B159_S1_2', 'B159_S1_4'],
   },
   {
     id: 'PYTORCH',
@@ -135,6 +135,12 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     [ContextFields.LABEL]: 'Tensorflow',
     [ContextFields.PARENT]: 'DL_FRAMEWORKS',
     [ContextFields.COLLECTING]: ['B159_S1_1', 'B110_S2_1'],
+  },
+  {
+    id: 'KERAS',
+    [ContextFields.LABEL]: 'Keras',
+    [ContextFields.PARENT]: 'B135_S2',
+    [ContextFields.COLLECTING]: ['B135_S2_2', 'B110_S2_2'],
   },
   {
     id: 'DL_PLATFORMS',
@@ -184,8 +190,8 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     id: 'C_PROGRAMS',
     [ContextFields.LABEL]: 'C/C++ Programs',
     [ContextFields.PARENT]: 'PROGRAMS',
-    [ContextFields.SUB]: ['A258_S3_1', 'A258_S3_2', 'A666_S3_1', 'A666_S3_2', 'A666_S3_3', 'A666_S3_4', 'A075_S4_1'],
-    [ContextFields.COLLECTING]: ['A234_2'],
+    [ContextFields.SUB]: ['A258_S3_1', 'A258_S3_2', 'A493_S3_1', 'A493_S3_2', 'A493_S3_3', 'A493_S3_4'],
+    [ContextFields.COLLECTING]: ['A234_2', 'A075_S4_1']
   },
   {
     id: 'JAVA_PROGRAMS',
@@ -250,7 +256,7 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     [ContextFields.LABEL]: 'Fault Localization / Detection',
     [ContextFields.PARENT]: 'SE_ACTIVITIES',
     [ContextFields.SUB]: ['ROOT_CAUSE_ANALYSIS', 'DEBUGGING', 'ISSUES_DEFECTS_FAILURES'],
-    [ContextFields.COLLECTING]: ['B159_S2_4', 'A026_1', 'B049_S1'],
+    [ContextFields.COLLECTING]: ['B159_S2_4', 'A026_1', 'B049_S1', 'B359_4'],
   },
   {
     id: 'BUG_HANDLING',
@@ -297,7 +303,7 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     [ContextFields.PARENT]: 'SE_ACTIVITIES',
     [ContextFields.COLLECTING]: ['A481_2', 'B159_S2_2', 'A615_1'],
     [ContextFields.SUB]: [ 'TEST_TYPES', 'TEST_INPUT_GEN', 'FUZZING', 'A087_S4', 'A087_3', 'A309_2', 'A949_1',
-      'A075_S2_8_1', 'A271_S1_2_1_3', 'A765_S1_1', 'A765_S1_2', 'A765_S1_3', 'A765_S1_4', 'B122_S1', 'B122_S1_0', 'B273_S2_1',
+      'A075_S2_8_1', 'A765_S1_1', 'A765_S1_2', 'A765_S1_3', 'A765_S1_4', 'B122_S1', 'B122_S1_0', 'B273_S2_1',
       'B459_S1_1', 'B459_S1_2', 'B459_S1_3', 'B459_S1_4', 'A457_S1_1', 'A457_S1_2', 'A457_S1_3', 'A457_S1_4', 'A457_S1_5',
       'A469_S1_2', 'B483_S1_1', 'B483_S1_2', 'B483_S1_3', 'B483_S1_4', 'B483_S1_6', 'B483_S1_7', 'B483_S1_8', 'B483_S1_9'],
   },
@@ -360,7 +366,7 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     id: 'PS_SOURCING',
     [ContextFields.LABEL]: 'sourcing',
     [ContextFields.PARENT]: 'PS_PROJECT_CHARACTERISTICS',
-    [ContextFields.SUB]: ['B171_S6_1', 'B535_S4_1', 'B535_S4_3', 'A125_2', 'B183_S3_1', 'B209_1', 'A234_5', 'A284_4'],
+    [ContextFields.SUB]: ['B171_S6_1', 'B535_S4_1', 'B535_S4_3', 'A125_2', 'B209_1', 'A234_5', 'A284_4'],
   },
   {
     id: 'PS_CHAR',
@@ -378,7 +384,7 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     id: 'PS_PERSON_CHARACTERISTICS',
     [ContextFields.LABEL]: 'person related',
     [ContextFields.PARENT]: 'PAPER_SPECIFIC_PROPERTIES',
-    [ContextFields.SUB]: ['B171_S5_1', 'B171_S5_2', 'A654_S4_1', 'B171_S6_4'], // Position/Role/ Experience/ Team size
+    [ContextFields.SUB]: ['B171_S5_1', 'B171_S5_2', 'A654_S4_1'], // Position/Role/ Experience/ Team size
 
   },
   {

@@ -10,7 +10,7 @@ export const CONTEXT_B509: MergedContextData[] = [
     id: 'B509_1',
     [ContextFields.LABEL]: 'Highly Configurable Software',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
-    [ContextFields.PARENT]: 'DEV_OPS',
+    [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
   },
   {

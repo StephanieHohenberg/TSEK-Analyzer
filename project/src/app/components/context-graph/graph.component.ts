@@ -61,6 +61,7 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
 
   private initializeGraphElements(): void {
     this.elements = this.contextService.getGraphDataForRoots();
+    // this.elements = this.contextService.getGraphDataForRootAndKids('SOFTWARE_TOOLS');
     this.render();
 
     this.visibilityService.getGraphUpdates$()
@@ -175,6 +176,28 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
       idealEdgeLength: ( edge ) => 64,
     };
 
+    const trialLayout = {
+      name: 'breadthfirst',
+      fit: true, // whether to fit the viewport to the graph
+      directed: true, // whether the tree is directed downwards (or edges can point in any direction if false)
+      padding: 100, // padding on fit
+      circle: false, // put depths in concentric circles if true, put depths top down if false
+      grid: false, // whether to create an even grid into which the DAG is placed (circle:false only)
+      spacingFactor: 5, // positive spacing factor, larger => more space between nodes (N.B. n/a if causes overlap)
+      boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
+      avoidOverlap: true, // prevents node overlap, may overflow boundingBox if not enough space
+      nodeDimensionsIncludeLabels: false, // Excludes the label when calculating node bounding boxes for the layout algorithm
+      // roots: ['APPLICATIONS'], // the roots of the trees
+      maximal: false, // whether to shift nodes down their natural BFS depths in order to avoid upwards edges (DAGS only)
+      animate: false, // whether to transition the node positions
+      animationDuration: 500, // duration of animation in ms if enabled
+      animationEasing: undefined, // easing of animation if enabled,
+      animateFilter: ( node, i ) => true, // a function that determines whether the node should be animated.  All nodes animated by default on animate enabled.  Non-animated nodes are positioned immediately when the layout starts
+      ready: undefined, // callback on layoutready
+      stop: undefined, // callback on layoutstop
+      transform: (node, position ) => position
+    };
+
 
     this.style = cytoscape.stylesheet()
       .selector('node')
@@ -183,7 +206,8 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
         'width': 'data(weight)',
         'height': 'data(weight)',
         'content': 'data(label)',
-        'text-valign': 'bottom center',
+        'text-valign': 'bottom',
+        'text-halign': 'center',
         'text-outline-width': 2,
         'text-outline-color': 'white',
         'text-max-width': '50px',
@@ -198,7 +222,7 @@ export class GraphComponent implements OnInit, OnDestroy, OnChanges {
       })
       .selector('edge')
       .css({
-        'curve-style': 'taxi',
+        'curve-style': 'bezier', // 'taxi',
         'line-style': 'data(lineStyle)',
         'opacity': 0.8,
         'width': '2',

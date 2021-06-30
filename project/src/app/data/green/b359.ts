@@ -55,6 +55,13 @@ export const CONTEXT_B359: MergedContextData[] = [
     [ContextFields.VORKOMMEN]: Vorkommen.IMPLICITE,
     [ContextFields.PARENT]: 'PS_APPLICATION_CHARACTERISTICS',
   },
+  {
+    id: 'B359_4',
+    [ContextFields.LABEL]: 'Bug Detection',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'FAULT_DETECTION',
+  },
 ];
 
 
@@ -86,6 +93,7 @@ export const B359: AnalysisPaperData = {
     [GeneralizationFields.SECTION_THREATS]: true,
     [GeneralizationFields.SECTION_FUTURE_WORK]: true,
     [GeneralizationFields.REFERENCE_PROCEDURE]: true,
+    [GeneralizationFields.NO_CLAIM]: true,
   },
   [AnalysisPaperFields.ASSUMPTIONS]: {
     [AssumptionFields.ITERATION_GROUPS]: [

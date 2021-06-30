@@ -76,7 +76,7 @@ export const CONTEXT_A271: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'A271_S1',
-    [ContextFields.SUB]: ['A271_S1_1_1', 'A271_S1_1_2', 'A271_S1_1_3', 'A271_S1_1_4', 'A271_S1_1_5', 'A271_S1_1_6'],
+    [ContextFields.SUB]: ['A271_S1_2_1', 'A271_S1_2_2', 'A271_S1_2_3'],
   },
   {
     id: 'A271_S1_2_1',

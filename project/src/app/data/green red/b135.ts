@@ -19,7 +19,7 @@ export const CONTEXT_B135: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.PARENT]: 'DL_TOOLS',
-    [ContextFields.SUB]: ['B135_S2_1', 'B135_S2_2', 'B135_S2_3', 'B135_S2_4', 'B135_S2_5'],
+    [ContextFields.SUB]: ['B135_S2_1', 'KERAS', 'B135_S2_3', 'B135_S2_4', 'B135_S2_5'],
   },
   {
     id: 'B135_S2_1',
@@ -33,14 +33,14 @@ export const CONTEXT_B135: MergedContextData[] = [
     [ContextFields.LABEL]: 'Keras',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'B135_S2',
+    [ContextFields.PARENT]: 'KERAS',
   },
   {
     id: 'B135_S2_3',
     [ContextFields.LABEL]: 'Tensorflow',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'B135_S2',
+    [ContextFields.PARENT]: 'TENSORFLOW',
   },
   {
     id: 'B135_S2_4',

@@ -12,6 +12,7 @@ export const CONTEXT_B572: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.PARENT]: 'SOFTWARE_TOOLS',
+    [ContextFields.SUB]: ['B572_S1'],
   },
   {
     id: 'B572_S1',

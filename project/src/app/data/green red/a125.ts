@@ -39,7 +39,7 @@ export const CONTEXT_A125: MergedContextData[] = [
     id: 'A125_S2',
     [ContextFields.LABEL]: 'Root-cause Analysis',
     [ContextFields.PARENT]: 'ROOT_CAUSE_ANALYSIS',
-    [ContextFields.SUB]: ['A125_S2_1', 'A125_S2_2', 'A125_S2_3'],
+    // [ContextFields.SUB]: ['A125_S2_1', 'A125_S2_2', 'A125_S2_3'],
   },
   {
     id: 'A125_S2_1',

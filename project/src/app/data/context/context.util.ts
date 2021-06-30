@@ -6,8 +6,9 @@ export function getContextData(data: MergedContextData[]): ContextData[] {
     [ContextFields.LABEL]: d[ContextFields.LABEL],
     [ContextFields.PARENT]: d[ContextFields.PARENT],
     [ContextFields.SUB]: d[ContextFields.SUB],
-    [ContextFields.ZWECK]: d[ContextFields.ZWECK],
     [ContextFields.COLLECTING]: d[ContextFields.COLLECTING],
+    [ContextFields.ZWECK]: d[ContextFields.ZWECK], // TODO delete this lines
+    [ContextFields.VORKOMMEN]: d[ContextFields.VORKOMMEN],
   })).filter(d => d[ContextFields.LABEL] !== undefined);
 }
 

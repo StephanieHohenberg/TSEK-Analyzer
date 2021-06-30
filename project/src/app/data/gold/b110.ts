@@ -25,7 +25,7 @@ export const CONTEXT_B110: MergedContextData[] = [
     [ContextFields.LABEL]: 'Keras',
     [ContextFields.ZWECK]: Zweck.DETAILS,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'DL_FRAMEWORKS',
+    [ContextFields.PARENT]: 'KERAS',
   },
   {
     id: 'B110_S2_3',

@@ -11,7 +11,7 @@ export const CONTEXT_A641: MergedContextData[] = [
     [ContextFields.LABEL]: 'feature request detection',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'A641_17',
+    [ContextFields.PARENT]: 'A641_S1',
   },
   {
     id: 'A641_2',
@@ -95,17 +95,10 @@ export const CONTEXT_A641: MergedContextData[] = [
     id: 'A641_S1',
     [ContextFields.LABEL]: 'applications of sentence classificifaction',
     [ContextFields.PARENT]: 'A641_S3_1',
-    [ContextFields.SUB]: ['A641_1', 'A641_15', 'A641_16', 'A641_17', 'A641_18', 'A641_19', 'A641_20'],
+    [ContextFields.SUB]: ['A641_1', 'A641_15', 'A641_17', 'A641_18', 'A641_19', 'A641_20'],
   },
   {
     id: 'A641_15',
-    [ContextFields.LABEL]: 'opinion asking',
-    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
-    [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
-    [ContextFields.PARENT]: 'A641_S1',
-  },
-  {
-    id: 'A641_16',
     [ContextFields.LABEL]: 'opinion asking',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,

@@ -1,4 +1,4 @@
-import {ContextData} from '../../model/context.data';
+import {ContextData, ContextFields, Vorkommen, Zweck} from '../../model/context.data';
 import {CONTEXT_A641} from '../green/a641';
 import {CONTEXT_B171} from '../gold/b171';
 import {getContextData} from './context.util';
@@ -80,6 +80,13 @@ export function getContextDataOfRoots(): ContextData[] {
   return getContextData([...ROOTS]);
 }
 
+export function getContextDataOfRoot(index: number): ContextData[] {
+  if (ROOTS.length - 1 > index) {
+    return [];
+  }
+  return getContextData([ROOTS[index]]);
+}
+
 function getContextDataOfAllPapers(): ContextData[][] {
   const goldContext = [
     getContextData([...CONTEXT_B535]),
@@ -152,7 +159,15 @@ function getContextDataOfAllPapers(): ContextData[][] {
     getContextData([...CONTEXT_B209]),
     getContextData([...CONTEXT_A234]),
   ];
-  return [
+
+  console.log(redContext.map(r => r.length).reduce((a, b) => a + b), 'red');
+  console.log(greenContext.map(r => r.length).reduce((a, b) => a + b), 'green');
+  console.log(goldContext.map(r => r.length).reduce((a, b) => a + b), 'gold');
+  console.log(greenRedContext.map(r => r.length).reduce((a, b) => a + b), 'grey');
+  console.log(getContextData([...SHARED_CONTEXT]).filter(d => d[ContextFields.COLLECTING] !== undefined).length, 'collecting Ober');
+  console.log(getContextData([...SHARED_CONTEXT]).filter(d => d[ContextFields.COLLECTING] !== undefined).map(r => r[ContextFields.COLLECTING].length).reduce((a, b) => a + b), 'collecting Unter');
+
+  const context = [
     ...goldContext,
     ...greenRedContext,
     ...greenContext,
@@ -160,4 +175,41 @@ function getContextDataOfAllPapers(): ContextData[][] {
     getContextData([...SHARED_CONTEXT]),
     getContextData([...ROOTS]),
   ];
+
+  /**
+  let n = 0;
+  context.forEach(c => {
+    c.forEach(c2 => {
+      if (c2[ContextFields.VORKOMMEN] === Vorkommen.TITEL && c2[ContextFields.ZWECK] === Zweck.THEMA) {
+        n += 1;
+      }
+    });
+  });
+  console.log(n, 'Titel - Thema'); **/
+
+  return context;
+}
+
+function getContextMatrix(): number[][] {
+  const zLength = 8;
+  const vLength = 15;
+  const matrix = new Array(zLength);
+  for ( let z = 0; z < zLength; z++) {
+    matrix[z] = new Array(vLength);
+    for ( let v = 0; v < vLength; v++) {
+      matrix[z][v] = 0;
+    }
+  }
+
+  const data: ContextData[][] = getContextDataOfAllPapers();
+  data.forEach(contextDataForPaper => {
+    contextDataForPaper.forEach(contextData => {
+      const z = contextData[ContextFields.ZWECK];
+      const v = contextData[ContextFields.VORKOMMEN];
+      if (z && v) {
+        matrix[z][v] += 1;
+      }
+    });
+  });
+  return matrix;
 }

@@ -10,7 +10,7 @@ export const CONTEXT_A258: MergedContextData[] = [
     id: 'A258_S2',
     [ContextFields.LABEL]: 'Security Attacks',
     [ContextFields.PARENT]: 'SECURITY_A',
-    [ContextFields.SUB]: ['A258_S1_1', 'A258_S1_2', 'A258_S1_3'],
+    [ContextFields.SUB]: ['A258_S2_1', 'A258_S2_2', 'A258_S2_3'],
   },
   {
     id: 'A258_S2_1',

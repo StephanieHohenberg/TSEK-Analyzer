@@ -14,7 +14,7 @@ export const CONTEXT_A409: MergedContextData[] = [
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.PARENT]: 'HUMAN_ASPECTS',
     [ContextFields.SUB]: ['A409_S1_1', 'A409_S1_2', 'A409_S1_3', 'A409_S1_4',
-                          'A409_S1_2', 'A409_S1_6', 'A409_S1_7', 'A409_S1_8'],
+                          'A409_S1_5', 'A409_S1_6', 'A409_S1_7', 'A409_S1_8'],
   },
   {
     id: 'A409_S1_1',

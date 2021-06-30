@@ -19,7 +19,7 @@ export const CONTEXT_A986: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'DEBUGGING',
-    [ContextFields.SUB]: ['A986_S1_2_1', 'A986_S1_2_1'],
+    [ContextFields.SUB]: ['A986_S1_2_1', 'A986_S1_2_2'],
   },
   {
     id: 'A986_S1_2_1',

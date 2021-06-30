@@ -7,18 +7,11 @@ import {ContextFields, MergedContextData, Vorkommen, Zweck} from '../../model/co
 
 export const CONTEXT_A714: MergedContextData[] = [
   {
-    id: 'A714_0',
-    [ContextFields.LABEL]: 'verification techniques',
-    [ContextFields.ZWECK]: Zweck.THEMA,
-    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.SUB]: ['A714_0_1'],
-  },
-  {
     id: 'A714_0_1',
     [ContextFields.LABEL]: 'differential verification',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'A714_0',
+    [ContextFields.PARENT]: 'B122_S1_2',
   },
   {
     id: 'A714_X',

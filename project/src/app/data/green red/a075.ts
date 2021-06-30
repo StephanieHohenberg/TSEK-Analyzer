@@ -26,8 +26,8 @@ export const CONTEXT_A075: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.PARENT]: 'DATA',
-    [ContextFields.SUB]: ['A075_2_1', 'A075_2_2', 'A075_2_3', 'A075_2_4', 'A075_2_5',
-                          'A075_2_6', 'A075_2_7', 'A075_2_8_1', 'A075_2_8_2'],
+    [ContextFields.SUB]: ['A075_S2_1', 'A075_S2_2', 'A075_S2_3', 'A075_S2_4', 'A075_S2_5',
+                          'A075_S2_6', 'A075_S2_7', 'A075_S2_8_1', 'A075_S2_8_2'],
   },
   {
     id: 'A075_S2_1',

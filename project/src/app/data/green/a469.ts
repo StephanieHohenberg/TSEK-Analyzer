@@ -12,7 +12,7 @@ export const CONTEXT_A469: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.PARENT]: 'TEST_INPUT_GEN',
-    [ContextFields.SUB]: ['B447_S1_1_1', 'B447_S1_1_2', 'B447_S1_1_3'],
+    [ContextFields.SUB]: ['A469_S1_1_1', 'A469_S1_1_2', 'A469_S1_1_3'],
   },
   {
     id: 'A469_S1_1_1',

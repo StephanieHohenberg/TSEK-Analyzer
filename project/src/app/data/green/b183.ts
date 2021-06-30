@@ -86,9 +86,7 @@ export const B183: AnalysisPaperData = {
   [AnalysisPaperFields.CHARACTERIZATION]: {
     [CharacterizationFields.PROPOSAL]: 'recommender',
     [CharacterizationFields.EVALUATION]: true,
-    [CharacterizationFields.BENCHMARK]: true,
     [CharacterizationFields.SIMULATION]: true,
-    [CharacterizationFields.INTERVIEW]: true,
   },
   [AnalysisPaperFields.CONTEXTS]: getContextTableData([...CONTEXT_B183]),
   [AnalysisPaperFields.GENERALIZATION]: {

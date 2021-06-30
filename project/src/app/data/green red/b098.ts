@@ -12,7 +12,7 @@ export const CONTEXT_B098: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.PARENT]: 'DATA',
-    [ContextFields.SUB]: ['B098_S1_1', 'B098_S1_2', 'B098_S1_3', 'B098_S1_4', 'B098_S1_4'],
+    [ContextFields.SUB]: ['B098_S1_1', 'B098_S1_2', 'B098_S1_3', 'B098_S1_4', 'B098_S1_5'],
   },
   {
     id: 'B098_S1_1',
