@@ -11,7 +11,7 @@ export const CONTEXT_A949: MergedContextData[] = [
     [ContextFields.LABEL]: 'Fairness Testing',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'TESTING'
+    [ContextFields.PARENT]: 'B122_S1'
   },
   {
     id: 'A949_S2_1',

@@ -18,7 +18,7 @@ export const CONTEXT_A615: MergedContextData[] = [
     [ContextFields.LABEL]: 'Test Suite based program repair',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'AUTOMATED_REPAIR',
+    [ContextFields.PARENT]: 'PROGRAM_REPAIR',
   },
   {
     id: 'A615_S2_2',

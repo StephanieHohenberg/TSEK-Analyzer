@@ -37,7 +37,7 @@ export const CONTEXT_B410: MergedContextData[] = [
   },
   {
     id: 'B410_S1_4',
-    [ContextFields.LABEL]: 'Fuzz Testing',
+    [ContextFields.LABEL]: 'Fuzzing',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'B410_S1',

@@ -156,7 +156,7 @@ export const A641: AnalysisPaperData = {
   [AnalysisPaperFields.GENERALIZATION]: {
     [GeneralizationFields.AUFTEILUNG_3]: true,
     [GeneralizationFields.SECTION_THREATS]: true,
-    [GeneralizationFields.VAGUE_STATEMENT]: true,
+    [GeneralizationFields.REFERENCE_EVALUATION]: true,
     [GeneralizationFields.CLAIM_FIRST_APPROACH]: 'novel approach',
   },
   [AnalysisPaperFields.ASSUMPTIONS]: {

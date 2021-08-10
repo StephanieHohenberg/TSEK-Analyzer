@@ -75,7 +75,6 @@ export const A566: AnalysisPaperData = {
     [GeneralizationFields.AUFTEILUNG_3]: true,
     [GeneralizationFields.SECTION_THREATS]: true,
     [GeneralizationFields.SECTION_FUTURE_WORK]: true,
-    [GeneralizationFields.VAGUE_STATEMENT]: true,
     [GeneralizationFields.CLAIM_FIRST_APPROACH]: 'first study',
     [GeneralizationFields.REFERENCE_SCOPE_SCALE]: true,
   },

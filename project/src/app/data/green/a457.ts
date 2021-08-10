@@ -7,32 +7,26 @@ import {getContextTableData} from '../context/context.util';
 
 export const CONTEXT_A457: MergedContextData[] = [
   {
+    id: 'A457_S1_3',
+    [ContextFields.LABEL]: 'GUI Testing / GUI Exploration',
+    [ContextFields.ZWECK]: Zweck.THEMA,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'TESTING',
+    [ContextFields.SUB]: ['A457_S1_1', 'A457_S1_2'],
+  },
+  {
     id: 'A457_S1_1',
     [ContextFields.LABEL]: 'Mulitple Entry Testing',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'TESTING',
+    [ContextFields.PARENT]: 'A457_S1_3',
   },
   {
     id: 'A457_S1_2',
     [ContextFields.LABEL]: 'Single Entry Testing',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
-    [ContextFields.PARENT]: 'TESTING',
-  },
-  {
-    id: 'A457_S1_3',
-    [ContextFields.LABEL]: 'GUI Testing',
-    [ContextFields.ZWECK]: Zweck.THEMA,
-    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'TESTING',
-  },
-  {
-    id: 'A457_S1_4',
-    [ContextFields.LABEL]: 'GUI Exploration',
-    [ContextFields.ZWECK]: Zweck.THEMA,
-    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
-    [ContextFields.PARENT]: 'TESTING',
+    [ContextFields.PARENT]: 'A457_S1_3',
   },
   {
     id: 'A457_S1_5',
@@ -82,7 +76,6 @@ export const A457: AnalysisPaperData = {
   [AnalysisPaperFields.GENERALIZATION]: {
     [GeneralizationFields.AUFTEILUNG_2]: true,
     [GeneralizationFields.SECTION_THREATS]: true,
-    [GeneralizationFields.VAGUE_STATEMENT]: true,
   },
   [AnalysisPaperFields.ASSUMPTIONS]: {
     [AssumptionFields.ITERATION_GROUPS]: [

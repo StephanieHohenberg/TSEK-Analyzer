@@ -11,13 +11,27 @@ export const CONTEXT_B273: MergedContextData[] = [
     [ContextFields.LABEL]: 'Differential Software Analysis',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.SUB]: ['B273_S2'],
+    [ContextFields.SUB]: ['B273_S1_1', 'B273_S1_2', 'B273_S2'],
+  },
+  {
+    id: 'B273_S1_1',
+    [ContextFields.LABEL]: 'Fuzzing',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.SUB]: ['B273_S1'],
+  },
+  {
+    id: 'B273_S1_2',
+    [ContextFields.LABEL]: 'Symbolic Execution',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.SUB]: ['B273_S1'],
   },
   {
     id: 'B273_S2',
     [ContextFields.LABEL]: 'Applications of Differential Software Analysis',
-    [ContextFields.ZWECK]: Zweck.THEMA,
-    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.SUB]: ['B273_S2_1', 'B273_S2_2', 'B273_S2_3'],
     [ContextFields.PARENT]: 'B273_S1',
   },
@@ -109,7 +123,7 @@ export const CONTEXT_B273: MergedContextData[] = [
   {
     id: 'B273_S3_8',
     [ContextFields.LABEL]: 'other programs, other classifier, other domains',
-    [ContextFields.ZWECK]: Zweck.VAGUE_VERALLGEMEINBARKEIT,
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.LIMITATIONS,
   }
 ];

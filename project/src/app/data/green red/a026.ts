@@ -23,7 +23,7 @@ export const CONTEXT_A026: MergedContextData[] = [
   {
     id: 'A026_3',
     [ContextFields.LABEL]: 'other domains with partially ordered constructs',
-    [ContextFields.ZWECK]: Zweck.VAGUE_VERALLGEMEINBARKEIT,
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.CONCLUSION,
   },
 ];

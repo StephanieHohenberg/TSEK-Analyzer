@@ -32,6 +32,7 @@ export const CONTEXT_A824: MergedContextData[] = [
     [ContextFields.LABEL]: 'Program Transformation',  // TODO
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
+    [ContextFields.PARENT]: 'A493_S4_1',
   },
   {
     id: 'A824_S3_1',

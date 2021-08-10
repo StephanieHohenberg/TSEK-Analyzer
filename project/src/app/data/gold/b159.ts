@@ -127,7 +127,7 @@ export const CONTEXT_B159: MergedContextData[] = [
   {
     id: 'B159_S5',
     [ContextFields.LABEL]: 'Program Failures',
-    [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
+    [ContextFields.PARENT]: 'SOFTWARE_ISSUES',
     [ContextFields.SUB]: ['B159_S5_1', 'B159_S5_2', 'B159_S5_3', 'B159_S5_4', 'B159_S5_5', 'B159_S5_6', 'B159_S5_7'],
   },
   {

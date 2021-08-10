@@ -120,7 +120,6 @@ export const B098 = {
   [AnalysisPaperFields.GENERALIZATION]: {
     [GeneralizationFields.AUFTEILUNG_2]: true,
     [GeneralizationFields.SECTION_THREATS]: true,
-    [GeneralizationFields.NO_CLAIM]: true,
     [GeneralizationFields.REFERENCE_PARTICIPANTS]: '"may not represent"',
     [GeneralizationFields.REFERENCE_EVALUATION]: '"real world issues in 12 representative open-source DB-backed applications"',
   },

@@ -11,7 +11,7 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.LABEL]: 'injection vulnerabilities and attacks',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
+    [ContextFields.PARENT]: 'B447_S3_1',
     [ContextFields.SUB]: ['A284_S1_1', 'A284_S1_2', 'A284_S1_3', 'A284_S1_4', 'A284_S1_5', 'A284_S1_6', 'A284_S1_7'],
   },
   {
@@ -26,7 +26,7 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.LABEL]: 'vulnerabilities caused by source-sink flows, that are exposed by test cases',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'A284_S1',
+    [ContextFields.PARENT]: 'SEC_VUL',
   },
   {
     id: 'A284_S1_3',
@@ -168,6 +168,13 @@ export const CONTEXT_A284: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.PARENT]: 'FUNC_TESTS',
+  },
+  {
+    id: 'A284_7',
+    [ContextFields.LABEL]: 'Security Tests',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'SEC_TESTS',
   },
   {
     id: 'A284_6',

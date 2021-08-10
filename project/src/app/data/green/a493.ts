@@ -11,7 +11,8 @@ export const CONTEXT_A493: MergedContextData[] = [
     [ContextFields.LABEL]: 'Refactoring',
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'SE_ACTIVITIES',
+    [ContextFields.PARENT]: 'QUALITY_ASSURANCE',
+    [ContextFields.SUB]: ['A493_S4'],
   },
   {
     id: 'A493_S2',
@@ -69,6 +70,7 @@ export const CONTEXT_A493: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
     [ContextFields.PARENT]: 'A493_S4',
+    [ContextFields.COLLECTING]: ['A824_2'],
   },
   {
     id: 'A493_S4_2',

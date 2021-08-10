@@ -33,18 +33,11 @@ export const CONTEXT_B483: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.ERWEITERUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.PARENT]: 'TESTING',
-    [ContextFields.SUB]: ['B483_S1_4_1', 'B483_S1_4_2', 'B483_S1_4_3', 'B483_S1_4_4', 'B483_S1_4_5', 'B483_S1_4_6'],
+    [ContextFields.SUB]: ['B483_S1_4_1', 'B483_S1_4_3', 'B483_S1_4_4', 'B483_S1_4_5', 'B483_S1_4_6'],
   },
   {
     id: 'B483_S1_4_1',
     [ContextFields.LABEL]: 'Layered Model-based Testing',
-    [ContextFields.ZWECK]: Zweck.THEMA,
-    [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
-    [ContextFields.PARENT]: 'B483_S1_4',
-  },
-  {
-    id: 'B483_S1_4_2',
-    [ContextFields.LABEL]: 'Layered Model-based Testing', // TODO: check!
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.PARENT]: 'B483_S1_4',

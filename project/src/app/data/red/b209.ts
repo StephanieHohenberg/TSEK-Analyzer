@@ -88,6 +88,7 @@ export const B209: AnalysisPaperData = {
   [AnalysisPaperFields.GENERALIZATION]: {
     [GeneralizationFields.SECTION_THREATS]: true,
     [GeneralizationFields.SECTION_FUTURE_WORK]: true,
+    [GeneralizationFields.NO_CLAIM]: true,
     [GeneralizationFields.CLAIM_FIRST_APPROACH]: 'new research questions',
   },
   [AnalysisPaperFields.ASSUMPTIONS]: {

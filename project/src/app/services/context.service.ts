@@ -59,6 +59,7 @@ export class ContextService {
 
     subs.forEach((subID, _) => {
       const context = this.contextMap.get(subID);
+      console.log(subID);
       const nSubs = this.getSubIDsOfContext(context).length;
       const prefix = nSubs > 0 ? ' (' + nSubs + ')' : '';
       const word = context[ContextFields.LABEL] + prefix;
@@ -111,6 +112,25 @@ export class ContextService {
     return { nodes, edges};
   }
 
+  public getNodesUnintegratedInTaxonomy(): ContextData[] {
+    const result: ContextData[] = [];
+    this.initContextMap();
+
+    for (const context of this.contextMap.values()) {
+      if (!context[ContextFields.PARENT]) {
+        result.push(context);
+      } else {
+        const parent = this.contextMap.get(context[ContextFields.PARENT]);
+        const isCollecting = parent[ContextFields.COLLECTING] && parent[ContextFields.COLLECTING].includes(context.id);
+        const isSub = parent[ContextFields.SUB] && parent[ContextFields.SUB].includes(context.id);
+        if (!isCollecting && !isSub && parent.id !== 'PS_APPLICATION_CHARACTERISTICS') {
+          result.push(context);
+        }
+      }
+    }
+    return result;
+  }
+
   private getSubIDsOfContext(context: ContextData): string[] {
     let subs: string[] = context[ContextFields.SUB] || [];
     if (context[ContextFields.COLLECTING]) {
@@ -129,7 +149,6 @@ export class ContextService {
     const zweck = context[ContextFields.ZWECK];
     switch (zweck) {
       case Zweck.ANWENDUNG: return 'orange';
-      case Zweck.VAGUE_VERALLGEMEINBARKEIT:
       case Zweck.VERALLGEMEINBARKEIT:
       case Zweck.ERWEITERUNG:
         return 'lightblue';

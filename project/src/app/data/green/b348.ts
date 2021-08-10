@@ -14,6 +14,13 @@ export const CONTEXT_B348: MergedContextData[] = [
     [ContextFields.PARENT]: 'C++',
   },
   {
+    id: 'B348_S1_1_0',
+    [ContextFields.LABEL]: 'Java',
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'JAVA',
+  },
+  {
     id: 'B348_S1_2_1',
     [ContextFields.LABEL]: 'English',
     [ContextFields.ZWECK]: Zweck.ANWENDUNG,

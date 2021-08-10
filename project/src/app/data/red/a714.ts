@@ -87,9 +87,9 @@ export const CONTEXT_A714: MergedContextData[] = [
   },
   {
     id: 'A714_S2',
-    [ContextFields.LABEL]: 'Applications for neural networks',
+    [ContextFields.LABEL]: 'NN Applications',
     [ContextFields.SUB]: ['A714_S2_1', 'A714_S2_5', 'A714_S2_6' ],
-    [ContextFields.PARENT]: 'APPLICATIONS'
+    [ContextFields.PARENT]: 'NERUAL_APPLICATIONS'
   },
   {
     id: 'A714_S2_1',

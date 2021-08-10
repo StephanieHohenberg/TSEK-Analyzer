@@ -63,7 +63,6 @@
       "EINGRENZUNG": "Narrowing",
       "ABGRENZUNG": "Differentiation",
       "ANWENDUNG": "Application",
-      "VAGUE_VERALLGEMEINBARKEIT": "Vague Generality",
       "VERALLGEMEINBARKEIT": "Generality",
       "ERWEITERUNG": "Extension"
     },
@@ -73,8 +72,7 @@
       "EINGRENZUNG": "context defining borders and enclosing/narrowing the paper’s overall context",
       "ABGRENZUNG": "context which differentiates from other contexts",
       "ANWENDUNG": "context onto which the paper’s result are applicable",
-      "VAGUE_VERALLGEMEINBARKEIT": "context onto which the papers’s results could be generalizable",
-      "VERALLGEMEINBARKEIT": "context onto which the papers’s results are generalizable",
+      "VERALLGEMEINBARKEIT": "context onto which the papers’s results could be generalizable",
       "ERWEITERUNG": "context onto which the paper’s result could be extended by doing future work"
     },
     "VORKOMMEN": {
@@ -109,7 +107,6 @@
       "SECTION_LIMITATIONS": "Section: 'Limitations'",
       "SECTION_FUTURE_WORK": "Section: 'Future Work'",
       "NO_FOCUS": "Statement: 'no fokus'",
-      "VAGUE_STATEMENT": "vague statements",
       "CLAIM_FIRST_APPROACH": "Claim to novelty",
       "REFERENCE_PARTICIPANTS": "Reference to participants",
       "REFERENCE_EVALUATION": "Reference to evaluation",

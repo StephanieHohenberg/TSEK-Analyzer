@@ -87,6 +87,14 @@ export const CONTEXT_A210: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'A210_S3',
+    [ContextFields.SUB]: ['A210_S3_1_1'],
+  },
+  {
+    id: 'A210_S3_1_1',
+    [ContextFields.LABEL]: 'io based',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
+    [ContextFields.PARENT]: 'A210_S3_1',
   },
   {
     id: 'A210_S3_2',
@@ -147,7 +155,6 @@ export const A210: AnalysisPaperData = {
     [GeneralizationFields.SECTION_THREATS]: 'kurz',
     [GeneralizationFields.SECTION_LIMITATIONS]: true,
     [GeneralizationFields.SECTION_FUTURE_WORK]: true,
-    [GeneralizationFields.VAGUE_STATEMENT]: true,
   },
   [AnalysisPaperFields.ASSUMPTIONS]: {
     [AssumptionFields.ITERATION_GROUPS]: [ IterationGroup.C2_2 ],

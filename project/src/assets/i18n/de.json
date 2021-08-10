@@ -63,7 +63,6 @@
       "EINGRENZUNG": "Eingrenzung",
       "ABGRENZUNG": "Abgrenzung",
       "ANWENDUNG": "Anwendung",
-      "VAGUE_VERALLGEMEINBARKEIT": "Vague Verallgemeinbarkeit",
       "VERALLGEMEINBARKEIT": "Verallgemeinbarkeit",
       "ERWEITERUNG": "Erweiterung"
     },
@@ -98,7 +97,6 @@
       "SECTION_LIMITATIONS": "Sektion: 'Limitations'",
       "SECTION_FUTURE_WORK": "Sektion: 'Future Work'",
       "NO_FOCUS": "Aussage: 'kein Fokus'",
-      "VAGUE_STATEMENT": "vage Aussagen",
       "CLAIM_FIRST_APPROACH": "Anspruch auf Neuartigkeit",
       "REFERENCE_PARTICIPANTS": "Verweis auf Teilnehmende",
       "REFERENCE_EVALUATION": "Verweis auf Evaluation",

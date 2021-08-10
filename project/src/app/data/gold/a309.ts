@@ -70,7 +70,6 @@ export const A309: AnalysisPaperData = {
     [GeneralizationFields.SECTION_THREATS]: true,
     [GeneralizationFields.SECTION_LIMITATIONS]: true,
     [GeneralizationFields.SECTION_FUTURE_WORK]: true,
-    [GeneralizationFields.VAGUE_STATEMENT]: true,
     [GeneralizationFields.REFERENCE_EVALUATION]: 'number and diversity apps, interview',
     [GeneralizationFields.REFERENCE_SCOPE_SCALE]: 'large-scale study with 64 of the top applications',
   },

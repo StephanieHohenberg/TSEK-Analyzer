@@ -122,7 +122,7 @@ export const CONTEXT_B535: MergedContextData[] = [
     [ContextFields.LABEL]: 'Security Tests',
     [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
-    [ContextFields.PARENT]: 'TEST_TYPES'
+    [ContextFields.PARENT]: 'SEC_TESTS'
   },
   {
     id: 'B535_S6_4',

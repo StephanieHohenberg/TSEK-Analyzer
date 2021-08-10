@@ -63,7 +63,6 @@
       "EINGRENZUNG": "Narrowing",
       "ABGRENZUNG": "Differentiation",
       "ANWENDUNG": "Application",
-      "VAGUE_VERALLGEMEINBARKEIT": "Vague Generality",
       "VERALLGEMEINBARKEIT": "Generality",
       "ERWEITERUNG": "Extension"
     },
@@ -73,8 +72,7 @@
       "EINGRENZUNG": "context defining borders and enclosing/narrowing the paper’s overall context",
       "ABGRENZUNG": "context which differentiates from other contexts",
       "ANWENDUNG": "context onto which the paper’s result are applicable",
-      "VAGUE_VERALLGEMEINBARKEIT": "context onto which the papers’s results could be generalizable",
-      "VERALLGEMEINBARKEIT": "context onto which the papers’s results are generalizable",
+      "VERALLGEMEINBARKEIT": "context onto which the papers’s results could be generalizable",
       "ERWEITERUNG": "context onto which the paper’s result could be extended by doing future work"
     },
     "VORKOMMEN": {
@@ -109,7 +107,6 @@
       "SECTION_LIMITATIONS": "Section: 'Limitations'",
       "SECTION_FUTURE_WORK": "Section: 'Future Work'",
       "NO_FOCUS": "Statement: 'no fokus'",
-      "VAGUE_STATEMENT": "vague statements",
       "CLAIM_FIRST_APPROACH": "Claim to novelty",
       "REFERENCE_PARTICIPANTS": "Reference to participants",
       "REFERENCE_EVALUATION": "Reference to evaluation",
@@ -122,8 +119,8 @@
   "ASSUMPTIONS.TITLE": "Assumptions",
   "SETTINGS.TITLE": "Settings",
   "TOOLBAR": {
-    "TOGGLE_SIDEBAR": "toggle sidebar",
-    "TOGGLE FILTER": "toggle filter",
+    "TOGGLE_SIDEBAR": "toggle tablev",
+    "TOGGLE_FILTER": "toggle filter",
     "ABOUT": "About the project",
     "SETTINGS": "Settings"
   },
@@ -137,6 +134,7 @@
   "LINE_5": "The project got implemented with the framework Angular <i class=\"fab fa-angular\"></i> and the source code, as other artifacts, like the document of the postgrad thesis itselfs,\n    is publicly accessible on <a target=\"_blank\" href=\"https://github.com/StephanieHohenberg/TheMasterThesis\">Github <i class=\"fab fa-github\"></i></a>."
 },
   "ACTION_BUTTON": {
+    "HIDE_GRAPH": "Hide graph",
     "SHOW_GRAPH": "Show graph",
     "SHOW_CONTEXTS": "Show contexts in the graph",
     "DELETE_FOCUS": "Remove focus on ",

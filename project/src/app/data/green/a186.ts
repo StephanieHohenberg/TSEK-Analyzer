@@ -155,7 +155,6 @@ export const A186: AnalysisPaperData = {
     [GeneralizationFields.AUFTEILUNG_2]: true,
     [GeneralizationFields.SECTION_THREATS]: true,
     [GeneralizationFields.SECTION_FUTURE_WORK]: true,
-    [GeneralizationFields.VAGUE_STATEMENT]: 'reference on future work',
     [GeneralizationFields.CLAIM_FIRST_APPROACH]: 'study',
     [GeneralizationFields.REFERENCE_EVALUATION]: 'selection of apps',
   },

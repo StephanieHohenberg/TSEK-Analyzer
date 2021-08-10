@@ -10,14 +10,14 @@ export const ROOTS: MergedContextData[] = [
   {
     id: 'APPLICATIONS',
     [ContextFields.LABEL]: 'Applications',
-    [ContextFields.SUB]: ['A075_S5', 'SYSTEMS', 'PROGRAMS', 'DL_APPLICATIONS', 'RNN_APPLICATIONS',
-                          'MOBILE_APPLICATIONS', 'B535_5', 'A542_S3', 'B459_S2', 'A714_S2'],
+    [ContextFields.SUB]: ['A075_S5', 'SYSTEMS', 'PROGRAMS',
+                          'MOBILE_APPLICATIONS', 'B535_5', 'A542_S3', 'B459_S2'],
   },
   {
     id: 'SE_ACTIVITIES',
     [ContextFields.LABEL]: 'SE Activities',
-    [ContextFields.SUB]: ['CODE_REVIEW', 'SOFTWARE_DEVELOPMENT', 'DEV_OPS', 'SECURITY_A', 'BUG_HANDLING',
-                          'FAULT_DETECTION', 'TESTING', 'A493_1', 'A641_2'],
+    [ContextFields.SUB]: ['QUALITY_ASSURANCE', 'SOFTWARE_DEVELOPMENT', 'DEV_OPS', 'SECURITY_A', 'BUG_HANDLING',
+                          'FAULT_DETECTION', 'TESTING', 'A641_2'],
   },
   {
     id: 'PAPER_SPECIFIC_PROPERTIES',
@@ -28,7 +28,7 @@ export const ROOTS: MergedContextData[] = [
   {
     id: 'HUMAN_ASPECTS',
     [ContextFields.LABEL]: 'Human Aspects',
-    [ContextFields.SUB]: ['COG_BIAS', 'NATURAL_LANGUAGES', 'A678_S1', 'A409_S1', 'A666_2', 'B171_4'],
+    [ContextFields.SUB]: ['COG_BIAS', 'NATURAL_LANGUAGES', 'A678_S1', 'A409_S1', 'A666_2'],
   },
   {
     id: 'DATA',
@@ -56,7 +56,7 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     id: 'JAVA',
     [ContextFields.LABEL]: 'Java',
     [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
-    [ContextFields.COLLECTING]: ['A654_S3_1', 'B073_S1_1', 'B171_S6_2', 'A666_S4', 'A824_S3_1', 'B183_S4_1', 'A210_3', 'B447_S1_1_1'],
+    [ContextFields.COLLECTING]: ['A654_S3_1', 'B073_S1_1', 'B171_S6_2', 'A666_S4', 'A824_S3_1', 'B183_S4_1', 'A210_3', 'B447_S1_1_1', 'B348_S1_1_0'],
   },
   {
     id: 'C++',
@@ -158,14 +158,14 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     id: 'SYSTEMS',
     [ContextFields.LABEL]: 'Systems',
     [ContextFields.PARENT]: 'APPLICATIONS',
-    [ContextFields.SUB]: ['B535_S2', 'A641_11', 'B483_S2', 'B110_1', 'A986_S2_0', 'B248_S2'],
+    [ContextFields.SUB]: ['B535_S2', 'A641_11', 'B483_S2', 'A986_S2_0', 'B248_S2'],
   },
   {
     id: 'NEURAL_NETWORKS',
     [ContextFields.LABEL]: 'Neural Networks',
     [ContextFields.PARENT]: 'A986_S2_0',
     [ContextFields.COLLECTING]: ['B273_S3_2'],
-    [ContextFields.SUB]: ['DNN', 'CNN', 'A986_S2_1', 'A986_S2_4', 'A714_S1_5', 'A714_S1_2', 'A714_S1_3', 'A714_S1_4']
+    [ContextFields.SUB]: ['DNN', 'CNN', 'NERUAL_APPLICATIONS', 'A986_S2_1', 'A986_S2_4', 'A714_S1_5', 'A714_S1_2', 'A714_S1_3', 'A714_S1_4']
   },
   {
     id: 'DNN',
@@ -183,7 +183,6 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     id: 'PROGRAMS',
     [ContextFields.LABEL]: 'Programs',
     [ContextFields.PARENT]: 'APPLICATIONS',
-    [ContextFields.PARENT]: 'APPLICATIONS',
     [ContextFields.SUB]: ['C_PROGRAMS', 'JAVA_PROGRAMS', 'A026_2', 'B261_S2', 'A234_S1'],
   },
   {
@@ -191,7 +190,7 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     [ContextFields.LABEL]: 'C/C++ Programs',
     [ContextFields.PARENT]: 'PROGRAMS',
     [ContextFields.SUB]: ['A258_S3_1', 'A258_S3_2', 'A493_S3_1', 'A493_S3_2', 'A493_S3_3', 'A493_S3_4'],
-    [ContextFields.COLLECTING]: ['A234_2', 'A075_S4_1']
+    [ContextFields.COLLECTING]: ['A234_2', 'A075_S4_1', 'A271_S2_1']
   },
   {
     id: 'JAVA_PROGRAMS',
@@ -200,9 +199,15 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     [ContextFields.COLLECTING]: ['A087_S2_2', 'B049_2', 'B447_2', 'A075_S4_3', 'A615_S2_2'],
   },
   {
+    id: 'NERUAL_APPLICATIONS',
+    [ContextFields.LABEL]: 'Application Domains',
+    [ContextFields.PARENT]: 'NEURAL_NETWORKS',
+    [ContextFields.SUB]: ['DL_APPLICATIONS', 'RNN_APPLICATIONS', 'A714_S2'],
+  },
+  {
     id: 'DL_APPLICATIONS',
     [ContextFields.LABEL]: 'DL Applications',
-    [ContextFields.PARENT]: 'APPLICATIONS',
+    [ContextFields.PARENT]: 'NERUAL_APPLICATIONS',
     [ContextFields.SUB]: ['B110_S3_1', 'B110_S3_2', 'B110_S3_3', 'B110_S3_4', 'B110_S3_5', 'B110_S3_6',
                           'B159_S3_1', 'B159_S3_2', 'B159_S3_3', 'A986_S3_1', 'A986_S3_2', 'A986_S3_3', 'A986_S3_4',
                           'A986_S3_5', 'A986_S3_6'],
@@ -210,7 +215,7 @@ export const SHARED_CONTEXT: MergedContextData[] = [
   {
     id: 'RNN_APPLICATIONS',
     [ContextFields.LABEL]: 'RNN Applications',
-    [ContextFields.PARENT]: 'APPLICATIONS',
+    [ContextFields.PARENT]: 'NERUAL_APPLICATIONS',
     [ContextFields.SUB]: ['A986_S4_1', 'A986_S4_2', 'A986_S4_3', 'A986_S4_4', 'A986_S4_5'],
   },
   {
@@ -226,9 +231,15 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     [ContextFields.COLLECTING]: ['A481_S1_1', 'A309_S1_1', 'A322_S1_1', 'B061_S1_1', 'A457_S2', 'A469_2', 'B572_2'],
   },
   {
+    id: 'QUALITY_ASSURANCE',
+    [ContextFields.LABEL]: 'Quality Assurance',
+    [ContextFields.PARENT]: 'SE_ACTIVITIES',
+    [ContextFields.SUB]: ['CODE_REVIEW', 'A493_1'],
+  },
+  {
     id: 'CODE_REVIEW',
     [ContextFields.LABEL]: 'Code Review',
-    [ContextFields.PARENT]: 'SE_ACTIVITIES',
+    [ContextFields.PARENT]: 'QUALITY_ASSURANCE',
     [ContextFields.SUB]: ['B183_2', 'B171_S1'],
   },
   {
@@ -281,14 +292,28 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     id: 'ISSUES_DEFECTS_FAILURES',
     [ContextFields.LABEL]: 'Issues, Defects, Failures',
     [ContextFields.PARENT]: 'FAULT_DETECTION',
-    [ContextFields.SUB]: ['SOFTWARE_ISSUES', 'A125_S2_1', 'A125_S2_2', 'A125_S2_3', 'B159_S5', 'A284_S1',
-      'A530_S3', 'A765_S2', 'A752_1', 'B447_S3_1', 'B447_S3_2', 'B483_S4'],
+    [ContextFields.SUB]: ['SOFTWARE_ISSUES', 'SEC_VUL',
+      'A530_S3', 'A765_S2', 'A752_1', 'B447_S3_2', 'B483_S4'],
+  },
+  {
+    id: 'SEC_VUL',
+    [ContextFields.LABEL]: 'Security Vulnerabilities',
+    [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
+    [ContextFields.COLLECTING]: ['B447_S3_1'],
+    [ContextFields.SUB]: ['A284_S1'],
   },
   {
     id: 'SOFTWARE_ISSUES',
     [ContextFields.LABEL]: 'Software Issues',
     [ContextFields.PARENT]: 'ISSUES_DEFECTS_FAILURES',
-    [ContextFields.SUB]: ['B435_S2', 'B171_S3_1', 'B171_S3_2', 'B171_S3_3', 'A335_S1_1'],
+    [ContextFields.SUB]: ['B435_S2', 'B171_S3_1', 'B171_S3_2', 'COR_ISSUES', 'A335_S1_1', 'B159_S5'],
+  },
+  {
+    id: 'COR_ISSUES',
+    [ContextFields.LABEL]: 'Correctness Issues',
+    [ContextFields.PARENT]: 'SOFTWARE_ISSUES',
+    [ContextFields.SUB]: ['A125_S2_1', 'A125_S2_2', 'A125_S2_3'],
+    [ContextFields.COLLECTING]: ['B171_S3_3'],
   },
   {
     id: 'BUG_DETECTION',
@@ -302,16 +327,16 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     [ContextFields.LABEL]: 'Testing',
     [ContextFields.PARENT]: 'SE_ACTIVITIES',
     [ContextFields.COLLECTING]: ['A481_2', 'B159_S2_2', 'A615_1'],
-    [ContextFields.SUB]: [ 'TEST_TYPES', 'TEST_INPUT_GEN', 'FUZZING', 'A087_S4', 'A087_3', 'A309_2', 'A949_1',
-      'A075_S2_8_1', 'A765_S1_1', 'A765_S1_2', 'A765_S1_3', 'A765_S1_4', 'B122_S1', 'B122_S1_0', 'B273_S2_1',
-      'B459_S1_1', 'B459_S1_2', 'B459_S1_3', 'B459_S1_4', 'A457_S1_1', 'A457_S1_2', 'A457_S1_3', 'A457_S1_4', 'A457_S1_5',
-      'A469_S1_2', 'B483_S1_1', 'B483_S1_2', 'B483_S1_3', 'B483_S1_4', 'B483_S1_6', 'B483_S1_7', 'B483_S1_8', 'B483_S1_9'],
+    [ContextFields.SUB]: [ 'TEST_TYPES', 'TEST_INPUT_GEN', 'FUZZING', 'A087_S4', 'A087_3', 'A309_2',
+      'A075_S2_8_1', 'B122_S1', 'B122_S1_0',
+      'B459_S1_2', 'B459_S1_3', 'B459_S1_4', 'A457_S1_3', 'A457_S1_5',
+      'A469_S1_2', 'B483_S1_1', 'B483_S1_2', 'B483_S1_3', 'B483_S1_4', 'B483_S1_6', 'B483_S1_8'],
   },
   {
     id: 'TEST_TYPES',
     [ContextFields.LABEL]: 'Types of Test',
     [ContextFields.PARENT]: 'TESTING',
-    [ContextFields.SUB]: ['B535_S6_3', 'USABILITY_TESTS', 'PERFORMANCE_TESTS', 'FUNC_TESTS'],
+    [ContextFields.SUB]: ['SEC_TESTS', 'USABILITY_TESTS', 'PERFORMANCE_TESTS', 'FUNC_TESTS'],
   },
   {
     id: 'TEST_INPUT_GEN',
@@ -343,6 +368,12 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     [ContextFields.LABEL]: 'Functional Tests',
     [ContextFields.PARENT]: 'TEST_TYPES',
     [ContextFields.COLLECTING]: ['B535_S6_1', 'A309_S4_1', 'A284_5'],
+  },
+  {
+    id: 'SEC_TESTS',
+    [ContextFields.LABEL]: 'Security Tests',
+    [ContextFields.PARENT]: 'TEST_TYPES',
+    [ContextFields.COLLECTING]: ['B535_S6_3', 'A284_7'],
   },
   {
     id: 'PS_PROJECT_CHARACTERISTICS',
@@ -401,8 +432,14 @@ export const SHARED_CONTEXT: MergedContextData[] = [
   },
   {
     id: 'COG_BIAS',
-    [ContextFields.LABEL]: 'SE fields with cognitive biases',
+    [ContextFields.LABEL]: 'Cognitive Biases',
     [ContextFields.PARENT]: 'HUMAN_ASPECTS',
+    [ContextFields.SUB]: ['COG_BIAS2', 'B171_4'],
+  },
+  {
+    id: 'COG_BIAS2',
+    [ContextFields.LABEL]: 'Fields with cognitive biases',
+    [ContextFields.PARENT]: 'COG_BIAS',
     [ContextFields.SUB]: ['A654_S2_1', 'A654_S2_2', 'A654_S2_3', 'A654_S2_4', 'A654_S2_5', 'A654_S2_6',
                           'B171_S2_0', 'B171_S2_1', 'B171_S2_2', 'B171_S2_3', 'B171_S2_4', 'B171_S2_5'],
   },
@@ -410,7 +447,14 @@ export const SHARED_CONTEXT: MergedContextData[] = [
     id: 'AUTOMATED_REPAIR',
     [ContextFields.LABEL]: 'Automated Repair',
     [ContextFields.PARENT]: 'BUG_HANDLING',
-    [ContextFields.SUB]: ['A271_S1', 'A075_1_1', 'B135_1', 'A615_S2_1'],
+    [ContextFields.SUB]: ['PROGRAM_REPAIR', 'A075_1_1', 'B135_1'],
+  },
+  {
+    id: 'PROGRAM_REPAIR',
+    [ContextFields.LABEL]: 'Automated Program Repair',
+    [ContextFields.PARENT]: 'AUTOMATED_REPAIR',
+    [ContextFields.SUB]: ['A615_S2_1'],
+    [ContextFields.COLLECTING]: ['A271_S1'],
   },
   {
     id: 'NATURAL_LANGUAGES',

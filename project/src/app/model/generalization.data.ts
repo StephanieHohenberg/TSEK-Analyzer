@@ -7,7 +7,6 @@ export enum GeneralizationFields {
   SECTION_FUTURE_WORK = 'SECTION_FUTURE_WORK',
   NO_FOCUS = 'NO_FOCUS',
   NO_CLAIM = 'NO_CLAIM',
-  VAGUE_STATEMENT = 'VAGUE_STATEMENT',
   CLAIM_FIRST_APPROACH = 'CLAIM_FIRST_APPROACH',
   REFERENCE_PARTICIPANTS = 'REFERENCE_PARTICIPANTS',
   REFERENCE_EVALUATION = 'REFERENCE_EVALUATION',
@@ -24,7 +23,6 @@ export const generalizationFieldList: GeneralizationFields[] = [
   GeneralizationFields.SECTION_LIMITATIONS,
   GeneralizationFields.SECTION_FUTURE_WORK,
   GeneralizationFields.NO_FOCUS,
-  GeneralizationFields.VAGUE_STATEMENT,
   GeneralizationFields.CLAIM_FIRST_APPROACH,
   GeneralizationFields.REFERENCE_PARTICIPANTS,
   GeneralizationFields.REFERENCE_EVALUATION,
@@ -43,7 +41,6 @@ export interface GeneralizationData {
   [GeneralizationFields.SECTION_FUTURE_WORK]?: string | boolean;
   [GeneralizationFields.NO_FOCUS]?: string | boolean;
   [GeneralizationFields.NO_CLAIM]?: string | boolean;
-  [GeneralizationFields.VAGUE_STATEMENT]?: string | boolean;
   [GeneralizationFields.CLAIM_FIRST_APPROACH]?: string | boolean;
   [GeneralizationFields.REFERENCE_PARTICIPANTS]?: string | boolean;
   [GeneralizationFields.REFERENCE_EVALUATION]?: string | boolean;

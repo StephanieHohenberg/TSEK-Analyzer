@@ -53,7 +53,7 @@ export const CONTEXT_B459: MergedContextData[] = [
   {
     id: 'B459_S2_1',
     [ContextFields.LABEL]: 'SMT Solvers',
-    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.PARENT]: 'B459_S2',
     [ContextFields.SUB]: ['B459_S3'],
@@ -61,7 +61,7 @@ export const CONTEXT_B459: MergedContextData[] = [
   {
     id: 'B459_S2_2',
     [ContextFields.LABEL]: 'Automa-based Solvers',
-    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
+    [ContextFields.ZWECK]: Zweck.ANWENDUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.CONCLUSION,
     [ContextFields.PARENT]: 'B459_S2',
   },

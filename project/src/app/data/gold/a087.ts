@@ -84,7 +84,7 @@ export const CONTEXT_A087: MergedContextData[] = [
   {
     id: 'A087_S5_2',
     [ContextFields.LABEL]: 'debugging own/familiar code',
-    [ContextFields.ZWECK]: Zweck.VAGUE_VERALLGEMEINBARKEIT,
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
     [ContextFields.PARENT]: 'A087_S5'
   },

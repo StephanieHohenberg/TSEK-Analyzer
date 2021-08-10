@@ -29,8 +29,7 @@ export const B447: AnalysisPaperData = {
   [AnalysisPaperFields.GENERALIZATION]: {
     [GeneralizationFields.AUFTEILUNG_3]: true,
     [GeneralizationFields.SECTION_THREATS]: true,
-    [GeneralizationFields.VAGUE_STATEMENT]: true,
-    [GeneralizationFields.CLAIM_FIRST_APPROACH]: 'TODO',
+    [GeneralizationFields.CLAIM_FIRST_APPROACH]: '-',
   },
   [AnalysisPaperFields.ASSUMPTIONS]: {
     [AssumptionFields.ITERATION_GROUPS]: [

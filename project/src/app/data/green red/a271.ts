@@ -26,13 +26,34 @@ export const CONTEXT_A271: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.PARENT]: 'A271_S1_1',
-    [ContextFields.SUB]: ['A271_S1_1_1_1']
+    [ContextFields.SUB]: ['A271_S1_1_1_1', 'A271_S1_1_1_2', 'A271_S1_1_1_3', 'A271_S1_1_1_4']
   },
   {
     id: 'A271_S1_1_1_1',
     [ContextFields.LABEL]: 'involved in custom allocators / deallocators',
     [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.LIMITATIONS,
+    [ContextFields.PARENT]: 'A271_S1_1_1',
+  },
+  {
+    id: 'A271_S1_1_1_2',
+    [ContextFields.LABEL]: 'memory leak',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'A271_S1_1_1',
+  },
+  {
+    id: 'A271_S1_1_1_3',
+    [ContextFields.LABEL]: 'double-free',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
+    [ContextFields.PARENT]: 'A271_S1_1_1',
+  },
+  {
+    id: 'A271_S1_1_1_4',
+    [ContextFields.LABEL]: 'use-after-free',
+    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.VORKOMMEN]: Vorkommen.ABSTRACT,
     [ContextFields.PARENT]: 'A271_S1_1_1',
   },
   {
@@ -73,7 +94,7 @@ export const CONTEXT_A271: MergedContextData[] = [
   {
     id: 'A271_S1_2',
     [ContextFields.LABEL]: 'General purpose for all kind of errors',
-    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'A271_S1',
     [ContextFields.SUB]: ['A271_S1_2_1', 'A271_S1_2_2', 'A271_S1_2_3'],
@@ -81,7 +102,7 @@ export const CONTEXT_A271: MergedContextData[] = [
   {
     id: 'A271_S1_2_1',
     [ContextFields.LABEL]: 'Test-based techniques',
-    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'A271_S1_2',
     [ContextFields.SUB]: ['A271_S1_2_1_1', 'A271_S1_2_1_2', 'A271_S1_2_1_3', 'A271_S1_2_1_4'],
@@ -89,7 +110,7 @@ export const CONTEXT_A271: MergedContextData[] = [
   {
     id: 'A271_S1_2_1_1',
     [ContextFields.LABEL]: 'Verification by Test Cases',
-    [ContextFields.ZWECK]: Zweck.DETAILS,
+    [ContextFields.ZWECK]: Zweck.ABGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
     [ContextFields.PARENT]: 'A271_S1_2_1',
   },
@@ -163,15 +184,14 @@ export const CONTEXT_A271: MergedContextData[] = [
     [ContextFields.LABEL]: 'UnSafe Languages',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
-    [ContextFields.PARENT]: 'PROGRAMMING_LANGUAGES',
-    [ContextFields.SUB]: ['A271_S2_1'],
+    [ContextFields.PARENT]: 'PROGRAMS',
   },
   {
     id: 'A271_S2_1',
     [ContextFields.LABEL]: 'C',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.RELATED_WORK,
-    [ContextFields.PARENT]: 'C',
+    [ContextFields.PARENT]: 'C_PROGRAMS',
   },
   {
     id: 'A271_S3',
@@ -232,7 +252,6 @@ export const A271 = {
     [GeneralizationFields.AUFTEILUNG_1]: true,
     [GeneralizationFields.SECTION_THREATS]: 'short',
     [GeneralizationFields.SECTION_LIMITATIONS]: true,
-    [GeneralizationFields.NO_CLAIM]: true,
     [GeneralizationFields.CLAIM_FIRST_APPROACH]: 'new technique',
     [GeneralizationFields.REFERENCE_EVALUATION]: 'open-source programs',
   },

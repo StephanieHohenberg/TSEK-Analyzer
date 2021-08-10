@@ -59,7 +59,7 @@ export const CONTEXT_A678: MergedContextData[] = [
   {
     id: 'A678_S1_7',
     [ContextFields.LABEL]: 'in-the-wild Programming',
-    [ContextFields.ZWECK]: Zweck.VAGUE_VERALLGEMEINBARKEIT,
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
     [ContextFields.PARENT]: 'A678_S1',
   },
@@ -91,7 +91,6 @@ export const A678 = {
   [AnalysisPaperFields.GENERALIZATION]: {
     [GeneralizationFields.SECTION_THREATS]: true,
     [GeneralizationFields.SECTION_FUTURE_WORK]: true,
-    [GeneralizationFields.NO_CLAIM]: true,
     [GeneralizationFields.CLAIM_FIRST_APPROACH]: 'first human study',
     [GeneralizationFields.REFERENCE_PARTICIPANTS]: 'limited',
   },

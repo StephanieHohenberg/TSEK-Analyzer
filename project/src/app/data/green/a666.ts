@@ -9,7 +9,7 @@ export const CONTEXT_A666: MergedContextData[] = [
   {
     id: 'A666_S1_1',
     [ContextFields.LABEL]: 'Colloborative',
-    [ContextFields.ZWECK]: Zweck.VAGUE_VERALLGEMEINBARKEIT,
+    [ContextFields.ZWECK]: Zweck.VERALLGEMEINBARKEIT,
     [ContextFields.VORKOMMEN]: Vorkommen.INTRODUCTION,
     [ContextFields.PARENT]: 'SOFTWARE_DEVELOPMENT',
   },
@@ -37,7 +37,7 @@ export const CONTEXT_A666: MergedContextData[] = [
   },
   {
     id: 'A666_S3_1',
-    [ContextFields.LABEL]: 'Labotory Settings',
+    [ContextFields.LABEL]: 'Labotory Settings with Junior Developers',
     [ContextFields.ZWECK]: Zweck.EINGRENZUNG,
     [ContextFields.VORKOMMEN]: Vorkommen.THREATS_TO_VALIDITY,
     [ContextFields.PARENT]: 'PS_STUDY_CHARACTERISTICS',
@@ -86,7 +86,8 @@ export const A666: AnalysisPaperData = {
   [AnalysisPaperFields.GENERALIZATION]: {
     [GeneralizationFields.AUFTEILUNG_3]: true,
     [GeneralizationFields.SECTION_THREATS]: true,
-    [GeneralizationFields.VAGUE_STATEMENT]: true,
+    [GeneralizationFields.REFERENCE_OTHER_STUDIES]: true,
+    [GeneralizationFields.REFERENCE_PARTICIPANTS]: true,
     [GeneralizationFields.CLAIM_FIRST_APPROACH]: 'novel approach',
   },
   [AnalysisPaperFields.ASSUMPTIONS]: {

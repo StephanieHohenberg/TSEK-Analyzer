@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {GeneralizationData} from '../model/generalization.data';
 import {AnalysisPaperData, AnalysisPaperFields, GeneralPaperData} from '../model/paper.data';
 import {CharacterizationData} from '../model/characterization.data';
-import {ContextData, ContextFields, ContextTableData} from '../model/context.data';
+import {ContextData, ContextFields, ContextTableData, Vorkommen, Zweck} from '../model/context.data';
 import {AssumptionData} from '../model/assumption.data';
 import {FilterConnector, FilterData, FilterUpdate, FilterUpdateType} from '../model/filter.data';
 import {getDataMap} from '../data/hashmap.data';
@@ -67,6 +67,14 @@ export class PaperService {
   public getAssumptionDataByID(id: string): AssumptionData {
     return this.paperMap.get(id)[AnalysisPaperFields.ASSUMPTIONS];
   }
+
+
+  public getAmountOfContext(z: Zweck, v: Vorkommen): number {
+    return this.paperList.map(p => {
+      return p[AnalysisPaperFields.CONTEXTS].filter(c =>
+        (z === null || c[ContextFields.ZWECK] === z) && ( v === null || c[ContextFields.VORKOMMEN] === v)).length;
+    }).reduce((sum, current) => sum + current, 0);
+}
 
   private applyAndFilter(filterData: FilterData[]): GeneralPaperData[] {
     const result = this.paperList.filter(p => {

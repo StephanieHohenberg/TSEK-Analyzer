@@ -12,7 +12,7 @@ export const CONTEXT_B122: MergedContextData[] = [
     [ContextFields.ZWECK]: Zweck.THEMA,
     [ContextFields.VORKOMMEN]: Vorkommen.TITEL,
     [ContextFields.PARENT]: 'TESTING',
-    [ContextFields.SUB]: ['B122_S1_1', 'B122_S1_2'],
+    [ContextFields.SUB]: ['B122_S1_1', 'B122_S1_2', 'A949_1'],
   },
   {
     id: 'B122_S1_0',
