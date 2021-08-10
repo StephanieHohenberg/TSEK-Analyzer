@@ -63,7 +63,6 @@
       "EINGRENZUNG": "Eingrenzung",
       "ABGRENZUNG": "Abgrenzung",
       "ANWENDUNG": "Anwendung",
-      "VAGUE_VERALLGEMEINBARKEIT": "Vague Verallgemeinbarkeit",
       "VERALLGEMEINBARKEIT": "Verallgemeinbarkeit",
       "ERWEITERUNG": "Erweiterung"
     },
@@ -98,7 +97,6 @@
       "SECTION_LIMITATIONS": "Sektion: 'Limitations'",
       "SECTION_FUTURE_WORK": "Sektion: 'Future Work'",
       "NO_FOCUS": "Aussage: 'kein Fokus'",
-      "VAGUE_STATEMENT": "vage Aussagen",
       "CLAIM_FIRST_APPROACH": "Anspruch auf Neuartigkeit",
       "REFERENCE_PARTICIPANTS": "Verweis auf Teilnehmende",
       "REFERENCE_EVALUATION": "Verweis auf Evaluation",
@@ -111,8 +109,8 @@
   "ASSUMPTIONS.TITLE": "Annahmen",
   "SETTINGS.TITLE": "Einstellungen",
   "TOOLBAR": {
-    "TOGGLE_SIDEBAR": "toggle Sidebar",
-    "TOGGLE FILTER": "toggle Filter",
+    "TOGGLE_SIDEBAR": "toggle Tabelle",
+    "TOGGLE_FILTER": "toggle Filter",
     "ABOUT": "Über das Projekt",
     "SETTINGS": "Einstellung"
   },
@@ -126,6 +124,7 @@
     "LINE_5": "Das Projekt wurde mit dem Framework Angular <i class=\"fab fa-angular\"></i> umgesetzt und der Sourcecode, sowie weitere Artefakte, wie das Dokument zur Masterthesis selbst,\n    ist auf <a target=\"_blank\" href=\"https://github.com/StephanieHohenberg/TheMasterThesis\">Github <i class=\"fab fa-github\"></i></a> öffentlich zugänglich."
   },
   "ACTION_BUTTON": {
+    "HIDE_GRAPH": "Verstecke Graphen",
     "SHOW_GRAPH": "Blende Graphen ein",
     "SHOW_CONTEXTS": "Zeig Kontexte im Graph",
     "DELETE_FOCUS": "Entferne Fokus von ",
