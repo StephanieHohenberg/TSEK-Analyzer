@@ -1,0 +1,174 @@
+{
+  "TABLE": {
+    "PAPER": "Paper",
+    "PAPERS": "s",
+    "FILTER_SET": "Filter set",
+    "NO_PAPERS_FOUND": "No matching papers found. Reset the filter."
+  },
+  "GENERAL_DATA": {
+    "TITLE": "General Data",
+    "CONTINENT": {
+      "EUROPE": "Europe",
+      "ASIA": "Asia",
+      "NORTH_AMERICA": "North America",
+      "CENTRAL_AMERICA": "Central America",
+      "SOUTH_AMERICA": "South America",
+      "AFRICA": "Africa",
+      "OCEANIA": "Oceania"
+    }
+  },
+  "CHARACTERIZATION": {
+    "TITLE": "Characterization",
+    "NOT_FOUND": "There is not data about the characterization!",
+    "LABELS": {
+      "PROPOSAL": "Proposal",
+      "INSPECTION": "Inspection",
+      "EMPIRICAL_STUDY": "Empirical Study",
+      "COMPREHENSIVE_STUDY": "Comprehensive Study",
+      "PILOT_STUDY": "Pilot Study",
+      "FIELD_STUDY": "Field Study",
+      "EXPLORATORY_STUDY": "Explorative Study",
+      "CASE_STUDY": "Case Study",
+      "USER_STUDY": "User Study",
+      "EVALUATION": "Evaluation",
+      "BENCHMARK": "Benchmark",
+      "EXPERIMENT": "Experiment",
+      "CONTROLLED_EXPERIMENT": "Controlled Experiment",
+      "PSYCHOLOGICAL_EXPERIMENT": "Psychological Experiment",
+      "ONLINE_EXPERIMENT": "Online Experiment",
+      "SIMULATION": "Simulation",
+      "INTERVIEW": "Interview",
+      "SEMI_STRUCTURED_INTERVIEW": "Semi-Structured Interview",
+      "STRUCTURED_INTERVIEW": "Structured Interview",
+      "SURVEY": "Survey",
+      "CONTEXTUAL_INQUIRY": "Contextual Inquiry",
+      "STATES_OF_ARTS": "States-of-Arts",
+      "DL_NN": "Deep Learning / Neural Networks",
+      "TESTING": "Testing",
+      "DATA": "Data",
+      "HUMAN_ASPECTS": "Human Aspects",
+      "QUALITATIVE_ANALYSIS": "Qualitative Analysis",
+      "APPLICATION_TARGET": "Application / Ziel"
+    }
+  },
+  "CONTEXTS": {
+    "TITLE": "Contexts",
+    "LABEL_SG": "Context",
+    "NOT_FOUND": "There is not data about the contexts!",
+    "ZWECK": {
+      "LABEL": "Intention",
+      "LABEL_PL": "Intentions",
+      "THEMA": "Topic",
+      "DETAILS": "Details",
+      "EINGRENZUNG": "Narrowing",
+      "ABGRENZUNG": "Differentiation",
+      "ANWENDUNG": "Application",
+      "VERALLGEMEINBARKEIT": "Generality",
+      "ERWEITERUNG": "Extension"
+    },
+    "TOOLTIP": {
+      "THEMA": "topic-specific context",
+      "DETAILS": "= subcontext which is too specific to fit any other intention",
+      "EINGRENZUNG": "context defining borders and enclosing/narrowing the paper’s overall context",
+      "ABGRENZUNG": "context which differentiates from other contexts",
+      "ANWENDUNG": "context onto which the paper’s result are applicable",
+      "VERALLGEMEINBARKEIT": "context onto which the papers’s results could be generalizable",
+      "ERWEITERUNG": "context onto which the paper’s result could be extended by doing future work"
+    },
+    "VORKOMMEN": {
+      "LABEL": "Appearance",
+      "LABEL_PL": "Appearances",
+      "TITLE": "Title",
+      "ABSTRACT": "Abstract",
+      "INTRODUCTION": "Introduction",
+      "BACKGROUND": "Background",
+      "RELATED_WORK": "Related Work",
+      "DATA_PREPARATION": "Data Preparation",
+      "RESULTS_ANALYSIS": "Results / Analysis",
+      "EXPERIMENTAL_DESIGN": "Experimental Design",
+      "LIMITATIONS": "Limitations",
+      "THREATS_TO_VALIDITY": "Threats to Validity",
+      "EVALUATION": "Evaluation",
+      "FUTURE_WORK": "Future Work",
+      "DISCUSSION": "Discussion",
+      "CONCLUSION": "Conclusions",
+      "IMPLICITE": "Implicitly"
+
+    }
+  },
+  "GENERALIZATION": {
+    "TITLE": "Generality",
+    "NOT_FOUND": "There is not data about the generality!",
+    "LABELS": {
+      "AUFTEILUNG_3": "Structure in 3 paragraphs (intern, extern, construct)",
+      "AUFTEILUNG_2": "Structure in 2 paragraphs ",
+      "AUFTEILUNG_1": "Structure in only one paragraph (intern/ extern/ construct)",
+      "SECTION_THREATS": "Section: 'Threats to Validity'",
+      "SECTION_LIMITATIONS": "Section: 'Limitations'",
+      "SECTION_FUTURE_WORK": "Section: 'Future Work'",
+      "NO_FOCUS": "Statement: 'no fokus'",
+      "CLAIM_FIRST_APPROACH": "Claim to novelty",
+      "REFERENCE_PARTICIPANTS": "Reference to participants",
+      "REFERENCE_EVALUATION": "Reference to evaluation",
+      "REFERENCE_OTHER_STUDIES": "Reference to other studies",
+      "REFERENCE_SCOPE_SCALE": "Reference to scope or scale of study",
+      "REFERENCE_PROCEDURE": "Reference to procedure",
+      "REFERENCE_IMPLEMENTATION": "Reference to implementation"
+    }
+  },
+  "ASSUMPTIONS.TITLE": "Assumptions",
+  "SETTINGS.TITLE": "Settings",
+  "TOOLBAR": {
+    "TOGGLE_SIDEBAR": "toggle tablev",
+    "TOGGLE_FILTER": "toggle filter",
+    "ABOUT": "About the project",
+    "SETTINGS": "Settings"
+  },
+  "ABOUT_PROJECT": {
+  "TITLE": "About the project",
+  "LINE_1": "The prototype TSEK-Analyzer got implemented by Stephanie Hohenberg in scope of her postgrad thesis in 2020/21 at the free university of Berlin.\n The title of the thesis is:",
+  "THESIS_TITLE": "First steps torwards a <b>T</b>axonomie of <b>S</b>oftware-<b>E</b>ngineering-<b>C</b>ontexts",
+  "LINE_2": "which contains the acrononym for TSEK.",
+  "LINE_3": "Within her thesis, Stephanie read and analyzed 59 technical papers, which got published at the International Conference on Software Engineering (ICSE) 2020. To analyze the data properly and to be able to answer the research questions, TSEK-Analyzer got developed. Therefore an User-Centered-Design approach got followed.",
+  "LINE_4": "More information can be found on the <a target=\"_blank\" href=\"http://www.inf.fu-berlin.de/w/SE/ThesisTaxonomy1\">thesis' webpage</a>.",
+  "LINE_5": "The project got implemented with the framework Angular <i class=\"fab fa-angular\"></i> and the source code, as other artifacts, like the document of the postgrad thesis itselfs,\n    is publicly accessible on <a target=\"_blank\" href=\"https://github.com/StephanieHohenberg/TheMasterThesis\">Github <i class=\"fab fa-github\"></i></a>."
+},
+  "ACTION_BUTTON": {
+    "HIDE_GRAPH": "Hide graph",
+    "SHOW_GRAPH": "Show graph",
+    "SHOW_CONTEXTS": "Show contexts in the graph",
+    "DELETE_FOCUS": "Remove focus on ",
+    "DELETE_HIGHLIGHT": "Remove highlights ",
+    "RESET_FILTER": "Reset filter"
+  },
+  "FILTER": {
+    "DROPDOWN.FILTER_SELECTED": "Filter selected",
+    "GENERAL_DATA": {
+      "TAB_TITLE": "General Data",
+      "FIELD.TITLE": "Title",
+      "TOOLTIP.AUTHOR": "Filter by Author",
+      "TOOLTIP.UNIVERSITY": "Filter by University",
+      "DROPDOWN.CONTINENT": "Continent",
+      "CHIP.TITLE": "Title: ",
+      "CHIP.AUTHOR": "Author: ",
+      "CHIP.UNIVERSITY": "University: "
+    },
+    "CHARACTERIZATION": {
+      "TAB_TITLE": "Characterization",
+      "DROPDOWN.TITLE": "Criteria"
+    },
+    "CONTEXTS": {
+      "TAB_TITLE": "Contexts",
+      "CHIP.CONTEXT": "Context: "
+
+    },
+    "GENERALIZATION": {
+      "TAB_TITLE": "Generalization",
+      "DROPDOWN.TITLE": "Criteria"
+    },
+    "ASSUMPTIONS.TAB_TITLE": "Assumptions"
+  },
+  "SNACKBAR": {
+    "ID_VALIDATION": "Enter the ID of a paper in this format 'XXXX'."
+  }
+}
