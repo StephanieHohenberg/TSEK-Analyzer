@@ -54,7 +54,8 @@ import { LanguageToggleComponent } from './components/language-toggle/language-t
 import { PaperAccordionComponent } from './components/paper-overview-table/paper-accordion/paper-accordion.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  // return new TranslateHttpLoader(http);
 }
 
 @NgModule({
